@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Join as Intern — FlashLab Creative</title>
+<meta name="description" content="Apply for an internship at FlashLab Creative — Goa's leading creative & digital marketing agency. Real projects, real mentorship, real growth.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+
+<style>
+/* ============================================================
+   1. DESIGN TOKENS
+   ============================================================ */
+:root {
+  --accent:  #a8e832;
+  --accent2: #f97316;
+  --accent3: #dc2626;
+  --font-head:   'Bebas Neue', sans-serif;
+  --font-body:   'Outfit', sans-serif;
+  --font-italic: 'Playfair Display', serif;
+  --radius:    16px;
+  --radius-lg: 28px;
+}
+[data-theme="dark"] {
+  --bg:          #0a0a0f;
+  --bg2:         #0f0f18;
+  --card:        #13131f;
+  --card2:       #1a1a2e;
+  --text:        #f0eee8;
+  --text-strong: #fff;
+  --muted:       #888;
+  --muted2:      #555;
+  --border:      rgba(255,255,255,0.07);
+  --shadow:      rgba(0,0,0,0.4);
+}
+[data-theme="light"] {
+  --bg:          #f7f5f0;
+  --bg2:         #fff;
+  --card:        #fff;
+  --card2:       #f0ede8;
+  --text:        #1a1218;
+  --text-strong: #0a0a0f;
+  --muted:       #6b6473;
+  --muted2:      #a89fb0;
+  --border:      rgba(0,0,0,0.09);
+  --shadow:      rgba(0,0,0,0.12);
+}
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background:   var(--bg);
+  color:        var(--text);
+  font-family:  var(--font-body);
+  line-height:  1.65;
+  overflow-x:   hidden;
+  cursor:       none;
+  transition:   background .4s, color .4s;
+}
+a   { text-decoration: none; color: inherit; }
+ul  { list-style: none; }
+img { max-width: 100%; display: block; }
+
+/* ============================================================
+   3. LAYOUT HELPERS
+   ============================================================ */
+.wrap    { width: min(1200px, 92%); margin: auto; }
+.section { padding: 100px 0; }
+
+/* ============================================================
+   4. CURSOR
+   ============================================================ */
+body { cursor: none; }
+.cursor {
+  width: 10px; height: 10px;
+  background: var(--text);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform .1s ease, background .2s ease, width .2s ease, height .2s ease;
+}
+
+/* ============================================================
+   5. LOGO BAR
+   ============================================================ */
+.site-logo-bar {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 1002;
+  display: flex; align-items: center; justify-content: center;
+  height: 130px;
+  transition: background .3s;
+}
+[data-theme="dark"]  .site-logo-bar { background: #0a0a0f; }
+[data-theme="light"] .site-logo-bar { background: #fff; }
+.site-logo-bar img { height: 105px; width: auto; object-fit: contain; transition: filter .3s; }
+[data-theme="dark"] .site-logo-bar img { filter: invert(1) brightness(1.1); }
+
+/* ============================================================
+   6. NAVBAR
+   ============================================================ */
+.navbar {
+  position: fixed; top: 130px; left: 0; right: 0;
+  z-index: 1001;
+  padding: 18px 5%;
+  background: #a8e832 !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,.12);
+  display: flex; align-items: center; justify-content: center;
+}
+.navbar.scrolled { box-shadow: 0 4px 18px rgba(0,0,0,.2); }
+.nav-wrap { width: 100%; max-width: 1200px; display: flex; align-items: center; justify-content: center; position: relative; }
+.nav-links { flex:1; display:flex; align-items:center; gap:28px; font-size:.92rem; font-weight:600; letter-spacing:.6px; white-space:nowrap; justify-content:center; text-transform:uppercase; list-style:none; margin:0; padding:0; }
+.nav-links > li { position:relative; overflow:visible; }
+.nav-links > li > a { color:#0a0a0f !important; text-decoration:none; display:inline-block; transition:opacity .2s; }
+.nav-links > li > a:hover { opacity:.65; }
+.nav-links > li > a::after { content:''; position:absolute; left:0; bottom:-4px; width:0; height:2px; background:#0a0a0f; transition:width .3s; }
+.nav-links > li > a:hover::after { width:100%; }
+.nav-links ul { display:none; position:absolute; top:calc(100% + 14px); left:50%; transform:translateX(-50%); background:#0a0a0f; list-style:none; padding:8px 0; min-width:220px; border-radius:8px; border:1px solid rgba(168,232,50,.2); box-shadow:0 16px 48px rgba(0,0,0,.6); z-index:99999; }
+.nav-links ul::before { content:''; position:absolute; top:-6px; left:50%; transform:translateX(-50%) rotate(45deg); width:12px; height:12px; background:#0a0a0f; border-left:1px solid rgba(168,232,50,.2); border-top:1px solid rgba(168,232,50,.2); }
+.nav-links li:hover > ul { display:block; }
+.nav-links ul li a { display:block; padding:10px 20px; color:#e8e8e8 !important; font-size:13px; font-weight:500; text-transform:none !important; letter-spacing:0 !important; white-space:nowrap; transition:background .2s,color .2s,padding-left .2s; }
+.nav-links ul li a:hover { background:rgba(168,232,50,.08); color:#a8e832 !important; padding-left:26px; }
+.nav-links ul li a::after { display:none !important; }
+.nav-controls { position:absolute; right:0; display:flex; align-items:center; gap:10px; }
+.theme-toggle { width:42px; height:42px; border-radius:50%; border:none; background:rgba(0,0,0,.1) !important; color:#0a0a0f !important; font-size:1.05rem; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all .3s; }
+.theme-toggle:hover { background:rgba(0,0,0,.2) !important; }
+.nav-cta { display:flex; align-items:center; gap:8px; background:#0a0a0f !important; color:#a8e832 !important; padding:10px 20px; border-radius:999px; font-size:.86rem; font-weight:700; white-space:nowrap; transition:all .3s; }
+.nav-cta:hover { background:#1a1a2a !important; transform:translateY(-1px); }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; }
+.hamburger span { display:block; width:24px; height:2px; background:#0a0a0f; border-radius:999px; transition:.3s; }
+.hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+.hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+/* active nav state */
+.nav-links > li > a.nav-active { color:#0a0a0f !important; opacity:1 !important; }
+.nav-links > li > a.nav-active::after { width:100% !important; background:#0a0a0f !important; }
+.nav-links ul li a.nav-active { color:#a8e832 !important; background:rgba(168,232,50,.08) !important; padding-left:26px !important; border-left:2px solid #a8e832; }
+.nav-links > li.nav-parent-active > a { color:#0a0a0f !important; opacity:1 !important; }
+
+/* ============================================================
+   7. MOBILE MENU
+   ============================================================ */
+.mob-overlay { position:fixed; inset:0; background:rgba(0,0,0,.7); z-index:1001; display:none; backdrop-filter:blur(4px); }
+.mob-overlay.active { display:block; }
+.mob-menu { position:fixed; top:0; right:-100%; width:280px; height:100%; background:var(--bg2); border-left:1px solid var(--border); z-index:1002; padding:70px 30px 40px; display:flex; flex-direction:column; gap:6px; transition:right .4s cubic-bezier(.22,1,.36,1); }
+.mob-menu.active { right:0; }
+.mob-close { position:absolute; top:20px; right:20px; background:none; border:none; color:var(--muted); font-size:1.4rem; cursor:pointer; }
+.mob-links { display:flex; flex-direction:column; gap:0; }
+.mob-links li a { display:block; padding:13px 0; font-size:1.05rem; font-weight:500; color:var(--text); border-bottom:1px solid var(--border); transition:color .3s,padding-left .3s; }
+.mob-links li a:hover { color:var(--accent); padding-left:8px; }
+.mob-cta { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#0a0a0f !important; padding:12px 24px; border-radius:999px; font-weight:600; font-size:.9rem; margin-top:16px; }
+
+/* ============================================================
+   8. SHARED TYPOGRAPHY
+   ============================================================ */
+.sec-eyebrow  { font-size:.78rem; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:14px; display:block; }
+.sec-heading  { font-family:var(--font-head); font-size:clamp(2.8rem,5vw,4.5rem); line-height:1.05; letter-spacing:1px; margin-bottom:18px; color:var(--text); }
+.sec-heading em { font-family:var(--font-italic); font-style:italic; color:var(--text); font-size:.9em; }
+.sec-sub      { color:var(--muted); font-size:1rem; max-width:560px; line-height:1.8; }
+.sec-header.centered { text-align:center; margin-bottom:60px; }
+.sec-header.centered .sec-sub { margin:0 auto; }
+
+/* ============================================================
+   9. BUTTONS
+   ============================================================ */
+.btn-primary { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#0a0a0f; padding:14px 30px; border-radius:999px; font-weight:700; font-size:.9rem; transition:all .3s; }
+.btn-primary:hover { background:#bef54a; transform:translateY(-2px); box-shadow:0 8px 30px rgba(168,232,50,.35); }
+.btn-ghost   { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); color:var(--muted); padding:14px 30px; border-radius:999px; font-weight:500; font-size:.9rem; transition:all .3s; }
+.btn-ghost:hover { border-color:var(--muted); color:var(--text); }
+
+/* ============================================================
+   10. SCROLL REVEAL
+   ============================================================ */
+.reveal       { opacity:0; transform:translateY(40px);  transition:opacity .8s,transform .8s; transition-delay:var(--delay,0s); }
+.reveal-left  { opacity:0; transform:translateX(-40px); transition:opacity .8s,transform .8s; }
+.reveal-right { opacity:0; transform:translateX(40px);  transition:opacity .8s,transform .8s; }
+.reveal.active, .reveal-left.active, .reveal-right.active { opacity:1; transform:translate(0); }
+
+/* ============================================================
+   11. FOOTER
+   ============================================================ */
+.footer        { background: #11222a !important; }
+.footer-bottom { background: #0c1a20 !important; border-top: 1px solid rgba(255,255,255,.07) !important; padding: 18px 40px; display: flex; align-items: center; justify-content: center; }
+.footer-bottom p, .footer-bottom p a { color:rgba(255,255,255,.55) !important; font-size:.82rem; }
+.footer-bottom p a.cyber-link { color:var(--accent) !important; font-weight:600; }
+.footer-grid { display: grid; grid-template-columns: 1.6fr .75fr .85fr .75fr .85fr 1.15fr; gap: 28px; padding: 64px 0 48px; }
+.footer-brand p { font-size:.82rem; color:rgba(255,255,255,.5); line-height:1.65; margin:16px 0 20px; }
+.footer-logo img { height:70px; }
+.footer-socials { display:flex; gap:10px; flex-wrap:wrap; }
+.footer-socials a { width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,.12); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.55); font-size:.95rem; transition:color .2s,border-color .2s,background .2s; }
+.footer-socials a:hover { color:#0a0a0f; background:var(--accent); border-color:var(--accent); }
+.footer-head { font-size:.72rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:rgba(255,255,255,.35); margin-bottom:16px; }
+.footer-list { display:flex; flex-direction:column; gap:6px; }
+.footer-list a { font-size:.82rem; color:rgba(255,255,255,.58); display:flex; align-items:center; gap:5px; transition:color .2s; }
+.footer-list a:hover { color:var(--accent); }
+.footer-list a i { color:var(--accent); font-size:1rem; flex-shrink:0; }
+.footer-contact { display:flex; flex-direction:column; gap:10px; }
+.footer-contact p { display:flex; align-items:flex-start; gap:8px; font-size:.82rem; color:rgba(255,255,255,.55); line-height:1.55; }
+.footer-contact p i { color:var(--accent); font-size:1rem; flex-shrink:0; margin-top:2px; }
+.footer-contact a { color:rgba(255,255,255,.55); }
+.footer-contact a:hover { color:var(--accent); }
+.footer-cta { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#0a0a0f; font-size:.82rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:11px 20px; border-radius:4px; margin-top:10px; transition:opacity .2s; }
+.footer-cta:hover { opacity:.88; }
+
+/* ============================================================
+   12. BACK TO TOP
+   ============================================================ */
+.back-top { position:fixed; bottom:30px; right:30px; z-index:9999; width:46px; height:46px; border-radius:50%; background:var(--accent) !important; color:#0a0a0f !important; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:1.2rem; box-shadow:0 4px 16px rgba(168,232,50,.35); opacity:0; visibility:hidden; transform:translateY(12px); transition:opacity .3s,visibility .3s,transform .3s; pointer-events:none; }
+.back-top.active { opacity:1 !important; visibility:visible !important; transform:translateY(0) !important; pointer-events:all !important; }
+.back-top:hover { background:#bef54a !important; transform:translateY(-3px) !important; }
+
+/* ============================================================
+   13. RESPONSIVE
+   ============================================================ */
+@media (max-width:1100px) { .footer-grid { grid-template-columns:repeat(3,1fr); gap:32px; } }
+@media (max-width:960px)  { .site-logo-bar { height:95px; } .site-logo-bar img { height:72px; } .navbar { top:95px !important; } .nav-cta { display:none; } .hamburger { display:flex; } }
+@media (max-width:640px)  { .section { padding:70px 0; } .nav-links { display:none !important; } .hamburger { display:flex; } .footer-grid { grid-template-columns:1fr; gap:24px; } }
+
+/* ============================================================
+   PAGE-SPECIFIC: INTERN
+   ============================================================ */
+
+/* HERO */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .78rem;
+  color: var(--muted);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.breadcrumb a { color: var(--accent); transition: opacity .2s; }
+.breadcrumb a:hover { opacity: .7; }
+.breadcrumb i { font-size: .7rem; color: var(--muted2); }
+
+.intern-hero {
+  padding: 280px 5% 120px;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+.intern-hero::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(168,232,50,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.intern-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px; left: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(249,115,22,0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.hero-tag { display:inline-flex; align-items:center; gap:8px; background:rgba(168,232,50,.1); border:1px solid rgba(168,232,50,.25); padding:6px 16px; border-radius:999px; font-size:.78rem; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--accent); margin-bottom:24px; }
+.hero-h1 { font-family:var(--font-head); font-size:clamp(3.5rem,6vw,6rem); line-height:1; letter-spacing:2px; color:var(--text-strong); margin-bottom:24px; }
+.hero-h1 em { font-family:var(--font-italic); font-style:italic; color:var(--accent); font-size:.85em; display:block; }
+.hero-desc { color:var(--muted); font-size:1.05rem; line-height:1.8; max-width:460px; margin-bottom:40px; }
+.hero-actions { display:flex; gap:14px; flex-wrap:wrap; }
+.hero-img-wrap { position:relative; border-radius:20px; overflow:hidden; aspect-ratio:4/3; }
+.hero-img-wrap img { width:100%; height:100%; object-fit:cover; filter:saturate(0.9); }
+.hero-img-wrap::after { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(168,232,50,.15),transparent 60%); }
+
+/* PERKS */
+.perks-section { padding:100px 0; background:var(--bg2); }
+.perks-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:20px; overflow:hidden; margin-top:60px; }
+.perk-card { background:var(--card); padding:40px 32px; transition:background .3s; }
+.perk-card:hover { background:var(--card2); }
+.perk-icon { width:52px; height:52px; background:rgba(168,232,50,.1); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:20px; font-size:1.4rem; color:var(--accent); }
+.perk-title { font-family:var(--font-head); font-size:1.5rem; letter-spacing:1px; color:var(--text-strong); margin-bottom:10px; }
+.perk-desc { font-size:.88rem; color:var(--muted); line-height:1.7; }
+
+/* DEPARTMENTS */
+.depts-section { padding:100px 0; background:var(--bg); }
+.depts-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:60px; }
+.dept-card {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+  overflow:hidden;
+  transition:border-color .3s, transform .3s, box-shadow .3s;
+}
+.dept-card:hover { border-color:rgba(168,232,50,.35); transform:translateY(-4px); box-shadow:0 20px 60px rgba(0,0,0,.3); }
+.dept-img { height:180px; overflow:hidden; }
+.dept-img img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
+.dept-card:hover .dept-img img { transform:scale(1.05); }
+.dept-body { padding:28px; }
+.dept-badge { display:inline-block; background:rgba(168,232,50,.12); color:var(--accent); font-size:.72rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:4px 12px; border-radius:999px; margin-bottom:14px; }
+.dept-title { font-family:var(--font-head); font-size:1.6rem; letter-spacing:1px; color:var(--text-strong); margin-bottom:10px; }
+.dept-desc { font-size:.88rem; color:var(--muted); line-height:1.7; margin-bottom:24px; }
+.dept-apply { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#0a0a0f; padding:10px 22px; border-radius:999px; font-weight:700; font-size:.85rem; transition:all .3s; }
+.dept-apply:hover { background:#bef54a; transform:translateY(-1px); }
+
+/* MARQUEE */
+.marquee-section { padding:0; background:var(--accent); overflow:hidden; }
+.fl-marquee { overflow:hidden; width:100%; padding:0; }
+.fl-track { display:inline-flex; gap:0; animation:fl-scroll 28s linear infinite; white-space:nowrap; }
+.fl-track:hover { animation-play-state:paused; }
+.fl-track span { font-family:var(--font-head); font-weight:400; font-size:1.6rem; letter-spacing:3px; text-transform:uppercase; color:#0a0a0f; padding:22px 28px; }
+.fl-track span.dot { font-size:10px; opacity:.4; padding:0 8px; }
+@keyframes fl-scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+
+/* WHAT YOU'LL LEARN (skills checklist) */
+.skills-section { padding:100px 0; background:var(--bg2); }
+.skills-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.skills-img { border-radius:20px; overflow:hidden; aspect-ratio:4/3; }
+.skills-img img { width:100%; height:100%; object-fit:cover; }
+.skills-list { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:32px; }
+.skill-item { display:flex; align-items:center; gap:12px; padding:14px 18px; background:var(--card); border:1px solid var(--border); border-radius:12px; font-size:.88rem; font-weight:500; transition:border-color .3s,background .3s; }
+.skill-item:hover { border-color:rgba(168,232,50,.3); background:var(--card2); }
+.skill-item i { color:var(--accent); font-size:1.1rem; flex-shrink:0; }
+
+/* PROCESS */
+.process-section { padding:100px 0; background:var(--bg); }
+.process-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; margin-top:60px; }
+.process-step { background:var(--card); padding:40px 28px; transition:background .3s; }
+.process-step:hover { background:var(--card2); }
+.step-num { font-family:var(--font-head); font-size:4rem; color:rgba(168,232,50,.15); line-height:1; margin-bottom:16px; }
+.step-icon { width:48px; height:48px; background:rgba(168,232,50,.1); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; font-size:1.3rem; color:var(--accent); }
+.step-title { font-family:var(--font-head); font-size:1.5rem; letter-spacing:1px; color:var(--text-strong); margin-bottom:10px; }
+.step-desc { font-size:.88rem; color:var(--muted); line-height:1.7; }
+
+/* STIPEND / INFO STRIP */
+.info-strip { padding:60px 0; background: linear-gradient(135deg, #0f1f14 0%, #0a1a0a 100%); border-top:1px solid rgba(168,232,50,.15); border-bottom:1px solid rgba(168,232,50,.15); }
+.info-strip-inner { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(168,232,50,.1); border-radius:16px; overflow:hidden; }
+.info-item { background:rgba(10,26,10,.6); padding:36px 28px; text-align:center; }
+.info-num { font-family:var(--font-head); font-size:3rem; letter-spacing:2px; color:var(--accent); margin-bottom:6px; }
+.info-label { font-size:.8rem; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.5); }
+
+/* ELIGIBILITY */
+.eligibility-section { padding:100px 0; background:var(--bg); }
+.eligibility-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; margin-top:60px; }
+.elig-col h3 { font-family:var(--font-head); font-size:1.8rem; letter-spacing:1px; color:var(--text-strong); margin-bottom:20px; }
+.elig-list { display:flex; flex-direction:column; gap:12px; }
+.elig-item { display:flex; align-items:flex-start; gap:12px; padding:16px 20px; background:var(--card); border:1px solid var(--border); border-radius:12px; font-size:.9rem; line-height:1.6; }
+.elig-item.yes i { color:var(--accent); }
+.elig-item.no  i { color:#dc2626; }
+.elig-item i { font-size:1.1rem; flex-shrink:0; margin-top:2px; }
+
+/* APPLICATION FORM SECTION */
+.form-section { padding:100px 0; background:var(--bg2); }
+.form-card { background:var(--card); border:1px solid var(--border); border-radius:28px; padding:60px; max-width:860px; margin:0 auto; }
+.form-card-title { font-family:var(--font-head); font-size:2.5rem; letter-spacing:1px; color:var(--text-strong); margin-bottom:8px; }
+.form-card-sub { color:var(--muted); font-size:.92rem; margin-bottom:40px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+.form-field { display:flex; flex-direction:column; gap:6px; }
+.form-field.full { grid-column:1/-1; }
+.form-field label { font-size:.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); }
+.form-field input,
+.form-field select,
+.form-field textarea {
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:13px 16px;
+  font-family:var(--font-body);
+  font-size:.92rem;
+  color:var(--text);
+  outline:none;
+  transition:border-color .2s,box-shadow .2s;
+  width:100%;
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(168,232,50,.1); }
+.form-field textarea { height:100px; resize:vertical; }
+.form-field select option { background:var(--card); }
+.form-check-group { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+.check-item { display:flex; align-items:center; gap:8px; font-size:.88rem; }
+.check-item input[type=checkbox] { width:16px; height:16px; accent-color:var(--accent); cursor:pointer; }
+.form-submit { width:100%; padding:15px; background:var(--accent); color:#0a0a0f; border:none; border-radius:999px; font-family:var(--font-body); font-weight:700; font-size:1rem; cursor:pointer; margin-top:24px; transition:all .3s; display:flex; align-items:center; justify-content:center; gap:8px; }
+.form-submit:hover { background:#bef54a; transform:translateY(-2px); box-shadow:0 8px 30px rgba(168,232,50,.35); }
+
+/* CTA BAND */
+.cta-band { padding:100px 0; background:var(--bg); }
+.cta-inner { background:linear-gradient(135deg,#0f1f14 0%,#0a1a0a 100%); border:1px solid rgba(168,232,50,.2); border-radius:28px; padding:80px 60px; display:grid; grid-template-columns:1fr auto; gap:60px; align-items:center; }
+.cta-band-title { font-family:var(--font-head); font-size:clamp(2.2rem,4vw,3.5rem); letter-spacing:1px; color:var(--text-strong); margin-bottom:14px; }
+.cta-band-title em { font-family:var(--font-italic); font-style:italic; color:var(--accent); }
+.cta-band-sub { color:var(--muted); font-size:1rem; max-width:500px; line-height:1.7; }
+.cta-band-actions { display:flex; flex-direction:column; gap:12px; align-items:flex-end; }
+
+/* ============================================================
+   RESPONSIVE PAGE-SPECIFIC
+   ============================================================ */
+@media (max-width:960px) {
+  .intern-hero { padding:220px 5% 80px; }
+  .hero-inner { grid-template-columns:1fr; gap:50px; }
+  .hero-img-wrap { order:-1; }
+  .perks-grid { grid-template-columns:repeat(2,1fr); }
+  .depts-grid { grid-template-columns:repeat(2,1fr); }
+  .process-steps { grid-template-columns:repeat(2,1fr); }
+  .skills-inner { grid-template-columns:1fr; gap:40px; }
+  .eligibility-grid { grid-template-columns:1fr; }
+  .info-strip-inner { grid-template-columns:repeat(2,1fr); }
+  .cta-inner { grid-template-columns:1fr; }
+  .cta-band-actions { align-items:flex-start; }
+  .form-card { padding:40px 28px; }
+}
+@media (max-width:640px) {
+  .intern-hero { padding:180px 5% 60px; }
+  .perks-grid { grid-template-columns:1fr; }
+  .depts-grid { grid-template-columns:1fr; }
+  .process-steps { grid-template-columns:1fr; }
+  .form-row { grid-template-columns:1fr; }
+  .form-check-group { grid-template-columns:repeat(2,1fr); }
+  .info-strip-inner { grid-template-columns:repeat(2,1fr); }
+  .cta-inner { padding:40px 28px; }
+  .skills-list { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body data-page="career-intern">
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+
+<!-- LOGO BAR -->
+<div class="site-logo-bar">
+  <a href="index.html">
+    <img src="https://www.flashlabcreative.com/wp-content/uploads/2025/10/cropped-Flashlab-LogoBlack-280x93.png" alt="FlashLab Creative" id="siteLogoImg">
+  </a>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-wrap">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li>
+        <a href="services.html">Services</a>
+        <ul>
+          <li><a href="digital-advertising.html">Digital Advertising</a></li>
+          <li><a href="seo-sem-marketing.html">SEO / SEM Marketing</a></li>
+          <li><a href="social-media-management.html">Social Media Management</a></li>
+          <li><a href="product-design-strategies.html">Product Design &amp; Strategies</a></li>
+          <li><a href="web-app-development.html">Web &amp; App Development</a></li>
+          <li><a href="outdoor-print-ads.html">Outdoor &amp; Print Ads</a></li>
+          <li><a href="ecommerce.html">E-Commerce</a></li>
+        </ul>
+      </li>
+      <li><a href="clients.html">Clients</a></li>
+      <li>
+        <a href="case-studies.html">Case Studies</a>
+        <ul>
+          <li><a href="story-1.html">Story 1</a></li>
+          <li><a href="story-2.html">Story 2</a></li>
+          <li><a href="story-3.html">Story 3</a></li>
+          <li><a href="story-4.html">Story 4</a></li>
+          <li><a href="story-5.html">Story 5</a></li>
+          <li><a href="story-6.html">Story 6</a></li>
+        </ul>
+      </li>
+      <li><a href="team.html">Team</a></li>
+      <li>
+        <a href="career.html">Career</a>
+        <ul>
+          <li><a href="career-intern.html" class="nav-active">Intern</a></li>
+          <li><a href="career-seo-expert.html">SEO Expert</a></li>
+          <li><a href="career-social-media-manager.html">Social Media Manager</a></li>
+          <li><a href="career-graphic-designer.html">Graphic Designer</a></li>
+          <li><a href="career-web-developer.html">Web Developer</a></li>
+          <li><a href="career-animation-designer.html">Animation Designer</a></li>
+          <li><a href="career-app-developer.html">App Developer</a></li>
+        </ul>
+      </li>
+      <li><a href="connect.html">Connect</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button class="theme-toggle" id="themeToggle">
+        <i class="ri-sun-line" id="themeIcon"></i>
+      </button>
+      <a href="connect.html" class="nav-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-overlay" id="mobOverlay"></div>
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose"><i class="ri-close-line"></i></button>
+  <ul class="mob-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="clients.html">Clients</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="career.html">Career</a></li>
+    <li><a href="connect.html">Connect</a></li>
+  </ul>
+  <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
+</div>
+
+<main>
+
+  <!-- ① HERO -->
+  <section class="intern-hero">
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="reveal">
+          <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <i class="ri-arrow-right-s-line"></i>
+            <a href="career.html">Career</a>
+            <i class="ri-arrow-right-s-line"></i>
+            <span>Intern</span>
+          </div>
+          <div class="hero-tag"><i class="ri-award-line"></i> Internship Programme</div>
+          <h1 class="hero-h1">Join as<br><em>Intern</em></h1>
+          <p class="hero-desc">Kick-start your creative career at Goa's most exciting agency. Work on live client projects, learn from senior professionals, and build a portfolio that gets you noticed.</p>
+          <div class="hero-actions">
+            <a href="#apply-form" class="btn-primary">Apply Now <i class="ri-arrow-down-line"></i></a>
+            <a href="career.html#open-positions" class="btn-ghost">See Departments</a>
+          </div>
+        </div>
+
+
+        <div class="reveal-right">
+          <div class="hero-img-wrap">
+            <img src="https://assets.entrepreneur.com/content/3x2/2000/20150503125436-shutterstock-177305711.jpeg" alt="FlashLab Interns at Work">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+ 
+
+  <!-- ⑨ APPLICATION FORM -->
+  <section class="form-section" id="apply-form">
+    <div class="wrap">
+      <div class="sec-header centered reveal">
+        <span class="sec-eyebrow">● Internship Registration</span>
+        <h2 class="sec-heading">Apply <em>Now</em></h2>
+        <p class="sec-sub">Fill in your details below and submit via WhatsApp. We'll be in touch within 5 working days.</p>
+      </div>
+      <div class="form-card reveal">
+        <div class="form-card-title">Internship Application</div>
+        <p class="form-card-sub">Fields marked with <span style="color:var(--accent)">*</span> are required.</p>
+
+        <form id="internForm">
+          <!-- Personal Information -->
+          <p style="font-family:var(--font-head);font-size:1.3rem;letter-spacing:1px;color:var(--text-strong);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--border);">Personal Information</p>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label>First Name *</label>
+              <input type="text" id="f-fname" placeholder="Your first name" required>
+            </div>
+            <div class="form-field">
+              <label>Last Name *</label>
+              <input type="text" id="f-lname" placeholder="Your last name" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Email *</label>
+              <input type="email" id="f-email" placeholder="you@email.com" required>
+            </div>
+            <div class="form-field">
+              <label>Phone *</label>
+              <input type="tel" id="f-phone" placeholder="+91 XXXXX XXXXX" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Address *</label>
+              <input type="text" id="f-address" placeholder="Your address" required>
+            </div>
+            <div class="form-field">
+              <label>City *</label>
+              <input type="text" id="f-city" placeholder="City" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>State / Country *</label>
+              <select id="f-country" required>
+                <option value="">Select State / Country</option>
+                <option>India</option>
+                <option>Goa</option>
+                <option>Maharashtra</option>
+                <option>Karnataka</option>
+                <option>Delhi</option>
+                <option>Other State</option>
+                <option>Outside India</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Pin Code *</label>
+              <input type="text" id="f-zip" placeholder="Zip / Pin Code" required>
+            </div>
+          </div>
+
+          <!-- Department -->
+          <p style="font-family:var(--font-head);font-size:1.3rem;letter-spacing:1px;color:var(--text-strong);margin:32px 0 20px;padding-bottom:10px;border-bottom:1px solid var(--border);">Department &amp; Skills</p>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label>Select Department *</label>
+              <select id="f-dept" required>
+                <option value="">Choose Department</option>
+                <option>Graphic Designer</option>
+                <option>Photographer</option>
+                <option>Videographer</option>
+                <option>Video Editor</option>
+                <option>App Developer</option>
+                <option>Drone Pilot</option>
+                <option>Web Developer</option>
+                <option>Animator</option>
+                <option>Motion Graphics Editor</option>
+                <option>Cinematographer</option>
+                <option>SEO Expert</option>
+                <option>Social Media Manager</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field full" style="margin-bottom:16px;">
+            <label>Interests (select all that apply)</label>
+            <div class="form-check-group" id="interests-group" style="margin-top:8px;">
+              <label class="check-item"><input type="checkbox" name="interest" value="Photography"> Photography</label>
+              <label class="check-item"><input type="checkbox" name="interest" value="Videography"> Videography</label>
+              <label class="check-item"><input type="checkbox" name="interest" value="Video Editing"> Video Editing</label>
+              <label class="check-item"><input type="checkbox" name="interest" value="Animation"> Animation</label>
+              <label class="check-item"><input type="checkbox" name="interest" value="Graphic Design"> Graphic Design</label>
+              <label class="check-item"><input type="checkbox" name="interest" value="Web Development"> Web Development</label>
+              <label class="check-item"><input type="checkbox" name="interest" value="App Development"> App Development</label>
+              <label class="check-item"><input type="checkbox" name="interest" value="I'm Creative and Want to Join"> I'm Creative &amp; Want to Join</label>
+            </div>
+          </div>
+
+          <div class="form-field full" style="margin-bottom:16px;">
+            <label>Software Knowledge (select all that apply)</label>
+            <div class="form-check-group" id="knowledge-group" style="margin-top:8px;">
+              <label class="check-item"><input type="checkbox" name="knowledge" value="Adobe Photoshop"> Adobe Photoshop</label>
+              <label class="check-item"><input type="checkbox" name="knowledge" value="Adobe Lightroom"> Adobe Lightroom</label>
+              <label class="check-item"><input type="checkbox" name="knowledge" value="Adobe Premiere Pro"> Adobe Premiere Pro</label>
+              <label class="check-item"><input type="checkbox" name="knowledge" value="Adobe Illustrator"> Adobe Illustrator</label>
+              <label class="check-item"><input type="checkbox" name="knowledge" value="Adobe After Effects"> Adobe After Effects</label>
+              <label class="check-item"><input type="checkbox" name="knowledge" value="Adobe Flash"> Adobe Flash</label>
+              <label class="check-item"><input type="checkbox" name="knowledge" value="Adobe InDesign"> Adobe InDesign</label>
+              <label class="check-item"><input type="checkbox" name="knowledge" value="Corel Draw"> Corel Draw</label>
+              <label class="check-item"><input type="checkbox" name="knowledge" value="Final Cut Pro"> Final Cut Pro</label>
+              <label class="check-item"><input type="checkbox" name="knowledge" value="iMovie"> iMovie</label>
+              <label class="check-item"><input type="checkbox" name="knowledge" value="Filmora"> Filmora</label>
+              <label class="check-item"><input type="checkbox" name="knowledge" value="Web Development"> Web Development</label>
+              <label class="check-item"><input type="checkbox" name="knowledge" value="WordPress"> WordPress</label>
+              <label class="check-item"><input type="checkbox" name="knowledge" value="App Development"> App Development</label>
+              <label class="check-item"><input type="checkbox" name="knowledge" value="Database Management"> Database Management</label>
+            </div>
+          </div>
+
+          <!-- Work History -->
+          <p style="font-family:var(--font-head);font-size:1.3rem;letter-spacing:1px;color:var(--text-strong);margin:32px 0 20px;padding-bottom:10px;border-bottom:1px solid var(--border);">Work History</p>
+
+          <div class="form-field full" style="margin-bottom:16px;">
+            <label>Previous Job Title</label>
+            <input type="text" id="f-prev-title" placeholder="e.g. Junior Designer (leave blank if fresher)">
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Date Previous Job Started</label>
+              <input type="date" id="f-date-start">
+            </div>
+            <div class="form-field">
+              <label>Date Previous Job Ended</label>
+              <input type="date" id="f-date-end">
+            </div>
+          </div>
+          <div class="form-field full" style="margin-bottom:16px;">
+            <label>Previous Job Description</label>
+            <textarea id="f-prev-desc" placeholder="Briefly describe your previous role and responsibilities..."></textarea>
+          </div>
+
+          <!-- Other -->
+          <p style="font-family:var(--font-head);font-size:1.3rem;letter-spacing:1px;color:var(--text-strong);margin:32px 0 20px;padding-bottom:10px;border-bottom:1px solid var(--border);">Other Information</p>
+
+          <div class="form-field full" style="margin-bottom:16px;">
+            <label>Other Knowledge / Skills *</label>
+            <input type="text" id="f-other-know" placeholder="e.g. Figma, Canva, Drone flying, etc." required>
+          </div>
+          <div class="form-field full" style="margin-bottom:16px;">
+            <label>Portfolio Link (Google Drive / Behance / Website)</label>
+            <input type="url" id="f-portfolio" placeholder="https://your-portfolio.com">
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Where Did You Hear About Us? *</label>
+              <input type="text" id="f-heard" placeholder="Instagram, Google, Friend..." required>
+            </div>
+            <div class="form-field">
+              <label>Why Do You Want to Join? *</label>
+              <input type="text" id="f-why" placeholder="Tell us in a sentence..." required>
+            </div>
+          </div>
+
+          <!-- Social -->
+          <div class="form-row">
+            <div class="form-field">
+              <label>Facebook Profile</label>
+              <input type="text" id="f-fb" placeholder="Facebook URL or username">
+            </div>
+            <div class="form-field">
+              <label>Instagram Profile</label>
+              <input type="text" id="f-ig" placeholder="@username">
+            </div>
+          </div>
+          <div class="form-field full" style="margin-bottom:0;">
+            <label>Twitter / X Profile</label>
+            <input type="text" id="f-tw" placeholder="@username">
+          </div>
+
+          <button type="submit" class="form-submit">
+            Submit Application via WhatsApp <i class="ri-whatsapp-line"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑩ CTA BAND -->
+  <section class="cta-band">
+    <div class="wrap">
+      <div class="cta-inner reveal">
+        <div>
+          <h2 class="cta-band-title">Want a Full-time<br><em>Role Instead?</em></h2>
+          <p class="cta-band-sub">Check out our open full-time positions across all departments, or send us your portfolio directly and we'll find the right spot for you.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="career.html" class="btn-primary">View All Roles <i class="ri-arrow-right-line"></i></a>
+          <a href="connect.html" class="btn-ghost">Send Portfolio <i class="ri-send-plane-line"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="https://www.flashlabcreative.com/wp-content/uploads/2025/10/cropped-Flashlab-LogoBlack-280x93.png" alt="FlashLab Creative"
+               style="filter:invert(1) brightness(1.1);"
+               onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
+        </a>
+      </div>
+      <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in 2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/flashlab.creative" target="_blank"><i class="ri-instagram-fill"></i></a>
+        <a href="https://www.facebook.com/flashlab.creative/" target="_blank"><i class="ri-facebook-fill"></i></a>
+        <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank"><i class="ri-linkedin-fill"></i></a>
+        <a href="https://twitter.com/theflashlab" target="_blank"><i class="ri-twitter-x-fill"></i></a>
+        <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank"><i class="ri-youtube-fill"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4 class="footer-head">Navigation</h4>
+      <ul class="footer-list">
+        <li><a href="index.html"><i class="ri-arrow-right-s-line"></i>Home</a></li>
+        <li><a href="about.html"><i class="ri-arrow-right-s-line"></i>About</a></li>
+        <li><a href="services.html"><i class="ri-arrow-right-s-line"></i>Services</a></li>
+        <li><a href="clients.html"><i class="ri-arrow-right-s-line"></i>Clients</a></li>
+        <li><a href="team.html"><i class="ri-arrow-right-s-line"></i>Teams</a></li>
+        <li><a href="career.html"><i class="ri-arrow-right-s-line"></i>Career</a></li>
+        <li><a href="connect.html"><i class="ri-arrow-right-s-line"></i>Connect</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer-head">Services</h4>
+      <ul class="footer-list">
+        <li><a href="digital-advertising.html"><i class="ri-arrow-right-s-line"></i>Digital Advertising</a></li>
+        <li><a href="seo-sem-marketing.html"><i class="ri-arrow-right-s-line"></i>SEO / SEM</a></li>
+        <li><a href="social-media-management.html"><i class="ri-arrow-right-s-line"></i>Social Media</a></li>
+        <li><a href="product-design-strategies.html"><i class="ri-arrow-right-s-line"></i>Product Design</a></li>
+        <li><a href="web-app-development.html"><i class="ri-arrow-right-s-line"></i>Web &amp; App Dev</a></li>
+        <li><a href="outdoor-print-ads.html"><i class="ri-arrow-right-s-line"></i>Outdoor &amp; Print</a></li>
+        <li><a href="ecommerce.html"><i class="ri-arrow-right-s-line"></i>E-Commerce</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer-head">Join Us</h4>
+      <ul class="footer-list">
+        <li><a href="career-intern.html"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
+        <li><a href="career-seo-expert.html"><i class="ri-arrow-right-s-line"></i>SEO Expert</a></li>
+        <li><a href="career-social-media-manager.html"><i class="ri-arrow-right-s-line"></i>Social Media Mgr</a></li>
+        <li><a href="career-graphic-designer.html"><i class="ri-arrow-right-s-line"></i>Graphic Designer</a></li>
+        <li><a href="career-web-developer.html"><i class="ri-arrow-right-s-line"></i>Web Developer</a></li>
+        <li><a href="career-animation-designer.html"><i class="ri-arrow-right-s-line"></i>Animation Designer</a></li>
+        <li><a href="career-app-developer.html"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer-head">Studio Links</h4>
+      <ul class="footer-list">
+        <li><a href="https://parashootstudio.com"><i class="ri-arrow-right-s-line"></i>Content Production</a></li>
+        <li><a href="https://backstagexchange.com"><i class="ri-arrow-right-s-line"></i>Event Activation</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer-head">Contact</h4>
+      <div class="footer-contact">
+        <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa" target="_blank">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
+        <p><i class="ri-phone-fill"></i><a href="tel:+919923580023">+91 99235 80023</a></p>
+        <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a></p>
+        <p><i class="ri-time-fill"></i><span>Mon – Sat: 9am – 6pm IST</span></p>
+        <a href="connect.html" class="footer-cta">Start a Project <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright &copy; 2026 FlashLab Creative — Website Crafted by
+      <a href="https://cybercreative.in/" target="_blank" class="cyber-link">Cyber Creative</a>
+    </p>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop"><i class="ri-arrow-up-line"></i></button>
+
+<script>
+/* THEME */
+(function () {
+  const toggle = document.getElementById('themeToggle');
+  const icon   = document.getElementById('themeIcon');
+  const html   = document.documentElement;
+  const saved  = localStorage.getItem('flashlab-theme') || 'dark';
+  html.setAttribute('data-theme', saved);
+  setIcon(saved);
+  toggle.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('flashlab-theme', next);
+    setIcon(next);
+    toggle.style.transform = 'rotate(360deg) scale(1.15)';
+    setTimeout(() => toggle.style.transform = '', 400);
+  });
+  function setIcon(t) { icon.className = t === 'dark' ? 'ri-sun-line' : 'ri-moon-line'; }
+})();
+
+/* CURSOR */
+(function () {
+  const cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top  = e.clientY + 'px';
+  });
+  document.querySelectorAll('a, button, label.check-item').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.transform = 'translate(-50%, -50%) scale(2.5)';
+      cursor.style.background = 'var(--accent)';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+      cursor.style.background = 'var(--text)';
+    });
+  });
+})();
+
+/* NAVBAR SCROLL */
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+
+/* MOBILE MENU */
+(function () {
+  const ham  = document.getElementById('hamburger');
+  const menu = document.getElementById('mobMenu');
+  const ov   = document.getElementById('mobOverlay');
+  const cls  = document.getElementById('mobClose');
+  function open() { menu.classList.add('active'); ov.classList.add('active'); ham.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function shut() { menu.classList.remove('active'); ov.classList.remove('active'); ham.classList.remove('open'); document.body.style.overflow = ''; }
+  ham.addEventListener('click', open);
+  cls.addEventListener('click', shut);
+  ov.addEventListener('click',  shut);
+  document.querySelectorAll('.mob-menu a').forEach(a => a.addEventListener('click', shut));
+})();
+
+/* SCROLL REVEAL */
+(function () {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); obs.unobserve(e.target); } });
+  }, { threshold: .1 });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
+})();
+
+/* BACK TO TOP */
+(function () {
+  const btn = document.getElementById('backTop');
+  window.addEventListener('scroll', () => btn.classList.toggle('active', window.scrollY > 400), { passive: true });
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+})();
+
+/* SMOOTH SCROLL */
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    const id = this.getAttribute('href');
+    const target = document.querySelector(id);
+    if (target) {
+      e.preventDefault();
+      const nb = document.getElementById('navbar');
+      const offset = nb.offsetTop + nb.offsetHeight + 16;
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+    }
+  });
+});
+
+/* SET DEPT FROM CARD */
+function setDept(dept) {
+  const sel = document.getElementById('f-dept');
+  for (let i = 0; i < sel.options.length; i++) {
+    if (sel.options[i].value === dept) { sel.selectedIndex = i; break; }
+  }
+}
+
+/* FORM SUBMIT — WhatsApp */
+document.getElementById('internForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const getChecked = (name) => Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(el => el.value).join(', ') || 'None';
+
+  const phone = "919923580023"; // FlashLab number
+  const msg =
+`*New Internship Application*
+━━━━━━━━━━━━━━━━━━━━━━
+*Personal Info*
+Name: ${document.getElementById('f-fname').value} ${document.getElementById('f-lname').value}
+Email: ${document.getElementById('f-email').value}
+Phone: ${document.getElementById('f-phone').value}
+Address: ${document.getElementById('f-address').value}, ${document.getElementById('f-city').value}
+State/Country: ${document.getElementById('f-country').value}
+Pin Code: ${document.getElementById('f-zip').value}
+
+*Department & Skills*
+Department: ${document.getElementById('f-dept').value}
+Interests: ${getChecked('interest')}
+Knowledge: ${getChecked('knowledge')}
+
+*Work History*
+Previous Job: ${document.getElementById('f-prev-title').value || 'Fresher'}
+Duration: ${document.getElementById('f-date-start').value || '—'} to ${document.getElementById('f-date-end').value || '—'}
+Description: ${document.getElementById('f-prev-desc').value || '—'}
+
+*Other*
+Other Skills: ${document.getElementById('f-other-know').value}
+Portfolio: ${document.getElementById('f-portfolio').value || '—'}
+Heard From: ${document.getElementById('f-heard').value}
+Why Join: ${document.getElementById('f-why').value}
+Facebook: ${document.getElementById('f-fb').value || '—'}
+Instagram: ${document.getElementById('f-ig').value || '—'}
+Twitter: ${document.getElementById('f-tw').value || '—'}`;
+
+  window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(msg), '_blank');
+});
+</script>
+</body>
+</html>

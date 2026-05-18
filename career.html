@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Career — FlashLab Creative</title>
+<meta name="description" content="Join FlashLab Creative — Goa's leading creative & digital marketing agency. Explore open positions and build your career with us.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="flash.css">
+
+
+<style>
+.sec-header.centered { text-align:center; margin-bottom:60px; }
+.sec-header.centered .sec-sub { margin:0 auto; }
+
+/* ============================================================
+   9. BUTTONS
+   ============================================================ */
+.btn-primary { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#0a0a0f; padding:14px 30px; border-radius:999px; font-weight:700; font-size:.9rem; transition:all .3s; }
+.btn-primary:hover { background:#bef54a; transform:translateY(-2px); box-shadow:0 8px 30px rgba(168,232,50,.35); }
+.btn-ghost   { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); color:var(--muted); padding:14px 30px; border-radius:999px; font-weight:500; font-size:.9rem; transition:all .3s; }
+.btn-ghost:hover { border-color:var(--muted); color:var(--text); }
+
+
+
+/* ============================================================
+   PAGE-SPECIFIC STYLES
+   ============================================================ */
+
+/* HERO */
+.career-hero {
+  padding: 280px 5% 120px;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+.career-hero::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(168,232,50,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.hero-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(168,232,50,.1); border: 1px solid rgba(168,232,50,.25); padding: 6px 16px; border-radius: 999px; font-size: .78rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; }
+.hero-h1 { font-family: var(--font-head); font-size: clamp(3.5rem, 6vw, 6rem); line-height: 1; letter-spacing: 2px; color: var(--text-strong); margin-bottom: 24px; }
+.hero-h1 em { font-family: var(--font-italic); font-style: italic; color: var(--accent); font-size: .85em; display: block; }
+.hero-desc { color: var(--muted); font-size: 1.05rem; line-height: 1.8; max-width: 460px; margin-bottom: 40px; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-img-wrap { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 4/3; }
+.hero-img-wrap img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.9); }
+.hero-img-wrap::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(168,232,50,.15), transparent 60%); }
+
+/* PERKS */
+.perks-section { padding: 100px 0; background: var(--bg2); }
+.perks-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; margin-top: 60px; }
+.perk-card { background: var(--card); padding: 40px 32px; transition: background .3s; }
+.perk-card:hover { background: var(--card2); }
+.perk-icon { width: 52px; height: 52px; background: rgba(168,232,50,.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 1.4rem; color: var(--accent); }
+.perk-title { font-family: var(--font-head); font-size: 1.5rem; letter-spacing: 1px; color: var(--text-strong); margin-bottom: 10px; }
+.perk-desc { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+
+/* CULTURE GRID */
+.culture-section { padding: 100px 0; }
+.culture-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; border-radius: 20px; overflow: hidden; margin-top: 60px; }
+.culture-box {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+.culture-box::before { content: ""; position: absolute; inset: 0; background: rgba(10,10,15,.5); transition: .4s ease; z-index: 1; }
+.culture-box:hover::before { background: rgba(10,10,15,.75); }
+.culture-content { position: absolute; left: 28px; right: 28px; bottom: -90px; z-index: 2; color: #fff; transition: .4s ease; }
+.culture-box:hover .culture-content { bottom: 50px; }
+.culture-content h3 { margin: 0; font-family: var(--font-head); font-size: 1.6rem; letter-spacing: 2px; text-transform: uppercase; color: #fff; transition: .3s ease; }
+.culture-box:hover .culture-content h3 { color: var(--accent); }
+.culture-content p { margin: 12px 0 0; font-size: .9rem; line-height: 1.6; opacity: 0; transform: translateY(20px); transition: .4s ease; color: rgba(255,255,255,.85); }
+.culture-box:hover .culture-content p { opacity: 1; transform: translateY(0); }
+
+/* MARQUEE */
+.marquee-section { padding: 0; background: var(--accent); overflow: hidden; }
+.fl-marquee { overflow: hidden; width: 100%; padding: 0; }
+.fl-track { display: inline-flex; gap: 0; animation: fl-scroll 28s linear infinite; white-space: nowrap; }
+.fl-track:hover { animation-play-state: paused; }
+.fl-track span { font-family: var(--font-head); font-weight: 400; font-size: 1.6rem; letter-spacing: 3px; text-transform: uppercase; color: #0a0a0f; padding: 22px 28px; }
+.fl-track span.dot { font-size: 10px; opacity: .4; padding: 0 8px; }
+@keyframes fl-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* OPEN POSITIONS */
+.positions-section { padding: 100px 0; background: var(--bg); }
+.positions-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; }
+.positions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.job-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: border-color .3s, transform .3s, box-shadow .3s;
+}
+.job-card:hover { border-color: rgba(168,232,50,.35); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+.job-card-img { height: 180px; overflow: hidden; }
+.job-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.job-card:hover .job-card-img img { transform: scale(1.05); }
+.job-card-body { padding: 28px; }
+.job-badge { display: inline-block; background: rgba(168,232,50,.12); color: var(--accent); font-size: .72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; margin-bottom: 14px; }
+.job-title { font-family: var(--font-head); font-size: 1.6rem; letter-spacing: 1px; color: var(--text-strong); margin-bottom: 10px; }
+.job-desc { font-size: .88rem; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+.job-apply { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #0a0a0f; padding: 10px 22px; border-radius: 999px; font-weight: 700; font-size: .85rem; transition: all .3s; }
+.job-apply:hover { background: #bef54a; transform: translateY(-1px); }
+
+/* HOW IT WORKS */
+.process-section { padding: 100px 0; background: var(--bg2); }
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 60px; }
+.process-step {
+  background: var(--card);
+  padding: 40px 28px;
+  position: relative;
+  transition: background .3s;
+}
+.process-step:hover { background: var(--card2); }
+.step-num { font-family: var(--font-head); font-size: 4rem; color: rgba(168,232,50,.15); line-height: 1; margin-bottom: 16px; }
+.step-icon { width: 48px; height: 48px; background: rgba(168,232,50,.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 1.3rem; color: var(--accent); }
+.step-title { font-family: var(--font-head); font-size: 1.5rem; letter-spacing: 1px; color: var(--text-strong); margin-bottom: 10px; }
+.step-desc { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+
+/* CTA BAND */
+.cta-band { padding: 100px 0; background: var(--bg); }
+.cta-inner { background: linear-gradient(135deg, #0f1f14 0%, #0a1a0a 100%); border: 1px solid rgba(168,232,50,.2); border-radius: 28px; padding: 80px 60px; display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: center; }
+.cta-band-title { font-family: var(--font-head); font-size: clamp(2.2rem, 4vw, 3.5rem); letter-spacing: 1px; color: var(--text-strong); margin-bottom: 14px; }
+.cta-band-title em { font-family: var(--font-italic); font-style: italic; color: var(--accent); }
+.cta-band-sub { color: var(--muted); font-size: 1rem; max-width: 500px; line-height: 1.7; }
+.cta-band-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+
+/* CONTACT STRIP */
+.contact-strip { padding: 80px 0; background: #11222a; }
+.contact-strip-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.contact-label { font-size: .75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: block; }
+.contact-title { font-family: var(--font-head); font-size: 2.5rem; letter-spacing: 1px; color: #fff; margin-bottom: 16px; }
+.contact-addr { color: rgba(255,255,255,.55); font-size: .92rem; line-height: 1.7; }
+.contact-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.btn-white { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: #0a0a0f; padding: 13px 28px; border-radius: 999px; font-weight: 700; font-size: .88rem; transition: all .3s; }
+.btn-white:hover { background: var(--accent); transform: translateY(-2px); }
+.btn-outline-white { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,.25); color: rgba(255,255,255,.7); padding: 13px 28px; border-radius: 999px; font-weight: 500; font-size: .88rem; transition: all .3s; }
+.btn-outline-white:hover { border-color: var(--accent); color: var(--accent); }
+
+/* APPLICATION MODAL */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.75); z-index: 9000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(6px); }
+.modal-overlay.open { display: flex; }
+.modal-box { background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 48px; width: min(680px, 92vw); max-height: 90vh; overflow-y: auto; position: relative; animation: modalIn .35s cubic-bezier(.22,1,.36,1); }
+@keyframes modalIn { from { opacity:0; transform:translateY(40px) scale(.97); } to { opacity:1; transform:none; } }
+.modal-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 1.4rem; color: var(--muted); cursor: pointer; transition: color .2s; }
+.modal-close:hover { color: var(--text); }
+.modal-title { font-family: var(--font-head); font-size: 2rem; letter-spacing: 1px; color: var(--text-strong); margin-bottom: 8px; }
+.modal-sub { color: var(--muted); font-size: .9rem; margin-bottom: 32px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.form-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 0; }
+.form-field.full { grid-column: 1 / -1; }
+.form-field label { font-size: .78rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+.form-field input,
+.form-field select,
+.form-field textarea { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; font-family: var(--font-body); font-size: .92rem; color: var(--text); outline: none; transition: border-color .2s; width: 100%; }
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus { border-color: var(--accent); }
+.form-field textarea { height: 100px; resize: vertical; }
+.form-field select option { background: var(--card); }
+.form-submit { width: 100%; padding: 14px; background: var(--accent); color: #0a0a0f; border: none; border-radius: 999px; font-family: var(--font-body); font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 20px; transition: all .3s; }
+.form-submit:hover { background: #bef54a; }
+
+/* RESPONSIVE PAGE SPECIFIC */
+@media (max-width: 960px) {
+  .career-hero { padding: 220px 5% 80px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 50px; }
+  .hero-img-wrap { order: -1; }
+  .perks-grid { grid-template-columns: repeat(2, 1fr); }
+  .positions-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-steps { grid-template-columns: repeat(2, 1fr); }
+  .cta-inner { grid-template-columns: 1fr; }
+  .cta-band-actions { align-items: flex-start; }
+  .contact-strip-inner { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 640px) {
+  .career-hero { padding: 180px 5% 60px; }
+  .perks-grid { grid-template-columns: 1fr; }
+  .culture-grid { grid-template-columns: 1fr; }
+  .positions-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .positions-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .form-row { grid-template-columns: 1fr; }
+  .cta-inner { padding: 40px 28px; }
+}
+</style>
+</head>
+<body data-page="career">
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+
+<!-- LOGO BAR -->
+<div class="site-logo-bar">
+  <a href="index.html">
+    <img src="images/logos/flashlab-logo.png" alt="FlashLab Creative" id="siteLogoImg">
+  </a>
+</div>
+
+ <!-- ============================================================
+  NAVBAR
+  ============================================================ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-wrap">
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li>
+        <a href="services.html">Services</a>
+        <ul>
+          <li><a href="digital-advertising.html"><i class="ri-megaphone-line"></i>Digital Advertising</a></li>
+          <li><a href="seo-sem-marketing.html"><i class="ri-search-line"></i>SEO / SEM Marketing</a></li>
+          <li><a href="social-media-management.html"><i class="ri-instagram-line"></i>Social Media Management</a></li>
+          <li><a href="product-design-strategies.html"><i class="ri-pen-nib-line"></i>Product Design &amp; Strategies</a></li>
+          <li><a href="web-app-development.html"><i class="ri-code-s-slash-line"></i>Web &amp; App Development</a></li>
+          <li><a href="outdoor-print-ads.html"><i class="ri-image-line"></i>Outdoor &amp; Print Ads</a></li>
+          <li><a href="ecommerce.html"><i class="ri-shopping-cart-line"></i>E-Commerce</a></li>
+        </ul>
+      </li>
+      <li><a href="clients.html">Clients</a></li>
+      <li>
+        <a href="case-studies.html">Case Studies</a>
+        <ul>
+          <li><a href="story-1.html"><i class="ri-article-line"></i>Story 1</a></li>
+          <li><a href="story-2.html"><i class="ri-article-line"></i>Story 2</a></li>
+          <li><a href="story-3.html"><i class="ri-article-line"></i>Story 3</a></li>
+          <li><a href="story-4.html"><i class="ri-article-line"></i>Story 4</a></li>
+          <li><a href="story-5.html"><i class="ri-article-line"></i>Story 5</a></li>
+          <li><a href="story-6.html"><i class="ri-article-line"></i>Story 6</a></li>
+        </ul>
+      </li>
+      <li><a href="team.html">Team</a></li>
+      <li>
+        <a href="career.html">Career</a>
+        <ul>
+          <li><a href="career-intern.html"><i class="ri-user-add-line"></i>Intern</a></li>
+          <li><a href="career-seo-expert.html"><i class="ri-search-eye-line"></i>SEO Expert</a></li>
+          <li><a href="career-social-media-manager.html"><i class="ri-share-circle-line"></i>Social Media Manager</a></li>
+          <li><a href="career-graphic-designer.html"><i class="ri-brush-line"></i>Graphic Designer</a></li>
+          <li><a href="career-web-developer.html"><i class="ri-code-box-line"></i>Web Developer</a></li>
+          <li><a href="career-animation-designer.html"><i class="ri-video-line"></i>Animation Designer</a></li>
+          <li><a href="career-app-developer.html"><i class="ri-smartphone-line"></i>App Developer</a></li>
+        </ul>
+      </li>
+      <li><a href="connect.html">Connect</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="ri-sun-line" id="themeIcon"></i>
+      </button>
+      <a href="connect.html" class="nav-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</nav>
+
+<!-- ============================================================
+  MOBILE MENU  (single instance, no duplicates)
+  ============================================================ -->
+<div class="mob-overlay" id="mobOverlay"></div>
+
+<div class="mob-menu" id="mobMenu" aria-hidden="true">
+  <button class="mob-close" id="mobClose" aria-label="Close menu">
+    <i class="ri-close-line"></i>
+  </button>
+
+  <ul class="mob-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li>
+      <button class="mob-parent-btn" data-target="mob-sub-services">
+        Services <i class="ri-arrow-down-s-line mob-arrow"></i>
+      </button>
+      <ul class="mob-sub" id="mob-sub-services">
+        <li><a href="digital-advertising.html">Digital Advertising</a></li>
+        <li><a href="seo-sem-marketing.html">SEO / SEM Marketing</a></li>
+        <li><a href="social-media-management.html">Social Media Management</a></li>
+        <li><a href="product-design-strategies.html">Product Design &amp; Strategies</a></li>
+        <li><a href="web-app-development.html">Web &amp; App Development</a></li>
+        <li><a href="outdoor-print-ads.html">Outdoor &amp; Print Ads</a></li>
+        <li><a href="ecommerce.html">E-Commerce</a></li>
+      </ul>
+    </li>
+    <li><a href="clients.html">Clients</a></li>
+    <li>
+      <button class="mob-parent-btn" data-target="mob-sub-case">
+        Case Studies <i class="ri-arrow-down-s-line mob-arrow"></i>
+      </button>
+      <ul class="mob-sub" id="mob-sub-case">
+        <li><a href="story-1.html">Story 1</a></li>
+        <li><a href="story-2.html">Story 2</a></li>
+        <li><a href="story-3.html">Story 3</a></li>
+        <li><a href="story-4.html">Story 4</a></li>
+        <li><a href="story-5.html">Story 5</a></li>
+        <li><a href="story-6.html">Story 6</a></li>
+      </ul>
+    </li>
+    <li><a href="team.html">Team</a></li>
+    <li>
+      <button class="mob-parent-btn" data-target="mob-sub-career">
+        Career <i class="ri-arrow-down-s-line mob-arrow"></i>
+      </button>
+      <ul class="mob-sub" id="mob-sub-career">
+        <li><a href="career-intern.html">Intern</a></li>
+        <li><a href="career-seo-expert.html">SEO Expert</a></li>
+        <li><a href="career-social-media-manager.html">Social Media Manager</a></li>
+        <li><a href="career-graphic-designer.html">Graphic Designer</a></li>
+        <li><a href="career-web-developer.html">Web Developer</a></li>
+        <li><a href="career-animation-designer.html">Animation Designer</a></li>
+        <li><a href="career-app-developer.html">App Developer</a></li>
+      </ul>
+    </li>
+    <li><a href="connect.html">Connect</a></li>
+  </ul>
+  <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <section class="career-hero">
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="reveal">
+          <div class="hero-tag"><i class="ri-briefcase-4-line"></i> We're Hiring</div>
+          <h1 class="hero-h1">Join the<br><em>Intern Clan</em></h1>
+          <p class="hero-desc">Work alongside the best professionals and biggest brands in India. Get real experience, mentorship, and a creative environment where your ideas genuinely matter.</p>
+          <div class="hero-actions">
+            <a href="#open-positions" class="btn-primary">View Open Roles <i class="ri-arrow-down-line"></i></a>
+            <a href="career-intern.html" class="btn-ghost">Apply Now</a>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div class="hero-img-wrap">
+            <img src="https://assets.entrepreneur.com/content/3x2/2000/20150503125436-shutterstock-177305711.jpeg" alt="FlashLab Creative Team">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERKS -->
+  <section class="perks-section">
+    <div class="wrap">
+      <div class="sec-header centered reveal">
+        <span class="sec-eyebrow">● Why FlashLab</span>
+        <h2 class="sec-heading">What You <em>Gain</em></h2>
+        <p class="sec-sub">Every role at FlashLab comes with real responsibility, real mentorship, and real results from day one.</p>
+      </div>
+      <div class="perks-grid">
+        <div class="perk-card reveal" style="--delay:.1s">
+          <div class="perk-icon"><i class="ri-medal-line"></i></div>
+          <div class="perk-title">Certification</div>
+          <p class="perk-desc">Certificate + Letter of Recommendation on completion.</p>
+        </div>
+        <div class="perk-card reveal" style="--delay:.2s">
+          <div class="perk-icon"><i class="ri-team-line"></i></div>
+          <div class="perk-title">Mentorship</div>
+          <p class="perk-desc">1-on-1 guidance from Goa's best senior creatives.</p>
+        </div>
+        <div class="perk-card reveal" style="--delay:.3s">
+          <div class="perk-icon"><i class="ri-rocket-line"></i></div>
+          <div class="perk-title">Fast-Track Hire</div>
+          <p class="perk-desc">Top performers receive full-time offers.</p>
+        </div>
+        <div class="perk-card reveal" style="--delay:.4s">
+          <div class="perk-icon"><i class="ri-building-4-line"></i></div>
+          <div class="perk-title">Live Client Projects</div>
+          <p class="perk-desc">Work on real campaigns from your very first day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CULTURE GRID -->
+  <section class="culture-section">
+    <div class="wrap">
+      <div class="sec-header centered reveal">
+        <span class="sec-eyebrow">● Life at FlashLab</span>
+        <h2 class="sec-heading">Our <em>Culture</em></h2>
+      </div>
+    </div>
+    <div class="culture-grid reveal">
+      <div class="culture-box" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80');">
+        <div class="culture-content">
+          <h3>Our Work</h3>
+          <p>A glimpse into the award-winning campaigns and bold designs we've crafted.</p>
+        </div>
+      </div>
+      <div class="culture-box" style="background-image: url('https://images.unsplash.com/photo-1531496730074-83b638c0a7ac?auto=format&fit=crop&w=800&q=80');">
+        <div class="culture-content">
+          <h3>Brainstorming</h3>
+          <p>Where wild ideas meet strategic thinking in our dedicated creative rooms.</p>
+        </div>
+      </div>
+      <div class="culture-box" style="background-image: url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&q=80');">
+        <div class="culture-content">
+          <h3>Our Clients</h3>
+          <p>Collaborating closely with visionary brands to make a lasting market impact.</p>
+        </div>
+      </div>
+      <div class="culture-box" style="background-image: url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80');">
+        <div class="culture-content">
+          <h3>Team Culture</h3>
+          <p>Work hard, play hard. Celebrating our wins and growing together as a family.</p>
+        </div>
+      </div>
+      <div class="culture-box" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80');">
+        <div class="culture-content">
+          <h3>Creative Space</h3>
+          <p>An open-door studio environment designed to inspire out-of-the-box thinking.</p>
+        </div>
+      </div>
+      <div class="culture-box" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80');">
+        <div class="culture-content">
+          <h3>Behind the Scenes</h3>
+          <p>The late nights, the endless coffee runs, and the magic that makes it happen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <section class="marquee-section">
+    <div class="fl-marquee">
+      <div class="fl-track">
+        <span>Graphic Design</span><span class="dot">●</span>
+        <span>Social Media</span><span class="dot">●</span>
+        <span>Animation</span><span class="dot">●</span>
+        <span>Photography</span><span class="dot">●</span>
+        <span>Web Development</span><span class="dot">●</span>
+        <span>SEO &amp; Growth</span><span class="dot">●</span>
+        <span>Brand Strategy</span><span class="dot">●</span>
+        <span>Video Production</span><span class="dot">●</span>
+        <span>Digital Marketing</span><span class="dot">●</span>
+        <span>Event Management</span><span class="dot">●</span>
+        <!-- duplicate -->
+        <span>Graphic Design</span><span class="dot">●</span>
+        <span>Social Media</span><span class="dot">●</span>
+        <span>Animation</span><span class="dot">●</span>
+        <span>Photography</span><span class="dot">●</span>
+        <span>Web Development</span><span class="dot">●</span>
+        <span>SEO &amp; Growth</span><span class="dot">●</span>
+        <span>Brand Strategy</span><span class="dot">●</span>
+        <span>Video Production</span><span class="dot">●</span>
+        <span>Digital Marketing</span><span class="dot">●</span>
+        <span>Event Management</span><span class="dot">●</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN POSITIONS -->
+  <section class="positions-section" id="open-positions">
+    <div class="wrap">
+      <div class="positions-header">
+        <div class="reveal">
+          <span class="sec-eyebrow">● Open Positions</span>
+          <h2 class="sec-heading" style="margin-bottom:0;">Find Your<br><em>Role</em></h2>
+        
+      <div class="positions-grid">
+
+        <div class="job-card reveal" style="--delay:.1s">
+          <div class="job-card-img">
+            <img src="https://www.andacademy.com/resources/wp-content/uploads/2025/02/image3-9.jpg" alt="Graphic Designer">
+          </div>
+          <div class="job-card-body">
+            <span class="job-badge">Full-time</span>
+            <div class="job-title">Graphic Designer</div>
+            <p class="job-desc">Design visuals for print, digital, outdoor advertising, and brand identity for some of Goa's top brands.</p>
+            <a href="career-graphic-designer.html" class="job-apply" >Apply Now <i class="ri-arrow-right-line"></i></a>
+          </div>
+        </div>
+
+        <div class="job-card reveal" style="--delay:.2s">
+          <div class="job-card-img">
+            <img src="https://tse4.mm.bing.net/th/id/OIP.dWtJXsYYCo-5fUeCZBGUFgHaEK?pid=Api&P=0&h=180" alt="Animation Designer">
+          </div>
+          <div class="job-card-body">
+            <span class="job-badge">Full-time</span>
+            <div class="job-title">Animation Designer</div>
+            <p class="job-desc">Create engaging motion graphics and animated content for social campaigns, brand launches, and digital ads.</p>
+            <a href="career-animation-designer.html" class="job-apply" >Apply Now <i class="ri-arrow-right-line"></i></a>
+          </div>
+        </div>
+
+        <div class="job-card reveal" style="--delay:.3s">
+          <div class="job-card-img">
+            <img src="https://images.ctfassets.net/cpumif18y1gd/4lswR4QQwwXyOrZ1sCcLpU/eb59409ea03a832082576110d3527965/How_to_be_a_Social_Media_Manager_625x417.png" alt="Social Media Manager">
+          </div>
+          <div class="job-card-body">
+            <span class="job-badge">Full-time</span>
+            <div class="job-title">Social Media Manager</div>
+            <p class="job-desc">Plan, execute, and grow social presence across Meta, LinkedIn, and Google for our diverse B2C client portfolio.</p>
+            <a href="career-social-media-manager.html" class="job-apply" >Apply Now <i class="ri-arrow-right-line"></i></a>
+          </div>
+        </div>
+
+        <div class="job-card reveal" style="--delay:.1s">
+          <div class="job-card-img">
+            <img src="https://cdn.iplocation.net/assets/images/blog/2025/featured/web-development-3.png" alt="Web Developer">
+          </div>
+          <div class="job-card-body">
+            <span class="job-badge">Full-time</span>
+            <div class="job-title">Web Developer</div>
+            <p class="job-desc">Build and maintain WordPress sites using Elementor, custom PHP, and WooCommerce for our growing client base.</p>
+            <a href="career-web-developer.html" class="job-apply" >Apply Now <i class="ri-arrow-right-line"></i></a>
+          </div>
+        </div>
+
+        <div class="job-card reveal" style="--delay:.2s">
+          <div class="job-card-img">
+            <img src="https://www.sdarrstudios.com/wp-content/uploads/2022/07/seo-expert-optimizing-websites-in-phoenix.jpeg" alt="SEO Expert">
+          </div>
+          <div class="job-card-body">
+            <span class="job-badge">Full-time</span>
+            <div class="job-title">SEO Expert</div>
+            <p class="job-desc">Drive organic growth through technical SEO, content strategy, and data analytics for a diverse client roster.</p>
+            <a href="career-seo-expert.html" class="job-apply" >Apply Now <i class="ri-arrow-right-line"></i></a>
+          </div>
+        </div>
+
+        <div class="job-card reveal" style="--delay:.3s">
+          <div class="job-card-img">
+            <img src="https://www.hiremobileappdeveloper.com/wp-content/uploads/hire-application-developer.jpg" alt="App Developer">
+          </div>
+          <div class="job-card-body">
+            <span class="job-badge">Full-time</span>
+            <div class="job-title">App Developer</div>
+            <p class="job-desc">Build iOS and Android apps to support our clients' digital transformation, product launches, and e-commerce goals.</p>
+            <a href="career-app-developer.html" class="job-apply" >Apply Now <i class="ri-arrow-right-line"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="process-section">
+    <div class="wrap">
+      <div class="sec-header centered reveal">
+        <span class="sec-eyebrow">● The Process</span>
+        <h2 class="sec-heading">How It <em>Works</em></h2>
+        <p class="sec-sub">Four simple steps from application to your first day at FlashLab.</p>
+      </div>
+      <div class="process-steps reveal">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <div class="step-icon"><i class="ri-file-list-3-line"></i></div>
+          <div class="step-title">Apply Online</div>
+          <p class="step-desc">Fill out the form with your details, portfolio link, and the role you're excited about.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <div class="step-icon"><i class="ri-search-eye-line"></i></div>
+          <div class="step-title">We Review</div>
+          <p class="step-desc">Our creative team personally reviews every application within 5 working days — no bots here.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <div class="step-icon"><i class="ri-discuss-line"></i></div>
+          <div class="step-title">Interview</div>
+          <p class="step-desc">A relaxed conversation or a short task to see if we're a great creative fit for each other.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <div class="step-icon"><i class="ri-flashlight-line"></i></div>
+          <div class="step-title">Welcome!</div>
+          <p class="step-desc">Get onboarded, meet the team, and start doing your best work from day one at Flashlab.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band" id="apply">
+    <div class="wrap">
+      <div class="cta-inner reveal">
+        <div>
+          <h2 class="cta-band-title">Don't See Your<br><em>Role Listed?</em></h2>
+          <p class="cta-band-sub">We're always open to hearing from talented creatives. Send us your portfolio and tell us what you do best — we'll be in touch.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="connect.html" class="btn-primary">Contact Us <i class="ri-arrow-right-line"></i></a>
+          <a href="connect.html" class="btn-ghost">Send Your Portfolio <i class="ri-send-plane-line"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT STRIP -->
+  
+
+</main>
+
+<!-- APPLICATION MODAL -->
+<div class="modal-overlay" id="applyModal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose"><i class="ri-close-line"></i></button>
+    <div class="modal-title">Apply Now</div>
+    <p class="modal-sub">Fill out the form below. We'll review and get back within 5 working days.</p>
+    <form id="applyForm">
+      <div class="form-row">
+        <div class="form-field">
+          <label>Full Name</label>
+          <input type="text" id="f-name" placeholder="Your full name" required>
+        </div>
+        <div class="form-field">
+          <label>Mobile Number</label>
+          <input type="tel" id="f-mobile" placeholder="+91 XXXXX XXXXX" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" id="f-email" placeholder="you@email.com" required>
+        </div>
+        <div class="form-field">
+          <label>Address</label>
+          <input type="text" id="f-address" placeholder="City, State" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label>Department</label>
+          <select id="f-dept" required>
+            <option value="">Select Department</option>
+            <option>Animator</option>
+            <option>App Developer</option>
+            <option>Cinematographer</option>
+            <option>Drone Pilot</option>
+            <option>Graphics Designer</option>
+            <option>Motion Graphics Editor</option>
+            <option>Photographer</option>
+            <option>SEO Expert</option>
+            <option>Social Media Manager</option>
+            <option>Video Editor</option>
+            <option>Web Developer</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Portfolio URL</label>
+          <input type="url" id="f-portfolio" placeholder="https://yourportfolio.com">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label>Software Knowledge</label>
+          <select id="f-knowledge" required>
+            <option value="">Select Knowledge</option>
+            <option>Adobe After Effects</option>
+            <option>Adobe Illustrator</option>
+            <option>Adobe InDesign</option>
+            <option>Adobe Lightroom</option>
+            <option>Adobe Photoshop</option>
+            <option>Adobe Premiere Pro</option>
+            <option>App Development</option>
+            <option>Corel Draw</option>
+            <option>Final Cut Pro</option>
+            <option>Web Development</option>
+            <option>Wordpress</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>How Did You Hear?</label>
+          <select id="f-hear" required>
+            <option value="">Select Source</option>
+            <option>Instagram</option>
+            <option>Facebook</option>
+            <option>Google</option>
+            <option>Friends / Referral</option>
+            <option>Website</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-field full" style="margin-bottom:0;">
+        <label>Why Do You Want to Join Us?</label>
+        <textarea id="f-why" placeholder="Tell us what excites you about FlashLab..." required></textarea>
+      </div>
+      <button type="submit" class="form-submit">Submit via WhatsApp <i class="ri-whatsapp-line"></i></button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <a href="index.html">
+            <img src="images/logos/flask-logo.png" alt="FlashLab Creative"
+              onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
+          </a>
+        </div>
+        <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in
+          2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i
+              class="ri-instagram-fill"></i></a>
+          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i
+              class="ri-facebook-fill"></i></a>
+          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i
+              class="ri-linkedin-fill"></i></a>
+          <a href="https://twitter.com/theflashlab" target="_blank" rel="noopener"><i class="ri-twitter-x-fill"></i></a>
+          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i
+              class="ri-youtube-fill"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-head">Navigation</h4>
+        <ul class="footer-list">
+          <li><a href="index.html"><i class="ri-arrow-right-s-line"></i>Home</a></li>
+          <li><a href="about.html"><i class="ri-arrow-right-s-line"></i>About</a></li>
+          <li><a href="services.html"><i class="ri-arrow-right-s-line"></i>Services</a></li>
+          <li><a href="clients.html"><i class="ri-arrow-right-s-line"></i>Clients</a></li>
+          <li><a href="case-studies.html"><i class="ri-arrow-right-s-line"></i>Case Studies</a></li>
+          <li><a href="team.html"><i class="ri-arrow-right-s-line"></i>Teams</a></li>
+          <li><a href="career.html"><i class="ri-arrow-right-s-line"></i>Career</a></li>
+          <li><a href="connect.html"><i class="ri-arrow-right-s-line"></i>Connect</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-head">Services</h4>
+        <ul class="footer-list">
+          <li><a href="outdoor-print-ads.html"><i class="ri-arrow-right-s-line"></i>Outdoor &amp; Print</a></li>
+          <li><a href="digital-advertising.html"><i class="ri-arrow-right-s-line"></i>Digital Advertising</a></li>
+          <li><a href="seo-sem-marketing.html"><i class="ri-arrow-right-s-line"></i>SEO / SEM</a></li>
+          <li><a href="social-media-management.html"><i class="ri-arrow-right-s-line"></i>Social Media</a></li>
+          <li><a href="product-design-strategies.html"><i class="ri-arrow-right-s-line"></i>Product Design</a></li>
+          <li><a href="web-app-development.html"><i class="ri-arrow-right-s-line"></i>Web &amp; App Dev</a></li>
+          <li><a href="ecommerce.html"><i class="ri-arrow-right-s-line"></i>E-Commerce</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-head">Join Us</h4>
+        <ul class="footer-list">
+          <li><a href="career-intern.html"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
+          <li><a href="career-seo-expert.html"><i class="ri-arrow-right-s-line"></i>SEO Expert</a></li>
+          <li><a href="career-social-media-manager.html"><i class="ri-arrow-right-s-line"></i>Social Media Mgr</a></li>
+          <li><a href="career-graphic-designer.html"><i class="ri-arrow-right-s-line"></i>Graphic Designer</a></li>
+          <li><a href="career-web-developer.html"><i class="ri-arrow-right-s-line"></i>Web Developer</a></li>
+          <li><a href="career-animation-designer.html"><i class="ri-arrow-right-s-line"></i>Animation Designer</a></li>
+          <li><a href="career-app-developer.html"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-head">Service Links</h4>
+        <ul class="footer-list">
+          <li><a href="https://parashootstudio.com"><i class="ri-arrow-right-s-line"></i>Content Production</a></li>
+          <li><a href="https://backstagexchange.com"><i class="ri-arrow-right-s-line"></i>Event Activation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-head">Contact</h4>
+        <div class="footer-contact">
+          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa"
+              target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
+          <p><i class="ri-phone-fill"></i><a href="tel:+919923580023">+91 99235 80023</a></p>
+          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a>
+          </p>
+          <p><i class="ri-time-fill"></i><span>Mon – Sat: 9am – 6pm IST</span></p>
+          <a href="connect.html" class="footer-cta">Start a Project <i class="ri-arrow-right-line"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright &copy; 2026 FlashLab Creative — Website Crafted by <a href="https://cybercreative.in/"
+          target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
+    </div>
+  </footer>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop"><i class="ri-arrow-up-line"></i></button>
+<script src="flash.js"></script>
+<script>
+
+/* MODAL */
+function openModal(role) {
+  const modal = document.getElementById('applyModal');
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if (role) {
+    const dept = document.getElementById('f-dept');
+    for (let i = 0; i < dept.options.length; i++) {
+      if (dept.options[i].text.toLowerCase().includes(role.toLowerCase().split(' ')[0])) {
+        dept.selectedIndex = i;
+        break;
+      }
+    }
+  }
+}
+document.getElementById('modalClose').addEventListener('click', () => {
+  document.getElementById('applyModal').classList.remove('open');
+  document.body.style.overflow = '';
+});
+document.getElementById('applyModal').addEventListener('click', function(e) {
+  if (e.target === this) { this.classList.remove('open'); document.body.style.overflow = ''; }
+});
+document.getElementById('applyForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const phoneNumber = "919850978489";
+  const message =
+`New Career Form Submission
+-------------------------
+Full Name: ${document.getElementById("f-name").value}
+Mobile Number: ${document.getElementById("f-mobile").value}
+Email: ${document.getElementById("f-email").value}
+Address: ${document.getElementById("f-address").value}
+Department: ${document.getElementById("f-dept").value}
+Knowledge: ${document.getElementById("f-knowledge").value}
+Portfolio: ${document.getElementById("f-portfolio").value}
+Heard From: ${document.getElementById("f-hear").value}
+Why Join: ${document.getElementById("f-why").value}`;
+  window.open("https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message), "_blank");
+});
+</script>
+</body>
+</html>

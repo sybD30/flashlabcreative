@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Clients — FlashLab Creative</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="flash.css">
+
+  <style>
+    /* ── BUTTONS ── */
+    .btn-red {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #0a0a0f;
+      padding: 14px 30px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-red:hover {
+      background: #15803d;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(22, 163, 74, 0.38);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 500;
+      font-size: 0.88rem;
+      transition: all 0.3s;
+    }
+
+    .btn-ghost:hover {
+      background: var(--accent);
+      color: #0a0a0f;
+    }
+
+
+
+    /* ── PAGE HERO — CHANGE 5: no video, editorial stats hero ── */
+
+    /* ── PAGE HERO — centered, no background image ── */
+    .page-hero {
+      padding-top: 152px;
+      background: var(--bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-full-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 48px 5% 0;
+    }
+
+    /* No background image — remove the bg div */
+    .hero-full-bg {
+      display: none;
+    }
+
+    /* Ghost watermark text */
+    .hero-ghost-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-head);
+      font-size: clamp(6rem, 22vw, 18rem);
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(168, 232, 50, 0.08);
+      pointer-events: none;
+      line-height: 1;
+      letter-spacing: 8px;
+      white-space: nowrap;
+      z-index: 0;
+    }
+
+    /* Content layer */
+    .hero-full-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0;
+      padding: 0;
+    }
+
+    .hero-full-left {
+      width: 100%;
+    }
+
+    .hero-full-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #a8e832;
+      margin-bottom: 16px;
+      justify-content: center;
+    }
+
+    .hero-full-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: #a8e832;
+    }
+
+    .hero-full-eyebrow::after {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: #a8e832;
+    }
+
+    .hero-full-heading {
+      font-family: var(--font-head);
+      font-size: 100px;
+      line-height: 0.9;
+      letter-spacing: 3px;
+      color: var(--text);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-full-heading em {
+      font-family: var(--font-italic);
+      font-style: italic;
+      color: #a8e832;
+      font-size: 0.82em;
+    }
+
+    .hero-full-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 560px;
+      margin: 0 auto 32px;
+    }
+
+    /* Industry tags — centered row */
+    .hero-full-right {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 44px;
+    }
+
+    .hero-industry-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: transparent;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--muted);
+      text-transform: uppercase;
+      transition: all 0.25s;
+      white-space: nowrap;
+    }
+
+    .hero-industry-tag i {
+      color: #a8e832;
+      font-size: 0.9rem;
+    }
+
+    .hero-industry-tag:hover {
+      border-color: #a8e832;
+      color: var(--text);
+      background: rgba(168, 232, 50, 0.06);
+    }
+
+    /* Ticker strip */
+    .hero-ed-strip {
+      background: #a8e832;
+      padding: 13px 0;
+      overflow: hidden;
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-ed-strip-track {
+      display: flex;
+      gap: 32px;
+      white-space: nowrap;
+      animation: stripTicker 18s linear infinite;
+      width: max-content;
+    }
+
+    .hero-ed-strip-track span {
+      font-family: var(--font-head);
+      font-size: 0.92rem;
+      letter-spacing: 3px;
+      color: rgba(0, 0, 0, 0.55);
+      text-transform: uppercase;
+    }
+
+    .hero-ed-strip-track .dot {
+      color: rgba(0, 0, 0, 0.25);
+    }
+
+    @keyframes stripTicker {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero {
+        padding-top: 115px;
+      }
+
+      .hero-full-wrap {
+        padding: 36px 5% 0;
+      }
+
+      .hero-full-heading {
+        font-size: clamp(3rem, 14vw, 5rem);
+      }
+    }
+
+    /* ── INSTAGRAM STORY SHOWCASE ── */
+    .stories-section {
+      padding: 70px 0;
+    }
+
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .story-card {
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 9/16;
+      background: var(--card);
+      border: 1px solid var(--border);
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .story-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .story-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── CHANGE 4: LOGOS — bigger, no box ── */
+    .logos-section {
+      padding: 70px 0;
+    }
+
+    [data-theme="dark"] .logos-section {
+      background: #080810;
+    }
+
+    [data-theme="light"] .logos-section {
+      background: #f5f4f0;
+    }
+
+    .logos-free-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px 28px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 44px;
+    }
+
+    .logo-free-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      transition: transform 0.3s;
+      flex: 0 0 auto;
+    }
+
+    .logo-free-item:hover {
+      transform: scale(1.1);
+    }
+
+    .logo-free-item img {
+      /* CHANGE 4: bigger logos */
+      max-height: 88px;
+      max-width: 180px;
+      width: auto;
+      object-fit: contain;
+      filter: none;
+      transition: filter 0.3s;
+    }
+
+    [data-theme="dark"] .logo-free-item img {
+      filter: brightness(1.08) drop-shadow(0 2px 10px rgba(0, 0, 0, 0.4));
+    }
+
+    .logo-free-item .logo-name {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      color: var(--text);
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    /* ── CHANGE 3: GRAPHIC DESIGN — full-width with service tabs + lightbox images ── */
+    .graphic-section {
+      padding: 100px 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    [data-theme="dark"] .graphic-section {
+      background: #060609;
+    }
+
+    [data-theme="light"] .graphic-section {
+      background: #f0efe9;
+    }
+
+    /* Full-bleed header bar */
+    .graphic-header-bar {
+      width: 100vw;
+      margin-left: calc(-1 * ((100vw - 100%) / 2));
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: end;
+      gap: 0;
+      padding: 0 5% 56px;
+    }
+
+    .graphic-header-left .sec-eyebrow {
+      color: #a8e832 !important;
+    }
+
+    .graphic-header-left h2 {
+      font-family: var(--font-head);
+      font-size: clamp(3.5rem, 7vw, 6.5rem);
+      line-height: 0.95;
+      letter-spacing: 2px;
+      color: var(--text);
+      text-transform: uppercase;
+    }
+
+    .graphic-header-left h2 em {
+      font-family: var(--font-italic);
+      font-style: italic;
+      color: #a8e832;
+    }
+
+    .graphic-header-right {
+      padding-left: 40px;
+    }
+
+    .graphic-header-right p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 28px;
+      max-width: 440px;
+    }
+
+    /* Tab pills — clickable, shows different image on click */
+    .graphic-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .graphic-tab {
+      padding: 9px 20px;
+      border-radius: 999px;
+      background: rgba(168, 232, 50, 0.07);
+      border: 1px solid rgba(168, 232, 50, 0.18);
+      color: var(--muted);
+      font-size: 0.83rem;
+      font-weight: 600;
+      transition: all 0.25s;
+      cursor: pointer;
+      font-family: var(--font-body);
+    }
+
+    .graphic-tab:hover,
+    .graphic-tab.active {
+      background: #a8e832;
+      color: #0a0a0f;
+      border-color: #a8e832;
+    }
+
+    /* Full-bleed image showcase */
+    .graphic-showcase {
+      width: 100vw;
+      margin-left: calc(-1 * ((100vw - 100%) / 2));
+      position: relative;
+      height: 580px;
+      overflow: hidden;
+    }
+
+    .graphic-showcase-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    .graphic-showcase-img.active {
+      opacity: 1;
+    }
+
+    /* Fallback gradient panels when no image */
+    .graphic-showcase-fallback {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .graphic-showcase-fallback.active {
+      opacity: 1;
+    }
+
+    .graphic-showcase-fallback-icon {
+      font-size: 5rem;
+      opacity: 0.4;
+    }
+
+    .graphic-showcase-fallback-label {
+      font-family: var(--font-head);
+      font-size: 2rem;
+      letter-spacing: 4px;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+    }
+
+    /* Overlay caption bar */
+    .graphic-caption-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
+      padding: 40px 5% 28px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .graphic-caption-title {
+      font-family: var(--font-head);
+      font-size: clamp(1.4rem, 3vw, 2.4rem);
+      letter-spacing: 2px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    .graphic-caption-desc {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.65);
+      max-width: 360px;
+      text-align: right;
+    }
+
+    .graphic-caption-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #a8e832;
+      color: #0a0a0f;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    /* ── BEHIND THE LENS ── */
+    .media-section {
+      padding: 70px 0;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 280px 280px;
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .media-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #000;
+    }
+
+    .media-item.tall {
+      grid-row: span 2;
+    }
+
+    .media-item.wide {
+      grid-column: span 2;
+    }
+
+    .media-item iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .media-chip {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(168, 232, 50, 0.92);
+      color: #0a0a0f;
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ── CHANGE 2: TESTIMONIALS — wider rectangular cards ── */
+    .testi-section {
+      padding: 80px 0;
+    }
+
+    [data-theme="dark"] .testi-section {
+      background: #0a0a0f;
+    }
+
+    [data-theme="light"] .testi-section {
+      background: #f5f4f0;
+    }
+
+    .testi-slider-wrap {
+      position: relative;
+      margin-top: 44px;
+    }
+
+    .testi-slider {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .testi-slide {
+      min-width: 100%;
+      padding: 0 5%;
+    }
+
+    .testi-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      /* CHANGE 2: wider rectangular, 3-column layout inside */
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 0;
+      align-items: stretch;
+      max-width: 900px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    /* Left accent stripe */
+    .testi-card-stripe {
+      width: 5px;
+      background: linear-gradient(to bottom, #a8e832, rgba(168, 232, 50, 0.2));
+      flex-shrink: 0;
+    }
+
+    /* Middle: main content */
+    .testi-card-body {
+      padding: 36px 40px;
+    }
+
+    .testi-card-body .stars {
+      color: #f59e0b;
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      margin-bottom: 14px;
+    }
+
+    .testi-card-body .quote-icon {
+      font-size: 2.2rem;
+      color: #a8e832;
+      opacity: 0.25;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .testi-card-body p {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 0;
+    }
+
+    /* Right: author panel */
+    .testi-card-author {
+      width: 200px;
+      flex-shrink: 0;
+      border-left: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px;
+      text-align: center;
+      gap: 12px;
+    }
+
+    .testi-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-size: 1.4rem;
+      color: #0a0a0f;
+      border: 2px solid rgba(168, 232, 50, 0.3);
+    }
+
+    .testi-card-author strong {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .testi-card-author span {
+      font-size: 0.74rem;
+      color: var(--muted);
+    }
+
+    .testi-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .testi-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      background: var(--card);
+      color: var(--muted);
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .testi-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .testi-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .testi-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      transition: all 0.3s;
+      cursor: pointer;
+      border: none;
+      padding: 0;
+    }
+
+    .testi-dot.active {
+      background: var(--accent);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* ── CHANGE 1: MERGED CTA — one unified strip ── */
+    .merged-cta {
+      padding-right: 350px;
+      position: center;
+    }
+
+    [data-theme="dark"] .merged-cta {
+      background: #0d0d16;
+    }
+
+    [data-theme="light"] .merged-cta {
+      background: #f0efe9;
+    }
+
+    .mcta-col {
+      padding: 70px 5% 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .mcta-col:first-child {
+      padding-left: 7%;
+    }
+
+    .mcta-col:last-child {
+      padding-right: 7%;
+      text-align: center;
+      align-items: flex-end;
+    }
+
+    .mcta-divider-line {
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(168, 232, 50, 0.5), transparent);
+      align-self: stretch;
+    }
+
+    .mcta-col h3 {
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      color: var(--text);
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    .mcta-col h3 em {
+      font-family: var(--font-italic);
+      font-style: italic;
+      color: #a8e832;
+    }
+
+    .mcta-col p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+      line-height: 1.7;
+      max-width: 360px;
+    }
+
+    .mcta-col:last-child p {
+      text-align: right;
+    }
+
+    .mcta-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .mcta-col:last-child .mcta-btns {
+      justify-content: flex-end;
+    }
+
+    /* ── SOCIAL FEED ── */
+    .feed-section {
+      padding: 70px 0;
+    }
+
+    .feed-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .feed-card {
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 9/16;
+      background: var(--card);
+      border: 1px solid var(--border);
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .feed-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .feed-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width:1100px) {
+      .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width:900px) {
+      .hero-editorial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-ed-left {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .hero-ed-right {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stories-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .feed-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .merged-cta-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .mcta-divider-line {
+        width: 80px;
+        height: 1px;
+        margin: 0 auto;
+      }
+
+      .mcta-col:last-child {
+        text-align: left;
+        align-items: flex-start;
+      }
+
+      .mcta-col:last-child .mcta-btns {
+        justify-content: flex-start;
+      }
+
+      .mcta-col:last-child p {
+        text-align: left;
+      }
+
+      .media-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 220px 220px 220px;
+      }
+
+      .media-item.wide {
+        grid-column: span 2;
+      }
+
+      .media-item.tall {
+        grid-row: span 1;
+      }
+
+      .testi-card {
+        grid-template-columns: 1fr;
+      }
+
+      .testi-card-stripe {
+        width: 100%;
+        height: 5px;
+      }
+
+      .testi-card-author {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid var(--border);
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 20px 32px;
+      }
+
+      .graphic-header-bar {
+        grid-template-columns: 1fr;
+      }
+
+      .graphic-header-right {
+        padding-left: 0;
+        padding-top: 24px;
+      }
+
+      .graphic-showcase {
+        height: 340px;
+      }
+    }
+
+    @media (max-width:768px) {
+      .page-hero {
+        padding-top: 150px;
+      }
+    }
+
+    @media (max-width:640px) {
+      .stories-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feed-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .media-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+
+      .media-item.wide {
+        grid-column: span 1;
+      }
+
+      .media-item {
+        min-height: 220px;
+      }
+
+      .mcta-col:first-child {
+        padding-left: 5%;
+      }
+
+      .mcta-col:last-child {
+        padding-right: 5%;
+      }
+    }
+  </style>
+</head>
+
+<body data-page="clients">
+
+  <!-- LOGO BAR -->
+  <div class="site-logo-bar">
+    <a href="index.html">
+      <img src="images/logos/flashlab-logo.png" alt="FlashLab Creative" id="siteLogoImg">
+    </a>
+  </div>
+
+  <!-- ============================================================
+  NAVBAR
+  ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-wrap">
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <a href="services.html">Services</a>
+          <ul>
+            <li><a href="digital-advertising.html"><i class="ri-megaphone-line"></i>Digital Advertising</a></li>
+            <li><a href="seo-sem-marketing.html"><i class="ri-search-line"></i>SEO / SEM Marketing</a></li>
+            <li><a href="social-media-management.html"><i class="ri-instagram-line"></i>Social Media Management</a></li>
+            <li><a href="product-design-strategies.html"><i class="ri-pen-nib-line"></i>Product Design &amp;
+                Strategies</a></li>
+            <li><a href="web-app-development.html"><i class="ri-code-s-slash-line"></i>Web &amp; App Development</a>
+            </li>
+            <li><a href="outdoor-print-ads.html"><i class="ri-image-line"></i>Outdoor &amp; Print Ads</a></li>
+            <li><a href="ecommerce.html"><i class="ri-shopping-cart-line"></i>E-Commerce</a></li>
+          </ul>
+        </li>
+        <li><a href="clients.html">Clients</a></li>
+        <li>
+          <a href="case-studies.html">Case Studies</a>
+          <ul>
+            <li><a href="story-1.html"><i class="ri-article-line"></i>Story 1</a></li>
+            <li><a href="story-2.html"><i class="ri-article-line"></i>Story 2</a></li>
+            <li><a href="story-3.html"><i class="ri-article-line"></i>Story 3</a></li>
+            <li><a href="story-4.html"><i class="ri-article-line"></i>Story 4</a></li>
+            <li><a href="story-5.html"><i class="ri-article-line"></i>Story 5</a></li>
+            <li><a href="story-6.html"><i class="ri-article-line"></i>Story 6</a></li>
+          </ul>
+        </li>
+        <li><a href="team.html">Team</a></li>
+        <li>
+          <a href="career.html">Career</a>
+          <ul>
+            <li><a href="career-intern.html"><i class="ri-user-add-line"></i>Intern</a></li>
+            <li><a href="career-seo-expert.html"><i class="ri-search-eye-line"></i>SEO Expert</a></li>
+            <li><a href="career-social-media-manager.html"><i class="ri-share-circle-line"></i>Social Media Manager</a>
+            </li>
+            <li><a href="career-graphic-designer.html"><i class="ri-brush-line"></i>Graphic Designer</a></li>
+            <li><a href="career-web-developer.html"><i class="ri-code-box-line"></i>Web Developer</a></li>
+            <li><a href="career-animation-designer.html"><i class="ri-video-line"></i>Animation Designer</a></li>
+            <li><a href="career-app-developer.html"><i class="ri-smartphone-line"></i>App Developer</a></li>
+          </ul>
+        </li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="ri-sun-line" id="themeIcon"></i>
+        </button>
+        <a href="connect.html" class="nav-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ============================================================
+  MOBILE MENU  (single instance, no duplicates)
+  ============================================================ -->
+  <div class="mob-overlay" id="mobOverlay"></div>
+
+  <div class="mob-menu" id="mobMenu" aria-hidden="true">
+    <button class="mob-close" id="mobClose" aria-label="Close menu">
+      <i class="ri-close-line"></i>
+    </button>
+
+    <ul class="mob-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li>
+        <button class="mob-parent-btn" data-target="mob-sub-services">
+          Services <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-services">
+          <li><a href="digital-advertising.html">Digital Advertising</a></li>
+          <li><a href="seo-sem-marketing.html">SEO / SEM Marketing</a></li>
+          <li><a href="social-media-management.html">Social Media Management</a></li>
+          <li><a href="product-design-strategies.html">Product Design &amp; Strategies</a></li>
+          <li><a href="web-app-development.html">Web &amp; App Development</a></li>
+          <li><a href="outdoor-print-ads.html">Outdoor &amp; Print Ads</a></li>
+          <li><a href="ecommerce.html">E-Commerce</a></li>
+        </ul>
+      </li>
+      <li><a href="clients.html">Clients</a></li>
+      <li>
+        <button class="mob-parent-btn" data-target="mob-sub-case">
+          Case Studies <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-case">
+          <li><a href="story-1.html">Story 1</a></li>
+          <li><a href="story-2.html">Story 2</a></li>
+          <li><a href="story-3.html">Story 3</a></li>
+          <li><a href="story-4.html">Story 4</a></li>
+          <li><a href="story-5.html">Story 5</a></li>
+          <li><a href="story-6.html">Story 6</a></li>
+        </ul>
+      </li>
+      <li><a href="team.html">Team</a></li>
+      <li>
+        <button class="mob-parent-btn" data-target="mob-sub-career">
+          Career <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-career">
+          <li><a href="career-intern.html">Intern</a></li>
+          <li><a href="career-seo-expert.html">SEO Expert</a></li>
+          <li><a href="career-social-media-manager.html">Social Media Manager</a></li>
+          <li><a href="career-graphic-designer.html">Graphic Designer</a></li>
+          <li><a href="career-web-developer.html">Web Developer</a></li>
+          <li><a href="career-animation-designer.html">Animation Designer</a></li>
+          <li><a href="career-app-developer.html">App Developer</a></li>
+        </ul>
+      </li>
+      <li><a href="connect.html">Connect</a></li>
+    </ul>
+    <div class="mob-cta-wrap">
+      <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHANGE 5: PAGE HERO — editorial stats, no video ═══════════ -->
+  <section class="page-hero">
+    <div class="hero-full-wrap">
+      <div class="hero-full-bg"></div>
+      <div class="hero-ghost-text">CLIENTS</div>
+
+      <div class="hero-full-content">
+        <div class="hero-full-left">
+          <span class="hero-full-eyebrow">05 — Our Clients</span>
+          <h1 class="hero-full-heading">
+            Trusted By The <em>Best.</em>
+          </h1>
+          <p class="hero-full-sub">
+            A diverse family of brands — from Goa's beloved local spots to national names — who chose FlashLab to build,
+            grow, and tell their story.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-ed-strip">
+      <div class="hero-ed-strip-track">
+        <span>BRANDING</span><span class="dot">●</span>
+        <span>WEB DEV</span><span class="dot">●</span>
+        <span>SOCIAL MEDIA</span><span class="dot">●</span>
+        <span>SEO &amp; GROWTH</span><span class="dot">●</span>
+        <span>DIGITAL ADS</span><span class="dot">●</span>
+        <span>PHOTOGRAPHY</span><span class="dot">●</span>
+        <span>VIDEO PRODUCTION</span><span class="dot">●</span>
+        <span>ANIMATION</span><span class="dot">●</span>
+        <span>OUTDOOR &amp; PRINT</span><span class="dot">●</span>
+        <span>BRANDING</span><span class="dot">●</span>
+        <span>WEB DEV</span><span class="dot">●</span>
+        <span>SOCIAL MEDIA</span><span class="dot">●</span>
+        <span>SEO &amp; GROWTH</span><span class="dot">●</span>
+        <span>DIGITAL ADS</span><span class="dot">●</span>
+        <span>PHOTOGRAPHY</span><span class="dot">●</span>
+        <span>VIDEO PRODUCTION</span><span class="dot">●</span>
+        <span>ANIMATION</span><span class="dot">●</span>
+        <span>OUTDOOR &amp; PRINT</span><span class="dot">●</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ INSTAGRAM STORY SHOWCASE ═══════════ -->
+  <section class="stories-section">
+    <div class="wrap">
+      <div class="sec-header centered reveal">
+        <p class="sec-eyebrow">● Client Campaigns</p>
+        <h2 class="sec-heading">Stories We <em>Told</em></h2>
+        <p class="sec-sub">Real content we created for real brands — stories that stopped the scroll.</p>
+      </div>
+      <div class="stories-grid">
+        <div class="story-card reveal" style="--delay:0s"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/11/06-Aug-2024-Its-a-Sweet-Deal-Story-Size-Caravela-1.png"
+            alt="Caravela Story" loading="lazy"
+            onerror="this.parentElement.style.background='linear-gradient(135deg,#1a0a0a,#4a2a2a)'"></div>
+        <div class="story-card reveal" style="--delay:0.07s"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/11/Papiillion-week-offer-story-9-Aug-2024-1.png"
+            alt="Papiillon Story" loading="lazy"
+            onerror="this.parentElement.style.background='linear-gradient(135deg,#0a1a0a,#2a4a2a)'"></div>
+        <div class="story-card reveal" style="--delay:0.14s"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/11/The-Origin-Olympics-story-6-August-2024-1.png"
+            alt="Origin Story" loading="lazy"
+            onerror="this.parentElement.style.background='linear-gradient(135deg,#0a0a1a,#2a2a4a)'"></div>
+        <div class="story-card reveal" style="--delay:0.21s"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/11/Flashlab-x-Parashoot-Gandhi-Jayanti-story-1.png"
+            alt="Gandhi Jayanti Story" loading="lazy"
+            onerror="this.parentElement.style.background='linear-gradient(135deg,#1a0a00,#4a2a00)'"></div>
+        <div class="story-card reveal" style="--delay:0.28s"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/11/Robins-Ark-Diwali-storyy-17-Oct-2024-1.png"
+            alt="Robins Ark Diwali Story" loading="lazy"
+            onerror="this.parentElement.style.background='linear-gradient(135deg,#1a0a00,#5a3a00)'"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CHANGE 4: BRAND LOGOS — bigger ═══════════ -->
+  <section class="logos-section" id="brand-partners">
+    <div class="wrap">
+      <div class="sec-header centered reveal">
+        <p class="sec-eyebrow">● Our Brand Partners</p>
+        <h2 class="sec-heading">Trusted By <em>Leading Brands</em></h2>
+        <p class="sec-sub">Across Goa, India and beyond — a growing family of brands that chose FlashLab.</p>
+      </div>
+      <div class="logos-free-grid reveal">
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Caliber-cafe-yellow-.jpg" alt="Caliber Cafe"
+            loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Caliber</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Caravela-Logo-Black.png" alt="Caravela"
+            loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Caravela</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Club-Ricky_s-Logo.png" alt="Club Ricky's"
+            loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Ricky\'s</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Colva-Plaza-White-Logo.png"
+            alt="Colva Plaza" loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Colva Plaza</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Copy-of-Avtar-Kitchen-Bar-Logo.png"
+            alt="Avtar Kitchen Bar" loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Avtar</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Copy-of-Caeiro-Logo-Png.png" alt="Caeiro"
+            loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Caeiro</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Copy-of-Cali-Logo-Color-3-scaled.png"
+            alt="Cali" loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Cali</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Copy-of-Holi-Dhun-3.0.png" alt="Holi Dhun"
+            loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Holi Dhun</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Akshay-Green-Logo.jpg" alt="Akshay"
+            loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Akshay</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Crafted-Couches-Logo-.png"
+            alt="Crafted Couches" loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Crafted Couches</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Fomento-Realty-scaled.png"
+            alt="Fomento Realty" loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Fomento</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Hide-Expo-2025-Logo.jpg" alt="Hide Expo"
+            loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Hide Expo</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/KOA-Global-Impex-Logo-Open-File-02-scaled.png"
+            alt="KOA Global" loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>KOA Global</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/La-Barraca-Kitchen-Bar.png" alt="La Barraca"
+            loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>La Barraca</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Latin-Quarter-blue-PNG.png"
+            alt="Latin Quarter" loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Latin Quarter</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/NB_FinalLogo_page-0001.jpg" alt="NB"
+            loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>NB</span>'">
+        </div>
+        <div class="logo-free-item"><img src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Orane-Logo.png"
+            alt="Orane" loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Orane</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Papiillon-Logo.png" alt="Papiillon"
+            loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Papiillon</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Pedro_s-Logo-.jpg" alt="Pedro's"
+            loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Pedro\'s</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Yellow-scaled.jpg" alt="Yellow"
+            loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Yellow</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Reginaldo-Connect-Logo-option-03.png"
+            alt="Reginaldo Connect" loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Reginaldo</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Robins-Ark-logo.png" alt="Robins Ark"
+            loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Robins Ark</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Southern-Coast-Logo-JPG-scaled.jpg"
+            alt="Southern Coast" loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Southern Coast</span>'">
+        </div>
+        <div class="logo-free-item"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/10/Screenshot-2025-10-28-152831.png"
+            alt="Partner" loading="lazy"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-name\'>Partner</span>'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SOCIAL MEDIA FEED ═══════════ -->
+  <section class="feed-section section">
+    <div class="wrap">
+      <div class="sec-header centered reveal">
+        <p class="sec-eyebrow">● Social Media Marketing</p>
+        <h2 class="sec-heading">Instagram Feed <em>Design</em></h2>
+        <p class="sec-sub">Visually engaging feed designs crafted to elevate brand presence and drive real engagement.
+        </p>
+      </div>
+      <div class="feed-grid">
+        <div class="feed-card reveal" style="--delay:0s"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/11/WhatsApp-Image-2024-10-18-at-10.56.20_acd906e8-1.png"
+            alt="Feed Design 1" loading="lazy"
+            onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'"></div>
+        <div class="feed-card reveal" style="--delay:0.08s"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/11/WhatsApp-Image-2024-10-18-at-10.56.19_43031032-1.png"
+            alt="Feed Design 2" loading="lazy"
+            onerror="this.parentElement.style.background='linear-gradient(135deg,#0f3460,#533483)'"></div>
+        <div class="feed-card reveal" style="--delay:0.16s"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/11/WhatsApp-Image-2024-10-18-at-10.56.18_2675d496-1.png"
+            alt="Feed Design 3" loading="lazy"
+            onerror="this.parentElement.style.background='linear-gradient(135deg,#1a0a0a,#4a1a00)'"></div>
+        <div class="feed-card reveal" style="--delay:0.24s"><img
+            src="http://www.flashlabcreative.com/wp-content/uploads/2025/11/WhatsApp-Image-2024-10-18-at-10.56.19_ab6715cb-1.png"
+            alt="Feed Design 4" loading="lazy"
+            onerror="this.parentElement.style.background='linear-gradient(135deg,#0a1a0a,#1a4a1a)'"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CHANGE 3: GRAPHIC DESIGN — full-width with tab images ═══════════ -->
+  <section class="graphic-section">
+
+    <!-- Full-bleed header bar -->
+    <div class="graphic-header-bar">
+      <div class="graphic-header-left reveal-left">
+        <span class="sec-eyebrow">● Product Design &amp; Illustration</span>
+        <h2>Graphic <em>Design</em><br>That Sells.</h2>
+      </div>
+      <div class="graphic-header-right reveal-right">
+        <p>Crafting visual identities and print-ready assets that communicate your brand story with clarity and impact.
+          From logos to full campaigns, we build design systems that scale.</p>
+        <!-- CHANGE 3: tabs that swap the showcase image -->
+        <div class="graphic-tabs" id="graphicTabs">
+          <button class="graphic-tab active" data-tab="brand-identity">Brand Identity</button>
+          <button class="graphic-tab" data-tab="print-collateral">Print Collateral</button>
+          <button class="graphic-tab" data-tab="outdoor-ads">Outdoor Ads</button>
+          <button class="graphic-tab" data-tab="menu-design">Menu Design</button>
+          <button class="graphic-tab" data-tab="product-packaging">Product Packaging</button>
+          <button class="graphic-tab" data-tab="ui-ux">UI / UX Design</button>
+        </div>
+        <a href="connect.html" class="btn-red">View Our Portfolio <i class="ri-arrow-right-up-line"></i></a>
+      </div>
+    </div>
+
+    <!-- Full-bleed image showcase -->
+    <div class="graphic-showcase" id="graphicShowcase">
+
+      <!-- Each tab has its own panel: swap image src to your real images -->
+      <div class="graphic-showcase-fallback active" id="tab-brand-identity"
+        style="background: linear-gradient(135deg, #0a1f0a 0%, #155a15 50%, #1f7a1f 100%);">
+        <i class="ri-palette-fill graphic-showcase-fallback-icon" style="color:rgba(168,232,50,0.5);"></i>
+        <span class="graphic-showcase-fallback-label">Brand Identity</span>
+      </div>
+
+      <div class="graphic-showcase-fallback" id="tab-print-collateral"
+        style="background: linear-gradient(135deg, #1a0505 0%, #7f1d1d 60%, #991b1b 100%);">
+        <i class="ri-printer-fill graphic-showcase-fallback-icon" style="color:rgba(252,165,165,0.5);"></i>
+        <span class="graphic-showcase-fallback-label">Print Collateral</span>
+      </div>
+
+      <div class="graphic-showcase-fallback" id="tab-outdoor-ads"
+        style="background: linear-gradient(135deg, #1a1a00 0%, #7a6a00 60%, #a89000 100%);">
+        <i class="ri-megaphone-fill graphic-showcase-fallback-icon" style="color:rgba(253,224,71,0.5);"></i>
+        <span class="graphic-showcase-fallback-label">Outdoor Ads</span>
+      </div>
+
+      <div class="graphic-showcase-fallback" id="tab-menu-design"
+        style="background: linear-gradient(135deg, #0a0a1a 0%, #1e3a8a 60%, #2563eb 100%);">
+        <i class="ri-restaurant-2-fill graphic-showcase-fallback-icon" style="color:rgba(147,197,253,0.5);"></i>
+        <span class="graphic-showcase-fallback-label">Menu Design</span>
+      </div>
+
+      <div class="graphic-showcase-fallback" id="tab-product-packaging"
+        style="background: linear-gradient(135deg, #1a0a1a 0%, #7e22ce 60%, #9333ea 100%);">
+        <i class="ri-gift-fill graphic-showcase-fallback-icon" style="color:rgba(216,180,254,0.5);"></i>
+        <span class="graphic-showcase-fallback-label">Product Packaging</span>
+      </div>
+
+      <div class="graphic-showcase-fallback" id="tab-ui-ux"
+        style="background: linear-gradient(135deg, #001a1a 0%, #0e7490 60%, #0891b2 100%);">
+        <i class="ri-layout-masonry-fill graphic-showcase-fallback-icon" style="color:rgba(103,232,249,0.5);"></i>
+        <span class="graphic-showcase-fallback-label">UI / UX Design</span>
+      </div>
+
+      <!-- Caption bar -->
+      <div class="graphic-caption-bar">
+        <div>
+          <span class="graphic-caption-tag" id="captionTag"><i class="ri-palette-fill"></i> Brand Identity</span>
+          <div class="graphic-caption-title" id="captionTitle">Brand Identity Design</div>
+        </div>
+        <div class="graphic-caption-desc" id="captionDesc">
+          Logos, color systems, typography, and visual language — cohesive identities built to leave a lasting mark.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ BEHIND THE LENS ═══════════ -->
+  <section class="media-section section">
+    <div class="wrap">
+      <div class="sec-header centered reveal">
+        <p class="sec-eyebrow">● Our Creative Work</p>
+        <h2 class="sec-heading">Behind The <em>Lens.</em></h2>
+        <p class="sec-sub">Campaigns, shoots, and cinematic productions we've delivered for our clients.</p>
+      </div>
+      <div class="media-grid">
+        <div class="media-item tall reveal" style="--delay:0s;">
+          <iframe src="https://www.youtube.com/watch?v=-6RnEd5wqaw" title="FlashLab Creative Showreel"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+          <span class="media-chip"><i class="ri-film-fill"></i> Mystras Assagao Property Shoot</span>
+        </div>
+        <div class="media-item wide reveal" style="--delay:0.1s;">
+          <iframe src="https://www.youtube.com/watch?v=pYqtiK4YCnw" title="Brand Film"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+          <span class="media-chip"><i class="ri-video-fill"></i>Pipa Bella Fashion Film</span>
+        </div>
+        <div class="media-item reveal" style="--delay:0.2s;">
+          <iframe src="https://www.youtube.com/watch?v=ySfFXkFDbiI" title="Social Reels"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+          <span class="media-chip"><i class="ri-instagram-fill"></i>Ashely & Melita Wedding Promo</span>
+        </div>
+        <div class="media-item reveal" style="--delay:0.3s;">
+          <iframe src="https://www.youtube.com/watch?v=8oaB_G1o2zE" title="Event Coverage"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+          <span class="media-chip"><i class="ri-calendar-event-fill"></i>Cyrus Berne - Shape of You Cover</span>
+        </div>
+        <div class="media-item reveal" style="--delay:0.4s;">
+          <iframe src="https://www.youtube.com/watch?v=7nO9kYs-dZE" title="Animation"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+          <span class="media-chip"><i class="ri-magic-fill"></i>The Southern Deck</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CHANGE 2: TESTIMONIALS — wider rectangular cards ═══════════ -->
+  <section class="testi-section section">
+    <div class="wrap">
+      <div class="sec-header centered reveal">
+        <p class="sec-eyebrow">● What They Say</p>
+        <h2 class="sec-heading">Client <em>Voices</em></h2>
+        <p class="sec-sub">Real words from the brands we've helped grow.</p>
+      </div>
+      <div class="testi-slider-wrap reveal">
+        <div style="overflow:hidden;">
+          <div class="testi-slider" id="testiSlider">
+
+            <div class="testi-slide">
+              <div class="testi-card">
+                <div class="testi-card-stripe"></div>
+                <div class="testi-card-body">
+                  <div class="stars">★★★★★</div>
+                  <div class="quote-icon"><i class="ri-double-quotes-l"></i></div>
+                  <p>I've worked with FlashLab Creative for over two years on branding for two of my businesses. Their
+                    digital marketing and content management have significantly boosted our engagement and social media
+                    growth. Highly recommended.</p>
+                </div>
+                <div class="testi-card-author">
+                  <div class="testi-avatar" style="background:#a8e832;">R</div>
+                  <strong>Rajesh Naik</strong>
+                  <span>Founder, Spice Route Hotels</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi-slide">
+              <div class="testi-card">
+                <div class="testi-card-stripe"></div>
+                <div class="testi-card-body">
+                  <div class="stars">★★★★★</div>
+                  <div class="quote-icon"><i class="ri-double-quotes-l"></i></div>
+                  <p>Flashlab Creative's social media strategies are creative and effective. Our engagement and reach
+                    have grown consistently, and the team is professional, responsive, and trend-savvy.</p>
+                </div>
+                <div class="testi-card-author">
+                  <div class="testi-avatar" style="background:#f97316;">P</div>
+                  <strong>Priya Fernandes</strong>
+                  <span>CEO, Coastal Wellness Goa</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi-slide">
+              <div class="testi-card">
+                <div class="testi-card-stripe"></div>
+                <div class="testi-card-body">
+                  <div class="stars">★★★★★</div>
+                  <div class="quote-icon"><i class="ri-double-quotes-l"></i></div>
+                  <p>Flashlab Creative has done an excellent job with our social media. Engaging content, consistent
+                    posting, and quick responses — highly recommended for any serious brand in Goa!</p>
+                </div>
+                <div class="testi-card-author">
+                  <div class="testi-avatar" style="background:#dc2626;">A</div>
+                  <strong>Arjun Desai</strong>
+                  <span>Director, UrbanCore Realty</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi-slide">
+              <div class="testi-card">
+                <div class="testi-card-stripe"></div>
+                <div class="testi-card-body">
+                  <div class="stars">★★★★★</div>
+                  <div class="quote-icon"><i class="ri-double-quotes-l"></i></div>
+                  <p>Big thanks to Anuraj and the FlashLab team for the amazing creatives. Their videos and visuals have
+                    helped us build a strong online presence and brand awareness that truly stands out.</p>
+                </div>
+                <div class="testi-card-author">
+                  <div class="testi-avatar" style="background:#7c3aed;">S</div>
+                  <strong>Sanjay Kumbhar</strong>
+                  <span>Owner, Blue Lagoon Resort</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi-slide">
+              <div class="testi-card">
+                <div class="testi-card-stripe"></div>
+                <div class="testi-card-body">
+                  <div class="stars">★★★★★</div>
+                  <div class="quote-icon"><i class="ri-double-quotes-l"></i></div>
+                  <p>Exceptional creativity, professionalism, and flawless execution. Not your standard studio — truly
+                    memorable work that elevated our brand to a completely new level.</p>
+                </div>
+                <div class="testi-card-author">
+                  <div class="testi-avatar" style="background:#0891b2;">M</div>
+                  <strong>Meera Albuquerque</strong>
+                  <span>Marketing Head, FitLife Goa</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi-slide">
+              <div class="testi-card">
+                <div class="testi-card-stripe"></div>
+                <div class="testi-card-body">
+                  <div class="stars">★★★★★</div>
+                  <div class="quote-icon"><i class="ri-double-quotes-l"></i></div>
+                  <p>One of the best agencies in South Goa. The work environment is excellent, with supportive seniors
+                    and great leadership. Our ad performance has never been better.</p>
+                </div>
+                <div class="testi-card-author">
+                  <div class="testi-avatar" style="background:#15803d;">V</div>
+                  <strong>Vikram Pai</strong>
+                  <span>CEO, GreenLeaf Organics</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="testi-controls">
+          <button class="testi-btn" id="testiPrev" aria-label="Previous"><i class="ri-arrow-left-line"></i></button>
+          <div class="testi-dots" id="testiDots"></div>
+          <button class="testi-btn" id="testiNext" aria-label="Next"><i class="ri-arrow-right-line"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CHANGE 1: MERGED CTA — unified single strip ═══════════ -->
+  <section class="merged-cta">
+    <div class="merged-cta-inner">
+
+      <!-- Left: Case Studies -->
+      <div class="mcta-col reveal-left">
+        <h3>The Work That <em>Speaks</em> For Itself</h3>
+        <p>Explore detailed case studies showing the real impact we've created for our clients across industries.</p>
+        <div class="mcta-btns">
+          <a href="case-studies.html" class="btn-red">View Case Studies <i class="ri-arrow-right-up-line"></i></a>
+          <a href="connect.html" class="btn-ghost">Start a Project <i class="ri-arrow-right-line"></i></a>
+          <a href="connect.html" class="btn-red">Let's Build Together <i class="ri-arrow-right-up-line"></i></a>
+          <a href="about.html" class="btn-ghost">Our Story <i class="ri-arrow-right-line"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <a href="index.html">
+            <img src="images/logos/flask-logo.png" alt="FlashLab Creative"
+              onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
+          </a>
+        </div>
+        <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in
+          2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i
+              class="ri-instagram-fill"></i></a>
+          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i
+              class="ri-facebook-fill"></i></a>
+          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i
+              class="ri-linkedin-fill"></i></a>
+          <a href="https://twitter.com/theflashlab" target="_blank" rel="noopener"><i class="ri-twitter-x-fill"></i></a>
+          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i
+              class="ri-youtube-fill"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-head">Navigation</h4>
+        <ul class="footer-list">
+          <li><a href="index.html"><i class="ri-arrow-right-s-line"></i>Home</a></li>
+          <li><a href="about.html"><i class="ri-arrow-right-s-line"></i>About</a></li>
+          <li><a href="services.html"><i class="ri-arrow-right-s-line"></i>Services</a></li>
+          <li><a href="clients.html"><i class="ri-arrow-right-s-line"></i>Clients</a></li>
+          <li><a href="case-studies.html"><i class="ri-arrow-right-s-line"></i>Case Studies</a></li>
+          <li><a href="team.html"><i class="ri-arrow-right-s-line"></i>Teams</a></li>
+          <li><a href="career.html"><i class="ri-arrow-right-s-line"></i>Career</a></li>
+          <li><a href="connect.html"><i class="ri-arrow-right-s-line"></i>Connect</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-head">Services</h4>
+        <ul class="footer-list">
+          <li><a href="outdoor-print-ads.html"><i class="ri-arrow-right-s-line"></i>Outdoor &amp; Print</a></li>
+          <li><a href="digital-advertising.html"><i class="ri-arrow-right-s-line"></i>Digital Advertising</a></li>
+          <li><a href="seo-sem-marketing.html"><i class="ri-arrow-right-s-line"></i>SEO / SEM</a></li>
+          <li><a href="social-media-management.html"><i class="ri-arrow-right-s-line"></i>Social Media</a></li>
+          <li><a href="product-design-strategies.html"><i class="ri-arrow-right-s-line"></i>Product Design</a></li>
+          <li><a href="web-app-development.html"><i class="ri-arrow-right-s-line"></i>Web &amp; App Dev</a></li>
+          <li><a href="ecommerce.html"><i class="ri-arrow-right-s-line"></i>E-Commerce</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-head">Join Us</h4>
+        <ul class="footer-list">
+          <li><a href="career-intern.html"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
+          <li><a href="career-seo-expert.html"><i class="ri-arrow-right-s-line"></i>SEO Expert</a></li>
+          <li><a href="career-social-media-manager.html"><i class="ri-arrow-right-s-line"></i>Social Media Mgr</a></li>
+          <li><a href="career-graphic-designer.html"><i class="ri-arrow-right-s-line"></i>Graphic Designer</a></li>
+          <li><a href="career-web-developer.html"><i class="ri-arrow-right-s-line"></i>Web Developer</a></li>
+          <li><a href="career-animation-designer.html"><i class="ri-arrow-right-s-line"></i>Animation Designer</a></li>
+          <li><a href="career-app-developer.html"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-head">Service Links</h4>
+        <ul class="footer-list">
+          <li><a href="https://parashootstudio.com"><i class="ri-arrow-right-s-line"></i>Content Production</a></li>
+          <li><a href="https://backstagexchange.com"><i class="ri-arrow-right-s-line"></i>Event Activation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-head">Contact</h4>
+        <div class="footer-contact">
+          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa"
+              target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
+          <p><i class="ri-phone-fill"></i><a href="tel:+919923580023">+91 99235 80023</a></p>
+          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a>
+          </p>
+          <p><i class="ri-time-fill"></i><span>Mon – Sat: 9am – 6pm IST</span></p>
+          <a href="connect.html" class="footer-cta">Start a Project <i class="ri-arrow-right-line"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright &copy; 2026 FlashLab Creative — Website Crafted by <a href="https://cybercreative.in/"
+          target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" aria-label="Back to top">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+  <script src="flash.js"></script>
+  <script>
+
+    // ── COUNTER ANIMATION ──
+    (function () {
+      const counters = document.querySelectorAll('.counter');
+      function animate(el) {
+        const target = +el.getAttribute('data-target');
+        const start = performance.now();
+        (function tick(now) {
+          const p = Math.min((now - start) / 1600, 1);
+          el.textContent = Math.floor((1 - Math.pow(1 - p, 3)) * target);
+          if (p < 1) requestAnimationFrame(tick); else el.textContent = target;
+        })(start);
+      }
+      const heroStats = document.querySelector('.hero-ed-right');
+      if (heroStats) {
+        new IntersectionObserver((entries) => {
+          entries.forEach(e => { if (e.isIntersecting) { counters.forEach(animate); } });
+        }, { threshold: 0.3 }).observe(heroStats);
+      }
+    })();
+
+
+    // ── TESTIMONIAL SLIDER ──
+    (function () {
+      const slider = document.getElementById('testiSlider');
+      const dotsWrap = document.getElementById('testiDots');
+      const prevBtn = document.getElementById('testiPrev');
+      const nextBtn = document.getElementById('testiNext');
+      const slides = slider.querySelectorAll('.testi-slide');
+      let current = 0, autoTimer;
+
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'testi-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => { goTo(i); startAuto(); });
+        dotsWrap.appendChild(dot);
+      });
+
+      function goTo(n) {
+        current = (n + slides.length) % slides.length;
+        slider.style.transform = `translateX(-${current * 100}%)`;
+        dotsWrap.querySelectorAll('.testi-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+      }
+
+      function startAuto() {
+        clearInterval(autoTimer);
+        autoTimer = setInterval(() => goTo(current + 1), 5000);
+      }
+
+      prevBtn.addEventListener('click', () => { goTo(current - 1); startAuto(); });
+      nextBtn.addEventListener('click', () => { goTo(current + 1); startAuto(); });
+
+      let startX = 0;
+      slider.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      slider.addEventListener('touchend', e => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) { goTo(diff > 0 ? current + 1 : current - 1); startAuto(); }
+      });
+
+      startAuto();
+    })();
+
+    // ── GRAPHIC DESIGN TABS ──
+    (function () {
+      /*
+        TO ADD REAL IMAGES: replace the `image` value in each tab config with
+        the actual URL of your image, e.g.:
+          image: 'http://www.flashlabcreative.com/wp-content/uploads/2025/xx/brand-identity.jpg'
+        When an image URL is set, it will show the image; otherwise the
+        coloured gradient fallback is shown automatically.
+      */
+      const TABS = {
+        'brand-identity': { icon: 'ri-palette-fill', label: 'Brand Identity', title: 'Brand Identity Design', desc: 'Logos, color systems, typography, and visual language — cohesive identities built to leave a lasting mark.', image: '' },
+        'print-collateral': { icon: 'ri-printer-fill', label: 'Print Collateral', title: 'Print Collateral Design', desc: 'Brochures, flyers, business cards, and marketing materials — designed to impress in the physical world.', image: '' },
+        'outdoor-ads': { icon: 'ri-megaphone-fill', label: 'Outdoor Ads', title: 'Outdoor Advertising', desc: 'Hoardings, banners, bus shelters, and transit ads — bold creatives that command attention at scale.', image: '' },
+        'menu-design': { icon: 'ri-restaurant-2-fill', label: 'Menu Design', title: 'Menu & F&B Design', desc: 'Restaurant and café menus, drink lists, and F&B marketing — designed to delight and upsell.', image: '' },
+        'product-packaging': { icon: 'ri-gift-fill', label: 'Product Packaging', title: 'Product Packaging Design', desc: 'Packaging systems that stand out on shelf — structural design, labels, and unboxing experiences that convert.', image: '' },
+        'ui-ux': { icon: 'ri-layout-masonry-fill', label: 'UI / UX Design', title: 'UI / UX Interface Design', desc: 'Web and app interfaces designed with precision — wireframes, prototypes, and pixel-perfect final designs.', image: '' },
+      };
+
+      const tabs = document.querySelectorAll('.graphic-tab');
+      const showcase = document.getElementById('graphicShowcase');
+      const captionTag = document.getElementById('captionTag');
+      const captionTitle = document.getElementById('captionTitle');
+      const captionDesc = document.getElementById('captionDesc');
+
+      function activate(key) {
+        const data = TABS[key];
+        if (!data) return;
+
+        // Deactivate all fallbacks
+        document.querySelectorAll('.graphic-showcase-fallback').forEach(f => f.classList.remove('active'));
+
+        if (data.image) {
+          // Remove any old live img
+          const old = showcase.querySelector('.graphic-showcase-img');
+          if (old) old.remove();
+          const img = document.createElement('img');
+          img.className = 'graphic-showcase-img';
+          img.src = data.image;
+          img.alt = data.label;
+          img.style.objectFit = 'cover';
+          showcase.insertBefore(img, showcase.querySelector('.graphic-caption-bar'));
+          requestAnimationFrame(() => img.classList.add('active'));
+        } else {
+          // Show gradient fallback
+          const fallback = document.getElementById('tab-' + key);
+          if (fallback) fallback.classList.add('active');
+          // Remove any live img
+          const old = showcase.querySelector('.graphic-showcase-img');
+          if (old) old.remove();
+        }
+
+        // Update caption
+        captionTag.innerHTML = `<i class="${data.icon}"></i> ${data.label}`;
+        captionTitle.textContent = data.title;
+        captionDesc.textContent = data.desc;
+
+        // Update tab active state
+        tabs.forEach(t => t.classList.toggle('active', t.getAttribute('data-tab') === key));
+      }
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => activate(tab.getAttribute('data-tab')));
+      });
+
+      // Start on first tab
+      activate('brand-identity');
+    })();
+
+
+  </script>
+</body>
+
+</html>

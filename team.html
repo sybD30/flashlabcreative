@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Team — FlashLab Creative</title>
+    <meta name="description"
+        content="Meet the creative minds behind FlashLab — Goa's leading creative & digital marketing agency based in Margao.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+      <link rel="stylesheet" href="flash.css">
+
+    <style>
+        /* ═══════════════════════════════════
+           HERO — full-width photo + text below
+        ═══════════════════════════════════ */
+        .team-hero {
+            margin-top: 160px;
+            background: var(--bg);
+        }
+
+        /* Text block below photo */
+        .team-hero-inner {
+            padding: 24px 0 12px;
+        }
+
+        .hero-left {
+            max-width: 100%;
+        }
+
+        .hero-left .eyebrow {
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .hero-left h1 {
+            font-family: var(--font-head);
+            font-size: clamp(2rem, 3.5vw, 3.5rem);
+            line-height: 1;
+            color: var(--text);
+            margin-bottom: 10px;
+            white-space: nowrap;
+            padding-left: 30%;
+        }
+
+        .hero-left h1 em {
+            font-family: var(--font-italic);
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        /* Subtext: centered, single line */
+        .hero-left p {
+            color: var(--muted);
+            font-size: .92rem;
+            line-height: 1.6;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+
+        /* ═══════════════════════════════════
+           SECTION DIVIDERS
+        ═══════════════════════════════════ */
+        .section-divider {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 60px 0 36px;
+        }
+
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .section-divider .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent2);
+            flex-shrink: 0;
+        }
+
+        .section-divider h3 {
+            font-family: var(--font-head);
+            font-size: 1.45rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        [data-theme="dark"] .section-divider h3 {
+            color: rgba(255, 255, 255, .88);
+        }
+
+        [data-theme="light"] .section-divider h3 {
+            color: rgba(0, 0, 0, .75);
+        }
+
+        /* Left-aligned sub-section divider (e.g. Social Media Managers) */
+        .section-divider.divider-left {
+            justify-content: flex-start;
+            padding: 36px 0 28px;
+        }
+
+        .section-divider.divider-left::before {
+            display: none;
+        }
+
+        .section-divider.divider-left h3 {
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            color: var(--accent2);
+        }
+
+
+        /* ═══════════════════════════════════
+           TEAM SECTION & GRIDS
+        ═══════════════════════════════════ */
+        .team-section {
+            padding: 0 0 100px;
+            background: var(--bg);
+        }
+
+        /* Leadership: 2-column, centered */
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Creative / Social: 3-column */
+        .creative-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+
+        /* ═══════════════════════════════════
+           PORTRAIT CARD
+        ═══════════════════════════════════ */
+        .pcard {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 3/4;
+            background: var(--card2);
+        }
+
+        /* Placeholder gradient (shows when photo missing) */
+        .pcard-photo-placeholder {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-head);
+            font-size: 4rem;
+            color: rgba(255, 255, 255, .15);
+            transition: transform .55s cubic-bezier(.25, .46, .45, .94);
+        }
+
+        /* Photo */
+        .pcard-photo {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .55s cubic-bezier(.25, .46, .45, .94);
+        }
+
+        .pcard:hover .pcard-photo,
+        .pcard:hover .pcard-photo-placeholder {
+            transform: scale(1.07);
+        }
+
+        /* Name strip (visible at rest, fades on hover) */
+        .pcard-strip {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            padding: 40px 22px 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, .92) 0%, rgba(0, 0, 0, .55) 50%, transparent 100%);
+            transition: opacity .35s;
+        }
+
+        .pcard:hover .pcard-strip {
+            opacity: 0;
+        }
+
+        .pcard-strip h3 {
+            font-family: var(--font-head);
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            color: #fff;
+            margin: 0 0 3px;
+        }
+
+        .pcard-strip p {
+            font-size: .72rem;
+            color: rgba(255, 255, 255, .55);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* Hover panel (slides up) */
+        .pcard-hover {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .pcard-hover-inner {
+            background: rgba(168, 232, 50, .93);
+            backdrop-filter: blur(4px);
+            padding: 28px 24px 26px;
+            transform: translateY(100%);
+            transition: transform .42s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        .pcard:hover .pcard-hover {
+            pointer-events: auto;
+        }
+
+        .pcard:hover .pcard-hover-inner {
+            transform: translateY(0);
+        }
+
+        /* Hover panel colour variants */
+        .pcard[data-color="orange"] .pcard-hover-inner {
+            background: rgba(249, 115, 22, .92);
+        }
+
+        .pcard[data-color="blue"] .pcard-hover-inner {
+            background: rgba(59, 130, 246, .92);
+        }
+
+        .pcard[data-color="purple"] .pcard-hover-inner {
+            background: rgba(139, 92, 246, .92);
+        }
+
+        .pcard[data-color="teal"] .pcard-hover-inner {
+            background: rgba(20, 184, 166, .92);
+        }
+
+        .pcard[data-color="red"] .pcard-hover-inner {
+            background: rgba(239, 68, 68, .92);
+        }
+
+        .pcard[data-color="gold"] .pcard-hover-inner {
+            background: rgba(234, 179, 8, .92);
+        }
+
+        .pcard[data-color="pink"] .pcard-hover-inner {
+            background: rgba(236, 72, 153, .92);
+        }
+
+        .pcard[data-color="indigo"] .pcard-hover-inner {
+            background: rgba(99, 102, 241, .92);
+        }
+
+        .pcard[data-color="sky"] .pcard-hover-inner {
+            background: rgba(14, 165, 233, .92);
+        }
+
+        .pcard[data-color="rose"] .pcard-hover-inner {
+            background: rgba(244, 63, 94, .92);
+        }
+
+        .pcard[data-color="amber"] .pcard-hover-inner {
+            background: rgba(245, 158, 11, .92);
+        }
+
+        .pcard[data-color="emerald"].pcard-hover-inner {
+            background: rgba(16, 185, 129, .92);
+        }
+
+        /* Dark text for light panels */
+        .pcard[data-color="gold"] .pcard-hover-inner,
+        .pcard[data-color="amber"] .pcard-hover-inner {
+            --ht: #0a0a0f;
+            --hm: rgba(0, 0, 0, .6);
+            --hb: rgba(0, 0, 0, .2);
+        }
+
+        .phover-name {
+            font-family: var(--font-head);
+            font-size: 1.4rem;
+            letter-spacing: 1.5px;
+            color: var(--ht, #fff);
+            margin: 0 0 3px;
+            line-height: 1.1;
+        }
+
+        .phover-role {
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--hm, rgba(255, 255, 255, .75));
+            margin: 0 0 12px;
+        }
+
+        .phover-bio {
+            font-size: .84rem;
+            color: var(--ht, rgba(255, 255, 255, .9));
+            line-height: 1.72;
+            margin: 0 0 16px;
+        }
+
+        .phover-socials {
+            display: flex;
+            gap: 8px;
+        }
+
+        .phover-socials a {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1.5px solid var(--hb, rgba(255, 255, 255, .4));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .85rem;
+            color: var(--ht, rgba(255, 255, 255, .85));
+            transition: background .2s, border-color .2s;
+        }
+
+        .phover-socials a:hover {
+            background: rgba(255, 255, 255, .2);
+            border-color: rgba(255, 255, 255, .8);
+        }
+
+        /* Accent top line on hover */
+        .pcard::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent);
+            z-index: 4;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .4s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        .pcard[data-color="orange"]::after {
+            background: var(--accent2);
+        }
+
+        .pcard[data-color="blue"]::after {
+            background: #3b82f6;
+        }
+
+        .pcard[data-color="purple"]::after {
+            background: #8b5cf6;
+        }
+
+        .pcard[data-color="teal"]::after {
+            background: #14b8a6;
+        }
+
+        .pcard[data-color="red"]::after {
+            background: #ef4444;
+        }
+
+        .pcard[data-color="gold"]::after {
+            background: #eab308;
+        }
+
+        .pcard[data-color="pink"]::after {
+            background: #ec4899;
+        }
+
+        .pcard[data-color="indigo"]::after {
+            background: #6366f1;
+        }
+
+        .pcard[data-color="emerald"]::after {
+            background: #10b981;
+        }
+
+        .pcard[data-color="sky"]::after {
+            background: #0ea5e9;
+        }
+
+        .pcard[data-color="rose"]::after {
+            background: #f43f5e;
+        }
+
+        .pcard[data-color="amber"]::after {
+            background: #f59e0b;
+        }
+
+        .pcard:hover::after {
+            transform: scaleX(1);
+        }
+
+
+        /* ═══════════════════════════════════
+           JOIN CTA BANNER
+        ═══════════════════════════════════ */
+        .join-cta {
+            text-align: center;
+            padding: 48px 5% 52px;
+            background: var(--bg2);
+            border-top: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .join-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(168, 232, 50, .05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .join-cta h2 {
+            font-family: var(--font-head);
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            letter-spacing: 1px;
+            color: var(--text);
+            margin-bottom: 10px;
+            white-space: nowrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .join-cta h2 em {
+            font-family: var(--font-italic);
+            font-style: italic;
+            color: var(--accent2);
+        }
+
+        .join-cta p {
+            color: var(--muted);
+            font-size: .92rem;
+            margin-bottom: 28px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .join-btns {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 11px 26px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: .88rem;
+            transition: all .3s;
+        }
+
+        .btn-primary:hover {
+            background: #bef54a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(168, 232, 50, .3);
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            padding: 11px 26px;
+            border-radius: 999px;
+            font-weight: 500;
+            font-size: .88rem;
+            transition: all .3s;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--muted);
+            color: var(--text);
+        }
+
+@media (max-width: 960px) {
+            .creative-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-bg {
+                height: 380px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            
+            .team-hero {
+                margin-top: 120px;
+            }
+
+            .hero-bg {
+                height: 300px;
+            }
+
+            .hero-left p {
+                white-space: normal;
+                text-align: left;
+            }
+
+            .join-cta h2 {
+                white-space: normal;
+            }
+
+            .founders-grid {
+                grid-template-columns: 1fr;
+                max-width: 340px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .creative-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+</head>
+
+<body data-page="team">
+
+    <!-- ═══════════════════════════════════
+         LOGO BAR
+    ═══════════════════════════════════ -->
+    <div class="site-logo-bar">
+        <a href="index.html">
+            <img src="images/logos/flashlab-logo.png" alt="FlashLab Creative"
+                onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.8rem;letter-spacing:2px;color:var(--text)\'>FLASHLAB CREATIVE</span>'">
+        </a>
+    </div>
+
+     <!-- ============================================================
+  NAVBAR
+  ============================================================ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-wrap">
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li>
+        <a href="services.html">Services</a>
+        <ul>
+          <li><a href="digital-advertising.html"><i class="ri-megaphone-line"></i>Digital Advertising</a></li>
+          <li><a href="seo-sem-marketing.html"><i class="ri-search-line"></i>SEO / SEM Marketing</a></li>
+          <li><a href="social-media-management.html"><i class="ri-instagram-line"></i>Social Media Management</a></li>
+          <li><a href="product-design-strategies.html"><i class="ri-pen-nib-line"></i>Product Design &amp; Strategies</a></li>
+          <li><a href="web-app-development.html"><i class="ri-code-s-slash-line"></i>Web &amp; App Development</a></li>
+          <li><a href="outdoor-print-ads.html"><i class="ri-image-line"></i>Outdoor &amp; Print Ads</a></li>
+          <li><a href="ecommerce.html"><i class="ri-shopping-cart-line"></i>E-Commerce</a></li>
+        </ul>
+      </li>
+      <li><a href="clients.html">Clients</a></li>
+      <li>
+        <a href="case-studies.html">Case Studies</a>
+        <ul>
+          <li><a href="story-1.html"><i class="ri-article-line"></i>Story 1</a></li>
+          <li><a href="story-2.html"><i class="ri-article-line"></i>Story 2</a></li>
+          <li><a href="story-3.html"><i class="ri-article-line"></i>Story 3</a></li>
+          <li><a href="story-4.html"><i class="ri-article-line"></i>Story 4</a></li>
+          <li><a href="story-5.html"><i class="ri-article-line"></i>Story 5</a></li>
+          <li><a href="story-6.html"><i class="ri-article-line"></i>Story 6</a></li>
+        </ul>
+      </li>
+      <li><a href="team.html">Team</a></li>
+      <li>
+        <a href="career.html">Career</a>
+        <ul>
+          <li><a href="career-intern.html"><i class="ri-user-add-line"></i>Intern</a></li>
+          <li><a href="career-seo-expert.html"><i class="ri-search-eye-line"></i>SEO Expert</a></li>
+          <li><a href="career-social-media-manager.html"><i class="ri-share-circle-line"></i>Social Media Manager</a></li>
+          <li><a href="career-graphic-designer.html"><i class="ri-brush-line"></i>Graphic Designer</a></li>
+          <li><a href="career-web-developer.html"><i class="ri-code-box-line"></i>Web Developer</a></li>
+          <li><a href="career-animation-designer.html"><i class="ri-video-line"></i>Animation Designer</a></li>
+          <li><a href="career-app-developer.html"><i class="ri-smartphone-line"></i>App Developer</a></li>
+        </ul>
+      </li>
+      <li><a href="connect.html">Connect</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="ri-sun-line" id="themeIcon"></i>
+      </button>
+      <a href="connect.html" class="nav-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</nav>
+
+<!-- ============================================================
+  MOBILE MENU  (single instance, no duplicates)
+  ============================================================ -->
+<div class="mob-overlay" id="mobOverlay"></div>
+
+<div class="mob-menu" id="mobMenu" aria-hidden="true">
+  <button class="mob-close" id="mobClose" aria-label="Close menu">
+    <i class="ri-close-line"></i>
+  </button>
+
+  <ul class="mob-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li>
+      <button class="mob-parent-btn" data-target="mob-sub-services">
+        Services <i class="ri-arrow-down-s-line mob-arrow"></i>
+      </button>
+      <ul class="mob-sub" id="mob-sub-services">
+        <li><a href="digital-advertising.html">Digital Advertising</a></li>
+        <li><a href="seo-sem-marketing.html">SEO / SEM Marketing</a></li>
+        <li><a href="social-media-management.html">Social Media Management</a></li>
+        <li><a href="product-design-strategies.html">Product Design &amp; Strategies</a></li>
+        <li><a href="web-app-development.html">Web &amp; App Development</a></li>
+        <li><a href="outdoor-print-ads.html">Outdoor &amp; Print Ads</a></li>
+        <li><a href="ecommerce.html">E-Commerce</a></li>
+      </ul>
+    </li>
+    <li><a href="clients.html">Clients</a></li>
+    <li>
+      <button class="mob-parent-btn" data-target="mob-sub-case">
+        Case Studies <i class="ri-arrow-down-s-line mob-arrow"></i>
+      </button>
+      <ul class="mob-sub" id="mob-sub-case">
+        <li><a href="story-1.html">Story 1</a></li>
+        <li><a href="story-2.html">Story 2</a></li>
+        <li><a href="story-3.html">Story 3</a></li>
+        <li><a href="story-4.html">Story 4</a></li>
+        <li><a href="story-5.html">Story 5</a></li>
+        <li><a href="story-6.html">Story 6</a></li>
+      </ul>
+    </li>
+    <li><a href="team.html">Team</a></li>
+    <li>
+      <button class="mob-parent-btn" data-target="mob-sub-career">
+        Career <i class="ri-arrow-down-s-line mob-arrow"></i>
+      </button>
+      <ul class="mob-sub" id="mob-sub-career">
+        <li><a href="career-intern.html">Intern</a></li>
+        <li><a href="career-seo-expert.html">SEO Expert</a></li>
+        <li><a href="career-social-media-manager.html">Social Media Manager</a></li>
+        <li><a href="career-graphic-designer.html">Graphic Designer</a></li>
+        <li><a href="career-web-developer.html">Web Developer</a></li>
+        <li><a href="career-animation-designer.html">Animation Designer</a></li>
+        <li><a href="career-app-developer.html">App Developer</a></li>
+      </ul>
+    </li>
+    <li><a href="connect.html">Connect</a></li>
+  </ul>
+        <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
+    </div>
+
+    <!-- ═══════════════════════════════════
+         HERO — photo + text below
+    ═══════════════════════════════════ -->
+    <section class="team-hero">
+        <div class="team-hero-inner wrap">
+            <div class="hero-left reveal">
+                <h1>The Minds Behind The <em>Magic.</em></h1>
+                <p>At the heart of FlashLab is a close-knit team of creatives, strategists, and storytellers dedicated
+                    to bringing bold ideas to life. Rooted in Margao, reaching everywhere.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         TEAM SECTION
+    ═══════════════════════════════════ -->
+    <section class="team-section">
+        <div class="wrap">
+
+            <!-- Leadership -->
+            <div class="section-divider reveal">
+                <div class="dot"></div>
+                <h3>Leadership</h3>
+                <div class="dot"></div>
+            </div>
+
+            <div class="founders-grid reveal" style="--delay:.05s">
+
+                <div class="pcard" data-color="green">
+                    <div class="pcard-photo-placeholder"
+                        style="background:linear-gradient(160deg,#052e16,#14532d,#16a34a);">AK</div>
+                    <img class="pcard-photo" src="images/ankith.png" alt="Ankith Kedar"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Ankith Kedar</h3>
+                        <p>Founder &amp; Creative Director</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Ankith Kedar</p>
+                            <p class="phover-role">Founder &amp; Creative Director</p>
+                            <p class="phover-bio">15+ years in Media, Web, Graphic &amp; UI/UX Design, Data Analytics,
+                                and Passionate DJ &amp; Producer. The creative backbone of FlashLab.</p>
+                            <div class="phover-socials">
+                                <a href="https://www.instagram.com/flashlab.creative" target="_blank"><i
+                                        class="ri-instagram-fill"></i></a>
+                                <a href="https://www.linkedin.com/company/flashlabcreative/" target="_blank"><i
+                                        class="ri-linkedin-fill"></i></a>
+                                <a href="https://x.com/theflashlab" target="_blank"><i
+                                        class="ri-twitter-x-fill"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pcard" data-color="orange">
+                    <div class="pcard-photo-placeholder"
+                        style="background:linear-gradient(160deg,#431407,#7c2d12,#f97316);">AK</div>
+                    <img class="pcard-photo" src="images/anuraj.png" alt="Anuraj Kedar"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Anuraj Kedar</h3>
+                        <p>Co-Founder &amp; Strategy Lead</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Anuraj Kedar</p>
+                            <p class="phover-role">Co-Founder &amp; Strategy Lead</p>
+                            <p class="phover-bio">The strategic force at FlashLab. Expert in brand positioning, client
+                                relations, and scaling businesses through creative digital strategies.</p>
+                            <div class="phover-socials">
+                                <a href="https://www.instagram.com/flashlab.creative" target="_blank"><i
+                                        class="ri-instagram-fill"></i></a>
+                                <a href="https://www.linkedin.com/company/flashlabcreative/" target="_blank"><i
+                                        class="ri-linkedin-fill"></i></a>
+                                <a href="https://x.com/theflashlab" target="_blank"><i
+                                        class="ri-twitter-x-fill"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /founders-grid -->
+
+            <!-- Creative Team -->
+            <div class="section-divider reveal" style="--delay:.05s">
+                <div class="dot"></div>
+                <h3>Creative Team</h3>
+                <div class="dot"></div>
+            </div>
+
+            <!-- Social Media Managers (sub-section, left-aligned) -->
+            <div class="section-divider divider-left reveal" style="--delay:.05s">
+                <div class="dot"></div>
+                <h3>Social Media Managers</h3>
+            </div>
+
+            <div class="creative-grid reveal" style="--delay:.08s">
+
+                <div class="pcard" data-color="pink">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#500724,#ec4899);">SW
+                    </div>
+                    <img class="pcard-photo" src="images/team/sweta.png" alt="Sweta"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Sweta</h3>
+                        <p>Marketing Head</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Sweta</p>
+                            <p class="phover-role">Social Media Head</p>
+                            <p class="phover-bio">Leads FlashLab's social presence with sharp content strategy,
+                                community building, and scroll-stopping campaigns across all platforms.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pcard" data-color="red">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#450a0a,#dc2626);">HE
+                    </div>
+                    <img class="pcard-photo" src="images/team/Herly.png" alt="Herlyn"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Herlyn</h3>
+                        <p>Social Media Executive</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Herlyn</p>
+                            <p class="phover-role">Social Media Executive</p>
+                            <p class="phover-bio">Subject composition expert, enhancing visuals through artificial light
+                                while maintaining the perfect exposure.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pcard" data-color="purple">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#2e1065,#7c3aed);">AR
+                    </div>
+                    <img class="pcard-photo" src="images/team/Aarya.png" alt="Arya" onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Arya</h3>
+                        <p>Social Media Manager</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Arya</p>
+                            <p class="phover-role">Social Media Manager</p>
+                            <p class="phover-bio">Previously working as a content creator with Parashoot Studio &amp;
+                                currently testing App Development.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pcard" data-color="teal">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#042f2e,#0d9488);">SA
+                    </div>
+                    <img class="pcard-photo" src="images/team/Sanica.png" alt="Sanica"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Sanica</h3>
+                        <p>Social Media Manager</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Sanica</p>
+                            <p class="phover-role">Social Media Manager</p>
+                            <p class="phover-bio">Humorous intern turned full-time assistant graphic designer managing
+                                designs and artwork adaptations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pcard" data-color="pink">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#500724,#db2777);">AM
+                    </div>
+                    <img class="pcard-photo" src="images/team/Innah.png" alt="Amina"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Amina</h3>
+                        <p>Social Media Manager</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Amina</p>
+                            <p class="phover-role">Social Media Manager</p>
+                            <p class="phover-bio">Shapes and maintains a consistent digital presence through thoughtful
+                                content and platform management.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /social media grid -->
+
+
+            <div class="section-divider divider-left reveal" style="--delay:.05s">
+                <div class="dot"></div>
+                <h3>Web Developers</h3>
+            </div>
+
+            <div class="creative-grid reveal" style="--delay:.1s">
+
+                <div class="pcard" data-color="gold">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#451a03,#d97706);">RU
+                    </div>
+                    <img class="pcard-photo" src="images/team/rutwik.jpeg" alt="Rutwik"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Rutwik</h3>
+                        <p>Head Web Developer</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Rutwik</p>
+                            <p class="phover-role">Head Web Developer</p>
+                            <p class="phover-bio">Executing web design ideas at the speed of a flash. Specialised in
+                                eCommerce with interests in Blockchain.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pcard" data-color="emerald">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#052e16,#16a34a);">TA
+                    </div>
+                    <img class="pcard-photo" src="images/team/tanish.jpg" alt="Tanish"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Tanish</h3>
+                        <p>Jr. Web Developer</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Tanish</p>
+                            <p class="phover-role">Jr. Web Developer</p>
+                            <p class="phover-bio">Driven by creativity and innovation, with a track record in web
+                                development for retail brands.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="section-divider divider-left reveal" style="--delay:.05s">
+                <div class="dot"></div>
+                <h3>Graphic Designers</h3>
+            </div>
+
+            <div class="creative-grid reveal" style="--delay:.1s">
+
+
+                <div class="pcard" data-color="orange">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#431407,#f97316);">NO
+                    </div>
+                    <img class="pcard-photo" src="images/team/noah.jpg" alt="Noah" onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Noah</h3>
+                        <p>Head Graphic Designer</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Noah</p>
+                            <p class="phover-role">Head Graphic Designer</p>
+                            <p class="phover-bio">A bold visual thinker leading FlashLab's design output — from brand
+                                identities to campaign artwork.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pcard" data-color="teal">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#042f2e,#14b8a6);">AL
+                    </div>
+                    <img class="pcard-photo" src="images/team/Alvinaa.png" alt="Alvina"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Alvina</h3>
+                        <p>Assistant Graphic Designer</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Alvina</p>
+                            <p class="phover-role">Assistant Graphic Designer</p>
+                            <p class="phover-bio">Analyzing characters and story structure while deciding on a visual
+                                approach with purpose and precision.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pcard" data-color="indigo">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#1e1b4b,#6366f1);">SL
+                    </div>
+                    <img class="pcard-photo" src="images/team/salina.jpg" alt="Salina"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Salina</h3>
+                        <p>Assistant Graphic Designer</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Salina</p>
+                            <p class="phover-role">Assistant Graphic Designer</p>
+                            <p class="phover-bio">Analyzing story structure and deciding on a visual approach with a
+                                keen creative sensibility.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="pcard" data-color="blue">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#1e3a5f,#1d4ed8);">RO
+                    </div>
+                    <img class="pcard-photo" src="images/team/Rohit.png" alt="Rohit"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Rohit</h3>
+                        <p>Jr. Graphic Designer</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Rohit</p>
+                            <p class="phover-role">Jr. Graphic Designer</p>
+                            <p class="phover-bio">Enthusiastic designer bringing fresh ideas to every project,
+                                specialising in digital and social creatives.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="pcard" data-color="sky">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#082f49,#0ea5e9);">AN
+                    </div>
+                    <img class="pcard-photo" src="images/team/Anand.png" alt="Anand"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Anand</h3>
+                        <p>Jr. Graphic Designer</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Anand</p>
+                            <p class="phover-role">Jr. Graphic Designer</p>
+                            <p class="phover-bio">Crafting compelling visuals with an eye for detail and a passion for
+                                clean, purposeful design.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="pcard" data-color="amber">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#451a03,#f59e0b);">RA
+                    </div>
+                    <img class="pcard-photo" src="images/team/Rajat.png" alt="Rajat"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Rajat</h3>
+                        <p>Jr. Graphic Designer</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Rajat</p>
+                            <p class="phover-role">Jr. Graphic Designer</p>
+                            <p class="phover-bio">Bringing energy and fresh perspectives to every design brief — from
+                                social creatives to print campaigns.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pcard" data-color="emerald">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#022c22,#10b981);">SA
+                    </div>
+                    <img class="pcard-photo" src="images/team/Samiksha.png" alt="Samiksha"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Samiksha</h3>
+                        <p>Graphic Designer</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Samiksha</p>
+                            <p class="phover-role">Graphic Designer</p>
+                            <p class="phover-bio">Creates visually engaging designs that keep brands fresh, consistent,
+                                and recognizable.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pcard" data-color="rose">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#4c0519,#f43f5e);">SK
+                    </div>
+                    <img class="pcard-photo" src="images/team/swanika.jpg" alt="Swanika"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Swanika</h3>
+                        <p>UI/UX Intern</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Swanika</p>
+                            <p class="phover-role">UI/UX Intern</p>
+                            <p class="phover-bio">Exploring the intersection of design and technology, crafting
+                                intuitive digital experiences.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+             <div class="section-divider divider-left reveal" style="--delay:.05s">
+                <div class="dot"></div>
+                <h3>Video Editors</h3>
+            </div>
+
+            <div class="creative-grid reveal" style="--delay:.1s">
+
+                <div class="pcard" data-color="purple">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#2e1065,#9333ea);">AA
+                    </div>
+                    <img class="pcard-photo" src="images/team/Aaron.png" alt="Aaron"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Aaron</h3>
+                        <p>Video Editor Intern</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Aaron</p>
+                            <p class="phover-role">Video Editor Intern</p>
+                            <p class="phover-bio">Passionate about storytelling through the lens — cutting footage into
+                                cinematic, compelling narratives.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pcard" data-color="teal">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#042f2e,#0d9488);">JI
+                    </div>
+                    <img class="pcard-photo" src="images/team/Jishnu.png" alt="Jishnu"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Jishnu</h3>
+                        <p>Video Editor</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Jishnu</p>
+                            <p class="phover-role">Video Editor</p>
+                            <p class="phover-bio">Turns ideas and footage into polished edits that feel sharp, seamless,
+                                and engaging.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pcard" data-color="orange">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#431407,#f97316);">NA
+                    </div>
+                    <img class="pcard-photo" src="images/team/Nagesh.png" alt="Nagesh"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Nagesh</h3>
+                        <p>Video Editor</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Nagesh</p>
+                            <p class="phover-role">Video Editor</p>
+                            <p class="phover-bio">Brings together visuals, motion, and clean execution across every
+                                creative project.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pcard" data-color="indigo">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#1e1b4b,#6366f1);">AB
+                    </div>
+                    <img class="pcard-photo" src="images/team/Abhi.png" alt="Abhimanue"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Abhimanue</h3>
+                        <p>Video Editor</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Abhimanue</p>
+                            <p class="phover-role">Video Editor</p>
+                            <p class="phover-bio">Builds the final story through editing, ensuring every frame serves a
+                                purpose.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+
+            </div>
+
+            <div class="section-divider divider-left reveal" style="--delay:.05s">
+                <div class="dot"></div>
+                <h3>Photographers / Videohraphers</h3>
+            </div>
+
+            <div class="creative-grid reveal" style="--delay:.1s">
+                <div class="pcard" data-color="blue">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#172554,#3b82f6);">AM
+                    </div>
+                    <img class="pcard-photo" src="images/team/aman.jpg" alt="Aman" onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Aman</h3>
+                        <p>Photographer</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Aman</p>
+                            <p class="phover-role">Photographer</p>
+                            <p class="phover-bio">Analyzing the screenplay, characters and story structure — deciding on
+                                the perfect visual approach for every shoot.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="pcard" data-color="sky">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#082f49,#0ea5e9);">AL
+                    </div>
+                    <img class="pcard-photo" src="images/team/Alwin.png" alt="Alwin"
+                        onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Alwin</h3>
+                        <p>Photographer / Videographer</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Alwin</p>
+                            <p class="phover-role">Photographer / Videographer</p>
+                            <p class="phover-bio">Focuses on capturing and shaping visuals that communicate more than
+                                words.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pcard" data-color="purple">
+                    <div class="pcard-photo-placeholder" style="background:linear-gradient(160deg,#2e1065,#7c3aed);">JN
+                    </div>
+                    <img class="pcard-photo" src="images/team/Jinu.png" alt="Jinu" onerror="this.style.display='none'">
+                    <div class="pcard-strip">
+                        <h3>Jinu</h3>
+                        <p>Videographer</p>
+                    </div>
+                    <div class="pcard-hover">
+                        <div class="pcard-hover-inner">
+                            <p class="phover-name">Jinu</p>
+                            <p class="phover-role">Videographer</p>
+                            <p class="phover-bio">Captures compelling footage that forms the visual foundation of every
+                                production.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           <!-- /creative-grid -->
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         JOIN CTA BANNER
+    ═══════════════════════════════════ -->
+    <div class="join-cta">
+        <h2>Want to create <em>magic with us?</em></h2>
+        <p>We're always looking for bold, creative, passionate people. If that sounds like you — let's talk.</p>
+        <div class="join-btns">
+            <a href="connect.html" class="btn-primary">Get In Touch <i class="ri-arrow-right-line"></i></a>
+            <a href="about.html" class="btn-ghost">Our Story <i class="ri-information-line"></i></a>
+        </div>
+    </div>
+
+   <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <a href="index.html">
+            <img src="images/logos/flask-logo.png" alt="FlashLab Creative"
+              onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
+          </a>
+        </div>
+        <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in
+          2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i
+              class="ri-instagram-fill"></i></a>
+          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i
+              class="ri-facebook-fill"></i></a>
+          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i
+              class="ri-linkedin-fill"></i></a>
+          <a href="https://twitter.com/theflashlab" target="_blank" rel="noopener"><i class="ri-twitter-x-fill"></i></a>
+          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i
+              class="ri-youtube-fill"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-head">Navigation</h4>
+        <ul class="footer-list">
+          <li><a href="index.html"><i class="ri-arrow-right-s-line"></i>Home</a></li>
+          <li><a href="about.html"><i class="ri-arrow-right-s-line"></i>About</a></li>
+          <li><a href="services.html"><i class="ri-arrow-right-s-line"></i>Services</a></li>
+          <li><a href="clients.html"><i class="ri-arrow-right-s-line"></i>Clients</a></li>
+          <li><a href="case-studies.html"><i class="ri-arrow-right-s-line"></i>Case Studies</a></li>
+          <li><a href="team.html"><i class="ri-arrow-right-s-line"></i>Teams</a></li>
+          <li><a href="career.html"><i class="ri-arrow-right-s-line"></i>Career</a></li>
+          <li><a href="connect.html"><i class="ri-arrow-right-s-line"></i>Connect</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-head">Services</h4>
+        <ul class="footer-list">
+          <li><a href="outdoor-print-ads.html"><i class="ri-arrow-right-s-line"></i>Outdoor &amp; Print</a></li>
+          <li><a href="digital-advertising.html"><i class="ri-arrow-right-s-line"></i>Digital Advertising</a></li>
+          <li><a href="seo-sem-marketing.html"><i class="ri-arrow-right-s-line"></i>SEO / SEM</a></li>
+          <li><a href="social-media-management.html"><i class="ri-arrow-right-s-line"></i>Social Media</a></li>
+          <li><a href="product-design-strategies.html"><i class="ri-arrow-right-s-line"></i>Product Design</a></li>
+          <li><a href="web-app-development.html"><i class="ri-arrow-right-s-line"></i>Web &amp; App Dev</a></li>
+          <li><a href="ecommerce.html"><i class="ri-arrow-right-s-line"></i>E-Commerce</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-head">Join Us</h4>
+        <ul class="footer-list">
+          <li><a href="career-intern.html"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
+          <li><a href="career-seo-expert.html"><i class="ri-arrow-right-s-line"></i>SEO Expert</a></li>
+          <li><a href="career-social-media-manager.html"><i class="ri-arrow-right-s-line"></i>Social Media Mgr</a></li>
+          <li><a href="career-graphic-designer.html"><i class="ri-arrow-right-s-line"></i>Graphic Designer</a></li>
+          <li><a href="career-web-developer.html"><i class="ri-arrow-right-s-line"></i>Web Developer</a></li>
+          <li><a href="career-animation-designer.html"><i class="ri-arrow-right-s-line"></i>Animation Designer</a></li>
+          <li><a href="career-app-developer.html"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-head">Service Links</h4>
+        <ul class="footer-list">
+          <li><a href="https://parashootstudio.com"><i class="ri-arrow-right-s-line"></i>Content Production</a></li>
+          <li><a href="https://backstagexchange.com"><i class="ri-arrow-right-s-line"></i>Event Activation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-head">Contact</h4>
+        <div class="footer-contact">
+          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa"
+              target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
+          <p><i class="ri-phone-fill"></i><a href="tel:+919923580023">+91 99235 80023</a></p>
+          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a>
+          </p>
+          <p><i class="ri-time-fill"></i><span>Mon – Sat: 9am – 6pm IST</span></p>
+          <a href="connect.html" class="footer-cta">Start a Project <i class="ri-arrow-right-line"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright &copy; 2026 FlashLab Creative — Website Crafted by <a href="https://cybercreative.in/"
+          target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
+    </div>
+  </footer>
+
+    <button class="back-top" id="backTop"><i class="ri-arrow-up-line"></i></button>
+<script src="flash.js"></script>
+    <script>
+        
+
+        /* ── Portrait card: ensure correct z-index on photo vs placeholder ── */
+        document.querySelectorAll('.pcard').forEach(card => {
+            const placeholder = card.querySelector('.pcard-photo-placeholder');
+            const photo = card.querySelector('.pcard-photo');
+            if (placeholder) { placeholder.style.position = 'absolute'; placeholder.style.inset = '0'; placeholder.style.zIndex = '0'; }
+            if (photo) { photo.style.position = 'absolute'; photo.style.inset = '0'; photo.style.zIndex = '1'; photo.addEventListener('error', () => photo.style.display = 'none'); }
+        });
+
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ▸ Change these per page -->
+  <title>Page Title — FlashLab Creative</title>
+  <meta name="description" content="Page description here.">
+  <!-- ▸ End page meta -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="flash.css">
+</head>
+
+<!-- ▸ Set data-page to match PAGE_MAP key in the JS below -->
+
+<body data-page="case-studies">
+
+  <!-- ============================================================
+  LOGO BAR
+  ============================================================ -->
+  <div class="site-logo-bar">
+    <a href="index.html">
+      <img src="images/logos/flashlab-logo.png" alt="FlashLab Creative" id="siteLogoImg"
+        onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.8rem;letter-spacing:3px;color:var(--text)\'>FLASHLAB CREATIVE</span>'">
+    </a>
+  </div>
+
+  <!-- ============================================================
+  NAVBAR
+  ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-wrap">
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <a href="services.html">Services</a>
+          <ul>
+            <li><a href="digital-advertising.html"><i class="ri-megaphone-line"></i>Digital Advertising</a></li>
+            <li><a href="seo-sem-marketing.html"><i class="ri-search-line"></i>SEO / SEM Marketing</a></li>
+            <li><a href="social-media-management.html"><i class="ri-instagram-line"></i>Social Media Management</a></li>
+            <li><a href="product-design-strategies.html"><i class="ri-pen-nib-line"></i>Product Design &amp;
+                Strategies</a></li>
+            <li><a href="web-app-development.html"><i class="ri-code-s-slash-line"></i>Web &amp; App Development</a>
+            </li>
+            <li><a href="outdoor-print-ads.html"><i class="ri-image-line"></i>Outdoor &amp; Print Ads</a></li>
+            <li><a href="ecommerce.html"><i class="ri-shopping-cart-line"></i>E-Commerce</a></li>
+          </ul>
+        </li>
+        <li><a href="clients.html">Clients</a></li>
+        <li>
+          <a href="case-studies.html">Case Studies</a>
+          <ul>
+            <li><a href="story-1.html"><i class="ri-article-line"></i>Story 1</a></li>
+            <li><a href="story-2.html"><i class="ri-article-line"></i>Story 2</a></li>
+            <li><a href="story-3.html"><i class="ri-article-line"></i>Story 3</a></li>
+            <li><a href="story-4.html"><i class="ri-article-line"></i>Story 4</a></li>
+            <li><a href="story-5.html"><i class="ri-article-line"></i>Story 5</a></li>
+            <li><a href="story-6.html"><i class="ri-article-line"></i>Story 6</a></li>
+          </ul>
+        </li>
+        <li><a href="team.html">Team</a></li>
+        <li>
+          <a href="career.html">Career</a>
+          <ul>
+            <li><a href="career-intern.html"><i class="ri-user-add-line"></i>Intern</a></li>
+            <li><a href="career-seo-expert.html"><i class="ri-search-eye-line"></i>SEO Expert</a></li>
+            <li><a href="career-social-media-manager.html"><i class="ri-share-circle-line"></i>Social Media Manager</a>
+            </li>
+            <li><a href="career-graphic-designer.html"><i class="ri-brush-line"></i>Graphic Designer</a></li>
+            <li><a href="career-web-developer.html"><i class="ri-code-box-line"></i>Web Developer</a></li>
+            <li><a href="career-animation-designer.html"><i class="ri-video-line"></i>Animation Designer</a></li>
+            <li><a href="career-app-developer.html"><i class="ri-smartphone-line"></i>App Developer</a></li>
+          </ul>
+        </li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="ri-sun-line" id="themeIcon"></i>
+        </button>
+        <a href="connect.html" class="nav-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ============================================================
+  MOBILE MENU  (single instance, no duplicates)
+  ============================================================ -->
+  <div class="mob-overlay" id="mobOverlay"></div>
+
+  <div class="mob-menu" id="mobMenu" aria-hidden="true">
+    <button class="mob-close" id="mobClose" aria-label="Close menu">
+      <i class="ri-close-line"></i>
+    </button>
+
+    <ul class="mob-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li>
+        <button class="mob-parent-btn" data-target="mob-sub-services">
+          Services <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-services">
+          <li><a href="digital-advertising.html">Digital Advertising</a></li>
+          <li><a href="seo-sem-marketing.html">SEO / SEM Marketing</a></li>
+          <li><a href="social-media-management.html">Social Media Management</a></li>
+          <li><a href="product-design-strategies.html">Product Design &amp; Strategies</a></li>
+          <li><a href="web-app-development.html">Web &amp; App Development</a></li>
+          <li><a href="outdoor-print-ads.html">Outdoor &amp; Print Ads</a></li>
+          <li><a href="ecommerce.html">E-Commerce</a></li>
+        </ul>
+      </li>
+      <li><a href="clients.html">Clients</a></li>
+      <li>
+        <button class="mob-parent-btn" data-target="mob-sub-case">
+          Case Studies <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-case">
+          <li><a href="story-1.html">Story 1</a></li>
+          <li><a href="story-2.html">Story 2</a></li>
+          <li><a href="story-3.html">Story 3</a></li>
+          <li><a href="story-4.html">Story 4</a></li>
+          <li><a href="story-5.html">Story 5</a></li>
+          <li><a href="story-6.html">Story 6</a></li>
+        </ul>
+      </li>
+      <li><a href="team.html">Team</a></li>
+      <li>
+        <button class="mob-parent-btn" data-target="mob-sub-career">
+          Career <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-career">
+          <li><a href="career-intern.html">Intern</a></li>
+          <li><a href="career-seo-expert.html">SEO Expert</a></li>
+          <li><a href="career-social-media-manager.html">Social Media Manager</a></li>
+          <li><a href="career-graphic-designer.html">Graphic Designer</a></li>
+          <li><a href="career-web-developer.html">Web Developer</a></li>
+          <li><a href="career-animation-designer.html">Animation Designer</a></li>
+          <li><a href="career-app-developer.html">App Developer</a></li>
+        </ul>
+      </li>
+      <li><a href="connect.html">Connect</a></li>
+    </ul>
+
+    <div class="mob-cta-wrap">
+      <a href="connect.html" class="mob-cta">
+        Start a Project <i class="ri-arrow-right-up-line"></i>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+  ████  YOUR PAGE CONTENT GOES HERE  ████
+
+  Tips:
+  • First section needs padding-top: 260px on desktop (130px logo-bar + 130px navbar)
+  • Use class="section wrap" for consistent spacing
+  • Use .reveal / .reveal-left / .reveal-right for scroll animations
+  • Use .sec-eyebrow, .sec-heading, .sec-sub for consistent type
+  • Use .btn-primary / .btn-ghost for buttons
+  ============================================================ -->
+  <main>
+
+    <section style="padding: 280px 5% 100px; min-height: 100vh;">
+      <div class="wrap">
+        <div class="reveal">
+          <span class="sec-eyebrow">● Page Eyebrow</span>
+          <h1 class="sec-heading">Your Page<br><em>Heading Here.</em></h1>
+          <p class="sec-sub">Supporting description text goes here. Keep it concise and compelling.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:32px;">
+            <a href="connect.html" class="btn-primary">Call to Action <i class="ri-arrow-right-line"></i></a>
+            <a href="#" class="btn-ghost">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADD MORE SECTIONS HERE -->
+
+  </main>
+
+
+  <!-- ============================================================
+  FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="wrap footer-grid">
+
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <a href="index.html">
+            <img src="images/logos/flask-logo.png" alt="FlashLab Creative"
+              onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
+          </a>
+        </div>
+        <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in
+          2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i
+              class="ri-instagram-fill"></i></a>
+          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i
+              class="ri-facebook-fill"></i></a>
+          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i
+              class="ri-linkedin-fill"></i></a>
+          <a href="https://twitter.com/theflashlab" target="_blank" rel="noopener"><i class="ri-twitter-x-fill"></i></a>
+          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i
+              class="ri-youtube-fill"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-head">Navigation</h4>
+        <ul class="footer-list">
+          <li><a href="index.html"><i class="ri-arrow-right-s-line"></i>Home</a></li>
+          <li><a href="about.html"><i class="ri-arrow-right-s-line"></i>About</a></li>
+          <li><a href="services.html"><i class="ri-arrow-right-s-line"></i>Services</a></li>
+          <li><a href="clients.html"><i class="ri-arrow-right-s-line"></i>Clients</a></li>
+          <li><a href="case-studies.html"><i class="ri-arrow-right-s-line"></i>Case Studies</a></li>
+          <li><a href="team.html"><i class="ri-arrow-right-s-line"></i>Teams</a></li>
+          <li><a href="career.html"><i class="ri-arrow-right-s-line"></i>Career</a></li>
+          <li><a href="connect.html"><i class="ri-arrow-right-s-line"></i>Connect</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-head">Services</h4>
+        <ul class="footer-list">
+          <li><a href="digital-advertising.html"><i class="ri-arrow-right-s-line"></i>Digital Advertising</a></li>
+          <li><a href="seo-sem-marketing.html"><i class="ri-arrow-right-s-line"></i>SEO / SEM</a></li>
+          <li><a href="social-media-management.html"><i class="ri-arrow-right-s-line"></i>Social Media</a></li>
+          <li><a href="product-design-strategies.html"><i class="ri-arrow-right-s-line"></i>Product Design</a></li>
+          <li><a href="web-app-development.html"><i class="ri-arrow-right-s-line"></i>Web &amp; App Dev</a></li>
+          <li><a href="outdoor-print-ads.html"><i class="ri-arrow-right-s-line"></i>Outdoor &amp; Print</a></li>
+          <li><a href="ecommerce.html"><i class="ri-arrow-right-s-line"></i>E-Commerce</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-head">Join Us</h4>
+        <ul class="footer-list">
+          <li><a href="career-intern.html"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
+          <li><a href="career-seo-expert.html"><i class="ri-arrow-right-s-line"></i>SEO Expert</a></li>
+          <li><a href="career-social-media-manager.html"><i class="ri-arrow-right-s-line"></i>Social Media Mgr</a></li>
+          <li><a href="career-graphic-designer.html"><i class="ri-arrow-right-s-line"></i>Graphic Designer</a></li>
+          <li><a href="career-web-developer.html"><i class="ri-arrow-right-s-line"></i>Web Developer</a></li>
+          <li><a href="career-animation-designer.html"><i class="ri-arrow-right-s-line"></i>Animation Designer</a></li>
+          <li><a href="career-app-developer.html"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-head">Studio Links</h4>
+        <ul class="footer-list">
+          <li><a href="https://parashootstudio.com" target="_blank" rel="noopener"><i
+                class="ri-arrow-right-s-line"></i>Content Production</a></li>
+          <li><a href="https://backstagexchange.com" target="_blank" rel="noopener"><i
+                class="ri-arrow-right-s-line"></i>Event Activation</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-head">Contact</h4>
+        <div class="footer-contact">
+          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa"
+              target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
+          <p><i class="ri-phone-fill"></i><a href="tel:+919923580023">+91 99235 80023</a></p>
+          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a>
+          </p>
+          <p><i class="ri-time-fill"></i><span>Mon – Sat: 9am – 6pm IST</span></p>
+          <a href="connect.html" class="footer-cta">Start a Project <i class="ri-arrow-right-line"></i></a>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright &copy; 2026 FlashLab Creative — Website Crafted by
+        <a href="https://cybercreative.in/" target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" aria-label="Back to top">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
+
+  <script src="flash.js"></script>
+</body>
+
+</html>
