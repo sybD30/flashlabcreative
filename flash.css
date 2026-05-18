@@ -3,7 +3,7 @@
    ============================================================ */
 :root {
   --accent:       #a8e832;
-  --accent2:      #f97316;
+  --accent2:      #E89A80;
   --accent3:      #dc2626;
   --font-head:    'Bebas Neue', sans-serif;
   --font-body:    'Outfit', sans-serif;
@@ -146,7 +146,7 @@ li, blockquote, input, textarea { cursor: text; }
   max-width:       1200px;
   display:         flex;
   align-items:     center;
-  justify-content: center;
+  justify-content: space-between;
   position:        relative;
 }
 
@@ -165,6 +165,8 @@ li, blockquote, input, textarea { cursor: text; }
   text-transform:  uppercase;
   list-style:      none;
   margin: 0; padding: 0;
+  margin-right: auto;
+  margin-left: -120px;
 }
 .nav-links > li {
   position: relative;
@@ -270,13 +272,13 @@ li, blockquote, input, textarea { cursor: text; }
   content: '';
   position: absolute; left:0; top:20%;
   height:60%; width:3px; border-radius: 0 3px 3px 0;
-  background: #f97316; opacity:0; transition: opacity .18s;
+  background: #E89A80; opacity:0; transition: opacity .18s;
 }
 .nav-links ul li a::after { display: none !important; }
 
 .nav-links ul li a:hover {
   background:   rgba(249,115,22,0.07) !important;
-  color:        #f97316 !important;
+  color:        #E89A80 !important;
   padding-left: 20px !important;
 }
 .nav-links ul li a:hover::before { opacity: 1; }
@@ -629,7 +631,7 @@ li, blockquote, input, textarea { cursor: text; }
   transition:color .2s, border-color .2s, background .2s;
 }
 .footer-socials a:hover {
-  color:#0a0a0f; background:#f97316; border-color:#f97316;
+  color:#0a0a0f; background:#E89A80; border-color:#E89A80;
 }
 
 .footer-head {
@@ -642,7 +644,7 @@ li, blockquote, input, textarea { cursor: text; }
   font-size:.82rem; color:rgba(255,255,255,0.58);
   display:flex; align-items:center; gap:5px; transition:color .2s;
 }
-.footer-list a:hover { color:#f97316 !important; }
+.footer-list a:hover { color:#E89A80 !important; }
 .footer-list a i { color:#a8e832; font-size:1rem; flex-shrink:0; }
 
 .footer-contact { display:flex; flex-direction:column; gap:10px; }
@@ -652,7 +654,7 @@ li, blockquote, input, textarea { cursor: text; }
 }
 .footer-contact p i { color:#a8e832; font-size:1rem; flex-shrink:0; margin-top:2px; }
 .footer-contact a { color:rgba(255,255,255,0.55); }
-.footer-contact a:hover { color:#f97316 !important; }
+.footer-contact a:hover { color:#E89A80 !important; }
 
 .footer-cta {
   display:inline-flex; align-items:center; gap:8px;
@@ -662,7 +664,7 @@ li, blockquote, input, textarea { cursor: text; }
   border-radius:4px; margin-top:10px; transition:opacity .2s;
 }
 .footer-cta:hover { opacity:.85; }
-.footer-cta:hover i { color:#f97316 !important; }
+.footer-cta:hover i { color:#E89A80 !important; }
 
 .footer-bottom {
   background:#0c1a20 !important;
@@ -671,7 +673,7 @@ li, blockquote, input, textarea { cursor: text; }
 }
 .footer-bottom p, .footer-bottom p a { color:rgba(255,255,255,0.55) !important; font-size:.82rem; }
 .footer-bottom p a.cyber-link { color:#a8e832 !important; font-weight:600; transition:color .2s; }
-.footer-bottom p a.cyber-link:hover { color:#f97316 !important; }
+.footer-bottom p a.cyber-link:hover { color:#E89A80 !important; }
 
 /* ============================================================
    15. BACK TO TOP

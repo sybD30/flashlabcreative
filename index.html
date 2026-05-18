@@ -12,7 +12,7 @@
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="flash.css">
-<style>
+  <style>
     /* BUTTONS */
     .btn-red {
       display: inline-flex;
@@ -424,7 +424,7 @@
 
     /* MARQUEE */
     .marquee-strip {
-      background: var(--accent);
+      background: var(--accent2);
       overflow: hidden;
       padding: 16px 0;
       width: 100%;
@@ -1141,14 +1141,14 @@
     }
 
     .flip-face-img img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;       /* ← fills the square, crops excess */
-  object-position: center; /* ← keeps it centered */
-  display: block;
-}
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
 
     .flip-face-img .face-overlay {
       position: absolute;
@@ -1273,7 +1273,81 @@
     .flip-face-text .face-link:hover {
       gap: 10px;
     }
+    /* ── REPLACE the previous flip-link CSS with this ── */
 
+/* Back face not clickable until flipped */
+.flip-card-back {
+  pointer-events: none;
+}
+.flip-card:hover .flip-card-back,
+.flip-card.flipped .flip-card-back {
+  pointer-events: auto;
+}
+
+/* ── Get Started button on DARK TEXT BACK (cards 1,3,5,7,9) ── */
+.flip-card-back.flip-face-text .face-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 8px !important;
+  padding: 10px 22px !important;
+  background: #a8e832 !important;
+  color: #0a0a0f !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.84rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  text-decoration: none !important;
+  border-radius: 999px !important;
+  border: none !important;
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 10 !important;
+  transition: background 0.2s, transform 0.2s, gap 0.2s !important;
+}
+.flip-card-back.flip-face-text .face-link:hover {
+  background: #c4f042 !important;
+  transform: translateY(-2px) !important;
+  gap: 12px !important;
+}
+
+/* ── Get Started button on IMAGE BACK (cards 2,4,6,8) ── */
+.flip-face-img .face-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 70%, transparent 100%);
+  padding: 20px 20px 22px;
+}
+.flip-face-img .face-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 10px !important;
+  padding: 8px 18px !important;
+  background: #a8e832 !important;
+  color: #0a0a0f !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  text-decoration: none !important;
+  border-radius: 999px !important;
+  text-shadow: none !important;
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 10 !important;
+  transition: background 0.2s, gap 0.2s, transform 0.2s !important;
+}
+.flip-face-img .face-link:hover {
+  background: #c4f042 !important;
+  gap: 12px !important;
+  transform: translateY(-2px) !important;
+}
+.flip-card-back {
+  pointer-events: none;
+}
+.flip-card:hover .flip-card-back,
+.flip-card.flipped .flip-card-back {
+  pointer-events: auto;
+}
     /* STATS */
     .stats-section {
       background: var(--accent);
@@ -1506,9 +1580,7 @@
       transform: scale(1.4);
     }
 
-    /* ═══════════════════════════════════════════
-       CLIENTS / PARTNERSHIPS SECTION
-    ═══════════════════════════════════════════ */
+    /* CLIENTS */
     .clients-section {
       background: #767676;
       padding: 60px 0 0;
@@ -1529,7 +1601,7 @@
       font-size: clamp(3.5rem, 7vw, 6rem);
       line-height: 0.95;
       letter-spacing: 2px;
-      background:  var(--accent2);
+      background: var(--accent2);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -1544,7 +1616,6 @@
       color: #000;
     }
 
-    /* Belt rows */
     .clients-belt-row {
       position: relative;
       overflow: hidden;
@@ -1573,7 +1644,6 @@
       background: linear-gradient(to left, #767676 0%, transparent 100%);
     }
 
-    /* Pause entire belt row on hover */
     .clients-belt-row:hover .clients-belt-track {
       animation-play-state: paused !important;
     }
@@ -1612,7 +1682,6 @@
       }
     }
 
-    /* Logo items — always original color (no grayscale) */
     .cl-logo-item {
       flex-shrink: 0;
       width: 160px;
@@ -1633,7 +1702,6 @@
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
-      /* Always show original color — no grayscale */
       filter: brightness(1);
       opacity: 1;
       transition: opacity 0.3s;
@@ -1646,7 +1714,6 @@
       background: rgba(255, 255, 255, 0.1);
     }
 
-    /* Gap between belts and button */
     .clients-belt-gap {
       height: 14px;
     }
@@ -1678,9 +1745,7 @@
       transform: translateY(-2px);
     }
 
-    /* ═══════════════════════════════════════════
-       TESTIMONIALS — one-by-one carousel
-    ═══════════════════════════════════════════ */
+    /* TESTIMONIALS */
     .testi-section {
       position: relative;
       padding: 100px 0 120px;
@@ -1724,7 +1789,6 @@
       opacity: 0.85;
     }
 
-    /* Carousel container */
     .testi-carousel-outer {
       position: relative;
       margin-top: 50px;
@@ -1734,7 +1798,6 @@
       box-sizing: border-box;
     }
 
-    /* fade left/right edges */
     .testi-carousel-outer::before,
     .testi-carousel-outer::after {
       content: '';
@@ -1850,7 +1913,6 @@
       font-size: 0.73rem;
     }
 
-    /* Carousel nav */
     .testi-carousel-nav {
       display: flex;
       align-items: center;
@@ -2057,7 +2119,6 @@
       flex-wrap: wrap;
     }
 
-    
     /* BACK TO TOP */
     .back-top {
       position: fixed;
@@ -2377,133 +2438,128 @@
     </a>
   </div>
 
-  <!-- ============================================================
-  NAVBAR
-  ============================================================ -->
-<nav class="navbar" id="navbar">
-  <div class="nav-wrap">
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-wrap">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li>
+          <a href="services.html">Services</a>
+          <ul>
+            <li><a href="digital-advertising.html"><i class="ri-megaphone-line"></i>Digital Advertising</a></li>
+            <li><a href="seo-sem-marketing.html"><i class="ri-search-line"></i>SEO / SEM Marketing</a></li>
+            <li><a href="social-media-management.html"><i class="ri-instagram-line"></i>Social Media Management</a></li>
+            <li><a href="product-design-strategies.html"><i class="ri-pen-nib-line"></i>Product Design &amp;
+                Strategies</a></li>
+            <li><a href="web-app-development.html"><i class="ri-code-s-slash-line"></i>Web &amp; App Development</a>
+            </li>
+            <li><a href="outdoor-print-ads.html"><i class="ri-image-line"></i>Outdoor &amp; Print Ads</a></li>
+            <li><a href="ecommerce.html"><i class="ri-shopping-cart-line"></i>E-Commerce</a></li>
+          </ul>
+        </li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li>
+          <a href="case-studies.html">Case Studies</a>
+          <ul>
+            <li><a href="story-1.html"><i class="ri-article-line"></i>Story 1</a></li>
+            <li><a href="story-2.html"><i class="ri-article-line"></i>Story 2</a></li>
+            <li><a href="story-3.html"><i class="ri-article-line"></i>Story 3</a></li>
+            <li><a href="story-4.html"><i class="ri-article-line"></i>Story 4</a></li>
+            <li><a href="story-5.html"><i class="ri-article-line"></i>Story 5</a></li>
+            <li><a href="story-6.html"><i class="ri-article-line"></i>Story 6</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="career.html">Career</a>
+          <ul>
+            <li><a href="career-intern.html"><i class="ri-user-add-line"></i>Intern</a></li>
+            <li><a href="career-seo-expert.html"><i class="ri-search-eye-line"></i>SEO Expert</a></li>
+            <li><a href="career-social-media-manager.html"><i class="ri-share-circle-line"></i>Social Media Manager</a>
+            </li>
+            <li><a href="career-graphic-designer.html"><i class="ri-brush-line"></i>Graphic Designer</a></li>
+            <li><a href="career-web-developer.html"><i class="ri-code-box-line"></i>Web Developer</a></li>
+            <li><a href="career-animation-designer.html"><i class="ri-video-line"></i>Animation Designer</a></li>
+            <li><a href="career-app-developer.html"><i class="ri-smartphone-line"></i>App Developer</a></li>
+          </ul>
+        </li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+      <div class="nav-controls">
+        <a href="connect.html" class="nav-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="ri-sun-line" id="themeIcon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
 
-    <ul class="nav-links" id="navLinks">
+  <!-- MOBILE MENU -->
+  <div class="mob-overlay" id="mobOverlay"></div>
+  <div class="mob-menu" id="mobMenu" aria-hidden="true">
+    <button class="mob-close" id="mobClose" aria-label="Close menu">
+      <i class="ri-close-line"></i>
+    </button>
+    <ul class="mob-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li>
-        <a href="services.html">Services</a>
-        <ul>
-          <li><a href="digital-advertising.html"><i class="ri-megaphone-line"></i>Digital Advertising</a></li>
-          <li><a href="seo-sem-marketing.html"><i class="ri-search-line"></i>SEO / SEM Marketing</a></li>
-          <li><a href="social-media-management.html"><i class="ri-instagram-line"></i>Social Media Management</a></li>
-          <li><a href="product-design-strategies.html"><i class="ri-pen-nib-line"></i>Product Design &amp; Strategies</a></li>
-          <li><a href="web-app-development.html"><i class="ri-code-s-slash-line"></i>Web &amp; App Development</a></li>
-          <li><a href="outdoor-print-ads.html"><i class="ri-image-line"></i>Outdoor &amp; Print Ads</a></li>
-          <li><a href="ecommerce.html"><i class="ri-shopping-cart-line"></i>E-Commerce</a></li>
-        </ul>
-      </li>
-      <li><a href="clients.html">Clients</a></li>
-      <li>
-        <a href="case-studies.html">Case Studies</a>
-        <ul>
-          <li><a href="story-1.html"><i class="ri-article-line"></i>Story 1</a></li>
-          <li><a href="story-2.html"><i class="ri-article-line"></i>Story 2</a></li>
-          <li><a href="story-3.html"><i class="ri-article-line"></i>Story 3</a></li>
-          <li><a href="story-4.html"><i class="ri-article-line"></i>Story 4</a></li>
-          <li><a href="story-5.html"><i class="ri-article-line"></i>Story 5</a></li>
-          <li><a href="story-6.html"><i class="ri-article-line"></i>Story 6</a></li>
-        </ul>
-      </li>
       <li><a href="team.html">Team</a></li>
       <li>
-        <a href="career.html">Career</a>
-        <ul>
-          <li><a href="career-intern.html"><i class="ri-user-add-line"></i>Intern</a></li>
-          <li><a href="career-seo-expert.html"><i class="ri-search-eye-line"></i>SEO Expert</a></li>
-          <li><a href="career-social-media-manager.html"><i class="ri-share-circle-line"></i>Social Media Manager</a></li>
-          <li><a href="career-graphic-designer.html"><i class="ri-brush-line"></i>Graphic Designer</a></li>
-          <li><a href="career-web-developer.html"><i class="ri-code-box-line"></i>Web Developer</a></li>
-          <li><a href="career-animation-designer.html"><i class="ri-video-line"></i>Animation Designer</a></li>
-          <li><a href="career-app-developer.html"><i class="ri-smartphone-line"></i>App Developer</a></li>
+        <button class="mob-parent-btn" data-target="mob-sub-services">
+          Services <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-services">
+          <li><a href="digital-advertising.html">Digital Advertising</a></li>
+          <li><a href="seo-sem-marketing.html">SEO / SEM Marketing</a></li>
+          <li><a href="social-media-management.html">Social Media Management</a></li>
+          <li><a href="product-design-strategies.html">Product Design &amp; Strategies</a></li>
+          <li><a href="web-app-development.html">Web &amp; App Development</a></li>
+          <li><a href="outdoor-print-ads.html">Outdoor &amp; Print Ads</a></li>
+          <li><a href="ecommerce.html">E-Commerce</a></li>
+        </ul>
+      </li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="clients.html">Clients</a></li>
+      <li>
+        <button class="mob-parent-btn" data-target="mob-sub-case">
+          Case Studies <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-case">
+          <li><a href="story-1.html">Story 1</a></li>
+          <li><a href="story-2.html">Story 2</a></li>
+          <li><a href="story-3.html">Story 3</a></li>
+          <li><a href="story-4.html">Story 4</a></li>
+          <li><a href="story-5.html">Story 5</a></li>
+          <li><a href="story-6.html">Story 6</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="mob-parent-btn" data-target="mob-sub-career">
+          Career <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-career">
+          <li><a href="career-intern.html">Intern</a></li>
+          <li><a href="career-seo-expert.html">SEO Expert</a></li>
+          <li><a href="career-social-media-manager.html">Social Media Manager</a></li>
+          <li><a href="career-graphic-designer.html">Graphic Designer</a></li>
+          <li><a href="career-web-developer.html">Web Developer</a></li>
+          <li><a href="career-animation-designer.html">Animation Designer</a></li>
+          <li><a href="career-app-developer.html">App Developer</a></li>
         </ul>
       </li>
       <li><a href="connect.html">Connect</a></li>
     </ul>
-
-    <div class="nav-controls">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <i class="ri-sun-line" id="themeIcon"></i>
-      </button>
-      <a href="connect.html" class="nav-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-  </div>
-</nav>
-
-<!-- ============================================================
-  MOBILE MENU  (single instance, no duplicates)
-  ============================================================ -->
-<div class="mob-overlay" id="mobOverlay"></div>
-
-<div class="mob-menu" id="mobMenu" aria-hidden="true">
-  <button class="mob-close" id="mobClose" aria-label="Close menu">
-    <i class="ri-close-line"></i>
-  </button>
-
-  <ul class="mob-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li>
-      <button class="mob-parent-btn" data-target="mob-sub-services">
-        Services <i class="ri-arrow-down-s-line mob-arrow"></i>
-      </button>
-      <ul class="mob-sub" id="mob-sub-services">
-        <li><a href="digital-advertising.html">Digital Advertising</a></li>
-        <li><a href="seo-sem-marketing.html">SEO / SEM Marketing</a></li>
-        <li><a href="social-media-management.html">Social Media Management</a></li>
-        <li><a href="product-design-strategies.html">Product Design &amp; Strategies</a></li>
-        <li><a href="web-app-development.html">Web &amp; App Development</a></li>
-        <li><a href="outdoor-print-ads.html">Outdoor &amp; Print Ads</a></li>
-        <li><a href="ecommerce.html">E-Commerce</a></li>
-      </ul>
-    </li>
-    <li><a href="clients.html">Clients</a></li>
-    <li>
-      <button class="mob-parent-btn" data-target="mob-sub-case">
-        Case Studies <i class="ri-arrow-down-s-line mob-arrow"></i>
-      </button>
-      <ul class="mob-sub" id="mob-sub-case">
-        <li><a href="story-1.html">Story 1</a></li>
-        <li><a href="story-2.html">Story 2</a></li>
-        <li><a href="story-3.html">Story 3</a></li>
-        <li><a href="story-4.html">Story 4</a></li>
-        <li><a href="story-5.html">Story 5</a></li>
-        <li><a href="story-6.html">Story 6</a></li>
-      </ul>
-    </li>
-    <li><a href="team.html">Team</a></li>
-    <li>
-      <button class="mob-parent-btn" data-target="mob-sub-career">
-        Career <i class="ri-arrow-down-s-line mob-arrow"></i>
-      </button>
-      <ul class="mob-sub" id="mob-sub-career">
-        <li><a href="career-intern.html">Intern</a></li>
-        <li><a href="career-seo-expert.html">SEO Expert</a></li>
-        <li><a href="career-social-media-manager.html">Social Media Manager</a></li>
-        <li><a href="career-graphic-designer.html">Graphic Designer</a></li>
-        <li><a href="career-web-developer.html">Web Developer</a></li>
-        <li><a href="career-animation-designer.html">Animation Designer</a></li>
-        <li><a href="career-app-developer.html">App Developer</a></li>
-      </ul>
-    </li>
-    <li><a href="connect.html">Connect</a></li>
-  </ul>
-      
     <div class="mob-cta-wrap">
       <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
     </div>
   </div>
 
-  <!-- ===== HERO ===== -->
+  <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-bg-img"></div>
     <div class="hero-bg-overlay"></div>
@@ -2516,7 +2572,7 @@
       <div class="hero-slide-dots" id="heroSlideDots"></div>
       <div class="hero-slide-wrap" id="heroSlideWrap"></div>
       <div class="hero-btns reveal">
-        <a href="case-studies.html" class="btn-red">See Our Work <i class="ri-arrow-right-line"></i></a>
+        <a href="portfolio.html" class="btn-red">See Our Work <i class="ri-arrow-right-line"></i></a>
         <a href="about.html" class="btn-ghost"
           style="border-color:rgba(255,255,255,0.2); color:rgba(255,255,255,0.7);">Our Story</a>
       </div>
@@ -2527,7 +2583,7 @@
         <div class="hstat-divider"></div>
         <div class="hstat"><strong>10yr</strong><span>Since 2016</span></div>
         <div class="hstat-divider"></div>
-        <div class="hstat"><strong>40</strong><span>Awards</span></div>
+        <div class="hstat"><strong>10+</strong><span>Recognision</span></div>
       </div>
     </div>
     <svg class="hero-diagonal-svg" viewBox="0 0 1440 90" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -2535,7 +2591,7 @@
     </svg>
   </section>
 
-  <!-- ===== MARQUEE ===== -->
+  <!-- MARQUEE -->
   <div class="marquee-strip">
     <div class="marquee-track">
       <span>GRAPHIC DESIGN</span><span class="dot">●</span>
@@ -2561,7 +2617,7 @@
     </div>
   </div>
 
-  <!-- ===== ABOUT ===== -->
+  <!-- ABOUT -->
   <section class="about-section" id="about">
     <div class="wrap">
       <div class="about-grid">
@@ -2576,7 +2632,7 @@
           </div>
         </div>
         <div class="about-text-col reveal-right">
-          <p class="sec-eyebrow">● 01 — About Us</p>
+          <p class="sec-eyebrow">● About Us</p>
           <h2 class="sec-heading">Your Vision.<br><em>Our Creation.</em></h2>
           <p class="sec-body">Born in the vibrant heart of Margao, FlashLab Creative was founded with a simple vision:
             to transform ideas into impactful stories. What started as a small team of passionate creators has grown
@@ -2643,7 +2699,6 @@
         <div class="sec-header centered reveal" style="margin-bottom:36px;">
           <p class="sec-eyebrow">● Who Made It</p>
           <h2 class="sec-heading">The Founders</h2>
-          <p class="sec-sub">The people who brought this vision to life.</p>
         </div>
         <div class="made-grid">
           <div class="founder-card reveal" style="--delay:0s">
@@ -2651,6 +2706,8 @@
             <div class="founder-info">
               <h4>Ankith Kedar</h4>
               <p>Founder &amp; Creative Director</p>
+              <p>15+ years in Media, Web, Graphic & UI/UX Design, Data Analytics, and Passionate DJ & Producer. The
+                creative backbone of FlashLab</p>
               <div class="founder-socials">
                 <a href="#" target="_blank" rel="noopener"><i class="ri-instagram-fill"></i></a>
                 <a href="#" target="_blank" rel="noopener"><i class="ri-linkedin-fill"></i></a>
@@ -2663,6 +2720,8 @@
             <div class="founder-info">
               <h4>Anuraj Kedar</h4>
               <p>Co-Founder &amp; Strategy Lead</p>
+              <p>The strategic force at FlashLab. Expert in brand positioning, client relations, and scaling businesses
+                through creative digital strategies.</p>
               <div class="founder-socials">
                 <a href="#" target="_blank" rel="noopener"><i class="ri-instagram-fill"></i></a>
                 <a href="#" target="_blank" rel="noopener"><i class="ri-linkedin-fill"></i></a>
@@ -2675,11 +2734,11 @@
     </div>
   </section>
 
-  <!-- ===== SERVICES ===== -->
+  <!-- SERVICES -->
   <section class="services-section" id="services">
     <div class="wrap">
       <div class="services-comprehensive reveal">
-        <span class="comp-eyebrow">● 02 — What We Do</span>
+        <span class="comp-eyebrow">● What We Do</span>
         <h2 class="comp-title">Comprehensive Digital Services &amp; Transformation</h2>
         <p class="comp-sub">Your Vision, <em>Our Creation.</em></p>
       </div>
@@ -2704,171 +2763,198 @@
         </div>
       </div>
 
-      <div class="flip-cards-grid">
-        <div class="flip-card reveal" style="--delay:0s">
-          <div class="flip-card-inner">
-            <div class="flip-card-front flip-face-img">
-              <img src="images/brands.png" alt="Brand Identity &amp; Design">
-              <div class="face-overlay"><span class="face-num">01</span>
-                <h3 class="face-title">Brand Identity &amp; Design</h3>
-              </div>
-            </div>
-            <div class="flip-card-back flip-face-text">
-              <div class="face-icon"><i class="ri-palette-fill"></i></div>
-              <span class="face-num-text">01</span>
-              <h3>Brand Identity &amp; Design</h3>
-              <p>Logos, color systems, typography, and print materials — cohesive identities built to leave a lasting
-                mark.</p>
-              <a href="services.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
-            </div>
-          </div>
+<div class="flip-cards-grid">
+
+  <!-- 01 Brand Identity — back: text -->
+  <div class="flip-card reveal" style="--delay:0s">
+    <div class="flip-card-inner">
+      <div class="flip-card-front flip-face-img">
+        <img src="images/brands.png" alt="Brand Identity &amp; Design">
+        <div class="face-overlay">
+          <span class="face-num">01</span>
+          <h3 class="face-title">Brand Identity &amp; Design</h3>
         </div>
-        <div class="flip-card text-front reveal" style="--delay:0.08s">
-          <div class="flip-card-inner">
-            <div class="flip-card-front flip-face-text">
-              <div class="face-icon"><i class="ri-global-line"></i></div>
-              <span class="face-num-text">02</span>
-              <h3>Web &amp; App Development</h3>
-              <p>Fast, beautiful, conversion-focused websites and apps built with modern tech for maximum performance.
-              </p>
-              <a href="services.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
-            </div>
-            <div class="flip-card-back flip-face-img">
-              <img src="images/web-dev.png" alt="Web &amp; App Development">
-              <div class="face-overlay"><span class="face-num">02</span>
-                <h3 class="face-title">Web &amp; App Development</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="flip-card reveal" style="--delay:0.16s">
-          <div class="flip-card-inner">
-            <div class="flip-card-front flip-face-img">
-              <img src="images/social-index.png" alt="Social Media Management">
-              <div class="face-overlay"><span class="face-num">03</span>
-                <h3 class="face-title">Social Media Management</h3>
-              </div>
-            </div>
-            <div class="flip-card-back flip-face-text">
-              <div class="face-icon"><i class="ri-instagram-fill"></i></div>
-              <span class="face-num-text">03</span>
-              <h3>Social Media Management</h3>
-              <p>Complete social media planning, content creation, scheduling, and growth management across all
-                platforms.</p>
-              <a href="services.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="flip-card text-front reveal" style="--delay:0.24s">
-          <div class="flip-card-inner">
-            <div class="flip-card-front flip-face-text">
-              <div class="face-icon"><i class="ri-bar-chart-fill"></i></div>
-              <span class="face-num-text">04</span>
-              <h3>Digital Advertising &amp; SEO</h3>
-              <p>Performance marketing, Google Ads, Meta Ads, SEO/SEM — tuned for maximum ROI and real conversions.</p>
-              <a href="services.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
-            </div>
-            <div class="flip-card-back flip-face-img">
-              <img src="images/digitalad-service.png" alt="Digital Advertising &amp; SEO">
-              <div class="face-overlay"><span class="face-num">04</span>
-                <h3 class="face-title">Digital Advertising &amp; SEO</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="flip-card reveal" style="--delay:0.32s">
-          <div class="flip-card-inner">
-            <div class="flip-card-front flip-face-img">
-              <img src="images/photo-index.png" alt="Photography &amp; Video">
-              <div class="face-overlay"><span class="face-num">05</span>
-                <h3 class="face-title">Photography &amp; Video</h3>
-              </div>
-            </div>
-            <div class="flip-card-back flip-face-text">
-              <div class="face-icon"><i class="ri-video-fill"></i></div>
-              <span class="face-num-text">05</span>
-              <h3>Photography &amp; Video</h3>
-              <p>Brand films, reels, motion graphics, food photography, aerial drone shots — cinematic content that
-                converts.</p>
-              <a href="services.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="flip-card text-front reveal" style="--delay:0.40s">
-          <div class="flip-card-inner">
-            <div class="flip-card-front flip-face-text">
-              <div class="face-icon"><i class="ri-price-tag-3-fill"></i></div>
-              <span class="face-num-text">06</span>
-              <h3>Outdoor &amp; Print Ads</h3>
-              <p>Hoardings, banners, brochures — print and outdoor materials that make your brand visible everywhere.
-              </p>
-              <a href="services.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
-            </div>
-            <div class="flip-card-back flip-face-img">
-              <img src="images/Outdoor Print ads1.png" alt="Outdoor &amp; Print Ads">
-              <div class="face-overlay"><span class="face-num">06</span>
-                <h3 class="face-title">Outdoor &amp; Print Ads</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="flip-card reveal" style="--delay:0.48s">
-          <div class="flip-card-inner">
-            <div class="flip-card-front flip-face-img">
-              <img src="images/event-index.png" alt="Event Production">
-              <div class="face-overlay"><span class="face-num">07</span>
-                <h3 class="face-title">Event Production</h3>
-              </div>
-            </div>
-            <div class="flip-card-back flip-face-text">
-              <div class="face-icon"><i class="ri-calendar-event-fill"></i></div>
-              <span class="face-num-text">07</span>
-              <h3>Event Production</h3>
-              <p>Full-scale event coverage, live production, and digital promotion for conferences, expos, and live
-                events.</p>
-              <a href="services.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="flip-card text-front reveal" style="--delay:0.56s">
-          <div class="flip-card-inner">
-            <div class="flip-card-front flip-face-text">
-              <div class="face-icon"><i class="ri-roadster-fill"></i></div>
-              <span class="face-num-text">08</span>
-              <h3>Media Consulting</h3>
-              <p>360° media consultancy across all channels — strategy, planning, and execution for maximum impact.</p>
-              <a href="services.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
-            </div>
-            <div class="flip-card-back flip-face-img">
-              <img src="images/consult.png" alt="Media Consulting">
-              <div class="face-overlay"><span class="face-num">08</span>
-                <h3 class="face-title">Media Consulting</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="flip-card reveal" style="--delay:0.64s">
-          <div class="flip-card-inner">
-            <div class="flip-card-front flip-face-img">
-              <img src="images/animate.png" alt="Animation &amp; Motion">
-              <div class="face-overlay"><span class="face-num">09</span>
-                <h3 class="face-title">Animation &amp; Motion</h3>
-              </div>
-            </div>
-            <div class="flip-card-back flip-face-text">
-              <div class="face-icon"><i class="ri-magic-fill"></i></div>
-              <span class="face-num-text">09</span>
-              <h3>Animation &amp; Motion</h3>
-              <p>Logo animations, explainer videos, social media reels, and motion graphics that stop the scroll.</p>
-              <a href="services.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
-            </div>
-          </div>
+      </div>
+      <div class="flip-card-back flip-face-text">
+        <div class="face-icon"><i class="ri-palette-fill"></i></div>
+        <span class="face-num-text">01</span>
+        <h3>Brand Identity &amp; Design</h3>
+        <p>Logos, color systems, typography, and print materials — cohesive identities built to leave a lasting mark.</p>
+        <a href="digital-advertising.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 Web & App — back: image -->
+  <div class="flip-card text-front reveal" style="--delay:0.08s">
+    <div class="flip-card-inner">
+      <div class="flip-card-front flip-face-text">
+        <div class="face-icon"><i class="ri-global-line"></i></div>
+        <span class="face-num-text">02</span>
+        <h3>Web &amp; App Development</h3>
+        <p>Fast, beautiful, conversion-focused websites and apps built with modern tech for maximum performance.</p>
+        <a href="web-app-development.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="flip-card-back flip-face-img">
+        <img src="images/web-dev.png" alt="Web &amp; App Development">
+        <div class="face-overlay">
+          <span class="face-num">02</span>
+          <h3 class="face-title">Web &amp; App Development</h3>
+          <a href="web-app-development.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- 03 Social Media — back: text -->
+  <div class="flip-card reveal" style="--delay:0.16s">
+    <div class="flip-card-inner">
+      <div class="flip-card-front flip-face-img">
+        <img src="images/social-index.png" alt="Social Media Management">
+        <div class="face-overlay">
+          <span class="face-num">03</span>
+          <h3 class="face-title">Social Media Management</h3>
+        </div>
+      </div>
+      <div class="flip-card-back flip-face-text">
+        <div class="face-icon"><i class="ri-instagram-fill"></i></div>
+        <span class="face-num-text">03</span>
+        <h3>Social Media Management</h3>
+        <p>Complete social media planning, content creation, scheduling, and growth management across all platforms.</p>
+        <a href="social-media-management.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 Digital Advertising — back: image -->
+  <div class="flip-card text-front reveal" style="--delay:0.24s">
+    <div class="flip-card-inner">
+      <div class="flip-card-front flip-face-text">
+        <div class="face-icon"><i class="ri-bar-chart-fill"></i></div>
+        <span class="face-num-text">04</span>
+        <h3>Digital Advertising &amp; SEO</h3>
+        <p>Performance marketing, Google Ads, Meta Ads, SEO/SEM — tuned for maximum ROI and real conversions.</p>
+        <a href="digital-advertising.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="flip-card-back flip-face-img">
+        <img src="images/digitalad-service.png" alt="Digital Advertising &amp; SEO">
+        <div class="face-overlay">
+          <span class="face-num">04</span>
+          <h3 class="face-title">Digital Advertising &amp; SEO</h3>
+          <a href="digital-advertising.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 Photography & Video — back: text -->
+  <div class="flip-card reveal" style="--delay:0.32s">
+    <div class="flip-card-inner">
+      <div class="flip-card-front flip-face-img">
+        <img src="images/photo-index.png" alt="Photography &amp; Video">
+        <div class="face-overlay">
+          <span class="face-num">05</span>
+          <h3 class="face-title">Photography &amp; Video</h3>
+        </div>
+      </div>
+      <div class="flip-card-back flip-face-text">
+        <div class="face-icon"><i class="ri-video-fill"></i></div>
+        <span class="face-num-text">05</span>
+        <h3>Photography &amp; Video</h3>
+        <p>Brand films, reels, motion graphics, food photography, aerial drone shots — cinematic content that converts.</p>
+        <a href="digital-advertising.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 Outdoor & Print — back: image -->
+  <div class="flip-card text-front reveal" style="--delay:0.40s">
+    <div class="flip-card-inner">
+      <div class="flip-card-front flip-face-text">
+        <div class="face-icon"><i class="ri-price-tag-3-fill"></i></div>
+        <span class="face-num-text">06</span>
+        <h3>Outdoor &amp; Print Ads</h3>
+        <p>Hoardings, banners, brochures — print and outdoor materials that make your brand visible everywhere.</p>
+        <a href="outdoor-print-ads.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="flip-card-back flip-face-img">
+        <img src="images/Outdoor Print ads1.png" alt="Outdoor &amp; Print Ads">
+        <div class="face-overlay">
+          <span class="face-num">06</span>
+          <h3 class="face-title">Outdoor &amp; Print Ads</h3>
+          <a href="outdoor-print-ads.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 07 Event Production — back: text -->
+  <div class="flip-card reveal" style="--delay:0.48s">
+    <div class="flip-card-inner">
+      <div class="flip-card-front flip-face-img">
+        <img src="images/event-index.png" alt="Event Production">
+        <div class="face-overlay">
+          <span class="face-num">07</span>
+          <h3 class="face-title">Event Production</h3>
+        </div>
+      </div>
+      <div class="flip-card-back flip-face-text">
+        <div class="face-icon"><i class="ri-calendar-event-fill"></i></div>
+        <span class="face-num-text">07</span>
+        <h3>Event Production</h3>
+        <p>Full-scale event coverage, live production, and digital promotion for conferences, expos, and live events.</p>
+        <a href="digital-advertising.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 08 Media Consulting — back: image -->
+  <div class="flip-card text-front reveal" style="--delay:0.56s">
+    <div class="flip-card-inner">
+      <div class="flip-card-front flip-face-text">
+        <div class="face-icon"><i class="ri-roadster-fill"></i></div>
+        <span class="face-num-text">08</span>
+        <h3>Media Consulting</h3>
+        <p>360° media consultancy across all channels — strategy, planning, and execution for maximum impact.</p>
+        <a href="services.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="flip-card-back flip-face-img">
+        <img src="images/consult.png" alt="Media Consulting">
+        <div class="face-overlay">
+          <span class="face-num">08</span>
+          <h3 class="face-title">Media Consulting</h3>
+          <a href="services.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 09 Animation & Motion — back: text -->
+  <div class="flip-card reveal" style="--delay:0.64s">
+    <div class="flip-card-inner">
+      <div class="flip-card-front flip-face-img">
+        <img src="images/animate.png" alt="Animation &amp; Motion">
+        <div class="face-overlay">
+          <span class="face-num">09</span>
+          <h3 class="face-title">Animation &amp; Motion</h3>
+        </div>
+      </div>
+      <div class="flip-card-back flip-face-text">
+        <div class="face-icon"><i class="ri-magic-fill"></i></div>
+        <span class="face-num-text">09</span>
+        <h3>Animation &amp; Motion</h3>
+        <p>Logo animations, explainer videos, social media reels, and motion graphics that stop the scroll.</p>
+        <a href="digital-advertising.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end .flip-cards-grid -->
+
+    </div>
   </section>
 
-  <!-- ===== STATS ===== -->
+  <!-- STATS -->
   <section class="stats-section" id="stats">
     <div class="stats-noise"></div>
     <div class="wrap">
@@ -2890,9 +2976,9 @@
           <div class="stat-bar"></div>
         </div>
         <div class="stat-item reveal" style="--delay:0.2s">
-          <div class="stat-num-wrap"><span class="stat-num counter" data-target="40">0</span><span
+          <div class="stat-num-wrap"><span class="stat-num counter" data-target="10">0</span><span
               class="stat-suf">+</span></div>
-          <p>Awards Won</p>
+          <p>Recognision</p>
           <div class="stat-bar"></div>
         </div>
         <div class="stat-item reveal" style="--delay:0.3s">
@@ -2905,11 +2991,11 @@
     </div>
   </section>
 
-  <!-- ===== PORTFOLIO ===== -->
+  <!-- PORTFOLIO -->
   <section class="section" id="work">
     <div class="wrap">
       <div class="sec-header centered reveal">
-        <p class="sec-eyebrow">● 03 — Our Work</p>
+        <p class="sec-eyebrow">● Our Work</p>
         <h2 class="sec-heading">Creative <em>Portfolio.</em></h2>
         <p class="sec-sub">A curated selection of projects across hospitality, real estate, fitness, sports, and
           lifestyle brands.</p>
@@ -2962,53 +3048,43 @@
     </div>
   </section>
 
-  <!-- ===== CLIENTS / PARTNERSHIPS — dual belt, original color, hover to pause ===== -->
+  <!-- CLIENTS -->
   <section class="clients-section">
     <div class="clients-header">
       <span class="clients-big-title">Our Esteeme Clients</span>
       <p class="clients-sub">Across Goa &amp; India</p>
     </div>
-
-    <!-- Row 1: forward (left → right) -->
     <div class="clients-belt-row" id="beltRow1">
       <div class="clients-belt-track fwd" id="cl-track-fwd"></div>
     </div>
-
     <div class="clients-belt-gap"></div>
-
-    <!-- Row 2: reverse (right → left) with logos in reversed order -->
     <div class="clients-belt-row" id="beltRow2">
       <div class="clients-belt-track rev" id="cl-track-rev"></div>
     </div>
-
     <div class="clients-view-all">
       <a href="clients.html#brand-partners">
-  View All Brand Partnerships
-  <i class="ri-arrow-right-up-line"></i>
-</a>
+        View All Brand Partnerships
+        <i class="ri-arrow-right-up-line"></i>
+      </a>
     </div>
   </section>
 
-  <!-- ===== TESTIMONIALS — one-by-one carousel with arrows + dots ===== -->
+  <!-- TESTIMONIALS -->
   <section class="section testi-section" id="testimonials">
     <div class="testi-bg"></div>
     <div class="testi-overlay"></div>
     <div class="wrap">
       <div class="sec-header centered reveal">
-        <p class="sec-eyebrow">● 04 — Kind Words</p>
+        <p class="sec-eyebrow">● Kind Words</p>
         <h2 class="sec-heading">Client <em>Feedback</em></h2>
         <p class="sec-sub">Don't just take our word for it — hear from the brands we've helped grow.</p>
       </div>
     </div>
-
-    <!-- Full-width one-by-one carousel -->
     <div class="testi-carousel-outer">
       <div class="testi-carousel-viewport">
         <div class="testi-carousel-track" id="testiCarouselTrack"></div>
       </div>
     </div>
-
-    <!-- Navigation: prev · dots · next -->
     <div class="testi-carousel-nav">
       <button class="testi-nav-btn" id="testiPrev" aria-label="Previous">&#8592;</button>
       <div class="testi-nav-dots" id="testiDots"></div>
@@ -3025,7 +3101,6 @@
           strategists, and creators with one shared objective: to work together and deliver quality work to our clients.
         </blockquote>
         <div class="fq-icon"><i class="ri-double-quotes-r"></i></div>
-
         <div class="fq-author">
           <div class="fq-avatar"><img src="images/ankith.png" alt="Ankith Kedar"></div>
           <div>
@@ -3037,7 +3112,7 @@
     </div>
   </div>
 
-  <!-- ===== CTA ===== -->
+  <!-- CTA -->
   <section class="cta-section">
     <div class="cta-noise"></div>
     <div class="cta-blob"></div>
@@ -3055,7 +3130,7 @@
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="wrap footer-grid">
       <div class="footer-brand">
@@ -3146,9 +3221,10 @@
   <button class="back-top" id="backTop" aria-label="Back to top">
     <i class="ri-arrow-up-line"></i>
   </button>
-<script src="flash.js"></script>
+
+  <script src="flash.js"></script>
   <script>
- 
+
     // ─── COUNTER ANIMATION ───
     (function () {
       const counters = document.querySelectorAll('.counter');
@@ -3169,7 +3245,6 @@
       }
     })();
 
-    
     // ─── PARALLAX BLOBS ───
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
@@ -3258,7 +3333,7 @@
       goTo(0);
     })();
 
-    // ─── CLIENTS DUAL BELT — original color, hover-to-pause, reverse order row 2 ───
+    // ─── CLIENTS DUAL BELT ───
     (function () {
       const logos = [
         { src: 'images/logos/tikibab.png', alt: 'Tikibab' },
@@ -3320,35 +3395,160 @@
         return frag;
       }
 
-      // TOP BELT
-const fwdTrack = document.getElementById('cl-track-fwd');
+      const fwdTrack = document.getElementById('cl-track-fwd');
+      if (fwdTrack) { fwdTrack.appendChild(buildLogoSet(logos)); fwdTrack.appendChild(buildLogoSet(logos)); }
 
-if (fwdTrack) {
-  fwdTrack.appendChild(buildLogoSet(logos));
-  fwdTrack.appendChild(buildLogoSet(logos));
-}
-
-
-// BOTTOM BELT
-const revTrack = document.getElementById('cl-track-rev');
-
-if (revTrack) {
-  revTrack.appendChild(buildLogoSet(bottomlogos));
-  revTrack.appendChild(buildLogoSet(bottomlogos));
-}
+      const revTrack = document.getElementById('cl-track-rev');
+      if (revTrack) { revTrack.appendChild(buildLogoSet(bottomlogos)); revTrack.appendChild(buildLogoSet(bottomlogos)); }
     })();
 
-    // ─── TESTIMONIALS — one-by-one carousel with auto-play, arrows, dots ───
+    // ─── TESTIMONIALS — Real Google Reviews ───
     (function () {
       const TESTIMONIALS = [
-        { stars: 5, text: "FlashLab completely reimagined our brand. Within weeks of launch, our enquiries doubled. Their creative vision is unmatched.", name: "Rajesh Naik", role: "Founder, Spice Route Hotels", initial: "R", color: "#a8e832" },
-        { stars: 5, text: "The team understood our vision instantly. The website they built is stunning, fast, modern, and mobile-perfect.", name: "Priya Fernandes", role: "CEO, Coastal Wellness", initial: "P", color: "#f97316" },
-        { stars: 5, text: "Working with FlashLab felt collaborative and exciting. Our social media reach tripled in just a few months.", name: "Arjun Desai", role: "Director, UrbanCore Realty", initial: "A", color: "#dc2626" },
-        { stars: 5, text: "Outstanding creative output every single time. FlashLab's branding work for our resort completely elevated our image.", name: "Sanjay Kumbhar", role: "Owner, Blue Lagoon Resort", initial: "S", color: "#7c3aed" },
-        { stars: 5, text: "Our ad campaigns run by FlashLab consistently outperform industry benchmarks. Best ROI we've ever seen from an agency.", name: "Meera Albuquerque", role: "Marketing Head, FitLife Goa", initial: "M", color: "#0891b2" },
-        { stars: 5, text: "They delivered a full rebrand and website in record time. The attention to detail and quality of work is truly remarkable.", name: "Vikram Pai", role: "CEO, GreenLeaf Organics", initial: "V", color: "#15803d" },
-        { stars: 5, text: "From concept to launch, FlashLab nailed every detail. Our new identity resonates perfectly with our target audience.", name: "Deepa Shetty", role: "Founder, Goa Getaways", initial: "D", color: "#b45309" },
-        { stars: 5, text: "The team's energy, creativity, and professionalism are second to none. Highly recommended for any serious brand.", name: "Kartik Prabhu", role: "Director, Harbor Properties", initial: "K", color: "#be185d" },
+        {
+          stars: 5,
+          text: "Finally a team that genuinely knows their stuff! They seamlessly blend creativity with strategy, providing services in digital marketing, websites, reputation management, photography and videography. Love their energy, attention to detail, and the insights they bring to every project. Definitely my go-to team for any business looking to grow its online presence.",
+          name: "Ervin Sequeira",
+          role: "Google Review",
+          initial: "E",
+          color: "#a8e832"
+        },
+        {
+          stars: 5,
+          text: "Flashlab, the team just combines creativity with clear communication, delivering for social media videos, photos, posters, Ad campaign that reflects the clients vision. Responsiveness, flexibility, and attention to detail set them apart from others.",
+          name: "Midhz Muraly",
+          role: "Google Review",
+          initial: "M",
+          color: "#f97316"
+        },
+        {
+          stars: 5,
+          text: "One of the best agency in south Goa. The working atmosphere is too good and all the seniors were so understanding. I have learned a lot — how to give the best work to the client. Thank you Anuraj, the most humble senior I ever met. If you are considering an agency you can go for this without any hesitation.",
+          name: "Permeet Bhatia",
+          role: "Google Review",
+          initial: "P",
+          color: "#dc2626"
+        },
+        {
+          stars: 5,
+          text: "We've had a fantastic experience with Flashlab Creative. Their social media strategies are creative and impactful. Our engagement and reach have grown steadily since we started working with them. Anura and his team are professional, easy to communicate with, and always on top of trends. Highly recommended!",
+          name: "Kelton D'mello",
+          role: "Google Review",
+          initial: "K",
+          color: "#7c3aed"
+        },
+        {
+          stars: 5,
+          text: "Thoroughly impressed with Flashlab Creative's work on Bab's Hideout's social media! Their content is engaging, and they post regularly, keeping our audience entertained and informed. Their promptness and fast response times are top-notch. Highly recommend Flashlab Creative for all your social media needs!",
+          name: "Bab's Hideout",
+          role: "Google Review",
+          initial: "B",
+          color: "#0891b2"
+        },
+        {
+          stars: 5,
+          text: "They followed the brief to the T and the outcome was amazing. Super happy with the professionalism and the creativity involved. They are not your standard studio — they think out of the box and deliver perfection. Thanks guys for capturing all the amazing moments. You've given us a perfect box of memories!",
+          name: "Giselle Marie",
+          role: "Google Review",
+          initial: "G",
+          color: "#15803d"
+        },
+        {
+          stars: 5,
+          text: "Had an incredible experience, the environment was always professional. A big shoutout to Anuraj for being the most down-to-earth person I've worked with.",
+          name: "Meliston Pinto",
+          role: "Google Review",
+          initial: "M",
+          color: "#b45309"
+        },
+        {
+          stars: 5,
+          text: "Flashlab is the premium sector of all things creative. Had appointed them for graphic designing work and they delivered with exceeding expectations. They made whatever changes I wanted till I was satisfied with the outcome. I would recommend for all their services!",
+          name: "Anushka Rodrigues",
+          role: "Google Review",
+          initial: "A",
+          color: "#be185d"
+        },
+        {
+          stars: 5,
+          text: "I chose Oliver and team to help me with our wedding. It was beautifully captured, the team was really accommodating, and helpful. I couldn't have asked for more. Thank you for helping me create beautiful memories.",
+          name: "Karen Callaghan",
+          role: "Google Review",
+          initial: "K",
+          color: "#6d28d9"
+        },
+        {
+          stars: 5,
+          text: "Excellent marketing agency, very professional and great delivery.",
+          name: "Clevio Pinto",
+          role: "Google Review",
+          initial: "C",
+          color: "#0f766e"
+        },
+        {
+          stars: 5,
+          text: "Really well executed Promoshoot for our Showroom. Well planned and delivery of final output was really beautiful. Thanks guys!",
+          name: "Saish Borkar",
+          role: "Google Review",
+          initial: "S",
+          color: "#a8e832"
+        },
+        {
+          stars: 5,
+          text: "Amazing group of minds at Flashlab. Got my website done here — couldn't be happier.",
+          name: "Elsa Lumia",
+          role: "Google Review",
+          initial: "E",
+          color: "#f97316"
+        },
+        {
+          stars: 5,
+          text: "The team is extremely professional, creative, and truly understands the client's vision. From concept to execution, everything was handled seamlessly with great attention to detail. Highly recommend Flashlab Creative to anyone looking for top-notch digital marketing, branding, or creative services.",
+          name: "Priyanka Halarnkar",
+          role: "Google Review",
+          initial: "P",
+          color: "#dc2626"
+        },
+        {
+          stars: 5,
+          text: "Best place to grow your business and help it reach the maximum audience. Professional people, professional work.",
+          name: "Chirag Sawant",
+          role: "Google Review",
+          initial: "C",
+          color: "#7c3aed"
+        },
+        {
+          stars: 5,
+          text: "Being part of Flashlab Creatives has been a really good experience. The team is collaborative with a strong focus on delivering quality work. The workflow is smooth and the environment makes it comfortable to stay consistent and deliver your best.",
+          name: "Herlyn Kim Rebello",
+          role: "Google Review",
+          initial: "H",
+          color: "#0891b2"
+        },
+        {
+          stars: 5,
+          text: "I worked at Flashlab Creative as a Visual & UI Designer for one year, and it was an incredible learning experience in a highly collaborative and fun environment. If you're looking for a top-notch marketing and branding agency, I highly recommend them. A talented team, best at what they do, professional, reliable and a pleasure to work with.",
+          name: "Shrishti Poi Anglo",
+          role: "Google Review",
+          initial: "S",
+          color: "#15803d"
+        },
+        {
+          stars: 5,
+          text: "Working at Flashlab Creative has truly been a great experience. The work culture is smooth, well structured, and very collaborative. The team is supportive, friendly, and always ready to help. It is always a great opportunity to work here with Anuraj, whose guidance and leadership make a real difference.",
+          name: "Arya Lotlikar",
+          role: "Google Review",
+          initial: "A",
+          color: "#b45309"
+        },
+        {
+          stars: 5,
+          text: "Working here has been a very good experience. The team is professional, respectful, and supportive. The environment encourages learning and growth. Glad to be a part of Team Flashlab.",
+          name: "Rajat Desai",
+          role: "Google Review",
+          initial: "R",
+          color: "#be185d"
+        }
       ];
 
       const track = document.getElementById('testiCarouselTrack');
@@ -3357,7 +3557,6 @@ if (revTrack) {
       const nextBtn = document.getElementById('testiNext');
       if (!track || !dotsEl) return;
 
-      // Build cards
       TESTIMONIALS.forEach(t => {
         const card = document.createElement('div');
         card.className = 'testi-card';
@@ -3376,7 +3575,6 @@ if (revTrack) {
         track.appendChild(card);
       });
 
-      // Build dots
       TESTIMONIALS.forEach((_, i) => {
         const dot = document.createElement('button');
         dot.className = 'testi-nav-dot' + (i === 0 ? ' active' : '');
@@ -3385,7 +3583,6 @@ if (revTrack) {
         dotsEl.appendChild(dot);
       });
 
-      // Calculate card step: card width + gap
       const CARD_W = 280;
       const GAP = 20;
       const STEP = CARD_W + GAP;
@@ -3393,24 +3590,13 @@ if (revTrack) {
       let autoTimer = null;
 
       function goTo(idx) {
-
-        // LOOPING LOGIC
-        if (idx < 0) {
-          idx = TESTIMONIALS.length - 1;
-        }
-
-        if (idx >= TESTIMONIALS.length) {
-          idx = 0;
-        }
-
+        if (idx < 0) idx = TESTIMONIALS.length - 1;
+        if (idx >= TESTIMONIALS.length) idx = 0;
         current = idx;
-
         track.style.transform = `translateX(-${current * STEP}px)`;
-
         dotsEl.querySelectorAll('.testi-nav-dot').forEach((d, i) => {
           d.classList.toggle('active', i === current);
         });
-
       }
 
       function startAuto() {
@@ -3425,14 +3611,12 @@ if (revTrack) {
       prevBtn.addEventListener('click', () => { stopAuto(); goTo(current - 1); startAuto(); });
       nextBtn.addEventListener('click', () => { stopAuto(); goTo(current + 1); startAuto(); });
 
-      // Pause on hover
       const outer = document.querySelector('.testi-carousel-outer');
       if (outer) {
         outer.addEventListener('mouseenter', stopAuto);
         outer.addEventListener('mouseleave', startAuto);
       }
 
-      // Touch swipe support
       let touchStartX = 0;
       track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; stopAuto(); }, { passive: true });
       track.addEventListener('touchend', e => {
@@ -3475,7 +3659,6 @@ if (revTrack) {
       document.addEventListener('keydown', e => { if (e.key === 'Escape' && panel.classList.contains('active')) { panel.classList.remove('active'); document.body.style.overflow = ''; } });
     })();
 
-    
   </script>
 </body>
 
