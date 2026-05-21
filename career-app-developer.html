@@ -4,380 +4,306 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- ============================================================
-  PAGE-SPECIFIC META — change these for every page
-  ============================================================ -->
-<title>Page Title — FlashLab Creative</title>
-<meta name="description" content="Page description here.">
-<!-- ============================================================ -->
+<title>Join as App Developer — FlashLab Creative</title>
+<meta name="description" content="Flashlab is on a hunt for creative, skilled & enthusiastic app developers and professional minds willing to build & grow mobile and cross-platform applications.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="flash.css">
 
 <style>
 /* ============================================================
-   1. DESIGN TOKENS — shared across all pages
+   PAGE-SPECIFIC STYLES
    ============================================================ */
-:root {
-  --accent:  #a8e832;
-  --accent2: #f97316;
-  --accent3: #dc2626;
-  --font-head:   'Bebas Neue', sans-serif;
-  --font-body:   'Outfit', sans-serif;
-  --font-italic: 'Playfair Display', serif;
-  --radius:    16px;
-  --radius-lg: 28px;
-}
-[data-theme="dark"] {
-  --bg:          #0a0a0f;
-  --bg2:         #0f0f18;
-  --card:        #13131f;
-  --card2:       #1a1a2e;
-  --text:        #f0eee8;
-  --text-strong: #fff;
-  --muted:       #888;
-  --muted2:      #555;
-  --border:      rgba(255,255,255,0.07);
-  --shadow:      rgba(0,0,0,0.4);
-}
-[data-theme="light"] {
-  --bg:          #f7f5f0;
-  --bg2:         #fff;
-  --card:        #fff;
-  --card2:       #f0ede8;
-  --text:        #1a1218;
-  --text-strong: #0a0a0f;
-  --muted:       #6b6473;
-  --muted2:      #a89fb0;
-  --border:      rgba(0,0,0,0.09);
-  --shadow:      rgba(0,0,0,0.12);
-}
 
-/* ============================================================
-   2. RESET & BASE
-   ============================================================ */
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior: smooth; }
-body {
-  background:   var(--bg);
-  color:        var(--text);
-  font-family:  var(--font-body);
-  line-height:  1.65;
-  overflow-x:   hidden;
-  cursor:       none;
-  transition:   background .4s, color .4s;
+/* BREADCRUMB */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .78rem;
+  color: var(--muted);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
-a   { text-decoration: none; color: inherit; }
-ul  { list-style: none; }
-img { max-width: 100%; display: block; }
+.breadcrumb a { color: var(--accent); transition: opacity .2s; }
+.breadcrumb a:hover { opacity: .7; }
+.breadcrumb i { font-size: .7rem; color: var(--muted2); }
 
-/* ============================================================
-   3. LAYOUT HELPERS — reuse on every page
-   ============================================================ */
-.wrap    { width: min(1200px, 92%); margin: auto; }
-.section { padding: 100px 0; }
-
-/* ============================================================
-   4. CURSOR
-   ============================================================ */
-.cursor {
-  width:        10px;
-  height:       10px;
-  background:   var(--text);
+/* HERO */
+.career-hero {
+  padding: 280px 5% 120px;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+.career-hero::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(168,232,50,0.08) 0%, transparent 70%);
   border-radius: 50%;
-  position:     fixed;
-  pointer-events: none;
-  z-index:      9999;
-  transform:    translate(-50%, -50%);
-  transition:   transform .1s, background .2s;
-}
-
-/* ============================================================
-   5. LOGO BAR
-   ============================================================ */
-.site-logo-bar {
-  position:   fixed;
-  top: 0; left: 0; right: 0;
-  z-index:    1002;
-  display:    flex;
-  align-items: center;
-  justify-content: center;
-  height:     130px;
-  transition: background .3s;
-}
-[data-theme="dark"]  .site-logo-bar { background: #0a0a0f; }
-[data-theme="light"] .site-logo-bar { background: #fff; }
-.site-logo-bar img {
-  height:     105px;
-  width:      auto;
-  object-fit: contain;
-  transition: filter .3s;
-}
-[data-theme="dark"] .site-logo-bar img { filter: invert(1) brightness(1.1); }
-
-/* ============================================================
-   6. NAVBAR
-   ============================================================ */
-.navbar {
-  position:   fixed;
-  top:        130px; /* = logo-bar height */
-  left: 0; right: 0;
-  z-index:    1001;
-  padding:    18px 5%;
-  background: #a8e832 !important;
-  box-shadow: 0 2px 10px rgba(0,0,0,.12);
-  display:    flex;
-  align-items: center;
-  justify-content: center;
-}
-.navbar.scrolled { box-shadow: 0 4px 18px rgba(0,0,0,.2); }
-
-.nav-wrap {
-  width:      100%;
-  max-width:  1200px;
-  display:    flex;
-  align-items: center;
-  justify-content: center;
-  position:   relative;
-}
-
-/* Nav links */
-.nav-links {
-  flex: 1;
-  display:    flex;
-  align-items: center;
-  gap:        28px;
-  font-size:  .92rem;
-  font-weight: 600;
-  letter-spacing: .6px;
-  white-space: nowrap;
-  justify-content: center;
-  text-transform: uppercase;
-  list-style: none;
-  margin: 0; padding: 0;
-}
-.nav-links > li { position: relative; overflow: visible; }
-.nav-links > li > a { color: #0a0a0f !important; text-decoration: none; display: inline-block; transition: opacity .2s; }
-.nav-links > li > a:hover { opacity: .65; }
-.nav-links > li > a::after { content:''; position:absolute; left:0; bottom:-4px; width:0; height:2px; background:#0a0a0f; transition:width .3s; }
-.nav-links > li > a:hover::after { width: 100%; }
-
-/* Dropdowns */
-.nav-links ul {
-  display:    none;
-  position:   absolute;
-  top:        calc(100% + 14px);
-  left:       50%;
-  transform:  translateX(-50%);
-  background: #0a0a0f;
-  list-style: none;
-  padding:    8px 0;
-  min-width:  220px;
-  border-radius: 8px;
-  border:     1px solid rgba(168,232,50,.2);
-  box-shadow: 0 16px 48px rgba(0,0,0,.6);
-  z-index:    99999;
-}
-.nav-links ul::before {
-  content:'';
-  position:  absolute;
-  top:       -6px; left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  width: 12px; height: 12px;
-  background: #0a0a0f;
-  border-left: 1px solid rgba(168,232,50,.2);
-  border-top:  1px solid rgba(168,232,50,.2);
-}
-.nav-links li:hover > ul { display: block; }
-.nav-links ul li a { display:block; padding:10px 20px; color:#e8e8e8 !important; font-size:13px; font-weight:500; text-transform:none !important; letter-spacing:0 !important; white-space:nowrap; transition:background .2s,color .2s,padding-left .2s; }
-.nav-links ul li a:hover { background:rgba(168,232,50,.08); color:#a8e832 !important; padding-left:26px; }
-.nav-links ul li a::after { display:none !important; }
-
-/* Controls (theme toggle, CTA, hamburger) */
-.nav-controls { position:absolute; right:0; display:flex; align-items:center; gap:10px; }
-.theme-toggle { width:42px; height:42px; border-radius:50%; border:none; background:rgba(0,0,0,.1) !important; color:#0a0a0f !important; font-size:1.05rem; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all .3s; }
-.theme-toggle:hover { background:rgba(0,0,0,.2) !important; }
-.nav-cta { display:flex; align-items:center; gap:8px; background:#0a0a0f !important; color:#a8e832 !important; padding:10px 20px; border-radius:999px; font-size:.86rem; font-weight:700; white-space:nowrap; transition:all .3s; }
-.nav-cta:hover { background:#1a1a2a !important; transform:translateY(-1px); }
-.hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; }
-.hamburger span { display:block; width:24px; height:2px; background:#0a0a0f; border-radius:999px; transition:.3s; }
-.hamburger.open span:nth-child(1) { transform:translateY(7px)  rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
-.hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
-
-/* ============================================================
-   7. MOBILE MENU
-   ============================================================ */
-.mob-overlay { position:fixed; inset:0; background:rgba(0,0,0,.7); z-index:1001; display:none; backdrop-filter:blur(4px); }
-.mob-overlay.active { display:block; }
-.mob-menu { position:fixed; top:0; right:-100%; width:280px; height:100%; background:var(--bg2); border-left:1px solid var(--border); z-index:1002; padding:70px 30px 40px; display:flex; flex-direction:column; gap:6px; transition:right .4s cubic-bezier(.22,1,.36,1); }
-.mob-menu.active { right:0; }
-.mob-close { position:absolute; top:20px; right:20px; background:none; border:none; color:var(--muted); font-size:1.4rem; cursor:pointer; }
-.mob-links { display:flex; flex-direction:column; gap:0; }
-.mob-links li a { display:block; padding:13px 0; font-size:1.05rem; font-weight:500; color:var(--text); border-bottom:1px solid var(--border); transition:color .3s,padding-left .3s; }
-.mob-links li a:hover { color:var(--accent); padding-left:8px; }
-.mob-cta { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#0a0a0f !important; padding:12px 24px; border-radius:999px; font-weight:600; font-size:.9rem; margin-top:16px; }
-
-/* ============================================================
-   8. SHARED TYPOGRAPHY HELPERS — use freely on any page
-   ============================================================ */
-.sec-eyebrow  { font-size:.78rem; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:14px; display:block; }
-.sec-heading  { font-family:var(--font-head); font-size:clamp(2.8rem,5vw,4.5rem); line-height:1.05; letter-spacing:1px; margin-bottom:18px; color:var(--text); }
-.sec-heading em { font-family:var(--font-italic); font-style:italic; color:var(--text); font-size:.9em; }
-.sec-sub      { color:var(--muted); font-size:1rem; max-width:560px; line-height:1.8; }
-.sec-header.centered { text-align:center; margin-bottom:60px; }
-.sec-header.centered .sec-sub { margin:0 auto; }
-
-/* ============================================================
-   9. SHARED BUTTON HELPERS
-   ============================================================ */
-.btn-primary { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#0a0a0f; padding:14px 30px; border-radius:999px; font-weight:700; font-size:.9rem; transition:all .3s; }
-.btn-primary:hover { background:#bef54a; transform:translateY(-2px); box-shadow:0 8px 30px rgba(168,232,50,.35); }
-.btn-ghost   { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); color:var(--muted); padding:14px 30px; border-radius:999px; font-weight:500; font-size:.9rem; transition:all .3s; }
-.btn-ghost:hover { border-color:var(--muted); color:var(--text); }
-
-/* ============================================================
-   10. SCROLL REVEAL HELPERS
-   ============================================================ */
-.reveal       { opacity:0; transform:translateY(40px);  transition:opacity .8s,transform .8s; transition-delay:var(--delay,0s); }
-.reveal-left  { opacity:0; transform:translateX(-40px); transition:opacity .8s,transform .8s; }
-.reveal-right { opacity:0; transform:translateX(40px);  transition:opacity .8s,transform .8s; }
-.reveal.active, .reveal-left.active, .reveal-right.active { opacity:1; transform:translate(0); }
-
-/* ============================================================
-   11. FOOTER
-   ============================================================ */
-.footer        { background: #11222a !important; }
-.footer-bottom {
-  background:   #0c1a20 !important;
-  border-top:   1px solid rgba(255,255,255,.07) !important;
-  padding:      18px 40px;
-  display:      flex;
-  align-items:  center;
-  justify-content: center;
-}
-.footer-bottom p,
-.footer-bottom p a    { color:rgba(255,255,255,.55) !important; font-size:.82rem; }
-.footer-bottom p a.cyber-link { color:var(--accent) !important; font-weight:600; }
-
-.footer-grid {
-  display:               grid;
-  grid-template-columns: 1.6fr .75fr .85fr .75fr .85fr 1.15fr;
-  gap:        28px;
-  padding:    64px 0 48px;
-}
-.footer-brand p   { font-size:.82rem; color:rgba(255,255,255,.5); line-height:1.65; margin:16px 0 20px; }
-.footer-logo img  { height:70px; }
-.footer-socials   { display:flex; gap:10px; flex-wrap:wrap; }
-.footer-socials a { width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,.12); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.55); font-size:.95rem; transition:color .2s,border-color .2s,background .2s; }
-.footer-socials a:hover { color:#0a0a0f; background:var(--accent); border-color:var(--accent); }
-.footer-head  { font-size:.72rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:rgba(255,255,255,.35); margin-bottom:16px; }
-.footer-list  { display:flex; flex-direction:column; gap:6px; }
-.footer-list a { font-size:.82rem; color:rgba(255,255,255,.58); display:flex; align-items:center; gap:5px; transition:color .2s; }
-.footer-list a:hover { color:var(--accent); }
-.footer-list a i { color:var(--accent); font-size:1rem; flex-shrink:0; }
-.footer-contact   { display:flex; flex-direction:column; gap:10px; }
-.footer-contact p { display:flex; align-items:flex-start; gap:8px; font-size:.82rem; color:rgba(255,255,255,.55); line-height:1.55; }
-.footer-contact p i { color:var(--accent); font-size:1rem; flex-shrink:0; margin-top:2px; }
-.footer-contact a { color:rgba(255,255,255,.55); }
-.footer-contact a:hover { color:var(--accent); }
-.footer-cta { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#0a0a0f; font-size:.82rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:11px 20px; border-radius:4px; margin-top:10px; transition:opacity .2s; }
-.footer-cta:hover { opacity:.88; }
-
-/* ============================================================
-   12. BACK-TO-TOP BUTTON
-   ============================================================ */
-.back-top {
-  position:   fixed;
-  bottom:     30px; right: 30px;
-  z-index:    9999;
-  width:  46px; height: 46px;
-  border-radius: 50%;
-  background: var(--accent) !important;
-  color:      #0a0a0f !important;
-  border:     none;
-  cursor:     pointer;
-  display:    flex;
-  align-items: center;
-  justify-content: center;
-  font-size:  1.2rem;
-  box-shadow: 0 4px 16px rgba(168,232,50,.35);
-  opacity:    0;
-  visibility: hidden;
-  transform:  translateY(12px);
-  transition: opacity .3s, visibility .3s, transform .3s;
   pointer-events: none;
 }
-.back-top.active  { opacity:1 !important; visibility:visible !important; transform:translateY(0) !important; pointer-events:all !important; }
-.back-top:hover   { background:#bef54a !important; transform:translateY(-3px) !important; }
+.career-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px; left: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(249,115,22,0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.hero-tag { display:inline-flex; align-items:center; gap:8px; background:rgba(168,232,50,.1); border:1px solid rgba(168,232,50,.25); padding:6px 16px; border-radius:999px; font-size:.78rem; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--accent); margin-bottom:24px; }
+.hero-h1 { font-family:var(--font-head); font-size:clamp(3.5rem,6vw,6rem); line-height:1; letter-spacing:2px; color:var(--text-strong); margin-bottom:24px; }
+.hero-h1 span { color: var(--accent); display:block; }
+.hero-desc { color:var(--muted); font-size:1.05rem; line-height:1.8; max-width:460px; margin-bottom:40px; }
+.hero-actions { display:flex; gap:14px; flex-wrap:wrap; }
+
+/* Code card (right side of hero) */
+.hero-code-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.code-topbar {
+  background: var(--card2);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.dot { width:10px; height:10px; border-radius:50%; }
+.dot-r { background:#ff5f57; }
+.dot-y { background:#febc2e; }
+.dot-g { background:#28c840; }
+.code-body {
+  padding: 24px;
+  font-family: 'Courier New', monospace;
+  font-size: .82rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.code-kw { color: #c792ea; }
+.code-fn { color: #82aaff; }
+.code-str { color: var(--accent); }
+.code-cm { color: #546e7a; font-style: italic; }
+
+/* PERKS / SCOPE SECTION */
+.perks-section { padding:100px 0; background:var(--bg2); }
+.perks-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:20px; overflow:hidden; margin-top:60px; }
+.perk-card { background:var(--card); padding:40px 32px; transition:background .3s; }
+.perk-card:hover { background:var(--card2); }
+.perk-icon { width:52px; height:52px; background:rgba(168,232,50,.1); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:20px; font-size:1.4rem; color:var(--accent); }
+.perk-title { font-family:var(--font-head); font-size:1.5rem; letter-spacing:1px; color:var(--text-strong); margin-bottom:10px; }
+.perk-desc { font-size:.88rem; color:var(--muted); line-height:1.7; }
+.eligibility-list { display:flex; flex-direction:column; gap:10px; margin-top:8px; }
+.eligibility-item { display:flex; align-items:flex-start; gap:10px; font-size:.88rem; color:var(--muted); }
+.eligibility-item i { color:var(--accent); font-size:1rem; flex-shrink:0; margin-top:2px; }
+.salary-note { display:flex; align-items:center; gap:12px; background:rgba(168,232,50,.07); border:1px solid rgba(168,232,50,.2); border-radius:12px; padding:16px 20px; margin-top:12px; }
+.salary-note i { color:var(--accent); font-size:1.3rem; flex-shrink:0; }
+.salary-note p { color:var(--muted); font-size:.88rem; line-height:1.6; }
+
+/* MARQUEE */
+.marquee-section { padding:0; background:var(--accent); overflow:hidden; }
+.fl-marquee { overflow:hidden; width:100%; padding:0; }
+.fl-track { display:inline-flex; gap:0; animation:fl-scroll 28s linear infinite; white-space:nowrap; }
+.fl-track:hover { animation-play-state:paused; }
+.fl-track span { font-family:var(--font-head); font-weight:400; font-size:1.6rem; letter-spacing:3px; text-transform:uppercase; color:#0a0a0f; padding:22px 28px; }
+.fl-track span.dot-sep { font-size:10px; opacity:.4; padding:0 8px; }
+@keyframes fl-scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+
+/* PROCESS / WHAT YOU'LL DO */
+.process-section { padding:100px 0; background:var(--bg); }
+.process-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; margin-top:60px; }
+.process-step { background:var(--card); padding:40px 28px; transition:background .3s; }
+.process-step:hover { background:var(--card2); }
+.step-num-big { font-family:var(--font-head); font-size:4rem; color:rgba(168,232,50,.15); line-height:1; margin-bottom:16px; }
+.step-icon { width:48px; height:48px; background:rgba(168,232,50,.1); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; font-size:1.3rem; color:var(--accent); }
+.step-title { font-family:var(--font-head); font-size:1.5rem; letter-spacing:1px; color:var(--text-strong); margin-bottom:10px; }
+.step-desc { font-size:.88rem; color:var(--muted); line-height:1.7; }
+
+/* INFO STRIP */
+.info-strip { padding:60px 0; background: linear-gradient(135deg, #0f1f14 0%, #0a1a0a 100%); border-top:1px solid rgba(168,232,50,.15); border-bottom:1px solid rgba(168,232,50,.15); }
+.info-strip-inner { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(168,232,50,.1); border-radius:16px; overflow:hidden; max-width:1200px; margin:0 auto; }
+.info-item { background:rgba(10,26,10,.6); padding:36px 28px; text-align:center; }
+.info-num { font-family:var(--font-head); font-size:3rem; letter-spacing:2px; color:var(--accent); margin-bottom:6px; }
+.info-label { font-size:.8rem; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.5); }
+
+/* APPLICATION FORM SECTION */
+.form-section { padding:100px 0; background:var(--bg2); }
+.form-card { background:var(--card); border:1px solid var(--border); border-radius:28px; padding:60px; max-width:860px; margin:0 auto; }
+.form-card-title { font-family:var(--font-head); font-size:2.5rem; letter-spacing:1px; color:var(--text-strong); margin-bottom:8px; }
+.form-card-sub { color:var(--muted); font-size:.92rem; margin-bottom:40px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+.form-field { display:flex; flex-direction:column; gap:6px; }
+.form-field.full { grid-column:1/-1; }
+.form-field label { font-size:.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); }
+.form-field input,
+.form-field select {
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:13px 16px;
+  font-family:var(--font-body);
+  font-size:.92rem;
+  color:var(--text);
+  outline:none;
+  transition:border-color .2s,box-shadow .2s;
+  width:100%;
+}
+.form-field input::placeholder { color:var(--muted2); }
+.form-field input:focus,
+.form-field select:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(168,232,50,.1); }
+.form-field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Cpath stroke='%23888' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  padding-right: 40px;
+  cursor: pointer;
+}
+[data-theme="light"] .form-field input,
+[data-theme="light"] .form-field select { background:#fff; border-color:rgba(0,0,0,.1); }
+.form-submit { width:100%; padding:15px; background:var(--accent); color:#0a0a0f; border:none; border-radius:999px; font-family:var(--font-body); font-weight:700; font-size:1rem; cursor:pointer; margin-top:24px; transition:all .3s; display:flex; align-items:center; justify-content:center; gap:8px; }
+.form-submit:hover { background:#bef54a; transform:translateY(-2px); box-shadow:0 8px 30px rgba(168,232,50,.35); }
+
+/* CTA BAND */
+.cta-band { padding:100px 0; background:var(--bg); }
+.cta-inner { background:linear-gradient(135deg,#0f1f14 0%,#0a1a0a 100%); border:1px solid rgba(168,232,50,.2); border-radius:28px; padding:80px 60px; display:grid; grid-template-columns:1fr auto; gap:60px; align-items:center; }
+.cta-band-title { font-family:var(--font-head); font-size:clamp(2.2rem,4vw,3.5rem); letter-spacing:1px; color:var(--text-strong); margin-bottom:14px; }
+.cta-band-title em { font-family:var(--font-italic); font-style:italic; color:var(--accent); }
+.cta-band-sub { color:var(--muted); font-size:1rem; max-width:500px; line-height:1.7; }
+.cta-band-actions { display:flex; flex-direction:column; gap:12px; align-items:flex-end; }
+
+/* BOTTOM THREE-COL STRIP */
+.bottom-strip { padding:80px 5%; background:var(--bg2); border-top:1px solid var(--border); }
+.strip-grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:40px; }
+.strip-col-title { font-family:var(--font-head); font-size:1.6rem; letter-spacing:1px; color:var(--text-strong); margin-bottom:10px; }
+.strip-col-desc { color:var(--muted); font-size:.88rem; line-height:1.75; margin-bottom:18px; }
+.strip-btn { display:inline-flex; align-items:center; gap:7px; background:var(--accent); color:#0a0a0f; padding:10px 20px; border-radius:999px; font-size:.82rem; font-weight:700; transition:all .3s; }
+.strip-btn:hover { background:#bef54a; transform:translateY(-1px); }
+.strip-btn-ghost { display:inline-flex; align-items:center; gap:7px; border:1px solid var(--border); color:var(--muted); padding:10px 20px; border-radius:999px; font-size:.82rem; font-weight:500; transition:all .3s; }
+.strip-btn-ghost:hover { border-color:var(--muted); color:var(--text); }
+.strip-col-address { color:var(--muted); font-size:.85rem; line-height:1.8; }
 
 /* ============================================================
-   13. RESPONSIVE — shared breakpoints
+   RESPONSIVE
    ============================================================ */
-@media (max-width: 1100px) {
-  .footer-grid { grid-template-columns: repeat(3,1fr); gap:32px; }
+@media (max-width:1100px) { .footer-grid { grid-template-columns:repeat(3,1fr); gap:32px; } }
+@media (max-width:960px) {
+  .site-logo-bar { height:95px; } .site-logo-bar img { height:72px; } .navbar { top:95px !important; }
+  .nav-cta { display:none; } .hamburger { display:flex; }
+  .career-hero { padding:220px 5% 80px; }
+  .hero-inner { grid-template-columns:1fr; gap:50px; }
+  .perks-grid { grid-template-columns:repeat(2,1fr); }
+  .process-steps { grid-template-columns:repeat(2,1fr); }
+  .info-strip-inner { grid-template-columns:repeat(2,1fr); }
+  .cta-inner { grid-template-columns:1fr; }
+  .cta-band-actions { align-items:flex-start; }
+  .strip-grid { grid-template-columns:1fr; }
+  .form-card { padding:40px 28px; }
 }
-@media (max-width: 960px) {
-  .site-logo-bar { height:95px; }
-  .site-logo-bar img { height:72px; }
-  .navbar { top:95px !important; }
-  .nav-cta { display:none; }
-  .hamburger { display:flex; }
-}
-@media (max-width: 640px) {
-  .section { padding:70px 0; }
-  .nav-links { display:none !important; }
-  .hamburger { display:flex; }
+@media (max-width:640px) {
+  .career-hero { padding:180px 5% 60px; }
+  .nav-links { display:none !important; } .hamburger { display:flex; }
+  .perks-grid { grid-template-columns:1fr; }
+  .process-steps { grid-template-columns:1fr; }
+  .form-row { grid-template-columns:1fr; }
+  .info-strip-inner { grid-template-columns:repeat(2,1fr); }
   .footer-grid { grid-template-columns:1fr; gap:24px; }
+  .cta-inner { padding:40px 28px; }
 }
-@media (max-width: 440px) {
-  .footer-grid { grid-template-columns:1fr; }
-}
-
-/* ============================================================
-   ██████╗  █████╗  ██████╗ ███████╗    ███████╗████████╗ █████╗ ██████╗ ████████╗
-   ██╔══██╗██╔══██╗██╔════╝ ██╔════╝    ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝
-   ██████╔╝███████║██║  ███╗█████╗      ███████╗   ██║   ███████║██████╔╝   ██║
-   ██╔═══╝ ██╔══██║██║   ██║██╔══╝      ╚════██║   ██║   ██╔══██║██╔══██╗   ██║
-   ██║     ██║  ██║╚██████╔╝███████╗    ███████║   ██║   ██║  ██║██║  ██║   ██║
-   ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝    ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝
-
-   ADD YOUR PAGE-SPECIFIC CSS BELOW THIS BLOCK
-   ============================================================ */
-
-/* your page styles here */
-
 </style>
 </head>
-<body>
+<body data-page="career-app-developer">
+  <!-- LOGO BAR -->
+  <div class="site-logo-bar">
+    <a href="#">
+      <img src="images/logos/flashlab-logo.png" alt="FlashLab Creative" class="logo-light" id="siteLogoImg">
+      <img src="images/logos/flashlab-logo-dark.png" alt="FlashLab Creative" class="logo-dark" id="siteLogoImg">
+    </a>
+  </div>
 
-<!-- ============================================================
-  CURSOR  (shared — do not remove)
-  ============================================================ -->
-<div class="cursor" id="cursor"></div>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-wrap">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li>
+          <a href="services.html">Services</a>
+          <ul>
+            <li><a href="digital-advertising.html"><i class="ri-megaphone-line"></i>Digital Advertising</a></li>
+            <li><a href="seo-sem-marketing.html"><i class="ri-search-line"></i>SEO / SEM Marketing</a></li>
+            <li><a href="social-media-management.html"><i class="ri-instagram-line"></i>Social Media Management</a></li>
+            <li><a href="product-design-strategies.html"><i class="ri-pen-nib-line"></i>Product Design &amp; Strategies</a></li>
+            <li><a href="web-app-development.html"><i class="ri-code-s-slash-line"></i>Web &amp; App Development</a></li>
+            <li><a href="outdoor-print-ads.html"><i class="ri-image-line"></i>Outdoor &amp; Print Ads</a></li>
+            <li><a href="ecommerce.html"><i class="ri-shopping-cart-line"></i>E-Commerce</a></li>
+          </ul>
+        </li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li>
+          <a href="case-studies.html">Case Studies</a>
+          <ul>
+            <li><a href="story-1.html"><i class="ri-article-line"></i>Story 1</a></li>
+            <li><a href="story-2.html"><i class="ri-article-line"></i>Story 2</a></li>
+            <li><a href="story-3.html"><i class="ri-article-line"></i>Story 3</a></li>
+            <li><a href="story-4.html"><i class="ri-article-line"></i>Story 4</a></li>
+            <li><a href="story-5.html"><i class="ri-article-line"></i>Story 5</a></li>
+            <li><a href="story-6.html"><i class="ri-article-line"></i>Story 6</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="career.html">Career</a>
+          <ul>
+            <li><a href="career-intern.html"><i class="ri-user-add-line"></i>Intern</a></li>
+            <li><a href="career-seo-expert.html"><i class="ri-search-eye-line"></i>SEO Expert</a></li>
+            <li><a href="career-social-media-manager.html"><i class="ri-share-circle-line"></i>Social Media Manager</a></li>
+            <li><a href="career-graphic-designer.html"><i class="ri-brush-line"></i>Graphic Designer</a></li>
+            <li><a href="career-web-developer.html"><i class="ri-code-box-line"></i>Web Developer</a></li>
+            <li><a href="career-animation-designer.html"><i class="ri-video-line"></i>Animation Designer</a></li>
+            <li><a href="career-app-developer.html"><i class="ri-smartphone-line"></i>App Developer</a></li>
+          </ul>
+        </li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+      <div class="nav-controls">
+        <a href="connect.html" class="nav-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="ri-sun-line" id="themeIcon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
 
-<!-- ============================================================
-  LOGO BAR  (shared — do not remove)
-  ============================================================ -->
-<div class="site-logo-bar">
-  <a href="index.html">
-    <img src="images/logos/flashlab-logo.png" alt="FlashLab Creative" id="siteLogoImg">
-  </a>
-</div>
-
-<!-- ============================================================
-  NAVBAR  (shared — do not remove)
-  ============================================================ -->
-<nav class="navbar" id="navbar">
-  <div class="nav-wrap">
-    <ul class="nav-links">
+  <!-- MOBILE MENU -->
+  <div class="mob-overlay" id="mobOverlay"></div>
+  <div class="mob-menu" id="mobMenu" aria-hidden="true">
+    <button class="mob-close" id="mobClose" aria-label="Close menu">
+      <i class="ri-close-line"></i>
+    </button>
+    <ul class="mob-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="team.html">Team</a></li>
       <li>
-        <a href="services.html">Services</a>
-        <ul>
+        <button class="mob-parent-btn" data-target="mob-sub-services">
+          Services <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-services">
           <li><a href="digital-advertising.html">Digital Advertising</a></li>
           <li><a href="seo-sem-marketing.html">SEO / SEM Marketing</a></li>
           <li><a href="social-media-management.html">Social Media Management</a></li>
@@ -387,22 +313,26 @@ img { max-width: 100%; display: block; }
           <li><a href="ecommerce.html">E-Commerce</a></li>
         </ul>
       </li>
+      <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="clients.html">Clients</a></li>
       <li>
-        <a href="case-studies.html">Case Studies</a>
-        <ul>
-         <li><a href="story-1.html">Story 1</a></li>
-            <li><a href="story-2.html">story 2</a></li>
-            <li><a href="story-3.html">Story 3</a></li>
-            <li><a href="story-4.html">Story 4</a></li>
-            <li><a href="story-5.html">story 5</a></li>
-            <li><a href="story-6.html">Story 6</a></li>
+        <button class="mob-parent-btn" data-target="mob-sub-case">
+          Case Studies <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-case">
+          <li><a href="story-1.html">Story 1</a></li>
+          <li><a href="story-2.html">Story 2</a></li>
+          <li><a href="story-3.html">Story 3</a></li>
+          <li><a href="story-4.html">Story 4</a></li>
+          <li><a href="story-5.html">Story 5</a></li>
+          <li><a href="story-6.html">Story 6</a></li>
         </ul>
       </li>
-      <li><a href="team.html">Team</a></li>
       <li>
-        <a href="career.html">Career</a>
-        <ul>
+        <button class="mob-parent-btn" data-target="mob-sub-career">
+          Career <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-career">
           <li><a href="career-intern.html">Intern</a></li>
           <li><a href="career-seo-expert.html">SEO Expert</a></li>
           <li><a href="career-social-media-manager.html">Social Media Manager</a></li>
@@ -414,273 +344,384 @@ img { max-width: 100%; display: block; }
       </li>
       <li><a href="connect.html">Connect</a></li>
     </ul>
-    <div class="nav-controls">
-      <button class="theme-toggle" id="themeToggle">
-        <i class="ri-sun-line" id="themeIcon"></i>
-      </button>
-      <a href="connect.html" class="nav-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
-      <button class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </button>
+    <div class="mob-cta-wrap">
+      <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
     </div>
   </div>
-</nav>
 
-<!-- ============================================================
-  MOBILE MENU  (shared — do not remove)
-  ============================================================ -->
-<div class="mob-overlay" id="mobOverlay"></div>
-<div class="mob-menu" id="mobMenu">
-  <button class="mob-close" id="mobClose"><i class="ri-close-line"></i></button>
-  <ul class="mob-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="clients.html">Clients</a></li>
-    <li><a href="team.html">Team</a></li>
-    <li><a href="career.html">Career</a></li>
-    <li><a href="connect.html">Connect</a></li>
-  </ul>
-  <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
-</div>
-
-
-<!-- ============================================================
-  ████████╗ ██████╗ ██████╗      ██████╗ ███████╗
-  ╚══██╔══╝██╔═══██╗██╔══██╗    ██╔═══██╗██╔════╝
-     ██║   ██║   ██║██████╔╝    ██║   ██║█████╗
-     ██║   ██║   ██║██╔═══╝     ██║   ██║██╔══╝
-     ██║   ╚██████╔╝██║         ╚██████╔╝██║
-     ╚═╝    ╚═════╝ ╚═╝          ╚═════╝ ╚═╝
-
-  Everything between this comment and the FOOTER comment
-  is YOUR page-specific content. Delete this placeholder
-  and add your sections here.
-
-  TIPS:
-  • Use class="section" on <section> tags for consistent vertical padding
-  • Use class="wrap" on inner divs to stay within the 1200px max-width
-  • Use .reveal / .reveal-left / .reveal-right on any element for scroll animations
-  • Use .sec-eyebrow, .sec-heading, .sec-sub, .sec-header for consistent typography
-  • Use .btn-primary / .btn-ghost for consistent buttons
-  • Navbar + logo-bar occupy 260px on desktop — use padding-top:260px on your first section
-  ============================================================ -->
 
 <main>
 
-  <!-- EXAMPLE: hero / first section -->
-  <!-- Adjust padding-top to clear the fixed logo-bar + navbar (260px desktop, 210px tablet) -->
-  <section style="padding: 260px 5% 100px; min-height: 100vh; background: var(--bg);">
+  <!-- ① HERO -->
+  <section class="career-hero">
     <div class="wrap">
-      <div class="reveal">
-        <span class="sec-eyebrow">● Page Eyebrow</span>
-        <h1 class="sec-heading">Your Page<br><em>Heading Here.</em></h1>
-        <p class="sec-sub">Supporting description text goes here. Keep it concise.</p>
-        <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:32px;">
-          <a href="connect.html" class="btn-primary">Call to Action <i class="ri-arrow-right-line"></i></a>
-          <a href="#" class="btn-ghost">Secondary Action</a>
+      <div class="hero-inner">
+        <div class="reveal">
+          <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <i class="ri-arrow-right-s-line"></i>
+            <a href="career.html">Career</a>
+            <i class="ri-arrow-right-s-line"></i>
+            <span>App Developer</span>
+          </div>
+          <div class="hero-tag"><i class="ri-smartphone-line"></i> Career Opportunity</div>
+          <h1 class="hero-h1">App<br><span>Developer</span></h1>
+          <p class="hero-desc">Flashlab is on a hunt for creative, skilled &amp; enthusiastic app developers and professional minds willing to build &amp; grow mobile and cross-platform applications.</p>
+          <div class="hero-actions">
+            <a href="#apply" class="btn-primary">Apply Now <i class="ri-arrow-down-line"></i></a>
+            <a href="#overview" class="btn-ghost">View Details <i class="ri-arrow-right-line"></i></a>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div class="hero-code-card">
+            <div class="code-topbar">
+              <span class="dot dot-r"></span>
+              <span class="dot dot-y"></span>
+              <span class="dot dot-g"></span>
+            </div>
+            <div class="code-body">
+              <span class="code-cm">// flashlab — app developer</span><br>
+              <span class="code-kw">const</span> <span class="code-fn">appDev</span> = {<br>
+              &nbsp;&nbsp;<span class="code-str">"android"</span>: <span class="code-str">"skilled"</span>,<br>
+              &nbsp;&nbsp;<span class="code-str">"ios"</span>: <span class="code-str">"confident"</span>,<br>
+              &nbsp;&nbsp;<span class="code-str">"flutter"</span>: <span class="code-str">"exploring"</span>,<br>
+              &nbsp;&nbsp;<span class="code-str">"ui_ux"</span>: <span class="code-str">"creative"</span>,<br>
+              &nbsp;&nbsp;<span class="code-str">"attitude"</span>: <span class="code-str">"100% willing"</span><br>
+              };<br><br>
+              <span class="code-kw">if</span> (<span class="code-fn">appDev</span>.attitude === <span class="code-str">"100% willing"</span>) {<br>
+              &nbsp;&nbsp;<span class="code-fn">flashlab</span>.<span class="code-fn">hire</span>(<span class="code-fn">appDev</span>);<br>
+              }
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ADD MORE SECTIONS HERE -->
+  <!-- ② SCOPE / ELIGIBILITY / SALARY -->
+  <section class="perks-section" id="overview">
+    <div class="wrap">
+      <div class="sec-header centered reveal">
+        <span class="sec-eyebrow">● What We're Looking For</span>
+        <h2 class="sec-heading">Role <em>Overview</em></h2>
+      </div>
+      <div class="perks-grid">
+
+        <div class="perk-card reveal">
+          <div class="perk-icon"><i class="ri-eye-line"></i></div>
+          <div class="perk-title">Scope of Work</div>
+          <div class="perk-desc">Having any basic or skilled knowledge of Android, iOS, Flutter, React Native, or any other mobile / cross-platform development framework. We welcome both interns and experienced developers ready to grow.</div>
+        </div>
+
+        <div class="perk-card reveal" style="--delay:.15s">
+          <div class="perk-icon"><i class="ri-checkbox-circle-line"></i></div>
+          <div class="perk-title">Eligibility</div>
+          <div class="perk-desc">
+            <div class="eligibility-list">
+              <div class="eligibility-item"><i class="ri-check-line"></i><span>Willing to learn 100%</span></div>
+              <div class="eligibility-item"><i class="ri-check-line"></i><span>Should be dedicated</span></div>
+              <div class="eligibility-item"><i class="ri-check-line"></i><span>Enthusiastic</span></div>
+              <div class="eligibility-item"><i class="ri-check-line"></i><span>Intentions of working long term and growing</span></div>
+              <div class="eligibility-item"><i class="ri-check-line"></i><span>Familiarity with Android / iOS or any cross-platform framework</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="perk-card reveal" style="--delay:.3s">
+          <div class="perk-icon"><i class="ri-money-dollar-circle-line"></i></div>
+          <div class="perk-title">Salary Range</div>
+          <div class="perk-desc">
+            <div class="salary-note">
+              <i class="ri-information-line"></i>
+              <p>Adhering to Skillset, Creativeness, Mindset and Experience. Salary depends on nature of client &amp; job.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ③ MARQUEE -->
+  <div class="marquee-section">
+    <div class="fl-marquee">
+      <div class="fl-track">
+        <span>Android</span><span class="dot-sep">●</span>
+        <span>iOS</span><span class="dot-sep">●</span>
+        <span>Flutter</span><span class="dot-sep">●</span>
+        <span>React Native</span><span class="dot-sep">●</span>
+        <span>Kotlin</span><span class="dot-sep">●</span>
+        <span>Swift</span><span class="dot-sep">●</span>
+        <span>UI / UX</span><span class="dot-sep">●</span>
+        <span>Firebase</span><span class="dot-sep">●</span>
+        <!-- duplicate for seamless loop -->
+        <span>Android</span><span class="dot-sep">●</span>
+        <span>iOS</span><span class="dot-sep">●</span>
+        <span>Flutter</span><span class="dot-sep">●</span>
+        <span>React Native</span><span class="dot-sep">●</span>
+        <span>Kotlin</span><span class="dot-sep">●</span>
+        <span>Swift</span><span class="dot-sep">●</span>
+        <span>UI / UX</span><span class="dot-sep">●</span>
+        <span>Firebase</span><span class="dot-sep">●</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ④ APPLICATION PROCESS — 4 steps -->
+  <section class="process-section">
+    <div class="wrap">
+      <div class="sec-header centered reveal">
+        <span class="sec-eyebrow">● How It Works</span>
+        <h2 class="sec-heading">Application <em>Process</em></h2>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <div class="step-num-big">01</div>
+          <div class="step-icon"><i class="ri-file-text-line"></i></div>
+          <div class="step-title">Fill the Form</div>
+          <div class="step-desc">Share your details and portfolio link using the application form below.</div>
+        </div>
+        <div class="process-step reveal" style="--delay:.1s">
+          <div class="step-num-big">02</div>
+          <div class="step-icon"><i class="ri-search-eye-line"></i></div>
+          <div class="step-title">We Review</div>
+          <div class="step-desc">Our team reviews your application and evaluates your skillset and mindset.</div>
+        </div>
+        <div class="process-step reveal" style="--delay:.2s">
+          <div class="step-num-big">03</div>
+          <div class="step-icon"><i class="ri-chat-smile-2-line"></i></div>
+          <div class="step-title">Get in Touch</div>
+          <div class="step-desc">We reach out if your profile is a fit to schedule a conversation.</div>
+        </div>
+        <div class="process-step reveal" style="--delay:.3s">
+          <div class="step-num-big">04</div>
+          <div class="step-icon"><i class="ri-rocket-line"></i></div>
+          <div class="step-title">Join Flashlab</div>
+          <div class="step-desc">Welcome aboard — you grow, we grow, together we build great things.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑤ INFO STRIP -->
+  <div class="info-strip">
+    <div class="info-strip-inner">
+      <div class="info-item">
+        <div class="info-num">MOB</div>
+        <div class="info-label">Core Skill Required</div>
+      </div>
+      <div class="info-item">
+        <div class="info-num">X-P</div>
+        <div class="info-label">Cross-Platform Confidence</div>
+      </div>
+      <div class="info-item">
+        <div class="info-num">100%</div>
+        <div class="info-label">Willingness to Learn</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑥ APPLICATION FORM -->
+  <section class="form-section" id="apply">
+    <div class="wrap">
+      <div class="sec-header centered reveal">
+        <span class="sec-eyebrow">● Apply Now</span>
+        <h2 class="sec-heading">Ready to <em>Join Us?</em></h2>
+        <p class="sec-sub">We're always expanding &amp; excited to discover new teammates and their perspectives that can add to Flashlab Creative.</p>
+      </div>
+      <div class="form-card reveal">
+        <div class="form-card-title">App Developer Application</div>
+        <p class="form-card-sub">Fields marked with <span style="color:var(--accent)">*</span> are required.</p>
+
+        <form id="applyForm" novalidate>
+          <div class="form-field full" style="margin-bottom:16px;">
+            <label for="position">Select Position</label>
+            <select id="position" name="position">
+              <option value="app-developer">App Developer</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="fname">First Name *</label>
+              <input type="text" id="fname" name="fname" placeholder="e.g. Priya" required>
+            </div>
+            <div class="form-field">
+              <label for="lname">Last Name *</label>
+              <input type="text" id="lname" name="lname" placeholder="e.g. Naik" required>
+            </div>
+          </div>
+
+          <div class="form-field full" style="margin-bottom:16px;">
+            <label for="phone">Phone *</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
+          </div>
+
+          <div class="form-field full" style="margin-bottom:16px;">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="form-field full" style="margin-bottom:16px;">
+            <label for="city">City *</label>
+            <input type="text" id="city" name="city" placeholder="e.g. Margao" required>
+          </div>
+
+          <div class="form-field full" style="margin-bottom:0;">
+            <label for="portfolio">Portfolio (Cloud Drive / Link)</label>
+            <input type="text" id="portfolio" name="portfolio" placeholder="https://drive.google.com/...">
+          </div>
+
+          <button type="submit" class="form-submit">
+            Submit Application <i class="ri-send-plane-2-line"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑦ CTA BAND -->
+  <section class="cta-band">
+    <div class="wrap">
+      <div class="cta-inner reveal">
+        <div>
+          <h2 class="cta-band-title">Looking for a<br><em>Different Role?</em></h2>
+          <p class="cta-band-sub">Check out our other open positions across all departments, or send us your portfolio directly and we'll find the right spot for you.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="career.html" class="btn-primary">View All Roles <i class="ri-arrow-right-line"></i></a>
+          <a href="connect.html" class="btn-ghost">Send Portfolio <i class="ri-send-plane-line"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑧ BOTTOM THREE-COL STRIP -->
+  <section class="bottom-strip">
+    <div class="strip-grid">
+      <div class="reveal">
+        <div class="strip-col-title">Start Project</div>
+        <p class="strip-col-desc">Flashlab Creative ensure that service we provide is both intelligently conceived and beautifully executed.</p>
+        <a href="connect.html" class="strip-btn">Enquire <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="reveal" style="--delay:.12s">
+        <div class="strip-col-title">Location</div>
+        <p class="strip-col-address">G26 Vikrant Complex, Next to State Bank of India (PBB) Opposite Luis &amp; Company, Malbhat Margao, Goa‑India. Pincode‑403601</p>
+        <a href="connect.html" class="strip-btn-ghost" style="margin-top:16px; display:inline-flex;">Connect <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="reveal" style="--delay:.24s">
+        <div class="strip-col-title">Join Us</div>
+        <p class="strip-col-desc">We're always expanding &amp; excited to discover new teammates and their perspectives that can add to Flashlab Creative.</p>
+        <a href="career.html" class="strip-btn">Join <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+  </section>
 
 </main>
 
-<!-- ============================================================
-  FOOTER  (shared — do not remove)
-  ============================================================ -->
-<footer class="footer">
-  <div class="wrap footer-grid">
 
-    <!-- Brand column -->
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <a href="index.html">
-          <img src="images/logos/flashlab-logo.png" alt="FlashLab Creative"
-               onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
-        </a>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <a href="index.html">
+            <img src="images/logos/flask-logo.png" alt="FlashLab Creative"
+              onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
+          </a>
+        </div>
+        <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in
+          2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i class="ri-instagram-fill"></i></a>
+          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i class="ri-facebook-fill"></i></a>
+          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i class="ri-linkedin-fill"></i></a>
+          <a href="https://twitter.com/theflashlab" target="_blank" rel="noopener"><i class="ri-twitter-x-fill"></i></a>
+          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i class="ri-youtube-fill"></i></a>
+        </div>
       </div>
-      <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in 2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
-      <div class="footer-socials">
-        <a href="https://www.instagram.com/flashlab.creative" target="_blank"><i class="ri-instagram-fill"></i></a>
-        <a href="https://www.facebook.com/flashlab.creative/" target="_blank"><i class="ri-facebook-fill"></i></a>
-        <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank"><i class="ri-linkedin-fill"></i></a>
-        <a href="https://twitter.com/theflashlab" target="_blank"><i class="ri-twitter-x-fill"></i></a>
-        <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank"><i class="ri-youtube-fill"></i></a>
+      <div>
+        <h4 class="footer-head">Navigation</h4>
+        <ul class="footer-list">
+          <li><a href="index.html"><i class="ri-arrow-right-s-line"></i>Home</a></li>
+          <li><a href="about.html"><i class="ri-arrow-right-s-line"></i>About</a></li>
+          <li><a href="services.html"><i class="ri-arrow-right-s-line"></i>Services</a></li>
+          <li><a href="clients.html"><i class="ri-arrow-right-s-line"></i>Clients</a></li>
+          <li><a href="case-studies.html"><i class="ri-arrow-right-s-line"></i>Case Studies</a></li>
+          <li><a href="team.html"><i class="ri-arrow-right-s-line"></i>Teams</a></li>
+          <li><a href="career.html"><i class="ri-arrow-right-s-line"></i>Career</a></li>
+          <li><a href="connect.html"><i class="ri-arrow-right-s-line"></i>Connect</a></li>
+        </ul>
       </div>
-    </div>
-
-    <!-- Navigation -->
-    <div>
-      <h4 class="footer-head">Navigation</h4>
-      <ul class="footer-list">
-        <li><a href="index.html"><i class="ri-arrow-right-s-line"></i>Home</a></li>
-        <li><a href="about.html"><i class="ri-arrow-right-s-line"></i>About</a></li>
-        <li><a href="services.html"><i class="ri-arrow-right-s-line"></i>Services</a></li>
-        <li><a href="clients.html"><i class="ri-arrow-right-s-line"></i>Clients</a></li>
-        <li><a href="case-studies.html"><i class="ri-arrow-right-s-line"></i>Case Studies</a></li>
-        <li><a href="team.html"><i class="ri-arrow-right-s-line"></i>Teams</a></li>
-        <li><a href="career.html"><i class="ri-arrow-right-s-line"></i>Career</a></li>
-        <li><a href="connect.html"><i class="ri-arrow-right-s-line"></i>Connect</a></li>
-      </ul>
-    </div>
-
-    <!-- Services -->
-    <div>
-      <h4 class="footer-head">Services</h4>
-      <ul class="footer-list">
-        <li><a href="digital-advertising.html"><i class="ri-arrow-right-s-line"></i>Digital Advertising</a></li>
-        <li><a href="seo-sem-marketing.html"><i class="ri-arrow-right-s-line"></i>SEO / SEM</a></li>
-        <li><a href="social-media-management.html"><i class="ri-arrow-right-s-line"></i>Social Media</a></li>
-        <li><a href="product-design-strategies.html"><i class="ri-arrow-right-s-line"></i>Product Design</a></li>
-        <li><a href="web-app-development.html"><i class="ri-arrow-right-s-line"></i>Web &amp; App Dev</a></li>
-        <li><a href="outdoor-print-ads.html"><i class="ri-arrow-right-s-line"></i>Outdoor &amp; Print</a></li>
-        <li><a href="ecommerce.html"><i class="ri-arrow-right-s-line"></i>E-Commerce</a></li>
-      </ul>
-    </div>
-
-    <!-- Careers -->
-    <div>
-      <h4 class="footer-head">Join Us</h4>
-      <ul class="footer-list">
-        <li><a href="career-intern.html"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
-        <li><a href="career-seo-expert.html"><i class="ri-arrow-right-s-line"></i>SEO Expert</a></li>
-        <li><a href="career-social-media-manager.html"><i class="ri-arrow-right-s-line"></i>Social Media Mgr</a></li>
-        <li><a href="career-graphic-designer.html"><i class="ri-arrow-right-s-line"></i>Graphic Designer</a></li>
-        <li><a href="career-web-developer.html"><i class="ri-arrow-right-s-line"></i>Web Developer</a></li>
-        <li><a href="career-animation-designer.html"><i class="ri-arrow-right-s-line"></i>Animation Designer</a></li>
-        <li><a href="career-app-developer.html"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
-      </ul>
-    </div>
-
-    <!-- Studio links -->
-    <div>
-      <h4 class="footer-head">Studio Links</h4>
-      <ul class="footer-list">
-        <li><a href="https://parashootstudio.com"><i class="ri-arrow-right-s-line"></i>Content Production</a></li>
-        <li><a href="https://backstagexchange.com"><i class="ri-arrow-right-s-line"></i>Event Activation</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact -->
-    <div>
-      <h4 class="footer-head">Contact</h4>
-      <div class="footer-contact">
-        <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa" target="_blank">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
-        <p><i class="ri-phone-fill"></i><a href="tel:+919923580023">+91 99235 80023</a></p>
-        <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a></p>
-        <p><i class="ri-time-fill"></i><span>Mon – Sat: 9am – 6pm IST</span></p>
-        <a href="connect.html" class="footer-cta">Start a Project <i class="ri-arrow-right-line"></i></a>
+      <div>
+        <h4 class="footer-head">Services</h4>
+        <ul class="footer-list">
+          <li><a href="outdoor-print-ads.html"><i class="ri-arrow-right-s-line"></i>Outdoor &amp; Print</a></li>
+          <li><a href="digital-advertising.html"><i class="ri-arrow-right-s-line"></i>Digital Advertising</a></li>
+          <li><a href="seo-sem-marketing.html"><i class="ri-arrow-right-s-line"></i>SEO / SEM</a></li>
+          <li><a href="social-media-management.html"><i class="ri-arrow-right-s-line"></i>Social Media</a></li>
+          <li><a href="product-design-strategies.html"><i class="ri-arrow-right-s-line"></i>Product Design</a></li>
+          <li><a href="web-app-development.html"><i class="ri-arrow-right-s-line"></i>Web &amp; App Dev</a></li>
+          <li><a href="ecommerce.html"><i class="ri-arrow-right-s-line"></i>E-Commerce</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-head">Join Us</h4>
+        <ul class="footer-list">
+          <li><a href="career-intern.html"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
+          <li><a href="career-seo-expert.html"><i class="ri-arrow-right-s-line"></i>SEO Expert</a></li>
+          <li><a href="career-social-media-manager.html"><i class="ri-arrow-right-s-line"></i>Social Media Mgr</a></li>
+          <li><a href="career-graphic-designer.html"><i class="ri-arrow-right-s-line"></i>Graphic Designer</a></li>
+          <li><a href="career-web-developer.html"><i class="ri-arrow-right-s-line"></i>Web Developer</a></li>
+          <li><a href="career-animation-designer.html"><i class="ri-arrow-right-s-line"></i>Animation Designer</a></li>
+          <li><a href="career-app-developer.html"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-head">Service Links</h4>
+        <ul class="footer-list">
+          <li><a href="https://parashootstudio.com"><i class="ri-arrow-right-s-line"></i>Content Production</a></li>
+          <li><a href="https://backstagexchange.com"><i class="ri-arrow-right-s-line"></i>Event Activation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-head">Contact</h4>
+        <div class="footer-contact">
+          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa" target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
+          <p><i class="ri-phone-fill"></i><a href="tel:+919923580023">+91 99235 80023</a></p>
+          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a></p>
+          <p><i class="ri-time-fill"></i><span>Mon – Sat: 9am – 6pm IST</span></p>
+          <a href="connect.html" class="footer-cta">Start a Project <i class="ri-arrow-right-line"></i></a>
+        </div>
       </div>
     </div>
+    <div class="footer-bottom">
+      <p>Copyright &copy; 2026 FlashLab Creative — Website Crafted by <a href="https://cybercreative.in/"
+          target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
+    </div>
+  </footer>
 
-  </div>
-  <div class="footer-bottom">
-    <p>Copyright &copy; 2026 FlashLab Creative — Website Crafted by
-      <a href="https://cybercreative.in/" target="_blank" class="cyber-link">Cyber Creative</a>
-    </p>
-  </div>
-</footer>
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" aria-label="Back to top">
+    <i class="ri-arrow-up-line"></i>
+  </button>
 
-<!-- ============================================================
-  BACK TO TOP  (shared — do not remove)
-  ============================================================ -->
-<button class="back-top" id="backTop"><i class="ri-arrow-up-line"></i></button>
-
-
-<!-- ============================================================
-  SHARED JAVASCRIPT  (do not remove or edit)
-  ============================================================ -->
+  <script src="flash.js"></script>
 <script>
-/* ── THEME ── */
-(function () {
-  const toggle = document.getElementById('themeToggle');
-  const icon   = document.getElementById('themeIcon');
-  const html   = document.documentElement;
-  const saved  = localStorage.getItem('flashlab-theme') || 'dark';
-  html.setAttribute('data-theme', saved);
-  setIcon(saved);
-  toggle.addEventListener('click', () => {
-    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('flashlab-theme', next);
-    setIcon(next);
-    toggle.style.transform = 'rotate(360deg) scale(1.15)';
-    setTimeout(() => toggle.style.transform = '', 400);
-  });
-  function setIcon(t) { icon.className = t === 'dark' ? 'ri-sun-line' : 'ri-moon-line'; }
-})();
-
-/* ── CUSTOM CURSOR ── */
-(function () {
-  const c = document.getElementById('cursor');
-  document.addEventListener('mousemove', e => {
-    c.style.left = e.clientX + 'px';
-    c.style.top  = e.clientY + 'px';
-  });
-  document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      c.style.transform = 'translate(-50%,-50%) scale(2.5)';
-      c.style.background = 'var(--accent)';
-    });
-    el.addEventListener('mouseleave', () => {
-      c.style.transform = 'translate(-50%,-50%) scale(1)';
-      c.style.background = 'var(--text)';
-    });
-  });
-})();
-
-/* ── NAVBAR SCROLL SHADOW ── */
-window.addEventListener('scroll', () => {
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
-}, { passive: true });
-
-/* ── MOBILE MENU ── */
-(function () {
-  const ham   = document.getElementById('hamburger');
-  const menu  = document.getElementById('mobMenu');
-  const ov    = document.getElementById('mobOverlay');
-  const close = document.getElementById('mobClose');
-  function open() { menu.classList.add('active'); ov.classList.add('active'); ham.classList.add('open'); document.body.style.overflow = 'hidden'; }
-  function shut() { menu.classList.remove('active'); ov.classList.remove('active'); ham.classList.remove('open'); document.body.style.overflow = ''; }
-  ham.addEventListener('click', open);
-  close.addEventListener('click', shut);
-  ov.addEventListener('click', shut);
-  document.querySelectorAll('.mob-menu a').forEach(a => a.addEventListener('click', shut));
-})();
-
-/* ── SCROLL REVEAL ── */
-(function () {
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); obs.unobserve(e.target); } });
-  }, { threshold: .1 });
-  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
-})();
-
-/* ── BACK TO TOP ── */
-(function () {
-  const btn = document.getElementById('backTop');
-  window.addEventListener('scroll', () => btn.classList.toggle('active', window.scrollY > 400), { passive: true });
-  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-})();
-
-/* ── SMOOTH SCROLL (accounts for fixed header height) ── */
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', function (e) {
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      const navbarEl = document.getElementById('navbar');
-      const offset   = navbarEl.offsetTop + navbarEl.offsetHeight + 8;
-      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
-    }
-  });
+/* FORM SUBMIT */
+document.getElementById('applyForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('.form-submit');
+  btn.innerHTML = '<i class="ri-check-line"></i> Application Submitted!';
+  btn.style.background = '#bef54a';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.innerHTML = 'Submit Application <i class="ri-send-plane-2-line"></i>';
+    btn.style.background = '';
+    btn.disabled = false;
+    this.reset();
+  }, 3000);
 });
-</script>
-<script>
-  // your page-specific JS here
 </script>
 
 </body>

@@ -238,16 +238,27 @@
 [data-theme="dark"] .form-group select option { background: #13131f; }
 [data-theme="light"] .form-group select option { background: #ffffff; }
 .form-group textarea { resize: vertical; min-height: 110px; }
+
+/* WhatsApp submit button */
 .btn-submit {
   width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;
-  background: var(--accent); color: white; border: none; border-radius: 12px;
+  background: #25D366; color: white; border: none; border-radius: 12px;
   padding: 16px 28px; font-family: var(--font-body); font-size: 0.95rem; font-weight: 600;
   cursor: pointer; transition: all 0.3s; margin-top: 4px;
 }
-.btn-submit:hover { background: #15803d; transform: translateY(-2px); box-shadow: 0 10px 32px rgba(22,163,74,0.38); }
+.btn-submit:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(37,211,102,0.38);
+}
+.btn-submit i { font-size: 1.1rem; }
+
 .form-note { text-align: center; margin-top: 12px; font-size: 0.8rem; color: var(--muted); }
 .form-note.success { color: var(--accent); }
-.form-note.error { color: var(--accent3); }
+.form-note.error { color: #dc2626; }
+
+/* Required field indicator */
+.form-group label span.req { color: #25D366; margin-left: 2px; }
 
 /* =====================================================
    JOIN OUR TEAM SECTION
@@ -338,136 +349,132 @@
 </head>
 
 <body data-page="connect">
+  <!-- LOGO BAR -->
+  <div class="site-logo-bar">
+    <a href="#">
+      <img src="images/logos/flashlab-logo.png" alt="FlashLab Creative" class="logo-light" id="siteLogoImg">
+      <img src="images/logos/flashlab-logo-dark.png" alt="FlashLab Creative" class="logo-dark" id="siteLogoImg">
+    </a>
+  </div>
 
-<!-- ===== LOGO BAR (services.html style) ===== -->
-<div class="site-logo-bar">
-  <a href="index.html">
-    <img src="images/logos/flashlab-logo.png" alt="FlashLab Creative"
-         onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.8rem;letter-spacing:2px;color:var(--text)\'>FLASHLAB CREATIVE</span>'">
-  </a>
-</div>
- <!-- ============================================================
-  NAVBAR
-  ============================================================ -->
-<nav class="navbar" id="navbar">
-  <div class="nav-wrap">
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-wrap">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li>
+          <a href="services.html">Services</a>
+          <ul>
+            <li><a href="digital-advertising.html"><i class="ri-megaphone-line"></i>Digital Advertising</a></li>
+            <li><a href="seo-sem-marketing.html"><i class="ri-search-line"></i>SEO / SEM Marketing</a></li>
+            <li><a href="social-media-management.html"><i class="ri-instagram-line"></i>Social Media Management</a></li>
+            <li><a href="product-design-strategies.html"><i class="ri-pen-nib-line"></i>Product Design &amp; Strategies</a></li>
+            <li><a href="web-app-development.html"><i class="ri-code-s-slash-line"></i>Web &amp; App Development</a></li>
+            <li><a href="outdoor-print-ads.html"><i class="ri-image-line"></i>Outdoor &amp; Print Ads</a></li>
+            <li><a href="ecommerce.html"><i class="ri-shopping-cart-line"></i>E-Commerce</a></li>
+          </ul>
+        </li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li>
+          <a href="case-studies.html">Case Studies</a>
+          <ul>
+            <li><a href="story-1.html"><i class="ri-article-line"></i>Story 1</a></li>
+            <li><a href="story-2.html"><i class="ri-article-line"></i>Story 2</a></li>
+            <li><a href="story-3.html"><i class="ri-article-line"></i>Story 3</a></li>
+            <li><a href="story-4.html"><i class="ri-article-line"></i>Story 4</a></li>
+            <li><a href="story-5.html"><i class="ri-article-line"></i>Story 5</a></li>
+            <li><a href="story-6.html"><i class="ri-article-line"></i>Story 6</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="career.html">Career</a>
+          <ul>
+            <li><a href="career-intern.html"><i class="ri-user-add-line"></i>Intern</a></li>
+            <li><a href="career-seo-expert.html"><i class="ri-search-eye-line"></i>SEO Expert</a></li>
+            <li><a href="career-social-media-manager.html"><i class="ri-share-circle-line"></i>Social Media Manager</a></li>
+            <li><a href="career-graphic-designer.html"><i class="ri-brush-line"></i>Graphic Designer</a></li>
+            <li><a href="career-web-developer.html"><i class="ri-code-box-line"></i>Web Developer</a></li>
+            <li><a href="career-animation-designer.html"><i class="ri-video-line"></i>Animation Designer</a></li>
+            <li><a href="career-app-developer.html"><i class="ri-smartphone-line"></i>App Developer</a></li>
+          </ul>
+        </li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+      <div class="nav-controls">
+        <a href="connect.html" class="nav-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="ri-sun-line" id="themeIcon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
 
-    <ul class="nav-links" id="navLinks">
+  <!-- MOBILE MENU -->
+  <div class="mob-overlay" id="mobOverlay"></div>
+  <div class="mob-menu" id="mobMenu" aria-hidden="true">
+    <button class="mob-close" id="mobClose" aria-label="Close menu">
+      <i class="ri-close-line"></i>
+    </button>
+    <ul class="mob-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li>
-        <a href="services.html">Services</a>
-        <ul>
-          <li><a href="digital-advertising.html"><i class="ri-megaphone-line"></i>Digital Advertising</a></li>
-          <li><a href="seo-sem-marketing.html"><i class="ri-search-line"></i>SEO / SEM Marketing</a></li>
-          <li><a href="social-media-management.html"><i class="ri-instagram-line"></i>Social Media Management</a></li>
-          <li><a href="product-design-strategies.html"><i class="ri-pen-nib-line"></i>Product Design &amp; Strategies</a></li>
-          <li><a href="web-app-development.html"><i class="ri-code-s-slash-line"></i>Web &amp; App Development</a></li>
-          <li><a href="outdoor-print-ads.html"><i class="ri-image-line"></i>Outdoor &amp; Print Ads</a></li>
-          <li><a href="ecommerce.html"><i class="ri-shopping-cart-line"></i>E-Commerce</a></li>
-        </ul>
-      </li>
-      <li><a href="clients.html">Clients</a></li>
-      <li>
-        <a href="case-studies.html">Case Studies</a>
-        <ul>
-          <li><a href="story-1.html"><i class="ri-article-line"></i>Story 1</a></li>
-          <li><a href="story-2.html"><i class="ri-article-line"></i>Story 2</a></li>
-          <li><a href="story-3.html"><i class="ri-article-line"></i>Story 3</a></li>
-          <li><a href="story-4.html"><i class="ri-article-line"></i>Story 4</a></li>
-          <li><a href="story-5.html"><i class="ri-article-line"></i>Story 5</a></li>
-          <li><a href="story-6.html"><i class="ri-article-line"></i>Story 6</a></li>
-        </ul>
-      </li>
       <li><a href="team.html">Team</a></li>
       <li>
-        <a href="career.html">Career</a>
-        <ul>
-          <li><a href="career-intern.html"><i class="ri-user-add-line"></i>Intern</a></li>
-          <li><a href="career-seo-expert.html"><i class="ri-search-eye-line"></i>SEO Expert</a></li>
-          <li><a href="career-social-media-manager.html"><i class="ri-share-circle-line"></i>Social Media Manager</a></li>
-          <li><a href="career-graphic-designer.html"><i class="ri-brush-line"></i>Graphic Designer</a></li>
-          <li><a href="career-web-developer.html"><i class="ri-code-box-line"></i>Web Developer</a></li>
-          <li><a href="career-animation-designer.html"><i class="ri-video-line"></i>Animation Designer</a></li>
-          <li><a href="career-app-developer.html"><i class="ri-smartphone-line"></i>App Developer</a></li>
+        <button class="mob-parent-btn" data-target="mob-sub-services">
+          Services <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-services">
+          <li><a href="digital-advertising.html">Digital Advertising</a></li>
+          <li><a href="seo-sem-marketing.html">SEO / SEM Marketing</a></li>
+          <li><a href="social-media-management.html">Social Media Management</a></li>
+          <li><a href="product-design-strategies.html">Product Design &amp; Strategies</a></li>
+          <li><a href="web-app-development.html">Web &amp; App Development</a></li>
+          <li><a href="outdoor-print-ads.html">Outdoor &amp; Print Ads</a></li>
+          <li><a href="ecommerce.html">E-Commerce</a></li>
+        </ul>
+      </li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="clients.html">Clients</a></li>
+      <li>
+        <button class="mob-parent-btn" data-target="mob-sub-case">
+          Case Studies <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-case">
+          <li><a href="story-1.html">Story 1</a></li>
+          <li><a href="story-2.html">Story 2</a></li>
+          <li><a href="story-3.html">Story 3</a></li>
+          <li><a href="story-4.html">Story 4</a></li>
+          <li><a href="story-5.html">Story 5</a></li>
+          <li><a href="story-6.html">Story 6</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="mob-parent-btn" data-target="mob-sub-career">
+          Career <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-career">
+          <li><a href="career-intern.html">Intern</a></li>
+          <li><a href="career-seo-expert.html">SEO Expert</a></li>
+          <li><a href="career-social-media-manager.html">Social Media Manager</a></li>
+          <li><a href="career-graphic-designer.html">Graphic Designer</a></li>
+          <li><a href="career-web-developer.html">Web Developer</a></li>
+          <li><a href="career-animation-designer.html">Animation Designer</a></li>
+          <li><a href="career-app-developer.html">App Developer</a></li>
         </ul>
       </li>
       <li><a href="connect.html">Connect</a></li>
     </ul>
-
-    <div class="nav-controls">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <i class="ri-sun-line" id="themeIcon"></i>
-      </button>
-      <a href="connect.html" class="nav-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+    <div class="mob-cta-wrap">
+      <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
     </div>
-
   </div>
-</nav>
 
-<!-- ============================================================
-  MOBILE MENU  (single instance, no duplicates)
-  ============================================================ -->
-<div class="mob-overlay" id="mobOverlay"></div>
-
-<div class="mob-menu" id="mobMenu" aria-hidden="true">
-  <button class="mob-close" id="mobClose" aria-label="Close menu">
-    <i class="ri-close-line"></i>
-  </button>
-
-  <ul class="mob-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li>
-      <button class="mob-parent-btn" data-target="mob-sub-services">
-        Services <i class="ri-arrow-down-s-line mob-arrow"></i>
-      </button>
-      <ul class="mob-sub" id="mob-sub-services">
-        <li><a href="digital-advertising.html">Digital Advertising</a></li>
-        <li><a href="seo-sem-marketing.html">SEO / SEM Marketing</a></li>
-        <li><a href="social-media-management.html">Social Media Management</a></li>
-        <li><a href="product-design-strategies.html">Product Design &amp; Strategies</a></li>
-        <li><a href="web-app-development.html">Web &amp; App Development</a></li>
-        <li><a href="outdoor-print-ads.html">Outdoor &amp; Print Ads</a></li>
-        <li><a href="ecommerce.html">E-Commerce</a></li>
-      </ul>
-    </li>
-    <li><a href="clients.html">Clients</a></li>
-    <li>
-      <button class="mob-parent-btn" data-target="mob-sub-case">
-        Case Studies <i class="ri-arrow-down-s-line mob-arrow"></i>
-      </button>
-      <ul class="mob-sub" id="mob-sub-case">
-        <li><a href="story-1.html">Story 1</a></li>
-        <li><a href="story-2.html">Story 2</a></li>
-        <li><a href="story-3.html">Story 3</a></li>
-        <li><a href="story-4.html">Story 4</a></li>
-        <li><a href="story-5.html">Story 5</a></li>
-        <li><a href="story-6.html">Story 6</a></li>
-      </ul>
-    </li>
-    <li><a href="team.html">Team</a></li>
-    <li>
-      <button class="mob-parent-btn" data-target="mob-sub-career">
-        Career <i class="ri-arrow-down-s-line mob-arrow"></i>
-      </button>
-      <ul class="mob-sub" id="mob-sub-career">
-        <li><a href="career-intern.html">Intern</a></li>
-        <li><a href="career-seo-expert.html">SEO Expert</a></li>
-        <li><a href="career-social-media-manager.html">Social Media Manager</a></li>
-        <li><a href="career-graphic-designer.html">Graphic Designer</a></li>
-        <li><a href="career-web-developer.html">Web Developer</a></li>
-        <li><a href="career-animation-designer.html">Animation Designer</a></li>
-        <li><a href="career-app-developer.html">App Developer</a></li>
-      </ul>
-    </li>
-    <li><a href="connect.html">Connect</a></li>
-  </ul>
-  <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
-</div>
 
 <!-- ===== HERO — HAPPY TO ASSIST ===== -->
 <section class="hero-section">
@@ -475,8 +482,6 @@
   <div class="hero-inner">
 
     <div class="hero-left">
-      
-
       <h1 class="hero-title reveal" style="--delay:0.1s">
         Get in Touch<br>
         <em>With Us.</em>
@@ -579,36 +584,32 @@
         </div>
       </div>
 
+      <!-- WHATSAPP FORM -->
       <div class="contact-form-wrap reveal-right">
         <h3 class="form-title">Send a Message</h3>
-        <p class="form-subtitle">Fill out the form and we'll get back to you shortly.</p>
+        <p class="form-subtitle">Fill out the form — your details will be sent directly via WhatsApp.</p>
 
-        <form action="https://formsubmit.co/contact@flashlabcreative.com" method="POST" id="contactForm">
-          <input type="hidden" name="_subject" value="New Project Enquiry — FlashLab Creative">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="https://www.flashlabcreative.com/contact-new-page/">
-          <input type="text" name="_honey" style="display:none">
+        <form id="contactForm" novalidate>
 
           <div class="form-row">
             <div class="form-group">
-              <label>Name *</label>
-              <input type="text" name="name" placeholder="Your Name" required>
+              <label>Name <span class="req">*</span></label>
+              <input type="text" id="field-name" placeholder="Your Name" required>
             </div>
             <div class="form-group">
-              <label>Mobile Number *</label>
-              <input type="number" name="mobile" placeholder="Mobile Number" required>
+              <label>Mobile Number <span class="req">*</span></label>
+              <input type="tel" id="field-mobile" placeholder="Mobile Number" required>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
-              <label>Email *</label>
-              <input type="email" name="email" placeholder="you@email.com" required>
+              <label>Email <span class="req">*</span></label>
+              <input type="email" id="field-email" placeholder="you@email.com" required>
             </div>
             <div class="form-group">
-              <label>Enquiry Type *</label>
-              <select name="enquiry_type" required>
+              <label>Enquiry Type <span class="req">*</span></label>
+              <select id="field-enquiry" required>
                 <option value="" disabled selected>Select</option>
                 <option value="Career &amp; Internship">Career &amp; Internship</option>
                 <option value="Start A Project">Start A Project</option>
@@ -618,13 +619,13 @@
 
           <div class="form-group">
             <label>Message</label>
-            <textarea name="message" placeholder="Tell us about your project or enquiry..."></textarea>
+            <textarea id="field-message" placeholder="Tell us about your project or enquiry..."></textarea>
           </div>
 
           <button type="submit" class="btn-submit">
-            Submit <i class="ri-send-plane-fill"></i>
+            <i class="ri-whatsapp-line"></i> Send via WhatsApp
           </button>
-          <p class="form-note" id="formNote"></p>
+          <p class="form-note" id="formNote">Your message will open in WhatsApp ready to send.</p>
         </form>
       </div>
 
@@ -689,7 +690,8 @@
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="wrap footer-grid">
       <div class="footer-brand">
@@ -702,15 +704,11 @@
         <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in
           2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i
-              class="ri-instagram-fill"></i></a>
-          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i
-              class="ri-facebook-fill"></i></a>
-          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i
-              class="ri-linkedin-fill"></i></a>
+          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i class="ri-instagram-fill"></i></a>
+          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i class="ri-facebook-fill"></i></a>
+          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i class="ri-linkedin-fill"></i></a>
           <a href="https://twitter.com/theflashlab" target="_blank" rel="noopener"><i class="ri-twitter-x-fill"></i></a>
-          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i
-              class="ri-youtube-fill"></i></a>
+          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i class="ri-youtube-fill"></i></a>
         </div>
       </div>
       <div>
@@ -760,38 +758,84 @@
       <div>
         <h4 class="footer-head">Contact</h4>
         <div class="footer-contact">
-          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa"
-              target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
+          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa" target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
           <p><i class="ri-phone-fill"></i><a href="tel:+919923580023">+91 99235 80023</a></p>
-          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a>
-          </p>
+          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a></p>
           <p><i class="ri-time-fill"></i><span>Mon – Sat: 9am – 6pm IST</span></p>
           <a href="connect.html" class="footer-cta">Start a Project <i class="ri-arrow-right-line"></i></a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>Copyright &copy; 2026 FlashLab Creative — Website Crafted by <a href="https://cybercreative.in/"
-          target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
+      <p>Copyright &copy; 2026 FlashLab Creative — Website Crafted by <a href="https://cybercreative.in/" target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
     </div>
   </footer>
 
-<!-- BACK TO TOP (services.html style) -->
-<button class="back-top" id="backTop" aria-label="Back to top">
-  <i class="ri-arrow-up-line"></i>
-</button>
-<script src="flash.js"></script>
-<script>
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" aria-label="Back to top">
+    <i class="ri-arrow-up-line"></i>
+  </button>
 
-/* ── Hero image placeholder ── */
-const imgEl = document.querySelector('.hero-image-frame img');
-const defaultPh = document.getElementById('hero-placeholder-default');
-if (imgEl) {
-  imgEl.addEventListener('load', () => { if (defaultPh) defaultPh.style.display = 'none'; });
-  imgEl.addEventListener('error', () => { imgEl.style.display = 'none'; if (defaultPh) defaultPh.style.display = 'flex'; });
-}
+  <script src="flash.js"></script>
+  <script>
 
+    /* ── Hero image placeholder ── */
+    const imgEl = document.querySelector('.hero-image-frame img');
+    const defaultPh = document.getElementById('hero-placeholder-default');
+    if (imgEl) {
+      imgEl.addEventListener('load', () => { if (defaultPh) defaultPh.style.display = 'none'; });
+      imgEl.addEventListener('error', () => { imgEl.style.display = 'none'; if (defaultPh) defaultPh.style.display = 'flex'; });
+    }
 
-</script>
+    /* ── WhatsApp Form Handler ── */
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name     = document.getElementById('field-name').value.trim();
+      const mobile   = document.getElementById('field-mobile').value.trim();
+      const email    = document.getElementById('field-email').value.trim();
+      const enquiry  = document.getElementById('field-enquiry').value;
+      const message  = document.getElementById('field-message').value.trim();
+      const noteEl   = document.getElementById('formNote');
+
+      /* Basic validation */
+      if (!name || !mobile || !email || !enquiry) {
+        noteEl.textContent = 'Please fill in all required fields.';
+        noteEl.className = 'form-note error';
+        return;
+      }
+
+      /* Build the WhatsApp message */
+      const waNumber = '919923580022'; // country code + number, no +
+      const text = [
+        ' *New Enquiry — FlashLab Creative*',
+        '',
+        ' *Name:* ' + name,
+        ' *Mobile:* ' + mobile,
+        ' *Email:* ' + email,
+        ' *Enquiry Type:* ' + enquiry,
+        message ? ' *Message:* ' + message : '',
+        '',
+        '_Sent via flashlabcreative.com_'
+      ].filter(Boolean).join('\n');
+
+      const waURL = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(text);
+
+      /* Open WhatsApp */
+      window.open(waURL, '_blank');
+
+      /* Feedback */
+      noteEl.textContent = ' WhatsApp opened! Just hit Send in the chat.';
+      noteEl.className = 'form-note success';
+
+      /* Reset form after a moment */
+      setTimeout(() => {
+        document.getElementById('contactForm').reset();
+        noteEl.textContent = 'Your message will open in WhatsApp ready to send.';
+        noteEl.className = 'form-note';
+      }, 4000);
+    });
+
+  </script>
 </body>
 </html>

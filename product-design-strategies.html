@@ -11,101 +11,9 @@
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap"
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="flash.css">
 
   <style>
-    :root {
-      --green: #a8e832;
-      --dark: #0a0a0f;
-      --white: #ffffff;
-      --navy: #11222a;
-      --navy-deep: #0c1a20;
-      --bg: #ffffff;
-      --bg2: #f5f6f2;
-      --text: #1a1a1a;
-      --text2: #555;
-      --text3: #888;
-      --border: #e8e8e8;
-      --card-bg: #ffffff;
-      --card-border: #e5e5e5;
-      --input-bg: #f8f9f4;
-    }
-
-    [data-theme="dark"] {
-      --bg: #0a0a0f;
-      --bg2: #111118;
-      --text: #f0f0f0;
-      --text2: #aaa;
-      --text3: #666;
-      --border: #222230;
-      --card-bg: #14141e;
-      --card-border: #1e1e2e;
-      --input-bg: #1a1a26;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
-    body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); transition: background 0.3s, color 0.3s; overflow-x: hidden; }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
-    img { max-width: 100%; display: block; }
-    button { cursor: pointer; font-family: inherit; }
-
-    .wrap { max-width: 1240px; margin: 0 auto; padding: 0 40px; }
-    @media (max-width: 768px) { .wrap { padding: 0 20px; } }
-
-    /* ── Active Nav ── */
-    .nav-links > li > a.nav-active { color: #0a0a0f !important; opacity: 1 !important; }
-    .nav-links > li > a.nav-active::after { width: 100% !important; background: #0a0a0f !important; }
-    .nav-links > li > a.nav-active::before { content: ''; position: absolute; top: -7px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; border-radius: 50%; background: #0a0a0f; }
-    .nav-links ul li a.nav-active { color: #a8e832 !important; background: rgba(168,232,50,0.08) !important; padding-left: 26px !important; border-left: 2px solid #a8e832; }
-    .nav-links > li.nav-parent-active > a { color: #0a0a0f !important; opacity: 1 !important; }
-    .nav-links > li.nav-parent-active > a::after { width: 100% !important; background: rgba(10,10,15,0.5) !important; }
-    .nav-links > li.nav-parent-active > a::before { content: ''; position: absolute; top: -7px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; border-radius: 50%; background: rgba(10,10,15,0.6); }
-
-    /* ── LOGO BAR ── */
-    .site-logo-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 1002; height: 110px; display: flex; align-items: center; justify-content: center; background: var(--bg); box-shadow: 0 1px 0 var(--border); transition: background 0.3s; }
-    .site-logo-bar img { height: 85px; width: auto; object-fit: contain; transition: filter 0.3s; }
-    [data-theme="dark"] .site-logo-bar img { filter: invert(1) brightness(1.1); }
-
-    /* ── NAVBAR ── */
-    .navbar { position: fixed; top: 110px; left: 0; right: 0; z-index: 1001; background: var(--green); padding: 14px 5%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,0.12); overflow: visible; }
-    .nav-wrap { width: 100%; max-width: 1200px; display: flex; align-items: center; justify-content: center; position: relative; overflow: visible; }
-    .nav-logo { display: none !important; }
-    .nav-links { flex: 1; display: flex; align-items: center; gap: 28px; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.6px; white-space: nowrap; justify-content: center; text-transform: uppercase; list-style: none; margin: 0; padding: 0; overflow: visible; }
-    .nav-links > li { position: relative; list-style: none; overflow: visible; }
-    .nav-links > li > a { color: var(--dark) !important; transition: color 0.2s, opacity 0.2s; position: relative; text-decoration: none; display: inline-block; }
-    .nav-links > li > a:hover { opacity: 0.65; }
-    .nav-links > li > a::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px; background: var(--dark); transition: width 0.3s; }
-    .nav-links > li > a:hover::after, .nav-links > li > a.active::after { width: 100%; }
-    .nav-links ul { display: none; position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%); background: #0a0a0f; list-style: none; padding: 8px 0; margin: 0; min-width: 220px; border-radius: 8px; border: 1px solid rgba(168,232,50,0.2); box-shadow: 0 16px 48px rgba(0,0,0,0.6); z-index: 99999; overflow: visible; }
-    .nav-links ul::before { content: ''; position: absolute; top: -6px; left: 50%; transform: translateX(-50%); width: 12px; height: 12px; background: #0a0a0f; border-left: 1px solid rgba(168,232,50,0.2); border-top: 1px solid rgba(168,232,50,0.2); rotate: 45deg; }
-    .nav-links li:hover > ul { display: block; }
-    .nav-links ul li { list-style: none; }
-    .nav-links ul li a { display: block; padding: 10px 20px; color: #e8e8e8 !important; text-decoration: none; font-size: 13px; font-weight: 500; text-transform: none !important; letter-spacing: 0 !important; white-space: nowrap; transition: background 0.2s, color 0.2s, padding-left 0.2s; }
-    .nav-links ul li a:hover { background: rgba(168,232,50,0.08); color: #a8e832 !important; padding-left: 26px; }
-    .nav-links ul li a::after { display: none !important; }
-
-    /* ── NAV CONTROLS ── */
-    .nav-controls { position: absolute; right: 0; display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-    .theme-toggle { width: 36px; height: 36px; border-radius: 50%; border: none; background: rgba(0,0,0,0.12); color: var(--dark); font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
-    .theme-toggle:hover { background: rgba(0,0,0,0.22); }
-    .nav-cta { background: var(--dark); color: var(--green); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 8px 16px; border-radius: 999px; border: none; display: flex; align-items: center; gap: 6px; white-space: nowrap; transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s; }
-    .nav-cta:hover { background: #1a1a2a !important; color: var(--green) !important; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,0.25) !important; }
-    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--dark); border-radius: 2px; transition: all 0.3s; }
-    @media (max-width: 960px) { .nav-links { display: none; } .nav-cta { display: none; } .hamburger { display: flex; } .nav-controls { position: static; margin-left: 0; } .nav-wrap { justify-content: space-between; } }
-
-    /* ── MOBILE MENU ── */
-    .mob-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 2000; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
-    .mob-overlay.open { opacity: 1; pointer-events: all; }
-    .mob-menu { position: fixed; top: 0; right: -300px; width: 280px; height: 100%; background: var(--dark); z-index: 2001; padding: 30px 28px; transition: right 0.35s cubic-bezier(0.4,0,0.2,1); display: flex; flex-direction: column; gap: 10px; }
-    .mob-menu.open { right: 0; }
-    .mob-close { align-self: flex-end; background: none; border: none; color: #fff; font-size: 1.5rem; margin-bottom: 20px; }
-    .mob-links { display: flex; flex-direction: column; gap: 6px; }
-    .mob-links a { color: rgba(255,255,255,0.85); font-size: 1rem; font-weight: 600; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); letter-spacing: 0.5px; }
-    .mob-links a:hover { color: var(--green); }
-    .mob-cta { margin-top: 24px; background: var(--green); color: var(--dark); font-weight: 700; padding: 13px 20px; border-radius: 4px; text-align: center; font-size: 0.9rem; letter-spacing: 0.5px; }
-
     /* ═══════════════════════════════════
        PAGE HERO
     ═══════════════════════════════════ */
@@ -296,48 +204,8 @@
     .contact-band .btn-dark { display: inline-flex; align-items: center; gap: 8px; background: var(--dark); color: var(--green); font-size: 0.88rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; padding: 16px 32px; border-radius: 4px; transition: transform 0.2s, box-shadow 0.2s; }
     .contact-band .btn-dark:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.2); }
 
-    /* ─── FOOTER ─── */
-    .footer { background: var(--navy); }
-    .footer-grid { display: grid; grid-template-columns: 1.6fr 0.75fr 0.85fr 0.75fr 0.85fr 1.15fr; gap: 28px; padding-top: 64px; padding-bottom: 48px; }
-    @media (max-width: 1100px) { .footer-grid { grid-template-columns: repeat(3, 1fr); gap: 32px; } }
-    @media (max-width: 700px) { .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; } }
-    @media (max-width: 440px) { .footer-grid { grid-template-columns: 1fr; gap: 24px; } }
-    .footer-brand p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.65; margin: 16px 0 20px; }
-    .footer-logo img { height: 48px; }
-    .footer-socials { display: flex; gap: 10px; flex-wrap: wrap; }
-    .footer-socials a { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.55); font-size: 0.95rem; transition: color 0.2s, border-color 0.2s, background 0.2s; }
-    .footer-socials a:hover { color: var(--dark); background: var(--green); border-color: var(--green); }
-    .footer-head { font-size: 0.72rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
-    .footer-list { display: flex; flex-direction: column; gap: 6px; }
-    .footer-list a { font-size: 0.82rem; color: rgba(255,255,255,0.58); display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
-    .footer-list a:hover { color: var(--green); }
-    .footer-list a i { color: var(--green); font-size: 1rem; flex-shrink: 0; }
-    .footer-contact { display: flex; flex-direction: column; gap: 10px; }
-    .footer-contact p { display: flex; align-items: flex-start; gap: 8px; font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.55; }
-    .footer-contact p i { color: var(--green); font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
-    .footer-contact a { color: rgba(255,255,255,0.55); }
-    .footer-contact a:hover { color: var(--green); }
-    .footer-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: var(--dark); font-size: 0.82rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 11px 20px; border-radius: 4px; margin-top: 10px; transition: opacity 0.2s; }
-    .footer-cta:hover { opacity: 0.88; }
-    .footer-bottom { background: var(--navy-deep); border-top: 1px solid rgba(255,255,255,0.06); padding: 18px 40px; display: flex; align-items: center; justify-content: center; }
-    .footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.38); }
-    .footer-bottom a { color: rgba(255,255,255,0.38); }
-    .footer-bottom .cyber-link { color: var(--green) !important; font-weight: 600; }
-
-    /* ─── BACK TO TOP ─── */
-    .back-top { position: fixed; bottom: 32px; right: 32px; z-index: 999; width: 46px; height: 46px; border-radius: 50%; background: var(--green); color: var(--dark); border: none; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(168,232,50,0.35); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s; cursor: pointer; }
-    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
-    .back-top:hover { transform: translateY(-3px); }
-
-    /* ─── REVEAL ─── */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
     /* ─── MOBILE NAV RESPONSIVE ─── */
     @media (max-width: 768px) {
-      .site-logo-bar { height: 75px; }
-      .site-logo-bar img { height: 58px; }
-      .navbar { top: 75px !important; }
       .page-hero { padding-top: 155px; }
     }
 
@@ -346,68 +214,70 @@
     }
   </style>
 </head>
-
 <body data-page="product-design-strategies">
-
   <!-- LOGO BAR -->
   <div class="site-logo-bar">
-    <a href="index.html">
-      <img src="images/logos/flashlab-logo.png" alt="FlashLab Creative"
-        onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.8rem;letter-spacing:2px;color:var(--text)\'>FLASHLAB CREATIVE</span>'">
+    <a href="#">
+      <img src="images/logos/flashlab-logo.png" alt="FlashLab Creative" class="logo-light" id="siteLogoImg">
+      <img src="images/logos/flashlab-logo-dark.png" alt="FlashLab Creative" class="logo-dark" id="siteLogoImg">
     </a>
   </div>
 
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-wrap">
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
         <li>
           <a href="services.html">Services</a>
           <ul>
-            <li><a href="outdoor-print-ads.html">Outdoor &amp; Print Ads</a></li>
-            <li><a href="digital-advertising.html">Digital Advertising</a></li>
-            <li><a href="seo-sem-marketing.html">SEO / SEM Marketing</a></li>
-            <li><a href="social-media-management.html">Social Media Management</a></li>
-            <li><a href="product-design-strategies.html" class="nav-active">Product Design &amp; Strategies</a></li>
-            <li><a href="web-app-development.html">Web &amp; App Development</a></li>
-            <li><a href="ecommerce.html">E-Commerce</a></li>
+            <li><a href="digital-advertising.html"><i class="ri-megaphone-line"></i>Digital Advertising</a></li>
+            <li><a href="seo-sem-marketing.html"><i class="ri-search-line"></i>SEO / SEM Marketing</a></li>
+            <li><a href="social-media-management.html"><i class="ri-instagram-line"></i>Social Media Management</a></li>
+            <li><a href="product-design-strategies.html"><i class="ri-pen-nib-line"></i>Product Design &amp;
+                Strategies</a></li>
+            <li><a href="web-app-development.html"><i class="ri-code-s-slash-line"></i>Web &amp; App Development</a>
+            </li>
+            <li><a href="outdoor-print-ads.html"><i class="ri-image-line"></i>Outdoor &amp; Print Ads</a></li>
+            <li><a href="ecommerce.html"><i class="ri-shopping-cart-line"></i>E-Commerce</a></li>
           </ul>
         </li>
+        <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="clients.html">Clients</a></li>
         <li>
           <a href="case-studies.html">Case Studies</a>
           <ul>
-            <li><a href="story-1.html">Story 1</a></li>
-            <li><a href="story-2.html">Story 2</a></li>
-            <li><a href="story-3.html">Story 3</a></li>
-            <li><a href="story-4.html">Story 4</a></li>
-            <li><a href="story-5.html">Story 5</a></li>
-            <li><a href="story-6.html">Story 6</a></li>
+            <li><a href="story-1.html"><i class="ri-article-line"></i>Story 1</a></li>
+            <li><a href="story-2.html"><i class="ri-article-line"></i>Story 2</a></li>
+            <li><a href="story-3.html"><i class="ri-article-line"></i>Story 3</a></li>
+            <li><a href="story-4.html"><i class="ri-article-line"></i>Story 4</a></li>
+            <li><a href="story-5.html"><i class="ri-article-line"></i>Story 5</a></li>
+            <li><a href="story-6.html"><i class="ri-article-line"></i>Story 6</a></li>
           </ul>
         </li>
-        <li><a href="team.html">Team</a></li>
         <li>
           <a href="career.html">Career</a>
           <ul>
-            <li><a href="career-intern.html">Intern</a></li>
-            <li><a href="career-seo-expert.html">SEO Expert</a></li>
-            <li><a href="career-social-media-manager.html">Social Media Manager</a></li>
-            <li><a href="career-graphic-designer.html">Graphic Designer</a></li>
-            <li><a href="career-web-developer.html">Web Developer</a></li>
-            <li><a href="career-animation-designer.html">Animation Designer</a></li>
-            <li><a href="career-app-developer.html">App Developer</a></li>
+            <li><a href="career-intern.html"><i class="ri-user-add-line"></i>Intern</a></li>
+            <li><a href="career-seo-expert.html"><i class="ri-search-eye-line"></i>SEO Expert</a></li>
+            <li><a href="career-social-media-manager.html"><i class="ri-share-circle-line"></i>Social Media Manager</a>
+            </li>
+            <li><a href="career-graphic-designer.html"><i class="ri-brush-line"></i>Graphic Designer</a></li>
+            <li><a href="career-web-developer.html"><i class="ri-code-box-line"></i>Web Developer</a></li>
+            <li><a href="career-animation-designer.html"><i class="ri-video-line"></i>Animation Designer</a></li>
+            <li><a href="career-app-developer.html"><i class="ri-smartphone-line"></i>App Developer</a></li>
           </ul>
         </li>
         <li><a href="connect.html">Connect</a></li>
       </ul>
       <div class="nav-controls">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <i class="ri-moon-line" id="themeIcon"></i>
-        </button>
         <a href="connect.html" class="nav-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="ri-sun-line" id="themeIcon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -416,19 +286,64 @@
 
   <!-- MOBILE MENU -->
   <div class="mob-overlay" id="mobOverlay"></div>
-  <div class="mob-menu" id="mobMenu">
-    <button class="mob-close" id="mobClose"><i class="ri-close-line"></i></button>
+  <div class="mob-menu" id="mobMenu" aria-hidden="true">
+    <button class="mob-close" id="mobClose" aria-label="Close menu">
+      <i class="ri-close-line"></i>
+    </button>
     <ul class="mob-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="clients.html">Clients</a></li>
       <li><a href="team.html">Team</a></li>
-      <li><a href="career.html">Career</a></li>
+      <li>
+        <button class="mob-parent-btn" data-target="mob-sub-services">
+          Services <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-services">
+          <li><a href="digital-advertising.html">Digital Advertising</a></li>
+          <li><a href="seo-sem-marketing.html">SEO / SEM Marketing</a></li>
+          <li><a href="social-media-management.html">Social Media Management</a></li>
+          <li><a href="product-design-strategies.html">Product Design &amp; Strategies</a></li>
+          <li><a href="web-app-development.html">Web &amp; App Development</a></li>
+          <li><a href="outdoor-print-ads.html">Outdoor &amp; Print Ads</a></li>
+          <li><a href="ecommerce.html">E-Commerce</a></li>
+        </ul>
+      </li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="clients.html">Clients</a></li>
+      <li>
+        <button class="mob-parent-btn" data-target="mob-sub-case">
+          Case Studies <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-case">
+          <li><a href="story-1.html">Story 1</a></li>
+          <li><a href="story-2.html">Story 2</a></li>
+          <li><a href="story-3.html">Story 3</a></li>
+          <li><a href="story-4.html">Story 4</a></li>
+          <li><a href="story-5.html">Story 5</a></li>
+          <li><a href="story-6.html">Story 6</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="mob-parent-btn" data-target="mob-sub-career">
+          Career <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-career">
+          <li><a href="career-intern.html">Intern</a></li>
+          <li><a href="career-seo-expert.html">SEO Expert</a></li>
+          <li><a href="career-social-media-manager.html">Social Media Manager</a></li>
+          <li><a href="career-graphic-designer.html">Graphic Designer</a></li>
+          <li><a href="career-web-developer.html">Web Developer</a></li>
+          <li><a href="career-animation-designer.html">Animation Designer</a></li>
+          <li><a href="career-app-developer.html">App Developer</a></li>
+        </ul>
+      </li>
       <li><a href="connect.html">Connect</a></li>
     </ul>
-    <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
+    <div class="mob-cta-wrap">
+      <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
+    </div>
   </div>
+
 
   <!-- SERVICE NAV STRIP -->
   <div class="service-nav-strip" style="margin-top: 152px;">
@@ -689,13 +604,18 @@
               onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
           </a>
         </div>
-        <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in 2018, we craft unforgettable experiences for brands that dare to stand out.</p>
+        <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in
+          2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i class="ri-instagram-fill"></i></a>
-          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i class="ri-facebook-fill"></i></a>
-          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i class="ri-linkedin-fill"></i></a>
+          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i
+              class="ri-instagram-fill"></i></a>
+          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i
+              class="ri-facebook-fill"></i></a>
+          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i
+              class="ri-linkedin-fill"></i></a>
           <a href="https://twitter.com/theflashlab" target="_blank" rel="noopener"><i class="ri-twitter-x-fill"></i></a>
-          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i class="ri-youtube-fill"></i></a>
+          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i
+              class="ri-youtube-fill"></i></a>
         </div>
       </div>
       <div>
@@ -745,60 +665,29 @@
       <div>
         <h4 class="footer-head">Contact</h4>
         <div class="footer-contact">
-          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa" target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
+          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa"
+              target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
           <p><i class="ri-phone-fill"></i><a href="tel:+919923580023">+91 99235 80023</a></p>
-          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a></p>
+          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a>
+          </p>
           <p><i class="ri-time-fill"></i><span>Mon – Sat: 9am – 6pm IST</span></p>
           <a href="connect.html" class="footer-cta">Start a Project <i class="ri-arrow-right-line"></i></a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>Copyright &copy; 2026 FlashLab Creative — Website Crafted by <a href="https://cybercreative.in/" target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
+      <p>Copyright &copy; 2026 FlashLab Creative — Website Crafted by <a href="https://cybercreative.in/"
+          target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
     </div>
   </footer>
 
-  <button class="back-top" id="backTop"><i class="ri-arrow-up-line"></i></button>
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" aria-label="Back to top">
+    <i class="ri-arrow-up-line"></i>
+  </button>
 
+  <script src="flash.js"></script>
   <script>
-    // Theme
-    const html = document.documentElement;
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
-    function setTheme(t) { html.setAttribute('data-theme', t); themeIcon.className = t === 'dark' ? 'ri-sun-line' : 'ri-moon-line'; localStorage.setItem('fl-theme', t); }
-    setTheme(localStorage.getItem('fl-theme') || 'light');
-    themeToggle.addEventListener('click', () => setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
-
-    // Mobile menu
-    const hamburger = document.getElementById('hamburger');
-    const mobMenu = document.getElementById('mobMenu');
-    const mobOverlay = document.getElementById('mobOverlay');
-    const mobClose = document.getElementById('mobClose');
-    function openMob() { mobMenu.classList.add('open'); mobOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
-    function closeMob() { mobMenu.classList.remove('open'); mobOverlay.classList.remove('open'); document.body.style.overflow = ''; }
-    hamburger.addEventListener('click', openMob);
-    mobClose.addEventListener('click', closeMob);
-    mobOverlay.addEventListener('click', closeMob);
-
-    // Back to top
-    const backTop = document.getElementById('backTop');
-    window.addEventListener('scroll', () => backTop.classList.toggle('show', window.scrollY > 400), { passive: true });
-    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // Reveal on scroll
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const delay = el.style.getPropertyValue('transition-delay') || '0s';
-          setTimeout(() => el.classList.add('visible'), parseFloat(delay) * 1000);
-          observer.unobserve(el);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(el => observer.observe(el));
-
     // FAQ accordion
     document.querySelectorAll('.faq-q').forEach(btn => {
       btn.addEventListener('click', () => {

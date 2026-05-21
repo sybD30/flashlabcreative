@@ -10,221 +10,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
-
+<link rel="stylesheet" href="flash.css">
 <style>
-/* ============================================================
-   1. DESIGN TOKENS
-   ============================================================ */
-:root {
-  --accent:  #a8e832;
-  --accent2: #f97316;
-  --accent3: #dc2626;
-  --font-head:   'Bebas Neue', sans-serif;
-  --font-body:   'Outfit', sans-serif;
-  --font-italic: 'Playfair Display', serif;
-  --radius:    16px;
-  --radius-lg: 28px;
-}
-[data-theme="dark"] {
-  --bg:          #0a0a0f;
-  --bg2:         #0f0f18;
-  --card:        #13131f;
-  --card2:       #1a1a2e;
-  --text:        #f0eee8;
-  --text-strong: #fff;
-  --muted:       #888;
-  --muted2:      #555;
-  --border:      rgba(255,255,255,0.07);
-  --shadow:      rgba(0,0,0,0.4);
-}
-[data-theme="light"] {
-  --bg:          #f7f5f0;
-  --bg2:         #fff;
-  --card:        #fff;
-  --card2:       #f0ede8;
-  --text:        #1a1218;
-  --text-strong: #0a0a0f;
-  --muted:       #6b6473;
-  --muted2:      #a89fb0;
-  --border:      rgba(0,0,0,0.09);
-  --shadow:      rgba(0,0,0,0.12);
-}
-
-/* ============================================================
-   2. RESET & BASE
-   ============================================================ */
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior: smooth; }
-body {
-  background:   var(--bg);
-  color:        var(--text);
-  font-family:  var(--font-body);
-  line-height:  1.65;
-  overflow-x:   hidden;
-  cursor:       none;
-  transition:   background .4s, color .4s;
-}
-a   { text-decoration: none; color: inherit; }
-ul  { list-style: none; }
-img { max-width: 100%; display: block; }
-
-/* ============================================================
-   3. LAYOUT HELPERS
-   ============================================================ */
-.wrap    { width: min(1200px, 92%); margin: auto; }
-.section { padding: 100px 0; }
-
-/* ============================================================
-   4. CURSOR
-   ============================================================ */
-body { cursor: none; }
-.cursor {
-  width: 10px; height: 10px;
-  background: var(--text);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: transform .1s ease, background .2s ease, width .2s ease, height .2s ease;
-}
-
-/* ============================================================
-   5. LOGO BAR
-   ============================================================ */
-.site-logo-bar {
-  position: fixed; top: 0; left: 0; right: 0;
-  z-index: 1002;
-  display: flex; align-items: center; justify-content: center;
-  height: 130px;
-  transition: background .3s;
-}
-[data-theme="dark"]  .site-logo-bar { background: #0a0a0f; }
-[data-theme="light"] .site-logo-bar { background: #fff; }
-.site-logo-bar img { height: 105px; width: auto; object-fit: contain; transition: filter .3s; }
-[data-theme="dark"] .site-logo-bar img { filter: invert(1) brightness(1.1); }
-
-/* ============================================================
-   6. NAVBAR
-   ============================================================ */
-.navbar {
-  position: fixed; top: 130px; left: 0; right: 0;
-  z-index: 1001;
-  padding: 18px 5%;
-  background: #a8e832 !important;
-  box-shadow: 0 2px 10px rgba(0,0,0,.12);
-  display: flex; align-items: center; justify-content: center;
-}
-.navbar.scrolled { box-shadow: 0 4px 18px rgba(0,0,0,.2); }
-.nav-wrap { width: 100%; max-width: 1200px; display: flex; align-items: center; justify-content: center; position: relative; }
-.nav-links { flex:1; display:flex; align-items:center; gap:28px; font-size:.92rem; font-weight:600; letter-spacing:.6px; white-space:nowrap; justify-content:center; text-transform:uppercase; list-style:none; margin:0; padding:0; }
-.nav-links > li { position:relative; overflow:visible; }
-.nav-links > li > a { color:#0a0a0f !important; text-decoration:none; display:inline-block; transition:opacity .2s; }
-.nav-links > li > a:hover { opacity:.65; }
-.nav-links > li > a::after { content:''; position:absolute; left:0; bottom:-4px; width:0; height:2px; background:#0a0a0f; transition:width .3s; }
-.nav-links > li > a:hover::after { width:100%; }
-.nav-links ul { display:none; position:absolute; top:calc(100% + 14px); left:50%; transform:translateX(-50%); background:#0a0a0f; list-style:none; padding:8px 0; min-width:220px; border-radius:8px; border:1px solid rgba(168,232,50,.2); box-shadow:0 16px 48px rgba(0,0,0,.6); z-index:99999; }
-.nav-links ul::before { content:''; position:absolute; top:-6px; left:50%; transform:translateX(-50%) rotate(45deg); width:12px; height:12px; background:#0a0a0f; border-left:1px solid rgba(168,232,50,.2); border-top:1px solid rgba(168,232,50,.2); }
-.nav-links li:hover > ul { display:block; }
-.nav-links ul li a { display:block; padding:10px 20px; color:#e8e8e8 !important; font-size:13px; font-weight:500; text-transform:none !important; letter-spacing:0 !important; white-space:nowrap; transition:background .2s,color .2s,padding-left .2s; }
-.nav-links ul li a:hover { background:rgba(168,232,50,.08); color:#a8e832 !important; padding-left:26px; }
-.nav-links ul li a::after { display:none !important; }
-.nav-controls { position:absolute; right:0; display:flex; align-items:center; gap:10px; }
-.theme-toggle { width:42px; height:42px; border-radius:50%; border:none; background:rgba(0,0,0,.1) !important; color:#0a0a0f !important; font-size:1.05rem; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all .3s; }
-.theme-toggle:hover { background:rgba(0,0,0,.2) !important; }
-.nav-cta { display:flex; align-items:center; gap:8px; background:#0a0a0f !important; color:#a8e832 !important; padding:10px 20px; border-radius:999px; font-size:.86rem; font-weight:700; white-space:nowrap; transition:all .3s; }
-.nav-cta:hover { background:#1a1a2a !important; transform:translateY(-1px); }
-.hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; }
-.hamburger span { display:block; width:24px; height:2px; background:#0a0a0f; border-radius:999px; transition:.3s; }
-.hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
-.hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
-
-/* active nav state */
-.nav-links > li > a.nav-active { color:#0a0a0f !important; opacity:1 !important; }
-.nav-links > li > a.nav-active::after { width:100% !important; background:#0a0a0f !important; }
-.nav-links ul li a.nav-active { color:#a8e832 !important; background:rgba(168,232,50,.08) !important; padding-left:26px !important; border-left:2px solid #a8e832; }
-.nav-links > li.nav-parent-active > a { color:#0a0a0f !important; opacity:1 !important; }
-
-/* ============================================================
-   7. MOBILE MENU
-   ============================================================ */
-.mob-overlay { position:fixed; inset:0; background:rgba(0,0,0,.7); z-index:1001; display:none; backdrop-filter:blur(4px); }
-.mob-overlay.active { display:block; }
-.mob-menu { position:fixed; top:0; right:-100%; width:280px; height:100%; background:var(--bg2); border-left:1px solid var(--border); z-index:1002; padding:70px 30px 40px; display:flex; flex-direction:column; gap:6px; transition:right .4s cubic-bezier(.22,1,.36,1); }
-.mob-menu.active { right:0; }
-.mob-close { position:absolute; top:20px; right:20px; background:none; border:none; color:var(--muted); font-size:1.4rem; cursor:pointer; }
-.mob-links { display:flex; flex-direction:column; gap:0; }
-.mob-links li a { display:block; padding:13px 0; font-size:1.05rem; font-weight:500; color:var(--text); border-bottom:1px solid var(--border); transition:color .3s,padding-left .3s; }
-.mob-links li a:hover { color:var(--accent); padding-left:8px; }
-.mob-cta { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#0a0a0f !important; padding:12px 24px; border-radius:999px; font-weight:600; font-size:.9rem; margin-top:16px; }
-
-/* ============================================================
-   8. SHARED TYPOGRAPHY
-   ============================================================ */
-.sec-eyebrow  { font-size:.78rem; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:14px; display:block; }
-.sec-heading  { font-family:var(--font-head); font-size:clamp(2.8rem,5vw,4.5rem); line-height:1.05; letter-spacing:1px; margin-bottom:18px; color:var(--text); }
-.sec-heading em { font-family:var(--font-italic); font-style:italic; color:var(--text); font-size:.9em; }
-.sec-sub      { color:var(--muted); font-size:1rem; max-width:560px; line-height:1.8; }
-.sec-header.centered { text-align:center; margin-bottom:60px; }
-.sec-header.centered .sec-sub { margin:0 auto; }
-
-/* ============================================================
-   9. BUTTONS
-   ============================================================ */
-.btn-primary { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#0a0a0f; padding:14px 30px; border-radius:999px; font-weight:700; font-size:.9rem; transition:all .3s; }
-.btn-primary:hover { background:#bef54a; transform:translateY(-2px); box-shadow:0 8px 30px rgba(168,232,50,.35); }
-.btn-ghost   { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); color:var(--muted); padding:14px 30px; border-radius:999px; font-weight:500; font-size:.9rem; transition:all .3s; }
-.btn-ghost:hover { border-color:var(--muted); color:var(--text); }
-
-/* ============================================================
-   10. SCROLL REVEAL
-   ============================================================ */
-.reveal       { opacity:0; transform:translateY(40px);  transition:opacity .8s,transform .8s; transition-delay:var(--delay,0s); }
-.reveal-left  { opacity:0; transform:translateX(-40px); transition:opacity .8s,transform .8s; }
-.reveal-right { opacity:0; transform:translateX(40px);  transition:opacity .8s,transform .8s; }
-.reveal.active, .reveal-left.active, .reveal-right.active { opacity:1; transform:translate(0); }
-
-/* ============================================================
-   11. FOOTER
-   ============================================================ */
-.footer        { background: #11222a !important; }
-.footer-bottom { background: #0c1a20 !important; border-top: 1px solid rgba(255,255,255,.07) !important; padding: 18px 40px; display: flex; align-items: center; justify-content: center; }
-.footer-bottom p, .footer-bottom p a { color:rgba(255,255,255,.55) !important; font-size:.82rem; }
-.footer-bottom p a.cyber-link { color:var(--accent) !important; font-weight:600; }
-.footer-grid { display: grid; grid-template-columns: 1.6fr .75fr .85fr .75fr .85fr 1.15fr; gap: 28px; padding: 64px 0 48px; }
-.footer-brand p { font-size:.82rem; color:rgba(255,255,255,.5); line-height:1.65; margin:16px 0 20px; }
-.footer-logo img { height:70px; }
-.footer-socials { display:flex; gap:10px; flex-wrap:wrap; }
-.footer-socials a { width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,.12); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.55); font-size:.95rem; transition:color .2s,border-color .2s,background .2s; }
-.footer-socials a:hover { color:#0a0a0f; background:var(--accent); border-color:var(--accent); }
-.footer-head { font-size:.72rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:rgba(255,255,255,.35); margin-bottom:16px; }
-.footer-list { display:flex; flex-direction:column; gap:6px; }
-.footer-list a { font-size:.82rem; color:rgba(255,255,255,.58); display:flex; align-items:center; gap:5px; transition:color .2s; }
-.footer-list a:hover { color:var(--accent); }
-.footer-list a i { color:var(--accent); font-size:1rem; flex-shrink:0; }
-.footer-contact { display:flex; flex-direction:column; gap:10px; }
-.footer-contact p { display:flex; align-items:flex-start; gap:8px; font-size:.82rem; color:rgba(255,255,255,.55); line-height:1.55; }
-.footer-contact p i { color:var(--accent); font-size:1rem; flex-shrink:0; margin-top:2px; }
-.footer-contact a { color:rgba(255,255,255,.55); }
-.footer-contact a:hover { color:var(--accent); }
-.footer-cta { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#0a0a0f; font-size:.82rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:11px 20px; border-radius:4px; margin-top:10px; transition:opacity .2s; }
-.footer-cta:hover { opacity:.88; }
-
-/* ============================================================
-   12. BACK TO TOP
-   ============================================================ */
-.back-top { position:fixed; bottom:30px; right:30px; z-index:9999; width:46px; height:46px; border-radius:50%; background:var(--accent) !important; color:#0a0a0f !important; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:1.2rem; box-shadow:0 4px 16px rgba(168,232,50,.35); opacity:0; visibility:hidden; transform:translateY(12px); transition:opacity .3s,visibility .3s,transform .3s; pointer-events:none; }
-.back-top.active { opacity:1 !important; visibility:visible !important; transform:translateY(0) !important; pointer-events:all !important; }
-.back-top:hover { background:#bef54a !important; transform:translateY(-3px) !important; }
-
-/* ============================================================
-   13. RESPONSIVE
-   ============================================================ */
-@media (max-width:1100px) { .footer-grid { grid-template-columns:repeat(3,1fr); gap:32px; } }
-@media (max-width:960px)  { .site-logo-bar { height:95px; } .site-logo-bar img { height:72px; } .navbar { top:95px !important; } .nav-cta { display:none; } .hamburger { display:flex; } }
-@media (max-width:640px)  { .section { padding:70px 0; } .nav-links { display:none !important; } .hamburger { display:flex; } .footer-grid { grid-template-columns:1fr; gap:24px; } }
-
 /* ============================================================
    PAGE-SPECIFIC: INTERN
    ============================================================ */
@@ -426,26 +213,90 @@ body { cursor: none; }
 </style>
 </head>
 <body data-page="career-intern">
+  <!-- LOGO BAR -->
+  <div class="site-logo-bar">
+    <a href="#">
+      <img src="images/logos/flashlab-logo.png" alt="FlashLab Creative" class="logo-light" id="siteLogoImg">
+      <img src="images/logos/flashlab-logo-dark.png" alt="FlashLab Creative" class="logo-dark" id="siteLogoImg">
+    </a>
+  </div>
 
-<!-- CURSOR -->
-<div class="cursor" id="cursor"></div>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-wrap">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li>
+          <a href="services.html">Services</a>
+          <ul>
+            <li><a href="digital-advertising.html"><i class="ri-megaphone-line"></i>Digital Advertising</a></li>
+            <li><a href="seo-sem-marketing.html"><i class="ri-search-line"></i>SEO / SEM Marketing</a></li>
+            <li><a href="social-media-management.html"><i class="ri-instagram-line"></i>Social Media Management</a></li>
+            <li><a href="product-design-strategies.html"><i class="ri-pen-nib-line"></i>Product Design &amp;
+                Strategies</a></li>
+            <li><a href="web-app-development.html"><i class="ri-code-s-slash-line"></i>Web &amp; App Development</a>
+            </li>
+            <li><a href="outdoor-print-ads.html"><i class="ri-image-line"></i>Outdoor &amp; Print Ads</a></li>
+            <li><a href="ecommerce.html"><i class="ri-shopping-cart-line"></i>E-Commerce</a></li>
+          </ul>
+        </li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li>
+          <a href="case-studies.html">Case Studies</a>
+          <ul>
+            <li><a href="story-1.html"><i class="ri-article-line"></i>Story 1</a></li>
+            <li><a href="story-2.html"><i class="ri-article-line"></i>Story 2</a></li>
+            <li><a href="story-3.html"><i class="ri-article-line"></i>Story 3</a></li>
+            <li><a href="story-4.html"><i class="ri-article-line"></i>Story 4</a></li>
+            <li><a href="story-5.html"><i class="ri-article-line"></i>Story 5</a></li>
+            <li><a href="story-6.html"><i class="ri-article-line"></i>Story 6</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="career.html">Career</a>
+          <ul>
+            <li><a href="career-intern.html"><i class="ri-user-add-line"></i>Intern</a></li>
+            <li><a href="career-seo-expert.html"><i class="ri-search-eye-line"></i>SEO Expert</a></li>
+            <li><a href="career-social-media-manager.html"><i class="ri-share-circle-line"></i>Social Media Manager</a>
+            </li>
+            <li><a href="career-graphic-designer.html"><i class="ri-brush-line"></i>Graphic Designer</a></li>
+            <li><a href="career-web-developer.html"><i class="ri-code-box-line"></i>Web Developer</a></li>
+            <li><a href="career-animation-designer.html"><i class="ri-video-line"></i>Animation Designer</a></li>
+            <li><a href="career-app-developer.html"><i class="ri-smartphone-line"></i>App Developer</a></li>
+          </ul>
+        </li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+      <div class="nav-controls">
+        <a href="connect.html" class="nav-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="ri-sun-line" id="themeIcon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
 
-<!-- LOGO BAR -->
-<div class="site-logo-bar">
-  <a href="index.html">
-    <img src="https://www.flashlabcreative.com/wp-content/uploads/2025/10/cropped-Flashlab-LogoBlack-280x93.png" alt="FlashLab Creative" id="siteLogoImg">
-  </a>
-</div>
-
-<!-- NAVBAR -->
-<nav class="navbar" id="navbar">
-  <div class="nav-wrap">
-    <ul class="nav-links">
+  <!-- MOBILE MENU -->
+  <div class="mob-overlay" id="mobOverlay"></div>
+  <div class="mob-menu" id="mobMenu" aria-hidden="true">
+    <button class="mob-close" id="mobClose" aria-label="Close menu">
+      <i class="ri-close-line"></i>
+    </button>
+    <ul class="mob-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="team.html">Team</a></li>
       <li>
-        <a href="services.html">Services</a>
-        <ul>
+        <button class="mob-parent-btn" data-target="mob-sub-services">
+          Services <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-services">
           <li><a href="digital-advertising.html">Digital Advertising</a></li>
           <li><a href="seo-sem-marketing.html">SEO / SEM Marketing</a></li>
           <li><a href="social-media-management.html">Social Media Management</a></li>
@@ -455,10 +306,13 @@ body { cursor: none; }
           <li><a href="ecommerce.html">E-Commerce</a></li>
         </ul>
       </li>
+      <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="clients.html">Clients</a></li>
       <li>
-        <a href="case-studies.html">Case Studies</a>
-        <ul>
+        <button class="mob-parent-btn" data-target="mob-sub-case">
+          Case Studies <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-case">
           <li><a href="story-1.html">Story 1</a></li>
           <li><a href="story-2.html">Story 2</a></li>
           <li><a href="story-3.html">Story 3</a></li>
@@ -467,11 +321,12 @@ body { cursor: none; }
           <li><a href="story-6.html">Story 6</a></li>
         </ul>
       </li>
-      <li><a href="team.html">Team</a></li>
       <li>
-        <a href="career.html">Career</a>
-        <ul>
-          <li><a href="career-intern.html" class="nav-active">Intern</a></li>
+        <button class="mob-parent-btn" data-target="mob-sub-career">
+          Career <i class="ri-arrow-down-s-line mob-arrow"></i>
+        </button>
+        <ul class="mob-sub" id="mob-sub-career">
+          <li><a href="career-intern.html">Intern</a></li>
           <li><a href="career-seo-expert.html">SEO Expert</a></li>
           <li><a href="career-social-media-manager.html">Social Media Manager</a></li>
           <li><a href="career-graphic-designer.html">Graphic Designer</a></li>
@@ -482,33 +337,11 @@ body { cursor: none; }
       </li>
       <li><a href="connect.html">Connect</a></li>
     </ul>
-    <div class="nav-controls">
-      <button class="theme-toggle" id="themeToggle">
-        <i class="ri-sun-line" id="themeIcon"></i>
-      </button>
-      <a href="connect.html" class="nav-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
-      <button class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </button>
+    <div class="mob-cta-wrap">
+      <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
     </div>
   </div>
-</nav>
 
-<!-- MOBILE MENU -->
-<div class="mob-overlay" id="mobOverlay"></div>
-<div class="mob-menu" id="mobMenu">
-  <button class="mob-close" id="mobClose"><i class="ri-close-line"></i></button>
-  <ul class="mob-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="clients.html">Clients</a></li>
-    <li><a href="team.html">Team</a></li>
-    <li><a href="career.html">Career</a></li>
-    <li><a href="connect.html">Connect</a></li>
-  </ul>
-  <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
-</div>
 
 <main>
 
@@ -757,177 +590,101 @@ body { cursor: none; }
 
 </main>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="wrap footer-grid">
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <a href="index.html">
-          <img src="https://www.flashlabcreative.com/wp-content/uploads/2025/10/cropped-Flashlab-LogoBlack-280x93.png" alt="FlashLab Creative"
-               style="filter:invert(1) brightness(1.1);"
-               onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
-        </a>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <a href="index.html">
+            <img src="images/logos/flask-logo.png" alt="FlashLab Creative"
+              onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
+          </a>
+        </div>
+        <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in
+          2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i
+              class="ri-instagram-fill"></i></a>
+          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i
+              class="ri-facebook-fill"></i></a>
+          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i
+              class="ri-linkedin-fill"></i></a>
+          <a href="https://twitter.com/theflashlab" target="_blank" rel="noopener"><i class="ri-twitter-x-fill"></i></a>
+          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i
+              class="ri-youtube-fill"></i></a>
+        </div>
       </div>
-      <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in 2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
-      <div class="footer-socials">
-        <a href="https://www.instagram.com/flashlab.creative" target="_blank"><i class="ri-instagram-fill"></i></a>
-        <a href="https://www.facebook.com/flashlab.creative/" target="_blank"><i class="ri-facebook-fill"></i></a>
-        <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank"><i class="ri-linkedin-fill"></i></a>
-        <a href="https://twitter.com/theflashlab" target="_blank"><i class="ri-twitter-x-fill"></i></a>
-        <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank"><i class="ri-youtube-fill"></i></a>
+      <div>
+        <h4 class="footer-head">Navigation</h4>
+        <ul class="footer-list">
+          <li><a href="index.html"><i class="ri-arrow-right-s-line"></i>Home</a></li>
+          <li><a href="about.html"><i class="ri-arrow-right-s-line"></i>About</a></li>
+          <li><a href="services.html"><i class="ri-arrow-right-s-line"></i>Services</a></li>
+          <li><a href="clients.html"><i class="ri-arrow-right-s-line"></i>Clients</a></li>
+          <li><a href="case-studies.html"><i class="ri-arrow-right-s-line"></i>Case Studies</a></li>
+          <li><a href="team.html"><i class="ri-arrow-right-s-line"></i>Teams</a></li>
+          <li><a href="career.html"><i class="ri-arrow-right-s-line"></i>Career</a></li>
+          <li><a href="connect.html"><i class="ri-arrow-right-s-line"></i>Connect</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-head">Services</h4>
+        <ul class="footer-list">
+          <li><a href="outdoor-print-ads.html"><i class="ri-arrow-right-s-line"></i>Outdoor &amp; Print</a></li>
+          <li><a href="digital-advertising.html"><i class="ri-arrow-right-s-line"></i>Digital Advertising</a></li>
+          <li><a href="seo-sem-marketing.html"><i class="ri-arrow-right-s-line"></i>SEO / SEM</a></li>
+          <li><a href="social-media-management.html"><i class="ri-arrow-right-s-line"></i>Social Media</a></li>
+          <li><a href="product-design-strategies.html"><i class="ri-arrow-right-s-line"></i>Product Design</a></li>
+          <li><a href="web-app-development.html"><i class="ri-arrow-right-s-line"></i>Web &amp; App Dev</a></li>
+          <li><a href="ecommerce.html"><i class="ri-arrow-right-s-line"></i>E-Commerce</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-head">Join Us</h4>
+        <ul class="footer-list">
+          <li><a href="career-intern.html"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
+          <li><a href="career-seo-expert.html"><i class="ri-arrow-right-s-line"></i>SEO Expert</a></li>
+          <li><a href="career-social-media-manager.html"><i class="ri-arrow-right-s-line"></i>Social Media Mgr</a></li>
+          <li><a href="career-graphic-designer.html"><i class="ri-arrow-right-s-line"></i>Graphic Designer</a></li>
+          <li><a href="career-web-developer.html"><i class="ri-arrow-right-s-line"></i>Web Developer</a></li>
+          <li><a href="career-animation-designer.html"><i class="ri-arrow-right-s-line"></i>Animation Designer</a></li>
+          <li><a href="career-app-developer.html"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-head">Service Links</h4>
+        <ul class="footer-list">
+          <li><a href="https://parashootstudio.com"><i class="ri-arrow-right-s-line"></i>Content Production</a></li>
+          <li><a href="https://backstagexchange.com"><i class="ri-arrow-right-s-line"></i>Event Activation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-head">Contact</h4>
+        <div class="footer-contact">
+          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa"
+              target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
+          <p><i class="ri-phone-fill"></i><a href="tel:+919923580023">+91 99235 80023</a></p>
+          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a>
+          </p>
+          <p><i class="ri-time-fill"></i><span>Mon – Sat: 9am – 6pm IST</span></p>
+          <a href="connect.html" class="footer-cta">Start a Project <i class="ri-arrow-right-line"></i></a>
+        </div>
       </div>
     </div>
-    <div>
-      <h4 class="footer-head">Navigation</h4>
-      <ul class="footer-list">
-        <li><a href="index.html"><i class="ri-arrow-right-s-line"></i>Home</a></li>
-        <li><a href="about.html"><i class="ri-arrow-right-s-line"></i>About</a></li>
-        <li><a href="services.html"><i class="ri-arrow-right-s-line"></i>Services</a></li>
-        <li><a href="clients.html"><i class="ri-arrow-right-s-line"></i>Clients</a></li>
-        <li><a href="team.html"><i class="ri-arrow-right-s-line"></i>Teams</a></li>
-        <li><a href="career.html"><i class="ri-arrow-right-s-line"></i>Career</a></li>
-        <li><a href="connect.html"><i class="ri-arrow-right-s-line"></i>Connect</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <p>Copyright &copy; 2026 FlashLab Creative — Website Crafted by <a href="https://cybercreative.in/"
+          target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
     </div>
-    <div>
-      <h4 class="footer-head">Services</h4>
-      <ul class="footer-list">
-        <li><a href="digital-advertising.html"><i class="ri-arrow-right-s-line"></i>Digital Advertising</a></li>
-        <li><a href="seo-sem-marketing.html"><i class="ri-arrow-right-s-line"></i>SEO / SEM</a></li>
-        <li><a href="social-media-management.html"><i class="ri-arrow-right-s-line"></i>Social Media</a></li>
-        <li><a href="product-design-strategies.html"><i class="ri-arrow-right-s-line"></i>Product Design</a></li>
-        <li><a href="web-app-development.html"><i class="ri-arrow-right-s-line"></i>Web &amp; App Dev</a></li>
-        <li><a href="outdoor-print-ads.html"><i class="ri-arrow-right-s-line"></i>Outdoor &amp; Print</a></li>
-        <li><a href="ecommerce.html"><i class="ri-arrow-right-s-line"></i>E-Commerce</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="footer-head">Join Us</h4>
-      <ul class="footer-list">
-        <li><a href="career-intern.html"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
-        <li><a href="career-seo-expert.html"><i class="ri-arrow-right-s-line"></i>SEO Expert</a></li>
-        <li><a href="career-social-media-manager.html"><i class="ri-arrow-right-s-line"></i>Social Media Mgr</a></li>
-        <li><a href="career-graphic-designer.html"><i class="ri-arrow-right-s-line"></i>Graphic Designer</a></li>
-        <li><a href="career-web-developer.html"><i class="ri-arrow-right-s-line"></i>Web Developer</a></li>
-        <li><a href="career-animation-designer.html"><i class="ri-arrow-right-s-line"></i>Animation Designer</a></li>
-        <li><a href="career-app-developer.html"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="footer-head">Studio Links</h4>
-      <ul class="footer-list">
-        <li><a href="https://parashootstudio.com"><i class="ri-arrow-right-s-line"></i>Content Production</a></li>
-        <li><a href="https://backstagexchange.com"><i class="ri-arrow-right-s-line"></i>Event Activation</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="footer-head">Contact</h4>
-      <div class="footer-contact">
-        <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa" target="_blank">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
-        <p><i class="ri-phone-fill"></i><a href="tel:+919923580023">+91 99235 80023</a></p>
-        <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a></p>
-        <p><i class="ri-time-fill"></i><span>Mon – Sat: 9am – 6pm IST</span></p>
-        <a href="connect.html" class="footer-cta">Start a Project <i class="ri-arrow-right-line"></i></a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>Copyright &copy; 2026 FlashLab Creative — Website Crafted by
-      <a href="https://cybercreative.in/" target="_blank" class="cyber-link">Cyber Creative</a>
-    </p>
-  </div>
-</footer>
+  </footer>
 
-<!-- BACK TO TOP -->
-<button class="back-top" id="backTop"><i class="ri-arrow-up-line"></i></button>
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" aria-label="Back to top">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
+  <script src="flash.js"></script>
 
 <script>
-/* THEME */
-(function () {
-  const toggle = document.getElementById('themeToggle');
-  const icon   = document.getElementById('themeIcon');
-  const html   = document.documentElement;
-  const saved  = localStorage.getItem('flashlab-theme') || 'dark';
-  html.setAttribute('data-theme', saved);
-  setIcon(saved);
-  toggle.addEventListener('click', () => {
-    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('flashlab-theme', next);
-    setIcon(next);
-    toggle.style.transform = 'rotate(360deg) scale(1.15)';
-    setTimeout(() => toggle.style.transform = '', 400);
-  });
-  function setIcon(t) { icon.className = t === 'dark' ? 'ri-sun-line' : 'ri-moon-line'; }
-})();
-
-/* CURSOR */
-(function () {
-  const cursor = document.getElementById('cursor');
-  document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top  = e.clientY + 'px';
-  });
-  document.querySelectorAll('a, button, label.check-item').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.style.transform = 'translate(-50%, -50%) scale(2.5)';
-      cursor.style.background = 'var(--accent)';
-    });
-    el.addEventListener('mouseleave', () => {
-      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-      cursor.style.background = 'var(--text)';
-    });
-  });
-})();
-
-/* NAVBAR SCROLL */
-window.addEventListener('scroll', () => {
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
-}, { passive: true });
-
-/* MOBILE MENU */
-(function () {
-  const ham  = document.getElementById('hamburger');
-  const menu = document.getElementById('mobMenu');
-  const ov   = document.getElementById('mobOverlay');
-  const cls  = document.getElementById('mobClose');
-  function open() { menu.classList.add('active'); ov.classList.add('active'); ham.classList.add('open'); document.body.style.overflow = 'hidden'; }
-  function shut() { menu.classList.remove('active'); ov.classList.remove('active'); ham.classList.remove('open'); document.body.style.overflow = ''; }
-  ham.addEventListener('click', open);
-  cls.addEventListener('click', shut);
-  ov.addEventListener('click',  shut);
-  document.querySelectorAll('.mob-menu a').forEach(a => a.addEventListener('click', shut));
-})();
-
-/* SCROLL REVEAL */
-(function () {
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); obs.unobserve(e.target); } });
-  }, { threshold: .1 });
-  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
-})();
-
-/* BACK TO TOP */
-(function () {
-  const btn = document.getElementById('backTop');
-  window.addEventListener('scroll', () => btn.classList.toggle('active', window.scrollY > 400), { passive: true });
-  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-})();
-
-/* SMOOTH SCROLL */
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', function (e) {
-    const id = this.getAttribute('href');
-    const target = document.querySelector(id);
-    if (target) {
-      e.preventDefault();
-      const nb = document.getElementById('navbar');
-      const offset = nb.offsetTop + nb.offsetHeight + 16;
-      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
-    }
-  });
-});
-
 /* SET DEPT FROM CARD */
 function setDept(dept) {
   const sel = document.getElementById('f-dept');

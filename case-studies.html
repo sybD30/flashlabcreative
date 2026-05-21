@@ -22,26 +22,21 @@
 <!-- ▸ Set data-page to match PAGE_MAP key in the JS below -->
 
 <body data-page="case-studies">
-
-  <!-- ============================================================
-  LOGO BAR
-  ============================================================ -->
+  <!-- LOGO BAR -->
   <div class="site-logo-bar">
-    <a href="index.html">
-      <img src="images/logos/flashlab-logo.png" alt="FlashLab Creative" id="siteLogoImg"
-        onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.8rem;letter-spacing:3px;color:var(--text)\'>FLASHLAB CREATIVE</span>'">
+    <a href="#">
+      <img src="images/logos/flashlab-logo.png" alt="FlashLab Creative" class="logo-light" id="siteLogoImg">
+      <img src="images/logos/flashlab-logo-dark.png" alt="FlashLab Creative" class="logo-dark" id="siteLogoImg">
     </a>
   </div>
 
-  <!-- ============================================================
-  NAVBAR
-  ============================================================ -->
+  <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-wrap">
-
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
         <li>
           <a href="services.html">Services</a>
           <ul>
@@ -56,6 +51,7 @@
             <li><a href="ecommerce.html"><i class="ri-shopping-cart-line"></i>E-Commerce</a></li>
           </ul>
         </li>
+        <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="clients.html">Clients</a></li>
         <li>
           <a href="case-studies.html">Case Studies</a>
@@ -68,7 +64,6 @@
             <li><a href="story-6.html"><i class="ri-article-line"></i>Story 6</a></li>
           </ul>
         </li>
-        <li><a href="team.html">Team</a></li>
         <li>
           <a href="career.html">Career</a>
           <ul>
@@ -84,33 +79,28 @@
         </li>
         <li><a href="connect.html">Connect</a></li>
       </ul>
-
       <div class="nav-controls">
+        <a href="connect.html" class="nav-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <i class="ri-sun-line" id="themeIcon"></i>
         </button>
-        <a href="connect.html" class="nav-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
         <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
-
     </div>
   </nav>
 
-  <!-- ============================================================
-  MOBILE MENU  (single instance, no duplicates)
-  ============================================================ -->
+  <!-- MOBILE MENU -->
   <div class="mob-overlay" id="mobOverlay"></div>
-
   <div class="mob-menu" id="mobMenu" aria-hidden="true">
     <button class="mob-close" id="mobClose" aria-label="Close menu">
       <i class="ri-close-line"></i>
     </button>
-
     <ul class="mob-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="team.html">Team</a></li>
       <li>
         <button class="mob-parent-btn" data-target="mob-sub-services">
           Services <i class="ri-arrow-down-s-line mob-arrow"></i>
@@ -125,6 +115,7 @@
           <li><a href="ecommerce.html">E-Commerce</a></li>
         </ul>
       </li>
+      <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="clients.html">Clients</a></li>
       <li>
         <button class="mob-parent-btn" data-target="mob-sub-case">
@@ -139,7 +130,6 @@
           <li><a href="story-6.html">Story 6</a></li>
         </ul>
       </li>
-      <li><a href="team.html">Team</a></li>
       <li>
         <button class="mob-parent-btn" data-target="mob-sub-career">
           Career <i class="ri-arrow-down-s-line mob-arrow"></i>
@@ -156,13 +146,11 @@
       </li>
       <li><a href="connect.html">Connect</a></li>
     </ul>
-
     <div class="mob-cta-wrap">
-      <a href="connect.html" class="mob-cta">
-        Start a Project <i class="ri-arrow-right-up-line"></i>
-      </a>
+      <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
     </div>
   </div>
+
 
 
   <!-- ============================================================
@@ -196,17 +184,15 @@
   </main>
 
 
-  <!-- ============================================================
-  FOOTER
-  ============================================================ -->
+ 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="wrap footer-grid">
-
       <div class="footer-brand">
         <div class="footer-logo">
           <a href="index.html">
             <img src="images/logos/flask-logo.png" alt="FlashLab Creative"
-              onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
+              onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
           </a>
         </div>
         <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in
@@ -223,7 +209,6 @@
               class="ri-youtube-fill"></i></a>
         </div>
       </div>
-
       <div>
         <h4 class="footer-head">Navigation</h4>
         <ul class="footer-list">
@@ -237,20 +222,18 @@
           <li><a href="connect.html"><i class="ri-arrow-right-s-line"></i>Connect</a></li>
         </ul>
       </div>
-
       <div>
         <h4 class="footer-head">Services</h4>
         <ul class="footer-list">
+          <li><a href="outdoor-print-ads.html"><i class="ri-arrow-right-s-line"></i>Outdoor &amp; Print</a></li>
           <li><a href="digital-advertising.html"><i class="ri-arrow-right-s-line"></i>Digital Advertising</a></li>
           <li><a href="seo-sem-marketing.html"><i class="ri-arrow-right-s-line"></i>SEO / SEM</a></li>
           <li><a href="social-media-management.html"><i class="ri-arrow-right-s-line"></i>Social Media</a></li>
           <li><a href="product-design-strategies.html"><i class="ri-arrow-right-s-line"></i>Product Design</a></li>
           <li><a href="web-app-development.html"><i class="ri-arrow-right-s-line"></i>Web &amp; App Dev</a></li>
-          <li><a href="outdoor-print-ads.html"><i class="ri-arrow-right-s-line"></i>Outdoor &amp; Print</a></li>
           <li><a href="ecommerce.html"><i class="ri-arrow-right-s-line"></i>E-Commerce</a></li>
         </ul>
       </div>
-
       <div>
         <h4 class="footer-head">Join Us</h4>
         <ul class="footer-list">
@@ -263,17 +246,13 @@
           <li><a href="career-app-developer.html"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
         </ul>
       </div>
-
       <div>
-        <h4 class="footer-head">Studio Links</h4>
+        <h4 class="footer-head">Service Links</h4>
         <ul class="footer-list">
-          <li><a href="https://parashootstudio.com" target="_blank" rel="noopener"><i
-                class="ri-arrow-right-s-line"></i>Content Production</a></li>
-          <li><a href="https://backstagexchange.com" target="_blank" rel="noopener"><i
-                class="ri-arrow-right-s-line"></i>Event Activation</a></li>
+          <li><a href="https://parashootstudio.com"><i class="ri-arrow-right-s-line"></i>Content Production</a></li>
+          <li><a href="https://backstagexchange.com"><i class="ri-arrow-right-s-line"></i>Event Activation</a></li>
         </ul>
       </div>
-
       <div>
         <h4 class="footer-head">Contact</h4>
         <div class="footer-contact">
@@ -286,12 +265,10 @@
           <a href="connect.html" class="footer-cta">Start a Project <i class="ri-arrow-right-line"></i></a>
         </div>
       </div>
-
     </div>
     <div class="footer-bottom">
-      <p>Copyright &copy; 2026 FlashLab Creative — Website Crafted by
-        <a href="https://cybercreative.in/" target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a>
-      </p>
+      <p>Copyright &copy; 2026 FlashLab Creative — Website Crafted by <a href="https://cybercreative.in/"
+          target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
     </div>
   </footer>
 
@@ -300,8 +277,10 @@
     <i class="ri-arrow-up-line"></i>
   </button>
 
-
   <script src="flash.js"></script>
+  <script>
+
+  </script>
 </body>
 
 </html>

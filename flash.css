@@ -3,7 +3,7 @@
    ============================================================ */
 :root {
   --accent:       #a8e832;
-  --accent2:      #E89A80;
+  --accent2:      #F0856A;
   --accent3:      #dc2626;
   --font-head:    'Bebas Neue', sans-serif;
   --font-body:    'Outfit', sans-serif;
@@ -101,28 +101,56 @@ p, span, h1, h2, h3, h4, h5, h6,
 li, blockquote, input, textarea { cursor: text; }
 
 /* ============================================================
-   5. LOGO BAR  — desktop: 100px tall
+   5. LOGO BAR
    ============================================================ */
+
 .site-logo-bar {
-  position:        fixed;
-  top: 0; left: 0; right: 0;
-  z-index:         1002;
-  display:         flex;
-  align-items:     center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1002;
+
+  display: flex;
+  align-items: center;
   justify-content: center;
-  height:          100px;
-  transition:      background .3s;
+
+  height: 100px;
+
+  transition: background .3s;
 }
-[data-theme="dark"]  .site-logo-bar { background: #0a0a0f; }
-[data-theme="light"] .site-logo-bar { background: #ffffff; }
+
+[data-theme="dark"] .site-logo-bar {
+  background: #0a0a0f;
+}
+
+[data-theme="light"] .site-logo-bar {
+  background: #ffffff;
+}
 
 .site-logo-bar img {
-  height:     90px;
-  width:      auto;
+  height: 45px;
+  width: auto;
   object-fit: contain;
-  transition: filter .3s;
 }
-[data-theme="dark"] .site-logo-bar img { filter: invert(1) brightness(1.1); }
+
+/* SHOW/HIDE LOGOS */
+
+.logo-dark {
+  display: none;
+}
+
+.logo-light {
+  display: block;
+}
+
+[data-theme="dark"] .logo-dark {
+  display: block;
+}
+
+[data-theme="dark"] .logo-light {
+  display: none;
+}
 
 /* ============================================================
    6. NAVBAR  — desktop: sits at top:100px

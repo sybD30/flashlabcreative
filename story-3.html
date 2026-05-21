@@ -71,28 +71,22 @@
   </style>
 </head>
 
-<body>
-
-  <div class="cursor" id="cursor"></div>
-
-  <!-- ============================================================
-  LOGO BAR  (shared — do not remove)
-  ============================================================ -->
+<body data-page="story-3">
+  <!-- LOGO BAR -->
   <div class="site-logo-bar">
-    <a href="index.html">
-      <img src="images/logos/flashlab-logo.png" alt="FlashLab Creative" id="siteLogoImg">
+    <a href="#">
+      <img src="images/logos/flashlab-logo.png" alt="FlashLab Creative" class="logo-light" id="siteLogoImg">
+      <img src="images/logos/flashlab-logo-dark.png" alt="FlashLab Creative" class="logo-dark" id="siteLogoImg">
     </a>
   </div>
 
-  <!-- ============================================================
-  NAVBAR
-  ============================================================ -->
+  <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-wrap">
-
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
         <li>
           <a href="services.html">Services</a>
           <ul>
@@ -107,6 +101,7 @@
             <li><a href="ecommerce.html"><i class="ri-shopping-cart-line"></i>E-Commerce</a></li>
           </ul>
         </li>
+        <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="clients.html">Clients</a></li>
         <li>
           <a href="case-studies.html">Case Studies</a>
@@ -119,7 +114,6 @@
             <li><a href="story-6.html"><i class="ri-article-line"></i>Story 6</a></li>
           </ul>
         </li>
-        <li><a href="team.html">Team</a></li>
         <li>
           <a href="career.html">Career</a>
           <ul>
@@ -135,33 +129,28 @@
         </li>
         <li><a href="connect.html">Connect</a></li>
       </ul>
-
       <div class="nav-controls">
+        <a href="connect.html" class="nav-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <i class="ri-sun-line" id="themeIcon"></i>
         </button>
-        <a href="connect.html" class="nav-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
         <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
-
     </div>
   </nav>
 
-  <!-- ============================================================
-  MOBILE MENU  (single instance, no duplicates)
-  ============================================================ -->
+  <!-- MOBILE MENU -->
   <div class="mob-overlay" id="mobOverlay"></div>
-
   <div class="mob-menu" id="mobMenu" aria-hidden="true">
     <button class="mob-close" id="mobClose" aria-label="Close menu">
       <i class="ri-close-line"></i>
     </button>
-
     <ul class="mob-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="team.html">Team</a></li>
       <li>
         <button class="mob-parent-btn" data-target="mob-sub-services">
           Services <i class="ri-arrow-down-s-line mob-arrow"></i>
@@ -176,6 +165,7 @@
           <li><a href="ecommerce.html">E-Commerce</a></li>
         </ul>
       </li>
+      <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="clients.html">Clients</a></li>
       <li>
         <button class="mob-parent-btn" data-target="mob-sub-case">
@@ -190,7 +180,6 @@
           <li><a href="story-6.html">Story 6</a></li>
         </ul>
       </li>
-      <li><a href="team.html">Team</a></li>
       <li>
         <button class="mob-parent-btn" data-target="mob-sub-career">
           Career <i class="ri-arrow-down-s-line mob-arrow"></i>
@@ -207,8 +196,11 @@
       </li>
       <li><a href="connect.html">Connect</a></li>
     </ul>
-    <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
+    <div class="mob-cta-wrap">
+      <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
+    </div>
   </div>
+
 
   <main>
 
