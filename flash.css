@@ -7,7 +7,7 @@
   --accent3:      #dc2626;
   --font-head:    'Bebas Neue', sans-serif;
   --font-body:    'Outfit', sans-serif;
-  --font-italic:  'Playfair Display', serif;
+  --font-italic:  'Inter', sans-serif;
   --radius:       16px;
   --radius-lg:    28px;
   --cta-noise-op: 0;
@@ -572,9 +572,10 @@ li, blockquote, input, textarea { cursor: text; }
   margin-bottom:16px;
 }
 .sec-heading em {
+  font-style: normal;
   font-family: var(--font-italic);
   color:       var(--accent2);
-  font-style:  italic;
+  font-weight: 200;
 }
 .sec-sub {
   font-size:    1.05rem;

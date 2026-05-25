@@ -9,9 +9,9 @@
     content="FlashLab Creative is Goa's leading creative & digital marketing agency based in Margao. Born in 2018, we craft unforgettable brand experiences.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,700&display=swap"
-    rel="stylesheet">
+ <link
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100;200;300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+  rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="flash.css">
 
@@ -25,7 +25,26 @@
     .ast-desktop-header-content {
       background-color: #ffffff;
     }
-.btn-ghost {
+
+    /* ── GLOBAL h2 em STYLE ── */
+    h2 em {
+      font-family: var(--font-italic);
+      font-style: normal;
+      color: var(--accent2);
+      font-weight: 200;
+      -webkit-text-fill-color: var(--accent2);
+    }
+
+    /* h1 em keeps accent2 (orange) as used in hero */
+    .page-hero h1 em {
+      font-family: var(--font-italic);
+      font-style: normal;
+      color: var(--accent2);
+      font-weight: 200;
+      -webkit-text-fill-color: var(--accent2);
+    }
+
+    .btn-ghost {
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -112,13 +131,6 @@
       color: #fff;
       margin-bottom: 18px;
       white-space: nowrap;
-    }
-
-    .page-hero h1 em {
-      font-family: var(--font-italic);
-      font-style: italic;
-      color: var(--accent);
-      -webkit-text-fill-color: var(--accent);
     }
 
     .page-hero-sub {
@@ -990,12 +1002,6 @@
       z-index: 1;
     }
 
-    .join-cta h2 em {
-      font-family: var(--font-italic);
-      font-style: italic;
-      color: var(--accent2);
-    }
-
     .join-cta p {
       color: var(--muted);
       font-size: .88rem;
@@ -1090,7 +1096,7 @@
   </div>
 
   <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar">
     <div class="nav-wrap">
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
@@ -1102,10 +1108,8 @@
             <li><a href="digital-advertising.html"><i class="ri-megaphone-line"></i>Digital Advertising</a></li>
             <li><a href="seo-sem-marketing.html"><i class="ri-search-line"></i>SEO / SEM Marketing</a></li>
             <li><a href="social-media-management.html"><i class="ri-instagram-line"></i>Social Media Management</a></li>
-            <li><a href="product-design-strategies.html"><i class="ri-pen-nib-line"></i>Product Design &amp;
-                Strategies</a></li>
-            <li><a href="web-app-development.html"><i class="ri-code-s-slash-line"></i>Web &amp; App Development</a>
-            </li>
+            <li><a href="product-design-strategies.html"><i class="ri-pen-nib-line"></i>Product Design &amp; Strategies</a></li>
+            <li><a href="web-app-development.html"><i class="ri-code-s-slash-line"></i>Web &amp; App Development</a></li>
             <li><a href="outdoor-print-ads.html"><i class="ri-image-line"></i>Outdoor &amp; Print Ads</a></li>
             <li><a href="ecommerce.html"><i class="ri-shopping-cart-line"></i>E-Commerce</a></li>
           </ul>
@@ -1125,16 +1129,7 @@
         </li>
         <li>
           <a href="career.html">Career</a>
-          <ul>
-            <li><a href="career-intern.html"><i class="ri-user-add-line"></i>Intern</a></li>
-            <li><a href="career-seo-expert.html"><i class="ri-search-eye-line"></i>SEO Expert</a></li>
-            <li><a href="career-social-media-manager.html"><i class="ri-share-circle-line"></i>Social Media Manager</a>
-            </li>
-            <li><a href="career-graphic-designer.html"><i class="ri-brush-line"></i>Graphic Designer</a></li>
-            <li><a href="career-web-developer.html"><i class="ri-code-box-line"></i>Web Developer</a></li>
-            <li><a href="career-animation-designer.html"><i class="ri-video-line"></i>Animation Designer</a></li>
-            <li><a href="career-app-developer.html"><i class="ri-smartphone-line"></i>App Developer</a></li>
-          </ul>
+          
         </li>
         <li><a href="connect.html">Connect</a></li>
       </ul>
@@ -1153,17 +1148,13 @@
   <!-- MOBILE MENU -->
   <div class="mob-overlay" id="mobOverlay"></div>
   <div class="mob-menu" id="mobMenu" aria-hidden="true">
-    <button class="mob-close" id="mobClose" aria-label="Close menu">
-      <i class="ri-close-line"></i>
-    </button>
+    <button class="mob-close" id="mobClose" aria-label="Close menu"><i class="ri-close-line"></i></button>
     <ul class="mob-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="team.html">Team</a></li>
       <li>
-        <button class="mob-parent-btn" data-target="mob-sub-services">
-          Services <i class="ri-arrow-down-s-line mob-arrow"></i>
-        </button>
+        <button class="mob-parent-btn" data-target="mob-sub-services">Services <i class="ri-arrow-down-s-line mob-arrow"></i></button>
         <ul class="mob-sub" id="mob-sub-services">
           <li><a href="digital-advertising.html">Digital Advertising</a></li>
           <li><a href="seo-sem-marketing.html">SEO / SEM Marketing</a></li>
@@ -1177,9 +1168,7 @@
       <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="clients.html">Clients</a></li>
       <li>
-        <button class="mob-parent-btn" data-target="mob-sub-case">
-          Case Studies <i class="ri-arrow-down-s-line mob-arrow"></i>
-        </button>
+        <button class="mob-parent-btn" data-target="mob-sub-case">Case Studies <i class="ri-arrow-down-s-line mob-arrow"></i></button>
         <ul class="mob-sub" id="mob-sub-case">
           <li><a href="story-1.html">Story 1</a></li>
           <li><a href="story-2.html">Story 2</a></li>
@@ -1189,27 +1178,13 @@
           <li><a href="story-6.html">Story 6</a></li>
         </ul>
       </li>
-      <li>
-        <button class="mob-parent-btn" data-target="mob-sub-career">
-          Career <i class="ri-arrow-down-s-line mob-arrow"></i>
-        </button>
-        <ul class="mob-sub" id="mob-sub-career">
-          <li><a href="career-intern.html">Intern</a></li>
-          <li><a href="career-seo-expert.html">SEO Expert</a></li>
-          <li><a href="career-social-media-manager.html">Social Media Manager</a></li>
-          <li><a href="career-graphic-designer.html">Graphic Designer</a></li>
-          <li><a href="career-web-developer.html">Web Developer</a></li>
-          <li><a href="career-animation-designer.html">Animation Designer</a></li>
-          <li><a href="career-app-developer.html">App Developer</a></li>
-        </ul>
-      </li>
+      <li><a href="career.html">Career</a></li>
       <li><a href="connect.html">Connect</a></li>
     </ul>
     <div class="mob-cta-wrap">
       <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
     </div>
   </div>
-
 
   <section class="page-hero" id="home">
     <div class="hero-bg">
@@ -1393,8 +1368,7 @@
     <div class="wrap">
       <div class="sec-header reveal" style="max-width:600px;">
         <span class="sec-eyebrow" style="color:rgba(255,255,255,.55);">&#9679; Why Collaborate With Us</span>
-        <h2 class="sec-heading" style="color:#fff; font-size:clamp(1.8rem,3.5vw,3rem);">Why Work With <em
-            style="color:var(--accent);-webkit-text-fill-color:var(--accent);">FlashLab?</em></h2>
+        <h2 class="sec-heading" style="color:#fff; font-size:clamp(1.8rem,3.5vw,3rem);">Why Work With <em>FlashLab?</em></h2>
         <p class="sec-sub" style="color:rgba(255,255,255,.65); font-size:.88rem;">Our marketing ideas and strategies
           have always led to efficient, measurable results. Here's what sets us apart.</p>
       </div>

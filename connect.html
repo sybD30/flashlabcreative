@@ -7,7 +7,9 @@
 <meta name="description" content="Get in touch with FlashLab Creative — Goa's leading creative & digital marketing agency. Let's discuss your project.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100;200;300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+  rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="flash.css">
 
@@ -99,8 +101,9 @@
 }
 .hero-title em {
   font-family: var(--font-italic);
-  font-style: italic;
-  background: var(--accent);
+  font-style: normal;
+  background: var(--accent2);
+font-weight: 200;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -273,7 +276,7 @@
 .join-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; position: relative; z-index: 2; }
 .join-left .sec-eyebrow { margin-bottom: 10px; }
 .join-heading { font-family: var(--font-head); font-size: clamp(3rem, 5vw, 5rem); line-height: 1; letter-spacing: 1px; color: var(--text); margin-bottom: 22px; }
-.join-heading em { font-family: var(--font-italic); font-style: italic; background: var(--accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.join-heading em { font-family: var(--font-italic); font-style: normal; background: var(--accent2);font-weight: 200; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .join-body { color: var(--muted); font-size: 0.97rem; line-height: 1.9; margin-bottom: 36px; }
 .btn-join {
   display: inline-flex; align-items: center; gap: 10px;
@@ -358,7 +361,7 @@
   </div>
 
   <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar">
     <div class="nav-wrap">
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
@@ -391,15 +394,7 @@
         </li>
         <li>
           <a href="career.html">Career</a>
-          <ul>
-            <li><a href="career-intern.html"><i class="ri-user-add-line"></i>Intern</a></li>
-            <li><a href="career-seo-expert.html"><i class="ri-search-eye-line"></i>SEO Expert</a></li>
-            <li><a href="career-social-media-manager.html"><i class="ri-share-circle-line"></i>Social Media Manager</a></li>
-            <li><a href="career-graphic-designer.html"><i class="ri-brush-line"></i>Graphic Designer</a></li>
-            <li><a href="career-web-developer.html"><i class="ri-code-box-line"></i>Web Developer</a></li>
-            <li><a href="career-animation-designer.html"><i class="ri-video-line"></i>Animation Designer</a></li>
-            <li><a href="career-app-developer.html"><i class="ri-smartphone-line"></i>App Developer</a></li>
-          </ul>
+          
         </li>
         <li><a href="connect.html">Connect</a></li>
       </ul>
@@ -418,17 +413,13 @@
   <!-- MOBILE MENU -->
   <div class="mob-overlay" id="mobOverlay"></div>
   <div class="mob-menu" id="mobMenu" aria-hidden="true">
-    <button class="mob-close" id="mobClose" aria-label="Close menu">
-      <i class="ri-close-line"></i>
-    </button>
+    <button class="mob-close" id="mobClose" aria-label="Close menu"><i class="ri-close-line"></i></button>
     <ul class="mob-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="team.html">Team</a></li>
       <li>
-        <button class="mob-parent-btn" data-target="mob-sub-services">
-          Services <i class="ri-arrow-down-s-line mob-arrow"></i>
-        </button>
+        <button class="mob-parent-btn" data-target="mob-sub-services">Services <i class="ri-arrow-down-s-line mob-arrow"></i></button>
         <ul class="mob-sub" id="mob-sub-services">
           <li><a href="digital-advertising.html">Digital Advertising</a></li>
           <li><a href="seo-sem-marketing.html">SEO / SEM Marketing</a></li>
@@ -442,9 +433,7 @@
       <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="clients.html">Clients</a></li>
       <li>
-        <button class="mob-parent-btn" data-target="mob-sub-case">
-          Case Studies <i class="ri-arrow-down-s-line mob-arrow"></i>
-        </button>
+        <button class="mob-parent-btn" data-target="mob-sub-case">Case Studies <i class="ri-arrow-down-s-line mob-arrow"></i></button>
         <ul class="mob-sub" id="mob-sub-case">
           <li><a href="story-1.html">Story 1</a></li>
           <li><a href="story-2.html">Story 2</a></li>
@@ -454,27 +443,13 @@
           <li><a href="story-6.html">Story 6</a></li>
         </ul>
       </li>
-      <li>
-        <button class="mob-parent-btn" data-target="mob-sub-career">
-          Career <i class="ri-arrow-down-s-line mob-arrow"></i>
-        </button>
-        <ul class="mob-sub" id="mob-sub-career">
-          <li><a href="career-intern.html">Intern</a></li>
-          <li><a href="career-seo-expert.html">SEO Expert</a></li>
-          <li><a href="career-social-media-manager.html">Social Media Manager</a></li>
-          <li><a href="career-graphic-designer.html">Graphic Designer</a></li>
-          <li><a href="career-web-developer.html">Web Developer</a></li>
-          <li><a href="career-animation-designer.html">Animation Designer</a></li>
-          <li><a href="career-app-developer.html">App Developer</a></li>
-        </ul>
-      </li>
+      <li><a href="career.html">Career</a></li>
       <li><a href="connect.html">Connect</a></li>
     </ul>
     <div class="mob-cta-wrap">
       <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
     </div>
   </div>
-
 
 <!-- ===== HERO — HAPPY TO ASSIST ===== -->
 <section class="hero-section">
