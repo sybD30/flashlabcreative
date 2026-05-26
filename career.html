@@ -1,19 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Career — FlashLab Creative</title>
+  <title>Career — Flashlab Creative</title>
   <meta name="description"
-    content="Join FlashLab Creative — Goa's leading creative & digital marketing agency. Explore open positions and build your career with us.">
+    content="Join Flashlab Creative — Goa's leading creative & digital marketing agency. Explore open positions and build your career with us.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,700&display=swap"
-    rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100;200;300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+  rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="flash.css">
 
@@ -140,9 +139,10 @@
     }
 
     .hero-h1 em {
-      font-family: sans-serif;
       font-style: normal;
-      color: var(--accent);
+  font-family: var(--font-italic);
+  font-weight: 200;
+  color: var(--accent2);
       font-size: .85em;
       display: block;
     }
@@ -315,47 +315,6 @@
       line-height: 1.7;
     }
 
-    /* MARQUEE */
-    .marquee-strip {
-      background: var(--accent2);
-      overflow: hidden;
-      padding: 16px 0;
-      width: 100%;
-    }
-
-    .marquee-track {
-      display: flex;
-      gap: 36px;
-      white-space: nowrap;
-      animation: ticker 10s linear infinite;
-    }
-
-    .marquee-strip:hover .marquee-track {
-      animation-play-state: paused;
-    }
-
-    .marquee-track span {
-      font-family: var(--font-head);
-      font-size: 1.1rem;
-      letter-spacing: 3px;
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    .marquee-track .dot {
-      color: rgba(255, 255, 255, 0.4);
-    }
-
-    @keyframes ticker {
-      from {
-        transform: translateX(0)
-      }
-
-      to {
-        transform: translateX(-50%)
-      }
-    }
-
-
     /* ============================================================
    OPEN POSITIONS (interactive sidebar layout)
    ============================================================ */
@@ -366,7 +325,7 @@
 
     .positions-layout {
       display: grid;
-      grid-template-columns: 280px 1fr;
+      grid-template-columns: 350px 1fr;
       gap: 0;
       border: 1px solid var(--border);
       border-radius: 20px;
@@ -389,6 +348,57 @@
       padding: 24px 28px 12px;
       border-bottom: 1px solid var(--border);
     }
+
+    /* Filter tabs */
+    .pos-filter-tabs {
+      display: flex;
+      gap: 6px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pos-filter-tab {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: none;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: all .25s;
+    }
+
+    .pos-filter-tab:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .pos-filter-tab.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #0a0a0f;
+    }
+
+    /* Section group label */
+    .pos-menu-group-label {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 14px 28px 6px;
+      opacity: 0.55;
+      list-style: none;
+      pointer-events: none;
+      /* add this */
+      cursor: default;
+      /* add this */
+    }
+
 
     .pos-menu-list {
       list-style: none;
@@ -786,10 +796,11 @@
     }
 
     .faq-intro h2 em {
-  font-family: sans-serif;
-  font-style: normal;
-  color: var(--accent);
-}
+      font-style: normal;
+  font-family: var(--font-italic);
+  font-weight: 200;
+  color: var(--accent2);
+    }
 
     .faq-intro p {
       color: var(--muted);
@@ -910,10 +921,11 @@
     }
 
     .no-role-title em {
-  font-family: sans-serif;
-  font-style: normal;
-  color: var(--accent);
-}
+      font-style: normal;
+  font-family: var(--font-italic);
+  font-weight: 200;
+  color: var(--accent2);
+    }
 
     .no-role-sub {
       color: var(--muted);
@@ -935,7 +947,7 @@
    ============================================================ */
     @media (max-width:1100px) {
       .positions-layout {
-        grid-template-columns: 240px 1fr;
+        grid-template-columns: 210px 1fr;
       }
     }
 
@@ -1076,17 +1088,14 @@
   <div class="cursor" id="cursor"></div>
 
   <!-- LOGO BAR -->
-  <!-- LOGO BAR -->
   <div class="site-logo-bar">
-    <a href="#">
-      <img src="images/logos/flashlab-logo.png" alt="FlashLab Creative" class="logo-light" id="siteLogoImg">
-      <img src="images/logos/flashlab-logo-dark.png" alt="FlashLab Creative" class="logo-dark" id="siteLogoImg">
+    <a href="index.html">
+      <img src="images/logos/flashlab-logo.png" alt="Flashlab Creative" id="siteLogoImg"
+        onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.6rem;letter-spacing:3px\'>FLASHLAB CREATIVE</span>'">
     </a>
   </div>
 
-  <!-- ============================================================
-  NAVBAR
-  ============================================================ -->
+ <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-wrap">
       <ul class="nav-links" id="navLinks">
@@ -1195,7 +1204,7 @@
           <div class="reveal-right">
             <div class="hero-img-wrap">
               <img src="https://assets.entrepreneur.com/content/3x2/2000/20150503125436-shutterstock-177305711.jpeg"
-                alt="FlashLab Creative Team">
+                alt="Flashlab Creative Team">
             </div>
           </div>
         </div>
@@ -1208,7 +1217,7 @@
       <div class="wrap">
         <div class="sec-header centered reveal">
           <span class="sec-eyebrow">● Our Culture</span>
-          <h2 class="sec-heading">Life at <em>FlashLab</em></h2>
+          <h2 class="sec-heading">Life at <em>Flashlab Creative</em></h2>
           <p class="sec-sub">Work hard, play harder — inside our studio, every day brings something new. Here's a
             glimpse into the world you'd be joining.</p>
         </div>
@@ -1254,9 +1263,9 @@
     <section class="perks-section">
       <div class="wrap">
         <div class="sec-header centered reveal">
-          <span class="sec-eyebrow">● Why FlashLab</span>
+          <span class="sec-eyebrow">● Why Flashlab Creative</span>
           <h2 class="sec-heading">Perks &amp; <em>Benefits</em></h2>
-          <p class="sec-sub">Every role at FlashLab comes with real responsibility, real mentorship, and real rewards
+          <p class="sec-sub">Every role at Flashlab Creative comes with real responsibility, real mentorship, and real rewards
             from day one.</p>
         </div>
         <div class="perks-grid">
@@ -1346,36 +1355,55 @@
           <!-- LEFT MENU -->
           <div class="pos-menu">
             <div class="pos-menu-title">Open Positions</div>
+
+            <div class="pos-filter-tabs">
+              <button class="pos-filter-tab active" data-filter="all">All</button>
+              <button class="pos-filter-tab" data-filter="fulltime">Full-Time</button>
+              <button class="pos-filter-tab" data-filter="internship">Internship</button>
+            </div>
+
             <ul class="pos-menu-list" id="posMenu">
-              <li class="pos-menu-item active" data-role="intern" onclick="selectRole('intern', this)">
-                <i class="ri-user-add-line"></i> Intern
-                <span class="pos-menu-badge">Open</span>
-              </li>
-              <li class="pos-menu-item" data-role="graphic-designer" onclick="selectRole('graphic-designer', this)">
+
+              <li class="pos-menu-group-label" data-group="fulltime">Full-Time Roles</li>
+
+              <li class="pos-menu-item active" data-role="graphic-designer" data-type="fulltime"
+                onclick="selectRole('graphic-designer', this)">
                 <i class="ri-brush-line"></i> Graphic Designer
                 <span class="pos-menu-badge">Open</span>
               </li>
-              <li class="pos-menu-item" data-role="animation-designer" onclick="selectRole('animation-designer', this)">
+              <li class="pos-menu-item" data-role="animation-designer" data-type="fulltime"
+                onclick="selectRole('animation-designer', this)">
                 <i class="ri-video-line"></i> Animation Designer
                 <span class="pos-menu-badge">Open</span>
               </li>
-              <li class="pos-menu-item" data-role="social-media-manager"
+              <li class="pos-menu-item" data-role="social-media-manager" data-type="fulltime"
                 onclick="selectRole('social-media-manager', this)">
                 <i class="ri-share-circle-line"></i> Social Media Manager
                 <span class="pos-menu-badge">Open</span>
               </li>
-              <li class="pos-menu-item" data-role="web-developer" onclick="selectRole('web-developer', this)">
+              <li class="pos-menu-item" data-role="web-developer" data-type="fulltime"
+                onclick="selectRole('web-developer', this)">
                 <i class="ri-code-box-line"></i> Web Developer
                 <span class="pos-menu-badge">Open</span>
               </li>
-              <li class="pos-menu-item" data-role="seo-expert" onclick="selectRole('seo-expert', this)">
+              <li class="pos-menu-item" data-role="seo-expert" data-type="fulltime"
+                onclick="selectRole('seo-expert', this)">
                 <i class="ri-search-eye-line"></i> SEO Expert
                 <span class="pos-menu-badge">Open</span>
               </li>
-              <li class="pos-menu-item" data-role="app-developer" onclick="selectRole('app-developer', this)">
+              <li class="pos-menu-item" data-role="app-developer" data-type="fulltime"
+                onclick="selectRole('app-developer', this)">
                 <i class="ri-smartphone-line"></i> App Developer
                 <span class="pos-menu-badge">Open</span>
               </li>
+
+              <li class="pos-menu-group-label" data-group="internship">Internships</li>
+
+              <li class="pos-menu-item" data-role="intern" data-type="internship" onclick="selectRole('intern', this)">
+                <i class="ri-user-add-line"></i> Intern
+                <span class="pos-menu-badge">Open</span>
+              </li>
+
             </ul>
           </div>
 
@@ -1383,7 +1411,7 @@
           <div class="pos-panel">
 
             <!-- INTERN -->
-            <div class="pos-detail active" id="role-intern">
+            <div class="pos-detail" id="role-intern">
               <span class="pos-eyebrow">● Internship Programme</span>
               <div class="pos-title">Intern</div>
               <div class="pos-tags">
@@ -1391,7 +1419,7 @@
                 <span class="pos-tag"><i class="ri-time-line"></i> Full-time</span>
                 <span class="pos-tag"><i class="ri-briefcase-line"></i> Fresher / Entry Level</span>
               </div>
-              <p class="pos-overview">FlashLab is looking for enthusiastic, creative young individuals who are eager to
+              <p class="pos-overview">FlashLab Creative is looking for enthusiastic, creative young individuals who are eager to
                 learn and grow in a real agency environment. As an intern, you'll work alongside our senior team on live
                 client campaigns — not make-believe projects. This is your chance to build a portfolio that actually
                 matters, get mentored by industry professionals, and earn a fast-track to a full-time role.</p>
@@ -1446,6 +1474,10 @@
                 <p class="pos-form-sub">Fill in your details. We'll review personally and respond within 5 working days.
                   Fields marked <span style="color:var(--accent)">*</span> are required.</p>
                 <form onsubmit="submitForm(event, 'Intern')">
+
+                  <!-- PERSONAL DETAILS -->
+                  <div class="pos-section-title" style="margin-top:24px;">PERSONAL DETAILS</div>
+
                   <div class="form-row">
                     <div class="form-field"><label>First Name *</label><input type="text" name="fname"
                         placeholder="First name" required></div>
@@ -1458,34 +1490,131 @@
                     <div class="form-field"><label>Phone *</label><input type="tel" name="phone"
                         placeholder="+91 XXXXX XXXXX" required></div>
                   </div>
+                  <!-- STUDY SECTION -->
+                  <div class="pos-section-title" style="margin-top:24px;">Where Do You Study?</div>
+
                   <div class="form-row">
-                    <div class="form-field"><label>City *</label><input type="text" name="city" placeholder="Your city"
-                        required></div>
-                    <div class="form-field"><label>Department of Interest *</label>
-                      <select name="dept" required>
-                        <option value="">Choose Department</option>
-                        <option>Graphic Design</option>
-                        <option>Video Editing</option>
-                        <option>Animation</option>
-                        <option>Photography</option>
-                        <option>Web Development</option>
-                        <option>App Development</option>
-                        <option>SEO</option>
-                        <option>Social Media</option>
-                        <option>General / Open</option>
+                    <div class="form-field">
+                      <label>College / University *</label>
+                      <input type="text" name="college" placeholder="Your college or university" required>
+                    </div>
+
+                    <div class="form-field">
+                      <label>Course + Specialization *</label>
+                      <input type="text" name="course" placeholder="BBA Marketing, BCA, Mass Media..." required>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Year of Graduation *</label>
+                      <select name="graduation" required>
+                        <option value="">Select Year</option>
+                        <option>2025</option>
+                        <option>2026</option>
+                        <option>2027</option>
+                        <option>2028</option>
+                        <option>2029</option>
+                        <option>2030</option>
                       </select>
                     </div>
                   </div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Portfolio / Drive Link</label><input
-                      type="url" name="portfolio" placeholder="https://your-portfolio.com or Google Drive link"></div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Why Do You Want to Join?
-                      *</label><textarea name="why"
-                      placeholder="Tell us in a few sentences what excites you about FlashLab..." required></textarea>
+
+                  <!-- INTEREST SECTION -->
+                  <div class="pos-section-title" style="margin-top:24px;">What Do You Want To Do Here?</div>
+
+                  <div class="form-field full" style="margin-bottom:14px;">
+                    <label>Pick everything you'd genuinely be good at *</label>
+
+                    <select name="interest" required>
+                      <option value="">Choose Area</option>
+                      <option>Graphic Design</option>
+                      <option>Video Editing</option>
+                      <option>Animation</option>
+                      <option>Photography</option>
+                      <option>Videography</option>
+                      <option>Social Media Management</option>
+                      <option>Content Writing</option>
+                      <option>SEO</option>
+                      <option>Web Development</option>
+                      <option>App Development</option>
+                      <option>Branding</option>
+                      <option>Marketing</option>
+                      <option>Production Assistance</option>
+                      <option>Client Servicing</option>
+                      <option>General / Open</option>
+                    </select>
                   </div>
+
+                  <!-- AVAILABILITY -->
+                  <div class="pos-section-title" style="margin-top:24px;">When And How Long?</div>
+
                   <div class="form-row">
-                    <div class="form-field"><label>Where Did You Hear About Us? *</label><input type="text" name="heard"
-                        placeholder="Instagram, Google, Friend..." required></div>
+                    <div class="form-field">
+                      <label>When Can You Start? *</label>
+                      <input type="text" name="start" placeholder="Immediately / Next Month..." required>
+                    </div>
+
+                    <div class="form-field">
+                      <label>How Long Can You Commit? *</label>
+                      <select name="duration" required>
+                        <option value="">Select Duration</option>
+                        <option>3 Months</option>
+                        <option>6 Months</option>
+                        <option>Flexible / Open Ended</option>
+                      </select>
+                    </div>
                   </div>
+
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Open To Full-Time Conversion If It Works Out? *</label>
+
+                      <select name="fulltime" required>
+                        <option value="">Choose Option</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                        <option>Maybe</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- SOCIALS -->
+                  <div class="pos-section-title" style="margin-top:24px;">Show Us Who You Are</div>
+
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Instagram Handle</label>
+                      <input type="text" name="instagram" placeholder="@yourhandle">
+                    </div>
+
+                    <div class="form-field">
+                      <label>LinkedIn Profile</label>
+                      <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                    </div>
+                  </div>
+
+                  <div class="form-field full" style="margin-bottom:14px;">
+                    <label>Portfolio Link</label>
+                    <input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link">
+                  </div>
+
+                  <!-- WHY JOIN -->
+                  <div class="form-field full" style="margin-bottom:14px;">
+                    <label>Why Do You Want To Join Flashlab Creative? *</label>
+
+                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..."
+                      required></textarea>
+                  </div>
+
+                  <!-- SOURCE -->
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Where Did You Hear About Us? *</label>
+                      <input type="text" name="heard" placeholder="Instagram, Google, Friend..." required>
+                    </div>
+                  </div>
+
                   <button type="submit" class="form-submit">Submit via WhatsApp <i
                       class="ri-whatsapp-line"></i></button>
                 </form>
@@ -1493,7 +1622,7 @@
             </div>
 
             <!-- GRAPHIC DESIGNER -->
-            <div class="pos-detail" id="role-graphic-designer">
+            <div class="pos-detail active" id="role-graphic-designer">
               <span class="pos-eyebrow">● Full-Time Role</span>
               <div class="pos-title">Graphic Designer</div>
               <div class="pos-tags">
@@ -1549,6 +1678,10 @@
                 <p class="pos-form-sub">Fields marked <span style="color:var(--accent)">*</span> are required. We'll
                   respond within 5 working days.</p>
                 <form onsubmit="submitForm(event, 'Graphic Designer')">
+
+                  <!-- PERSONAL DETAILS -->
+                  <div class="pos-section-title" style="margin-top:24px;">PERSONAL DETAILS</div>
+
                   <div class="form-row">
                     <div class="form-field"><label>First Name *</label><input type="text" name="fname"
                         placeholder="First name" required></div>
@@ -1575,20 +1708,61 @@
                       </select>
                     </div>
                   </div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Portfolio Link *</label><input
-                      type="url" name="portfolio" placeholder="Behance / Dribbble / Google Drive" required></div>
                   <div class="form-field full" style="margin-bottom:14px;"><label>Previous Job Title</label><input
                       type="text" name="prev" placeholder="e.g. Junior Designer (leave blank if fresher)"></div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Why Do You Want to Join?
-                      *</label><textarea name="why" placeholder="Tell us what excites you about this role..."
-                      required></textarea></div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Where Did You Hear About
-                      Us?</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..."></div>
+
+                  <!-- AVAILABILITY -->
+                  <div class="pos-section-title" style="margin-top:24px;">AVAILABILITY</div>
+
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>When Can You Start? *</label>
+                      <input type="text" name="start" placeholder="Immediately / Next Month..." required>
+                    </div>
+                  </div>
+
+                  <!-- SOCIALS -->
+                  <div class="pos-section-title" style="margin-top:24px;">Show Us Who You Are</div>
+
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Instagram Handle</label>
+                      <input type="text" name="instagram" placeholder="@yourhandle">
+                    </div>
+
+                    <div class="form-field">
+                      <label>LinkedIn Profile</label>
+                      <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                    </div>
+                  </div>
+
+                  <div class="form-field full" style="margin-bottom:14px;">
+                    <label>Portfolio Link</label>
+                    <input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link">
+                  </div>
+
+                  <!-- WHY JOIN -->
+                  <div class="form-field full" style="margin-bottom:14px;">
+                    <label>Why Do You Want To Join Flashlab Creative? *</label>
+
+                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..."
+                      required></textarea>
+                  </div>
+
+                  <!-- SOURCE -->
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Where Did You Hear About Us? *</label>
+                      <input type="text" name="heard" placeholder="Instagram, Google, Friend..." required>
+                    </div>
+                  </div>
+
                   <button type="submit" class="form-submit">Submit via WhatsApp <i
                       class="ri-whatsapp-line"></i></button>
                 </form>
               </div>
             </div>
+
 
             <!-- ANIMATION DESIGNER -->
             <div class="pos-detail" id="role-animation-designer">
@@ -1646,6 +1820,10 @@
                 <div class="pos-form-title">Animation Designer Application</div>
                 <p class="pos-form-sub">Fields marked <span style="color:var(--accent)">*</span> are required.</p>
                 <form onsubmit="submitForm(event, 'Animation Designer')">
+
+                  <!-- PERSONAL DETAILS -->
+                  <div class="pos-section-title" style="margin-top:24px;">PERSONAL DETAILS</div>
+
                   <div class="form-row">
                     <div class="form-field"><label>First Name *</label><input type="text" name="fname"
                         placeholder="First name" required></div>
@@ -1672,13 +1850,56 @@
                       </select>
                     </div>
                   </div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Portfolio / Showreel Link
-                      *</label><input type="url" name="portfolio" placeholder="YouTube / Vimeo / Drive link" required>
+
+                  <div class="form-field full" style="margin-bottom:14px;"><label>Previous Job Title</label><input
+                      type="text" name="prev" placeholder="e.g. Junior Designer (leave blank if fresher)"></div>
+
+                  <!-- AVAILABILITY -->
+                  <div class="pos-section-title" style="margin-top:24px;">AVAILABILITY</div>
+
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>When Can You Start? *</label>
+                      <input type="text" name="start" placeholder="Immediately / Next Month..." required>
+                    </div>
                   </div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Why Do You Want to Join?
-                      *</label><textarea name="why" placeholder="Tell us what excites you..." required></textarea></div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Where Did You Hear About
-                      Us?</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..."></div>
+
+                  <!-- SOCIALS -->
+                  <div class="pos-section-title" style="margin-top:24px;">Show Us Who You Are</div>
+
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Instagram Handle</label>
+                      <input type="text" name="instagram" placeholder="@yourhandle">
+                    </div>
+
+                    <div class="form-field">
+                      <label>LinkedIn Profile</label>
+                      <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                    </div>
+                  </div>
+
+                  <div class="form-field full" style="margin-bottom:14px;">
+                    <label>Portfolio Link</label>
+                    <input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link">
+                  </div>
+
+                  <!-- WHY JOIN -->
+                  <div class="form-field full" style="margin-bottom:14px;">
+                    <label>Why Do You Want To Join Flashlab Creative? *</label>
+
+                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..."
+                      required></textarea>
+                  </div>
+
+                  <!-- SOURCE -->
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Where Did You Hear About Us? *</label>
+                      <input type="text" name="heard" placeholder="Instagram, Google, Friend..." required>
+                    </div>
+                  </div>
+
                   <button type="submit" class="form-submit">Submit via WhatsApp <i
                       class="ri-whatsapp-line"></i></button>
                 </form>
@@ -1742,6 +1963,10 @@
                 <div class="pos-form-title">Social Media Manager Application</div>
                 <p class="pos-form-sub">Fields marked <span style="color:var(--accent)">*</span> are required.</p>
                 <form onsubmit="submitForm(event, 'Social Media Manager')">
+
+                  <!-- PERSONAL DETAILS -->
+                  <div class="pos-section-title" style="margin-top:24px;">PERSONAL DETAILS</div>
+
                   <div class="form-row">
                     <div class="form-field"><label>First Name *</label><input type="text" name="fname"
                         placeholder="First name" required></div>
@@ -1767,17 +1992,57 @@
                       </select>
                     </div>
                   </div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Social Media Profile / Portfolio
-                      *</label><input type="url" name="portfolio" placeholder="Link to managed page or portfolio"
-                      required></div>
+
                   <div class="form-field full" style="margin-bottom:14px;"><label>Platforms You've Worked
                       On</label><input type="text" name="platforms"
                       placeholder="Instagram, Facebook, LinkedIn, Twitter..."></div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Why Do You Want to Join?
-                      *</label><textarea name="why" placeholder="Tell us what excites you about this role..."
-                      required></textarea></div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Where Did You Hear About
-                      Us?</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..."></div>
+
+                  <!-- AVAILABILITY -->
+                  <div class="pos-section-title" style="margin-top:24px;">AVAILABILITY</div>
+
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>When Can You Start? *</label>
+                      <input type="text" name="start" placeholder="Immediately / Next Month..." required>
+                    </div>
+                  </div>
+
+                  <!-- SOCIALS -->
+                  <div class="pos-section-title" style="margin-top:24px;">Show Us Who You Are</div>
+
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Instagram Handle</label>
+                      <input type="text" name="instagram" placeholder="@yourhandle">
+                    </div>
+
+                    <div class="form-field">
+                      <label>LinkedIn Profile</label>
+                      <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                    </div>
+                  </div>
+
+                  <div class="form-field full" style="margin-bottom:14px;">
+                    <label>Portfolio Link</label>
+                    <input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link">
+                  </div>
+
+                  <!-- WHY JOIN -->
+                  <div class="form-field full" style="margin-bottom:14px;">
+                    <label>Why Do You Want To Join Flashlab Creative? *</label>
+
+                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..."
+                      required></textarea>
+                  </div>
+
+                  <!-- SOURCE -->
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Where Did You Hear About Us? *</label>
+                      <input type="text" name="heard" placeholder="Instagram, Google, Friend..." required>
+                    </div>
+                  </div>
+
                   <button type="submit" class="form-submit">Submit via WhatsApp <i
                       class="ri-whatsapp-line"></i></button>
                 </form>
@@ -1842,6 +2107,10 @@
                 <div class="pos-form-title">Web Developer Application</div>
                 <p class="pos-form-sub">Fields marked <span style="color:var(--accent)">*</span> are required.</p>
                 <form onsubmit="submitForm(event, 'Web Developer')">
+
+                  <!-- PERSONAL DETAILS -->
+                  <div class="pos-section-title" style="margin-top:24px;">PERSONAL DETAILS</div>
+
                   <div class="form-row">
                     <div class="form-field"><label>First Name *</label><input type="text" name="fname"
                         placeholder="First name" required></div>
@@ -1868,16 +2137,56 @@
                       </select>
                     </div>
                   </div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>GitHub / Portfolio Link
-                      *</label><input type="url" name="portfolio" placeholder="https://github.com/you or portfolio URL"
-                      required></div>
+
                   <div class="form-field full" style="margin-bottom:14px;"><label>Tech Stack / Skills</label><input
                       type="text" name="stack" placeholder="WordPress, PHP, JavaScript, React..."></div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Why Do You Want to Join?
-                      *</label><textarea name="why" placeholder="Tell us what excites you about this role..."
-                      required></textarea></div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Where Did You Hear About
-                      Us?</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..."></div>
+                 
+                  <!-- AVAILABILITY -->
+                  <div class="pos-section-title" style="margin-top:24px;">AVAILABILITY</div>
+
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>When Can You Start? *</label>
+                      <input type="text" name="start" placeholder="Immediately / Next Month..." required>
+                    </div>
+                  </div>
+
+                  <!-- SOCIALS -->
+                  <div class="pos-section-title" style="margin-top:24px;">Show Us Who You Are</div>
+
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Instagram Handle</label>
+                      <input type="text" name="instagram" placeholder="@yourhandle">
+                    </div>
+
+                    <div class="form-field">
+                      <label>LinkedIn Profile</label>
+                      <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                    </div>
+                  </div>
+
+                  <div class="form-field full" style="margin-bottom:14px;">
+                    <label>Portfolio Link</label>
+                    <input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link">
+                  </div>
+
+                  <!-- WHY JOIN -->
+                  <div class="form-field full" style="margin-bottom:14px;">
+                    <label>Why Do You Want To Join Flashlab Creative? *</label>
+
+                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..."
+                      required></textarea>
+                  </div>
+
+                  <!-- SOURCE -->
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Where Did You Hear About Us? *</label>
+                      <input type="text" name="heard" placeholder="Instagram, Google, Friend..." required>
+                    </div>
+                  </div>
+
                   <button type="submit" class="form-submit">Submit via WhatsApp <i
                       class="ri-whatsapp-line"></i></button>
                 </form>
@@ -1893,7 +2202,7 @@
                 <span class="pos-tag"><i class="ri-time-line"></i> Full-time</span>
                 <span class="pos-tag"><i class="ri-briefcase-line"></i> Fresher / Experienced</span>
               </div>
-              <p class="pos-overview">FlashLab is hunting for creative and enthusiastic minds willing to cultivate their
+              <p class="pos-overview">Flashlab Creative is hunting for creative and enthusiastic minds willing to cultivate their
                 ideas into delivering the highest rankings on the internet through smart SEO strategies. You'll work
                 directly with our digital marketing team and real clients, helping drive measurable organic growth
                 across industries. If you're passionate about search, data, and all things digital — we want you.</p>
@@ -1947,6 +2256,10 @@
                 <div class="pos-form-title">SEO Expert Application</div>
                 <p class="pos-form-sub">Fields marked <span style="color:var(--accent)">*</span> are required.</p>
                 <form onsubmit="submitForm(event, 'SEO Expert')">
+
+                  <!-- PERSONAL DETAILS -->
+                  <div class="pos-section-title" style="margin-top:24px;">PERSONAL DETAILS</div>
+
                   <div class="form-row">
                     <div class="form-field"><label>First Name *</label><input type="text" name="fname"
                         placeholder="First name" required></div>
@@ -1962,17 +2275,68 @@
                   <div class="form-row">
                     <div class="form-field"><label>City *</label><input type="text" name="city" placeholder="Your city"
                         required></div>
-                    <div class="form-field"><label>SEO Tools Familiar With</label><input type="text" name="tools"
-                        placeholder="Ahrefs, SEMrush, GSC, Analytics..."></div>
+                    <div class="form-field"><label>Years of Experience *</label>
+                      <select name="exp" required>
+                        <option value="">Select</option>
+                        <option>Fresher</option>
+                        <option>Less than 1 year</option>
+                        <option>1–2 years</option>
+                        <option>2–4 years</option>
+                        <option>4+ years</option>
+                      </select>
+                    </div>
                   </div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Portfolio / Case Study
-                      Link</label><input type="url" name="portfolio"
-                      placeholder="Results you've achieved or Google Drive link"></div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Why Do You Want to Join?
-                      *</label><textarea name="why" placeholder="Tell us what excites you about this role..."
-                      required></textarea></div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Where Did You Hear About
-                      Us?</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..."></div>
+                 
+                  <div class="form-field full" style="margin-bottom:14px;"><label>SEO Tools Familiar With</label><input type="text" name="tools"
+                        placeholder="Ahrefs, SEMrush, GSC, Analytics...">
+                  </div>
+
+                  <!-- AVAILABILITY -->
+                  <div class="pos-section-title" style="margin-top:24px;">AVAILABILITY</div>
+
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>When Can You Start? *</label>
+                      <input type="text" name="start" placeholder="Immediately / Next Month..." required>
+                    </div>
+                  </div>
+
+                  <!-- SOCIALS -->
+                  <div class="pos-section-title" style="margin-top:24px;">Show Us Who You Are</div>
+
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Instagram Handle</label>
+                      <input type="text" name="instagram" placeholder="@yourhandle">
+                    </div>
+
+                    <div class="form-field">
+                      <label>LinkedIn Profile</label>
+                      <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                    </div>
+                  </div>
+
+                  <div class="form-field full" style="margin-bottom:14px;">
+                    <label>Portfolio Link</label>
+                    <input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link">
+                  </div>
+
+                  <!-- WHY JOIN -->
+                  <div class="form-field full" style="margin-bottom:14px;">
+                    <label>Why Do You Want To Join Flashlab Creative? *</label>
+
+                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..."
+                      required></textarea>
+                  </div>
+
+                  <!-- SOURCE -->
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Where Did You Hear About Us? *</label>
+                      <input type="text" name="heard" placeholder="Instagram, Google, Friend..." required>
+                    </div>
+                  </div>
+
                   <button type="submit" class="form-submit">Submit via WhatsApp <i
                       class="ri-whatsapp-line"></i></button>
                 </form>
@@ -2035,6 +2399,10 @@
                 <div class="pos-form-title">App Developer Application</div>
                 <p class="pos-form-sub">Fields marked <span style="color:var(--accent)">*</span> are required.</p>
                 <form onsubmit="submitForm(event, 'App Developer')">
+
+                  <!-- PERSONAL DETAILS -->
+                  <div class="pos-section-title" style="margin-top:24px;">PERSONAL DETAILS</div>
+                 
                   <div class="form-row">
                     <div class="form-field"><label>First Name *</label><input type="text" name="fname"
                         placeholder="First name" required></div>
@@ -2050,6 +2418,17 @@
                   <div class="form-row">
                     <div class="form-field"><label>City *</label><input type="text" name="city" placeholder="Your city"
                         required></div>
+                    <div class="form-field"><label>Years of Experience *</label>
+                      <select name="exp" required>
+                        <option value="">Select</option>
+                        <option>Fresher</option>
+                        <option>Less than 1 year</option>
+                        <option>1–2 years</option>
+                        <option>2–4 years</option>
+                        <option>4+ years</option>
+                      </select>
+                    </div>
+                  </div>
                     <div class="form-field"><label>Primary Framework *</label>
                       <select name="framework" required>
                         <option value="">Select</option>
@@ -2060,17 +2439,56 @@
                         <option>Other</option>
                       </select>
                     </div>
+
+                  <!-- AVAILABILITY -->
+                  <div class="pos-section-title" style="margin-top:24px;">AVAILABILITY</div>
+
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>When Can You Start? *</label>
+                      <input type="text" name="start" placeholder="Immediately / Next Month..." required>
+                    </div>
                   </div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>App Portfolio / GitHub *</label><input
-                      type="url" name="portfolio" placeholder="App Store / Play Store / GitHub link" required></div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Why Do You Want to Join?
-                      *</label><textarea name="why" placeholder="Tell us what excites you about this role..."
-                      required></textarea></div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Where Did You Hear About
-                      Us?</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..."></div>
+
+                  <!-- SOCIALS -->
+                  <div class="pos-section-title" style="margin-top:24px;">Show Us Who You Are</div>
+
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Instagram Handle</label>
+                      <input type="text" name="instagram" placeholder="@yourhandle">
+                    </div>
+
+                    <div class="form-field">
+                      <label>LinkedIn Profile</label>
+                      <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                    </div>
+                  </div>
+
+                  <div class="form-field full" style="margin-bottom:14px;">
+                    <label>Portfolio Link</label>
+                    <input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link">
+                  </div>
+
+                  <!-- WHY JOIN -->
+                  <div class="form-field full" style="margin-bottom:14px;">
+                    <label>Why Do You Want To Join Flashlab Creative? *</label>
+
+                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..."
+                      required></textarea>
+                  </div>
+
+                  <!-- SOURCE -->
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Where Did You Hear About Us? *</label>
+                      <input type="text" name="heard" placeholder="Instagram, Google, Friend..." required>
+                    </div>
+                  </div>
+
                   <button type="submit" class="form-submit">Submit via WhatsApp <i
                       class="ri-whatsapp-line"></i></button>
-                </form>
+                </form>  
               </div>
             </div>
 
@@ -2150,7 +2568,7 @@
                 <i class="ri-add-line"></i>
               </div>
               <div class="faq-a">Yes! Every intern who successfully completes their programme receives an official
-                FlashLab Certificate of Completion and a Letter of Recommendation from our director — great for your
+                Flashlab Creative Certificate of Completion and a Letter of Recommendation from our director — great for your
                 portfolio and next interview.</div>
             </div>
           </div>
@@ -2170,7 +2588,7 @@
           </div>
           <div class="no-role-actions">
             <a href="connect.html" class="btn-primary">Contact Us <i class="ri-arrow-right-line"></i></a>
-            <a href="mailto:contact@flashlabcreative.com" class="btn-outline-accent">Send Your Resume <i
+            <a href="mailto:contact@flashlabcreative.com" button class="btn-outline-accent">Send Your Resume <i
                 class="ri-send-plane-line"></i></a>
           </div>
         </div>
@@ -2185,7 +2603,7 @@
       <div class="footer-brand">
         <div class="footer-logo">
           <a href="index.html">
-            <img src="images/logos/flask-logo.png" alt="FlashLab Creative"
+            <img src="images/logos/flask-logo.png" alt="Flashlab Creative"
               onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
           </a>
         </div>
@@ -2261,7 +2679,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>Copyright &copy; 2026 FlashLab Creative — Website Crafted by <a href="https://cybercreative.in/"
+      <p>Copyright &copy; 2026 Flashlab Creative — Website Crafted by <a href="https://cybercreative.in/"
           target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
     </div>
   </footer>
@@ -2333,7 +2751,7 @@
       const get = (n) => { const el = form.querySelector('[name="' + n + '"]'); return el ? el.value : '—'; };
       const phone = "919923580023";
       const msg =
-        `*New Career Application — FlashLab Creative*
+        `*New Career Application — Flashlab Creative*
 ━━━━━━━━━━━━━━━━━━━━━━
 *Position:* ${position}
 *Name:* ${get('fname')} ${get('lname')}
@@ -2399,6 +2817,22 @@
           const offset = nb ? nb.offsetTop + nb.offsetHeight + 8 : 0;
           window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
         }
+      });
+    });
+
+    // Filter tabs
+    document.querySelectorAll('.pos-filter-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.pos-filter-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const filter = tab.dataset.filter;
+
+        document.querySelectorAll('.pos-menu-item[data-type]').forEach(item => {
+          item.style.display = (filter === 'all' || item.dataset.type === filter) ? '' : 'none';
+        });
+        document.querySelectorAll('.pos-menu-group-label[data-group]').forEach(label => {
+          label.style.display = (filter === 'all' || label.dataset.group === filter) ? '' : 'none';
+        });
       });
     });
 

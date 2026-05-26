@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Outdoor &amp; Print Ads — FlashLab Creative</title>
+  <title>E-Commerce — Flashlab Creative</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -69,7 +69,7 @@
     }
 
     .page-hero::before {
-      content: 'PRINT';
+      content: 'ECOM';
       position: absolute;
       right: 80px;
       top: 50%;
@@ -116,9 +116,10 @@
     }
 
     .page-hero h1 em {
-      font-style: italic;
-      font-family: 'Playfair Display', serif;
-      color: var(--green);
+      font-style: normal;
+  font-family: var(--font-italic);
+  font-weight: 200;
+  color: var(--accent2);
     }
 
     .page-hero-sub {
@@ -126,48 +127,6 @@
       color: var(--text2);
       max-width: 580px;
       line-height: 1.7;
-    }
-
-    /* ── MARQUEE ── */
-    .marquee-strip {
-      background: var(--accent2);
-      padding: 13px 0;
-      overflow: hidden;
-    }
-
-    .marquee-track {
-      display: flex;
-      gap: 28px;
-      width: max-content;
-      animation: marquee 28s linear infinite;
-    }
-
-    .marquee-strip:hover .marquee-track {
-      animation-play-state: paused;
-    }
-
-    .marquee-track span {
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--dark);
-      white-space: nowrap;
-    }
-
-    .marquee-track .dot {
-      color: rgba(10, 10, 15, .4);
-      font-size: .5rem;
-    }
-
-    @keyframes marquee {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
     }
 
     /* ── SECTIONS ── */
@@ -208,7 +167,7 @@
     }
 
     .sec-heading em {
-      font-style: normal;
+     font-style: normal;
   font-family: var(--font-italic);
   font-weight: 200;
   color: var(--accent2);
@@ -298,8 +257,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--dark);
-      color: var(--green);
+      background: var(--green);    /* modified colour */
+      color: var(--dark);          /* modified colour */ 
       font-size: .85rem;
       font-weight: 700;
       letter-spacing: 1px;
@@ -321,13 +280,22 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
     }
 
-    /* ── BILLBOARD SHOWCASE ── */
+    /* ── SHOWCASE ── */
+    .billboard-showcase {
+      margin-bottom: 56px;
+    }
+
+    .showcase-banner {
+      width: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
     .showcase-banner img {
       width: 100%;
-      height: 220px;
+      max-height: 240px;
       object-fit: cover;
-      border-radius: 4px;
-      margin-bottom: 20px;
     }
 
     .showcase-grid {
@@ -349,7 +317,7 @@
       border-radius: 4px;
     }
 
-    /* ── BILLBOARD TYPES ── */
+    /* ── TYPES GRID ── */
     .types-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -417,7 +385,7 @@
       line-height: 1.65;
     }
 
-    /* ── WHAT WE DESIGN GRID ── */
+    /* ── DESIGN GRID ── */
     .design-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -741,13 +709,13 @@
   <!-- LOGO BAR -->
   <div class="site-logo-bar">
     <a href="#">
-      <img src="images/logos/flashlab-logo.png" alt="FlashLab Creative" class="logo-light" id="siteLogoImg">
-      <img src="images/logos/flashlab-logo-dark.png" alt="FlashLab Creative" class="logo-dark" id="siteLogoImg">
+      <img src="images/logos/flashlab-logo.png" alt="Flashlab Creative" class="logo-light" id="siteLogoImg">
+      <img src="images/logos/flashlab-logo-dark.png" alt="Flashlab Creative" class="logo-dark" id="siteLogoImg">
     </a>
   </div>
 
   <!-- NAVBAR -->
-    <nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar">
     <div class="nav-wrap">
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
@@ -778,10 +746,7 @@
             <li><a href="story-6.html"><i class="ri-article-line"></i>Story 6</a></li>
           </ul>
         </li>
-        <li>
-          <a href="career.html">Career</a>
-          
-        </li>
+        <li><a href="career.html">Career</a></li>
         <li><a href="connect.html">Connect</a></li>
       </ul>
       <div class="nav-controls">
@@ -854,11 +819,9 @@
   <section class="page-hero">
     <div class="wrap">
       <div class="hero-eyebrow reveal"><span></span>Service Detail</div>
-      <h1 class="reveal" style="transition-delay:.1s">Outdoor &amp;<br><em>Print</em> Ads</h1>
+      <h1 class="reveal" style="transition-delay:.1s">E-<em>Commerce</em><br>Solutions</h1>
       <p class="page-hero-sub reveal" style="transition-delay:.2s">
-        Bold, high-impact advertising solutions — including billboards, posters, and print collateral. Our designs
-        combine striking visuals with strategic messaging to capture attention and elevate your brand in physical
-        environments.
+        End-to-end e-commerce solutions built to convert browsers into buyers. From storefront design and product photography to SEO optimisation and performance marketing — we build and grow online stores that sell.
       </p>
     </div>
   </section>
@@ -866,16 +829,16 @@
   <!-- MARQUEE -->
   <div class="marquee-strip">
     <div class="marquee-track" id="marqueeTrack">
-      <span>Billboards</span><span class="dot">●</span>
-      <span>Hoardings</span><span class="dot">●</span>
-      <span>Bus Shelter Ads</span><span class="dot">●</span>
-      <span>Flyers &amp; Brochures</span><span class="dot">●</span>
-      <span>Roller Banners</span><span class="dot">●</span>
-      <span>Event Signage</span><span class="dot">●</span>
-      <span>Window Graphics</span><span class="dot">●</span>
-      <span>Catalogues</span><span class="dot">●</span>
-      <span>Posters</span><span class="dot">●</span>
-      <span>Magazine Ads</span><span class="dot">●</span>
+      <span>Shopify Stores</span><span class="dot">●</span>
+      <span>WooCommerce</span><span class="dot">●</span>
+      <span>Product Photography</span><span class="dot">●</span>
+      <span>Conversion Optimisation</span><span class="dot">●</span>
+      <span>Payment Integration</span><span class="dot">●</span>
+      <span>Inventory Management</span><span class="dot">●</span>
+      <span>Email Marketing</span><span class="dot">●</span>
+      <span>Performance Ads</span><span class="dot">●</span>
+      <span>SEO for E-Commerce</span><span class="dot">●</span>
+      <span>Analytics &amp; Reporting</span><span class="dot">●</span>
     </div>
   </div>
 
@@ -884,8 +847,8 @@
     <div class="wrap">
       <div class="overview-split">
         <div class="overview-img-wrap reveal">
-          <img class="overview-img-main" src="images/Outdoor Print ads1.png" alt="Outdoor &amp; Print Ads"
-            onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80'">
+          <img class="overview-img-main" src="images/ecom1.jpeg" alt="E-Commerce Solutions"
+            onerror="this.src='https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80'">
           <div class="img-badge">
             <strong>10+</strong>
             <span>Yrs Exp.</span>
@@ -893,129 +856,124 @@
         </div>
         <div class="overview-content reveal" style="transition-delay:.15s">
           <div class="sec-eyebrow"><span></span>Service Overview</div>
-          <h2 class="sec-heading" style="margin-bottom:20px">Making Your Brand<br><em>Impossible</em> to Miss</h2>
-          <p>At Flashlab Creative, we believe great advertising doesn't live only on screens. Our outdoor and print
-            design team creates campaigns that demand attention in the real world — on roadsides, in shopping centres,
-            at events, and in the hands of your customers. Every piece we produce is strategically designed,
-            brand-consistent, and print-ready to the highest production standards.</p>
-          <p>From a single flyer to a full outdoor campaign, we handle it all — delivering print-ready artwork that
-            looks just as stunning in the real world as it does on your screen.</p>
+          <h2 class="sec-heading" style="margin-bottom:20px">Your Online Store,<br><em>Built to Sell</em></h2>
+          <p>At Flashlab Creative, we believe great advertising doesn't live only on screens. Our outdoor and print design team creates campaigns that demand attention in the real world — on roadsides, in shopping centres, at events, and in the hands of your customers. Every piece we produce is strategically designed, brand-consistent, and print-ready to the highest production standards. From a single flyer to a full outdoor campaign, we handle it all — delivering print-ready artwork that looks just as stunning in the real world as it does on your screen.
+          </p>
           <a href="connect.html" class="btn-primary">Start a Project <i class="ri-arrow-right-up-line"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BILLBOARD SHOWCASE -->
+  <!-- SHOWCASE -->
   <section class="section section-alt">
     <div class="wrap">
       <div class="sec-eyebrow reveal"><span></span>Our Work</div>
-      <h2 class="sec-heading reveal" style="transition-delay:.08s; margin-bottom:40px;">Campaigns
-        That<br><em>Perform</em> in the Real World</h2>
+      <h2 class="sec-heading reveal" style="transition-delay:.08s; margin-bottom:40px;">Stores That<br><em>Drive Revenue</em></h2>
 
-      <div class="reveal" style="transition-delay:.12s">
+      <div class="billboard-showcase reveal" style="transition-delay:.12s">
         <div class="showcase-banner">
-          <img src="images/timeline/2022-sunburn.png" alt="Outdoor Campaign — Banner"
-            onerror="this.src='https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1400&q=80'">
+          <img src="images/ecom-banner.jpeg" alt="E-Commerce Campaign — Banner"
+            onerror="this.src='https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=80'"
+            style="width:100%; height:220px; object-fit:cover; border-radius:4px;">
         </div>
         <div class="showcase-grid">
-          <img src="images/Outdoor Print ads1.png" alt="Outdoor Ad — Poster"
-            onerror="this.src='https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=600&q=80'">
-          <img src="images/timeline/2022-sunburn2.png" alt="Outdoor Ad — Billboard"
-            onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80'">
+          <img src="images/ecom2.jpeg" alt="E-Commerce — Product Store"
+            onerror="this.src='https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?auto=format&fit=crop&w=600&q=80'"
+            style="height:340px; object-fit:cover; border-radius:4px;">
+          <img src="images/ecom3.jpeg" alt="E-Commerce — Online Shopping"
+            onerror="this.src='https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=900&q=80'"
+            style="height:340px; object-fit:cover; border-radius:4px;">
         </div>
       </div>
 
-      <!-- Billboard types -->
+      <!-- E-Commerce types -->
       <div class="types-grid reveal" style="transition-delay:.16s">
         <div class="type-card">
           <div class="type-num">01</div>
-          <h4>Static Billboards</h4>
-          <p>Large-format static displays designed to maximise visibility on high-traffic roads and junctions. Bold,
-            readable, and built for impact at 100km/h.</p>
+          <h4>Shopify Development</h4>
+          <p>Custom Shopify stores built for performance — from theme design and product setup to payment gateways, shipping rules, and app integrations tailored to your business model.</p>
         </div>
         <div class="type-card">
           <div class="type-num">02</div>
-          <h4>Portable Digital Billboards</h4>
-          <p>Mobile digital displays that take your campaign wherever the crowd is — events, festivals, roadshows, and
-            high-footfall locations across Goa.</p>
+          <h4>WooCommerce Stores</h4>
+          <p>Powerful WordPress-based stores with full flexibility. We design, develop, and configure WooCommerce environments that scale with your catalogue and customer base.</p>
         </div>
         <div class="type-card">
           <div class="type-num">03</div>
-          <h4>Flex Frame Billboards</h4>
-          <p>Lightweight and cost-effective flex banners with vivid, weather-resistant printing — ideal for long-term
-            outdoor exposure and high-visibility placements.</p>
+          <h4>Product Photography</h4>
+          <p>In-house studio and on-location product photography that makes your inventory look irresistible — colour-accurate, high-resolution, and ready for any platform or marketplace.</p>
         </div>
         <div class="type-card">
           <div class="type-num">04</div>
-          <h4>Signage Billboards</h4>
-          <p>Custom fabricated signage for retail fronts, corporate parks, and hospitality venues. Premium materials,
-            precision installation, lasting impressions.</p>
+          <h4>Marketplace Integration</h4>
+          <p>Expand your reach with seamless listings on Amazon, Flipkart, Meesho, and other marketplaces — synced inventory, optimised listings, and unified order management.</p>
         </div>
         <div class="type-card">
           <div class="type-num">05</div>
-          <h4>Hoarding &amp; Transit Ads</h4>
-          <p>Bus shelters, railway hoardings, and transit advertising placements that put your brand in front of
-            thousands of daily commuters across the region.</p>
+          <h4>Performance Marketing</h4>
+          <p>Meta Shopping Ads, Google Performance Max, and retargeting campaigns engineered to drive qualified traffic, reduce cart abandonment, and lower your cost-per-acquisition.</p>
         </div>
         <div class="type-card">
           <div class="type-num">06</div>
-          <h4>Print Collateral</h4>
-          <p>Flyers, brochures, catalogues, posters, and event collateral crafted to the same standard as our outdoor
-            campaigns — premium design, print-ready files.</p>
+          <h4>E-Commerce SEO</h4>
+          <p>Category and product page optimisation, technical SEO audits, schema markup, and content strategies that rank your store on page one and drive sustainable organic revenue.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHAT WE DESIGN -->
+  <!-- WHAT WE COVER -->
   <section class="section">
     <div class="wrap">
       <div class="centered reveal" style="margin-bottom:44px;">
-        <div class="sec-eyebrow"><span></span>Formats We Cover</div>
-        <h2 class="sec-heading">Every Format, <em>Covered</em></h2>
+        <div class="sec-eyebrow"><span></span>What We Cover</div>
+        <h2 class="sec-heading">Everything Your Store <em>Needs</em></h2>
       </div>
       <div class="design-grid reveal" style="transition-delay:.1s">
         <div class="design-card">
-          <div class="design-card-icon"><i class="ri-layout-4-line"></i></div>
-          <h4>Billboards &amp; Hoardings</h4>
-          <p>High-impact outdoor displays for roadsides, junctions, and high-visibility locations.</p>
+          <div class="design-card-icon"><i class="ri-store-line"></i></div>
+          <h4>Storefront Design</h4>
+          <p>Conversion-focused UI/UX design that guides visitors seamlessly from browsing to checkout.</p>
         </div>
         <div class="design-card">
-          <div class="design-card-icon"><i class="ri-file-text-line"></i></div>
-          <h4>Flyers &amp; Brochures</h4>
-          <p>Compact print materials designed to convert — from A4 flyers to multi-page brochures.</p>
+          <div class="design-card-icon"><i class="ri-camera-line"></i></div>
+          <h4>Product Photography</h4>
+          <p>Studio-quality product images and lifestyle shoots that make your catalogue stand out.</p>
         </div>
         <div class="design-card">
-          <div class="design-card-icon"><i class="ri-bar-chart-grouped-line"></i></div>
-          <h4>Roller Banners &amp; Posters</h4>
-          <p>Event-ready display solutions that look professional in any setting.</p>
+          <div class="design-card-icon"><i class="ri-shopping-bag-line"></i></div>
+          <h4>Catalogue Management</h4>
+          <p>Organised product listing, categorisation, and inventory sync across all your sales channels.</p>
         </div>
         <div class="design-card">
-          <div class="design-card-icon"><i class="ri-image-2-line"></i></div>
-          <h4>Window &amp; Event Signage</h4>
-          <p>Custom graphics for retail windows, conference spaces, exhibitions, and brand activations.</p>
+          <div class="design-card-icon"><i class="ri-secure-payment-line"></i></div>
+          <h4>Payment &amp; Checkout</h4>
+          <p>Frictionless payment gateway integration — Razorpay, Stripe, PayPal, and UPI support built in.</p>
         </div>
         <div class="design-card">
-          <div class="design-card-icon"><i class="ri-newspaper-line"></i></div>
-          <h4>Magazine &amp; Press Ads</h4>
-          <p>Full-page, half-page, and quarter-page ads designed to stand out on the printed page.</p>
+          <div class="design-card-icon"><i class="ri-mail-send-line"></i></div>
+          <h4>Email &amp; Retention</h4>
+          <p>Automated email flows, cart recovery campaigns, and loyalty programs that bring customers back.</p>
         </div>
         <div class="design-card">
-          <div class="design-card-icon"><i class="ri-bus-line"></i></div>
-          <h4>Bus Shelter &amp; Transit Ads</h4>
-          <p>High-frequency placements that build brand recall among daily commuters.</p>
+          <div class="design-card-icon"><i class="ri-bar-chart-2-line"></i></div>
+          <h4>Analytics &amp; Reporting</h4>
+          <p>GA4, Meta Pixel, and custom dashboards giving you full visibility over sales, traffic, and ROAS.</p>
         </div>
         <div class="design-card">
-          <div class="design-card-icon"><i class="ri-book-open-line"></i></div>
-          <h4>Catalogues &amp; Lookbooks</h4>
-          <p>Premium multi-page print books for hospitality, fashion, F&amp;B, and retail clients.</p>
+          <div class="design-card-icon"><i class="ri-smartphone-line"></i></div>
+          <h4>Mobile-First Experience</h4>
+          <p>Every store we build is optimised for mobile — faster load times, tap-friendly UI, and smooth checkout on any device.</p>
         </div>
         <div class="design-card">
-          <div class="design-card-icon"><i class="ri-map-pin-2-line"></i></div>
-          <h4>Point-of-Sale Displays</h4>
-          <p>In-store display materials that guide customers and reinforce brand presence at the point of purchase.</p>
+          <div class="design-card-icon"><i class="ri-truck-line"></i></div>
+          <h4>Shipping &amp; Logistics</h4>
+          <p>Shiprocket, Delhivery, and custom courier integrations with automated order tracking for your customers.</p>
         </div>
+      </div>
+      <div class="contact-band">
+        <a href="portfolio.html" class="btn-dark">Our Portfolio <i class="ri-arrow-right-up-line"></i></a>
       </div>
     </div>
   </section>
@@ -1024,47 +982,40 @@
   <section class="section section-alt">
     <div class="wrap">
       <div class="centered reveal" style="margin-bottom:0;">
-        <div class="sec-eyebrow"><span></span>Why FlashLab</div>
+        <div class="sec-eyebrow"><span></span>Why Flashlab Creative</div>
         <h2 class="sec-heading">What Sets Us <em>Apart</em></h2>
-        <p class="sec-sub">Unlike digital-only agencies, Flashlab Creative brings a real-world creative mindset to every
-          print campaign — thinking about placement, audience, and impact at every step.</p>
+        <p class="sec-sub">Unlike digital-only agencies, Flashlab Creative brings a real-world creative mindset to every print campaign. We don't just design pretty artwork — we think about placement, audience, and impact at every step. Our process is straightforward and collaborative, meaning you're involved from the first concept all the way to final print approval.</p>
       </div>
       <div class="why-grid">
         <div class="why-card reveal" style="transition-delay:0s">
-          <div class="why-card-icon"><i class="ri-eye-line"></i></div>
-          <h4>Obsessive Detail</h4>
-          <p>We obsess over every detail — from colour accuracy and typography to print finish and material selection —
-            ensuring your brand looks flawless whether it's on a flyer or a 48-sheet billboard.</p>
+          <div class="why-card-icon"><i class="ri-funds-line"></i></div>
+          <h4>Conversion-First Thinking</h4>
+          <p>Every design decision — layout, copy, CTA placement, colour — is made with one goal: turning more visitors into paying customers.</p>
         </div>
         <div class="why-card reveal" style="transition-delay:.1s">
-          <div class="why-card-icon"><i class="ri-megaphone-line"></i></div>
-          <h4>Maximum Impact</h4>
-          <p>Every campaign we design is built for maximum visibility and recall — strategically crafted to cut through
-            the noise, grab attention in seconds, and leave a lasting impression.</p>
+          <div class="why-card-icon"><i class="ri-speed-line"></i></div>
+          <h4>Performance Optimised</h4>
+          <p>Our stores are engineered for speed. Fast-loading pages improve SEO rankings, reduce bounce rates, and directly increase conversion rates.</p>
         </div>
         <div class="why-card reveal" style="transition-delay:.2s">
-          <div class="why-card-icon"><i class="ri-shield-check-line"></i></div>
-          <h4>Brand Standards, Always</h4>
-          <p>Every piece is produced in line with your brand guidelines — consistent colour, typography, and tone across
-            every format and placement.</p>
+          <div class="why-card-icon"><i class="ri-customer-service-2-line"></i></div>
+          <h4>End-to-End Management</h4>
+          <p>From store build and product upload to ad campaigns and monthly reporting — we manage the full e-commerce operation so you don't have to.</p>
         </div>
         <div class="why-card reveal" style="transition-delay:.3s">
-          <div class="why-card-icon"><i class="ri-shake-hands-line"></i></div>
-          <h4>Collaborative Process</h4>
-          <p>Our process is straightforward and collaborative — you're involved from the first concept all the way to
-            final print approval, with no surprises along the way.</p>
+          <div class="why-card-icon"><i class="ri-camera-3-line"></i></div>
+          <h4>In-House Content Production</h4>
+          <p>Our studio handles product photography, video, and lifestyle content — everything your store needs to look premium and convert at scale.</p>
         </div>
         <div class="why-card reveal" style="transition-delay:.4s">
-          <div class="why-card-icon"><i class="ri-camera-3-line"></i></div>
-          <h4>State-of-the-Art Production</h4>
-          <p>In-house photography, drone aerials, and studio setups mean every visual in your campaign is produced to
-            the highest standard before it goes to print.</p>
+          <div class="why-card-icon"><i class="ri-search-eye-line"></i></div>
+          <h4>Built for Discoverability</h4>
+          <p>Every store ships with on-page SEO, schema markup, and a content framework designed to grow your organic traffic month over month.</p>
         </div>
         <div class="why-card reveal" style="transition-delay:.5s">
           <div class="why-card-icon"><i class="ri-map-pin-line"></i></div>
-          <h4>Local Expertise, National Reach</h4>
-          <p>Deeply embedded in Goa's hospitality and F&amp;B ecosystem, with campaigns extending across major Indian
-            cities. We know this market better than anyone.</p>
+          <h4>Local Roots, National Scale</h4>
+          <p>Based in Goa with clients across India. We understand regional consumer behaviour while building stores capable of serving a national audience.</p>
         </div>
       </div>
     </div>
@@ -1088,7 +1039,7 @@
       <div class="centered reveal" style="margin-bottom:40px;">
         <div class="sec-eyebrow"><span></span>Got Questions?</div>
         <h2 class="sec-heading">Frequently Asked <em>Questions</em></h2>
-        <p class="sec-sub">Everything you need to know about our Outdoor &amp; Print Ads service.</p>
+        <p class="sec-sub">Everything you need to know about our E-Commerce service.</p>
       </div>
       <div class="faq-list reveal" style="transition-delay:.1s">
         <div class="faq-item">
@@ -1097,8 +1048,7 @@
             <div class="faq-icon"><i class="ri-add-line"></i></div>
           </button>
           <div class="faq-a">
-            <p>We design billboards, hoardings, bus shelter ads, flyers, brochures, catalogues, roller banners, posters,
-              window graphics, event signage, and newspaper and magazine advertisements.</p>
+            <p>We design billboards, hoardings, bus shelter ads, flyers, brochures, catalogues, roller banners, posters, window graphics, event signage, and newspaper and magazine advertisements.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -1107,8 +1057,7 @@
             <div class="faq-icon"><i class="ri-add-line"></i></div>
           </button>
           <div class="faq-a">
-            <p>Absolutely. We work from your brand guidelines to ensure every printed piece is fully consistent with
-              your website, social media, and all other marketing materials.</p>
+            <p>Absolutely. We work from your brand guidelines to ensure every printed piece is fully consistent with your website, social media, and all other marketing materials.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -1117,8 +1066,7 @@
             <div class="faq-icon"><i class="ri-add-line"></i></div>
           </button>
           <div class="faq-a">
-            <p>We deliver print-ready PDF files with correct bleed, crop marks, and CMYK colour profiles — ready to send
-              straight to any printer or outdoor media supplier worldwide.</p>
+            <p>We deliver print-ready PDF files with correct bleed, crop marks, and CMYK colour profiles — ready to send straight to any printer or outdoor media supplier worldwide.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -1127,18 +1075,18 @@
             <div class="faq-icon"><i class="ri-add-line"></i></div>
           </button>
           <div class="faq-a">
-            <p>Most print designs are completed within 3 to 5 business days. Larger campaigns or multi-piece projects
-              are typically delivered within 2 weeks. We always agree on a clear timeline before we begin.</p>
+            <p>Most print designs are completed within 3 to 5 business days. Larger campaigns or multi-piece projects are typically delivered within 2 weeks. We always agree on a clear timeline before we begin.</p>
           </div>
         </div>
+        
       </div>
     </div>
   </section>
 
   <!-- CONTACT BAND -->
   <div class="contact-band">
-    <h2>Ready to Make an <em>Impact?</em></h2>
-    <p>Let's create print and outdoor campaigns that stop people in their tracks.</p>
+    <h2>Ready to Start <em>Selling?</em></h2>
+    <p>Let's build an e-commerce store that works as hard as you do.</p>
     <a href="connect.html" class="btn-dark">Start a Project <i class="ri-arrow-right-up-line"></i></a>
   </div>
 
@@ -1148,22 +1096,17 @@
       <div class="footer-brand">
         <div class="footer-logo">
           <a href="index.html">
-            <img src="images/logos/flask-logo.png" alt="FlashLab Creative"
+            <img src="images/logos/flask-logo.png" alt="Flashlab Creative"
               onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
           </a>
         </div>
-        <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in
-          2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
+        <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in 2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i
-              class="ri-instagram-fill"></i></a>
-          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i
-              class="ri-facebook-fill"></i></a>
-          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i
-              class="ri-linkedin-fill"></i></a>
+          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i class="ri-instagram-fill"></i></a>
+          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i class="ri-facebook-fill"></i></a>
+          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i class="ri-linkedin-fill"></i></a>
           <a href="https://twitter.com/theflashlab" target="_blank" rel="noopener"><i class="ri-twitter-x-fill"></i></a>
-          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i
-              class="ri-youtube-fill"></i></a>
+          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i class="ri-youtube-fill"></i></a>
         </div>
       </div>
       <div>
@@ -1213,19 +1156,16 @@
       <div>
         <h4 class="footer-head">Contact</h4>
         <div class="footer-contact">
-          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa"
-              target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
+          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa" target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
           <p><i class="ri-phone-fill"></i><a href="tel:+919923580023">+91 99235 80023</a></p>
-          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a>
-          </p>
+          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a></p>
           <p><i class="ri-time-fill"></i><span>Mon – Sat: 9am – 6pm IST</span></p>
           <a href="connect.html" class="footer-cta">Start a Project <i class="ri-arrow-right-line"></i></a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>Copyright &copy; 2026 FlashLab Creative — Website Crafted by <a href="https://cybercreative.in/"
-          target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
+      <p>Copyright &copy; 2026 Flashlab Creative — Website Crafted by <a href="https://cybercreative.in/" target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
     </div>
   </footer>
 
@@ -1236,7 +1176,6 @@
 
   <script src="flash.js"></script>
   <script>
-
     /* ── FAQ ── */
     document.querySelectorAll('.faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -1250,7 +1189,6 @@
     /* ── MARQUEE DUPLICATE ── */
     const track = document.getElementById('marqueeTrack');
     if (track) track.innerHTML += track.innerHTML;
-
   </script>
 
 </body>

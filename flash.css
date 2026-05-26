@@ -3,7 +3,7 @@
    ============================================================ */
 :root {
   --accent:       #a8e832;
-  --accent2:      #F0856A;
+  --accent2:      #F56D43;
   --accent3:      #dc2626;
   --font-head:    'Bebas Neue', sans-serif;
   --font-body:    'Outfit', sans-serif;
@@ -115,7 +115,7 @@ li, blockquote, input, textarea { cursor: text; }
   align-items: center;
   justify-content: center;
 
-  height: 100px;
+  height: 90px;
 
   transition: background .3s;
 }
@@ -129,8 +129,8 @@ li, blockquote, input, textarea { cursor: text; }
 }
 
 .site-logo-bar img {
-  height: 45px;
-  width: auto;
+  height: 60px;
+  width: 1500px;
   object-fit: contain;
 }
 
@@ -157,7 +157,7 @@ li, blockquote, input, textarea { cursor: text; }
    ============================================================ */
 .navbar {
   position:        fixed;
-  top:             100px;
+  top:             90px;bottom:auto;
   left: 0; right: 0;
   z-index:         1001;
   padding:         11px 5%;
@@ -660,7 +660,7 @@ li, blockquote, input, textarea { cursor: text; }
   transition:color .2s, border-color .2s, background .2s;
 }
 .footer-socials a:hover {
-  color:#0a0a0f; background:#E89A80; border-color:#E89A80;
+  color:#0a0a0f; background:var(--accent2); border-color:var(--accent2);
 }
 
 .footer-head {
@@ -673,7 +673,7 @@ li, blockquote, input, textarea { cursor: text; }
   font-size:.82rem; color:rgba(255,255,255,0.58);
   display:flex; align-items:center; gap:5px; transition:color .2s;
 }
-.footer-list a:hover { color:#E89A80 !important; }
+.footer-list a:hover { color:var(--accent2) !important; }
 .footer-list a i { color:#a8e832; font-size:1rem; flex-shrink:0; }
 
 .footer-contact { display:flex; flex-direction:column; gap:10px; }
@@ -683,7 +683,7 @@ li, blockquote, input, textarea { cursor: text; }
 }
 .footer-contact p i { color:#a8e832; font-size:1rem; flex-shrink:0; margin-top:2px; }
 .footer-contact a { color:rgba(255,255,255,0.55); }
-.footer-contact a:hover { color:#E89A80 !important; }
+.footer-contact a:hover { color:var(--accent2) !important; }
 
 .footer-cta {
   display:inline-flex; align-items:center; gap:8px;
@@ -693,7 +693,7 @@ li, blockquote, input, textarea { cursor: text; }
   border-radius:4px; margin-top:10px; transition:opacity .2s;
 }
 .footer-cta:hover { opacity:.85; }
-.footer-cta:hover i { color:#E89A80 !important; }
+.footer-cta:hover i { color:var(--accent2) !important; }
 
 .footer-bottom {
   background:#0c1a20 !important;
@@ -702,7 +702,7 @@ li, blockquote, input, textarea { cursor: text; }
 }
 .footer-bottom p, .footer-bottom p a { color:rgba(255,255,255,0.55) !important; font-size:.82rem; }
 .footer-bottom p a.cyber-link { color:#a8e832 !important; font-weight:600; transition:color .2s; }
-.footer-bottom p a.cyber-link:hover { color:#E89A80 !important; }
+.footer-bottom p a.cyber-link:hover { color:var(--accent2) !important; }
 
 /* ============================================================
    15. BACK TO TOP
@@ -724,3 +724,43 @@ li, blockquote, input, textarea { cursor: text; }
   transform:translateY(0) !important; pointer-events:all !important;
 }
 .back-top:hover { background:#bef54a !important; transform:translateY(-3px) !important; }
+
+/* MARQUEE */
+    
+    .marquee-strip {
+      background: var(--accent2);
+      overflow: hidden;
+      padding: 16px 0;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 36px;
+      white-space: nowrap;
+      animation: ticker 12s linear infinite;
+    }
+
+    .marquee-strip:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    .marquee-track span {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      letter-spacing: 3px;
+      color: #0a0a0f;
+    }
+
+    .marquee-track .dot {
+      color: rgba(0, 0, 0, .3);
+    }
+
+    @keyframes ticker {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
