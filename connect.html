@@ -597,11 +597,10 @@ font-weight: 200;
             <textarea id="field-message" placeholder="Tell us about your project or enquiry..."></textarea>
           </div>
 
-          <button type="submit" class="btn-submit">
-            <i class="ri-whatsapp-line"></i> Send via WhatsApp
-          </button>
-          <p class="form-note" id="formNote">Your message will open in WhatsApp ready to send.</p>
-        </form>
+<button type="submit" class="btn-submit" style="background:var(--accent);color:#0a0a0f;">
+  <i class="ri-mail-send-line"></i> Send Message
+</button>
+<p class="form-note" id="formNote">Your message will open in your email client ready to send.</p>        </form>
       </div>
 
     </div>
@@ -752,65 +751,57 @@ font-weight: 200;
   </button>
 
   <script src="flash.js"></script>
-  <script>
+  <script>    
+  /* ── Hero image placeholder ── */
+  const imgEl = document.querySelector('.hero-image-frame img');
+  const defaultPh = document.getElementById('hero-placeholder-default');
+  if (imgEl) {
+    imgEl.addEventListener('load', () => { if (defaultPh) defaultPh.style.display = 'none'; });
+    imgEl.addEventListener('error', () => { imgEl.style.display = 'none'; if (defaultPh) defaultPh.style.display = 'flex'; });
+  }
 
-    /* ── Hero image placeholder ── */
-    const imgEl = document.querySelector('.hero-image-frame img');
-    const defaultPh = document.getElementById('hero-placeholder-default');
-    if (imgEl) {
-      imgEl.addEventListener('load', () => { if (defaultPh) defaultPh.style.display = 'none'; });
-      imgEl.addEventListener('error', () => { imgEl.style.display = 'none'; if (defaultPh) defaultPh.style.display = 'flex'; });
+  /* ── Email Form Handler ── */
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name    = document.getElementById('field-name').value.trim();
+    const mobile  = document.getElementById('field-mobile').value.trim();
+    const email   = document.getElementById('field-email').value.trim();
+    const enquiry = document.getElementById('field-enquiry').value;
+    const message = document.getElementById('field-message').value.trim();
+    const noteEl  = document.getElementById('formNote');
+
+    if (!name || !mobile || !email || !enquiry) {
+      noteEl.textContent = 'Please fill in all required fields.';
+      noteEl.className = 'form-note error';
+      return;
     }
 
-    /* ── WhatsApp Form Handler ── */
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+    const to      = 'ankith@flashlabcreative.com';
+    const subject = 'New Enquiry — ' + enquiry + ' | Flashlab Creative';
+    const body =
+      'New Enquiry — Flashlab Creative\n\n' +
+      'Enquiry Type: ' + enquiry + '\n' +
+      'Name: '         + name    + '\n' +
+      'Mobile: '       + mobile  + '\n' +
+      'Email: '        + email   + '\n' +
+      (message ? 'Message: ' + message + '\n' : '') +
+      '\n_Sent via flashlabcreative.com_';
 
-      const name     = document.getElementById('field-name').value.trim();
-      const mobile   = document.getElementById('field-mobile').value.trim();
-      const email    = document.getElementById('field-email').value.trim();
-      const enquiry  = document.getElementById('field-enquiry').value;
-      const message  = document.getElementById('field-message').value.trim();
-      const noteEl   = document.getElementById('formNote');
+    window.location.href = 'mailto:' + to +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body='    + encodeURIComponent(body);
 
-      /* Basic validation */
-      if (!name || !mobile || !email || !enquiry) {
-        noteEl.textContent = 'Please fill in all required fields.';
-        noteEl.className = 'form-note error';
-        return;
-      }
+    noteEl.textContent = '✓ Your email client has opened — just hit Send!';
+    noteEl.className = 'form-note success';
 
-      /* Build the WhatsApp message */
-      const waNumber = '919923580022'; // country code + number, no +
-      const text = [
-        ' *New Enquiry — Flashlab Creative*',
-        '',
-        ' *Name:* ' + name,
-        ' *Mobile:* ' + mobile,
-        ' *Email:* ' + email,
-        ' *Enquiry Type:* ' + enquiry,
-        message ? ' *Message:* ' + message : '',
-        '',
-        '_Sent via flashlabcreative.com_'
-      ].filter(Boolean).join('\n');
+    setTimeout(() => {
+      document.getElementById('contactForm').reset();
+      noteEl.textContent = 'Your message will open in your email client ready to send.';
+      noteEl.className = 'form-note';
+    }, 4000);
+  });
+</script>
 
-      const waURL = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(text);
-
-      /* Open WhatsApp */
-      window.open(waURL, '_blank');
-
-      /* Feedback */
-      noteEl.textContent = ' WhatsApp opened! Just hit Send in the chat.';
-      noteEl.className = 'form-note success';
-
-      /* Reset form after a moment */
-      setTimeout(() => {
-        document.getElementById('contactForm').reset();
-        noteEl.textContent = 'Your message will open in WhatsApp ready to send.';
-        noteEl.className = 'form-note';
-      }, 4000);
-    });
-
-  </script>
 </body>
 </html>

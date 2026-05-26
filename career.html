@@ -10,9 +10,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100;200;300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
-  rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100;200;300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="flash.css">
 
@@ -77,6 +77,7 @@
       background: none;
       cursor: pointer;
       font-family: var(--font-body);
+      text-decoration: none;
     }
 
     .btn-outline-accent:hover {
@@ -140,9 +141,9 @@
 
     .hero-h1 em {
       font-style: normal;
-  font-family: var(--font-italic);
-  font-weight: 200;
-  color: var(--accent2);
+      font-family: var(--font-italic);
+      font-weight: 200;
+      color: var(--accent2);
       font-size: .85em;
       display: block;
     }
@@ -394,9 +395,7 @@
       opacity: 0.55;
       list-style: none;
       pointer-events: none;
-      /* add this */
       cursor: default;
-      /* add this */
     }
 
 
@@ -706,6 +705,7 @@
       outline: none;
       transition: border-color .2s, box-shadow .2s;
       width: 100%;
+      box-sizing: border-box;
     }
 
     .form-field input:focus,
@@ -797,9 +797,9 @@
 
     .faq-intro h2 em {
       font-style: normal;
-  font-family: var(--font-italic);
-  font-weight: 200;
-  color: var(--accent2);
+      font-family: var(--font-italic);
+      font-weight: 200;
+      color: var(--accent2);
     }
 
     .faq-intro p {
@@ -922,9 +922,9 @@
 
     .no-role-title em {
       font-style: normal;
-  font-family: var(--font-italic);
-  font-weight: 200;
-  color: var(--accent2);
+      font-family: var(--font-italic);
+      font-weight: 200;
+      color: var(--accent2);
     }
 
     .no-role-sub {
@@ -941,6 +941,16 @@
       align-items: flex-end;
     }
 
+    /* Open application form wrapper (outside the green box) */
+    .open-form-outer {
+      margin-top: 32px;
+      display: none;
+      animation: panelFade .35s ease;
+    }
+
+    .open-form-outer.open {
+      display: block;
+    }
 
     /* ============================================================
    RESPONSIVE
@@ -1095,7 +1105,7 @@
     </a>
   </div>
 
- <!-- NAVBAR -->
+  <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-wrap">
       <ul class="nav-links" id="navLinks">
@@ -1129,7 +1139,6 @@
         </li>
         <li>
           <a href="career.html">Career</a>
-          
         </li>
         <li><a href="connect.html">Connect</a></li>
       </ul>
@@ -1244,7 +1253,7 @@
               alt="Client meetings">
             <div class="life-cell-overlay"><span class="life-cell-label">Client Work</span></div>
           </div>
-          <div class="life-cell ">
+          <div class="life-cell">
             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80"
               alt="Creative studio">
             <div class="life-cell-overlay"><span class="life-cell-label">Creative Space</span></div>
@@ -1254,7 +1263,6 @@
               alt="Workshop event">
             <div class="life-cell-overlay"><span class="life-cell-label">Workshops</span></div>
           </div>
-
         </div>
       </div>
     </section>
@@ -1474,37 +1482,26 @@
                 <p class="pos-form-sub">Fill in your details. We'll review personally and respond within 5 working days.
                   Fields marked <span style="color:var(--accent)">*</span> are required.</p>
                 <form onsubmit="submitForm(event, 'Intern')">
-
-                  <!-- PERSONAL DETAILS -->
                   <div class="pos-section-title" style="margin-top:24px;">PERSONAL DETAILS</div>
-
                   <div class="form-row">
-                    <div class="form-field"><label>First Name *</label><input type="text" name="fname"
-                        placeholder="First name" required></div>
-                    <div class="form-field"><label>Last Name *</label><input type="text" name="lname"
-                        placeholder="Last name" required></div>
+                    <div class="form-field"><label>First Name *</label><input type="text" name="fname" placeholder="First name" required></div>
+                    <div class="form-field"><label>Last Name *</label><input type="text" name="lname" placeholder="Last name" required></div>
                   </div>
                   <div class="form-row">
-                    <div class="form-field"><label>Email *</label><input type="email" name="email"
-                        placeholder="you@email.com" required></div>
-                    <div class="form-field"><label>Phone *</label><input type="tel" name="phone"
-                        placeholder="+91 XXXXX XXXXX" required></div>
+                    <div class="form-field"><label>Email *</label><input type="email" name="email" placeholder="you@email.com" required></div>
+                    <div class="form-field"><label>Phone *</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
                   </div>
-                  <!-- STUDY SECTION -->
                   <div class="pos-section-title" style="margin-top:24px;">Where Do You Study?</div>
-
                   <div class="form-row">
                     <div class="form-field">
                       <label>College / University *</label>
                       <input type="text" name="college" placeholder="Your college or university" required>
                     </div>
-
                     <div class="form-field">
                       <label>Course + Specialization *</label>
                       <input type="text" name="course" placeholder="BBA Marketing, BCA, Mass Media..." required>
                     </div>
                   </div>
-
                   <div class="form-row">
                     <div class="form-field">
                       <label>Year of Graduation *</label>
@@ -1519,13 +1516,9 @@
                       </select>
                     </div>
                   </div>
-
-                  <!-- INTEREST SECTION -->
                   <div class="pos-section-title" style="margin-top:24px;">What Do You Want To Do Here?</div>
-
                   <div class="form-field full" style="margin-bottom:14px;">
                     <label>Pick everything you'd genuinely be good at *</label>
-
                     <select name="interest" required>
                       <option value="">Choose Area</option>
                       <option>Graphic Design</option>
@@ -1545,16 +1538,12 @@
                       <option>General / Open</option>
                     </select>
                   </div>
-
-                  <!-- AVAILABILITY -->
                   <div class="pos-section-title" style="margin-top:24px;">When And How Long?</div>
-
                   <div class="form-row">
                     <div class="form-field">
                       <label>When Can You Start? *</label>
                       <input type="text" name="start" placeholder="Immediately / Next Month..." required>
                     </div>
-
                     <div class="form-field">
                       <label>How Long Can You Commit? *</label>
                       <select name="duration" required>
@@ -1565,11 +1554,9 @@
                       </select>
                     </div>
                   </div>
-
                   <div class="form-row">
                     <div class="form-field">
                       <label>Open To Full-Time Conversion If It Works Out? *</label>
-
                       <select name="fulltime" required>
                         <option value="">Choose Option</option>
                         <option>Yes</option>
@@ -1578,45 +1565,32 @@
                       </select>
                     </div>
                   </div>
-
-                  <!-- SOCIALS -->
                   <div class="pos-section-title" style="margin-top:24px;">Show Us Who You Are</div>
-
                   <div class="form-row">
                     <div class="form-field">
                       <label>Instagram Handle</label>
                       <input type="text" name="instagram" placeholder="@yourhandle">
                     </div>
-
                     <div class="form-field">
                       <label>LinkedIn Profile</label>
                       <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
                     </div>
                   </div>
-
                   <div class="form-field full" style="margin-bottom:14px;">
                     <label>Portfolio Link</label>
                     <input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link">
                   </div>
-
-                  <!-- WHY JOIN -->
                   <div class="form-field full" style="margin-bottom:14px;">
                     <label>Why Do You Want To Join Flashlab Creative? *</label>
-
-                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..."
-                      required></textarea>
+                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea>
                   </div>
-
-                  <!-- SOURCE -->
                   <div class="form-row">
                     <div class="form-field">
                       <label>Where Did You Hear About Us? *</label>
                       <input type="text" name="heard" placeholder="Instagram, Google, Friend..." required>
                     </div>
                   </div>
-
-                  <button type="submit" class="form-submit">Submit via WhatsApp <i
-                      class="ri-whatsapp-line"></i></button>
+                  <button type="submit" class="form-submit">Submit Application <i class="ri-send-plane-line"></i></button>
                 </form>
               </div>
             </div>
@@ -1639,7 +1613,6 @@
                     class="ri-arrow-down-s-line"></i></button>
                 <button class="btn-outline-accent" onclick="toggleForm('graphic-form', this)">Apply Now <i
                     class="ri-send-plane-line"></i></button>
-
               </div>
               <div class="pos-expanded" id="graphic-details">
                 <div class="pos-section-title">What You'll Do</div>
@@ -1659,44 +1632,29 @@
                 </div>
                 <div class="pos-section-title">Requirements</div>
                 <ul class="pos-elig-list">
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Proficiency in Adobe Photoshop,
-                      Illustrator, and InDesign</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>1–3 years of professional graphic design
-                      experience preferred</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Strong portfolio demonstrating range
-                      across print and digital</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Ability to handle multiple projects and
-                      meet deadlines</span></li>
-                  <li class="pos-elig-item"><i class="ri-information-line"></i><span>Salary based on skillset,
-                      creativity, mindset, and experience</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Proficiency in Adobe Photoshop, Illustrator, and InDesign</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>1–3 years of professional graphic design experience preferred</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Strong portfolio demonstrating range across print and digital</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Ability to handle multiple projects and meet deadlines</span></li>
+                  <li class="pos-elig-item"><i class="ri-information-line"></i><span>Salary based on skillset, creativity, mindset, and experience</span></li>
                 </ul>
               </div>
               <div class="pos-form-wrap" id="graphic-form">
-                <button class="form-close-btn" onclick="toggleForm('graphic-form', null)"><i
-                    class="ri-arrow-left-line"></i> Back to Overview</button>
+                <button class="form-close-btn" onclick="toggleForm('graphic-form', null)"><i class="ri-arrow-left-line"></i> Back to Overview</button>
                 <div class="pos-form-title">Graphic Designer Application</div>
-                <p class="pos-form-sub">Fields marked <span style="color:var(--accent)">*</span> are required. We'll
-                  respond within 5 working days.</p>
+                <p class="pos-form-sub">Fields marked <span style="color:var(--accent)">*</span> are required. We'll respond within 5 working days.</p>
                 <form onsubmit="submitForm(event, 'Graphic Designer')">
-
-                  <!-- PERSONAL DETAILS -->
                   <div class="pos-section-title" style="margin-top:24px;">PERSONAL DETAILS</div>
-
                   <div class="form-row">
-                    <div class="form-field"><label>First Name *</label><input type="text" name="fname"
-                        placeholder="First name" required></div>
-                    <div class="form-field"><label>Last Name *</label><input type="text" name="lname"
-                        placeholder="Last name" required></div>
+                    <div class="form-field"><label>First Name *</label><input type="text" name="fname" placeholder="First name" required></div>
+                    <div class="form-field"><label>Last Name *</label><input type="text" name="lname" placeholder="Last name" required></div>
                   </div>
                   <div class="form-row">
-                    <div class="form-field"><label>Email *</label><input type="email" name="email"
-                        placeholder="you@email.com" required></div>
-                    <div class="form-field"><label>Phone *</label><input type="tel" name="phone"
-                        placeholder="+91 XXXXX XXXXX" required></div>
+                    <div class="form-field"><label>Email *</label><input type="email" name="email" placeholder="you@email.com" required></div>
+                    <div class="form-field"><label>Phone *</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
                   </div>
                   <div class="form-row">
-                    <div class="form-field"><label>City *</label><input type="text" name="city" placeholder="Your city"
-                        required></div>
+                    <div class="form-field"><label>City *</label><input type="text" name="city" placeholder="Your city" required></div>
                     <div class="form-field"><label>Years of Experience *</label>
                       <select name="exp" required>
                         <option value="">Select</option>
@@ -1708,61 +1666,31 @@
                       </select>
                     </div>
                   </div>
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Previous Job Title</label><input
-                      type="text" name="prev" placeholder="e.g. Junior Designer (leave blank if fresher)"></div>
-
-                  <!-- AVAILABILITY -->
+                  <div class="form-field full" style="margin-bottom:14px;"><label>Previous Job Title</label><input type="text" name="prev" placeholder="e.g. Junior Designer (leave blank if fresher)"></div>
                   <div class="pos-section-title" style="margin-top:24px;">AVAILABILITY</div>
-
                   <div class="form-row">
                     <div class="form-field">
                       <label>When Can You Start? *</label>
                       <input type="text" name="start" placeholder="Immediately / Next Month..." required>
                     </div>
                   </div>
-
-                  <!-- SOCIALS -->
                   <div class="pos-section-title" style="margin-top:24px;">Show Us Who You Are</div>
-
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>Instagram Handle</label>
-                      <input type="text" name="instagram" placeholder="@yourhandle">
-                    </div>
-
-                    <div class="form-field">
-                      <label>LinkedIn Profile</label>
-                      <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
-                    </div>
+                    <div class="form-field"><label>Instagram Handle</label><input type="text" name="instagram" placeholder="@yourhandle"></div>
+                    <div class="form-field"><label>LinkedIn Profile</label><input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile"></div>
                   </div>
-
-                  <div class="form-field full" style="margin-bottom:14px;">
-                    <label>Portfolio Link</label>
-                    <input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link">
-                  </div>
-
-                  <!-- WHY JOIN -->
+                  <div class="form-field full" style="margin-bottom:14px;"><label>Portfolio Link</label><input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link"></div>
                   <div class="form-field full" style="margin-bottom:14px;">
                     <label>Why Do You Want To Join Flashlab Creative? *</label>
-
-                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..."
-                      required></textarea>
+                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea>
                   </div>
-
-                  <!-- SOURCE -->
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>Where Did You Hear About Us? *</label>
-                      <input type="text" name="heard" placeholder="Instagram, Google, Friend..." required>
-                    </div>
+                    <div class="form-field"><label>Where Did You Hear About Us? *</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..." required></div>
                   </div>
-
-                  <button type="submit" class="form-submit">Submit via WhatsApp <i
-                      class="ri-whatsapp-line"></i></button>
+                  <button type="submit" class="form-submit">Submit Application <i class="ri-send-plane-line"></i></button>
                 </form>
               </div>
             </div>
-
 
             <!-- ANIMATION DESIGNER -->
             <div class="pos-detail" id="role-animation-designer">
@@ -1778,11 +1706,8 @@
                 movement, rhythm, and storytelling. We're looking for someone who thinks in motion and can deliver
                 frame-perfect work that grabs attention in the first 3 seconds.</p>
               <div class="pos-actions">
-                <button class="btn-primary" onclick="toggleDetails('animation-details', this)">View Job Details <i
-                    class="ri-arrow-down-s-line"></i></button>
-                <button class="btn-outline-accent" onclick="toggleForm('animation-form', this)">Apply Now <i
-                    class="ri-send-plane-line"></i></button>
-
+                <button class="btn-primary" onclick="toggleDetails('animation-details', this)">View Job Details <i class="ri-arrow-down-s-line"></i></button>
+                <button class="btn-outline-accent" onclick="toggleForm('animation-form', this)">Apply Now <i class="ri-send-plane-line"></i></button>
               </div>
               <div class="pos-expanded" id="animation-details">
                 <div class="pos-section-title">What You'll Do</div>
@@ -1802,43 +1727,29 @@
                 </div>
                 <div class="pos-section-title">Requirements</div>
                 <ul class="pos-elig-list">
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Proficiency in Adobe After Effects and
-                      Premiere Pro</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Knowledge of Cinema 4D or Blender is a
-                      strong advantage</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Portfolio with motion work — reels, ads,
-                      or brand animations</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>1–3 years of experience in animation or
-                      motion graphics</span></li>
-                  <li class="pos-elig-item"><i class="ri-information-line"></i><span>Salary based on skillset,
-                      creativity, and experience</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Proficiency in Adobe After Effects and Premiere Pro</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Knowledge of Cinema 4D or Blender is a strong advantage</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Portfolio with motion work — reels, ads, or brand animations</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>1–3 years of experience in animation or motion graphics</span></li>
+                  <li class="pos-elig-item"><i class="ri-information-line"></i><span>Salary based on skillset, creativity, and experience</span></li>
                 </ul>
               </div>
               <div class="pos-form-wrap" id="animation-form">
-                <button class="form-close-btn" onclick="toggleForm('animation-form', null)"><i
-                    class="ri-arrow-left-line"></i> Back to Overview</button>
+                <button class="form-close-btn" onclick="toggleForm('animation-form', null)"><i class="ri-arrow-left-line"></i> Back to Overview</button>
                 <div class="pos-form-title">Animation Designer Application</div>
                 <p class="pos-form-sub">Fields marked <span style="color:var(--accent)">*</span> are required.</p>
                 <form onsubmit="submitForm(event, 'Animation Designer')">
-
-                  <!-- PERSONAL DETAILS -->
                   <div class="pos-section-title" style="margin-top:24px;">PERSONAL DETAILS</div>
-
                   <div class="form-row">
-                    <div class="form-field"><label>First Name *</label><input type="text" name="fname"
-                        placeholder="First name" required></div>
-                    <div class="form-field"><label>Last Name *</label><input type="text" name="lname"
-                        placeholder="Last name" required></div>
+                    <div class="form-field"><label>First Name *</label><input type="text" name="fname" placeholder="First name" required></div>
+                    <div class="form-field"><label>Last Name *</label><input type="text" name="lname" placeholder="Last name" required></div>
                   </div>
                   <div class="form-row">
-                    <div class="form-field"><label>Email *</label><input type="email" name="email"
-                        placeholder="you@email.com" required></div>
-                    <div class="form-field"><label>Phone *</label><input type="tel" name="phone"
-                        placeholder="+91 XXXXX XXXXX" required></div>
+                    <div class="form-field"><label>Email *</label><input type="email" name="email" placeholder="you@email.com" required></div>
+                    <div class="form-field"><label>Phone *</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
                   </div>
                   <div class="form-row">
-                    <div class="form-field"><label>City *</label><input type="text" name="city" placeholder="Your city"
-                        required></div>
+                    <div class="form-field"><label>City *</label><input type="text" name="city" placeholder="Your city" required></div>
                     <div class="form-field"><label>Software Expertise *</label>
                       <select name="software" required>
                         <option value="">Select Primary Tool</option>
@@ -1850,58 +1761,25 @@
                       </select>
                     </div>
                   </div>
-
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Previous Job Title</label><input
-                      type="text" name="prev" placeholder="e.g. Junior Designer (leave blank if fresher)"></div>
-
-                  <!-- AVAILABILITY -->
+                  <div class="form-field full" style="margin-bottom:14px;"><label>Previous Job Title</label><input type="text" name="prev" placeholder="e.g. Junior Designer (leave blank if fresher)"></div>
                   <div class="pos-section-title" style="margin-top:24px;">AVAILABILITY</div>
-
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>When Can You Start? *</label>
-                      <input type="text" name="start" placeholder="Immediately / Next Month..." required>
-                    </div>
+                    <div class="form-field"><label>When Can You Start? *</label><input type="text" name="start" placeholder="Immediately / Next Month..." required></div>
                   </div>
-
-                  <!-- SOCIALS -->
                   <div class="pos-section-title" style="margin-top:24px;">Show Us Who You Are</div>
-
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>Instagram Handle</label>
-                      <input type="text" name="instagram" placeholder="@yourhandle">
-                    </div>
-
-                    <div class="form-field">
-                      <label>LinkedIn Profile</label>
-                      <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
-                    </div>
+                    <div class="form-field"><label>Instagram Handle</label><input type="text" name="instagram" placeholder="@yourhandle"></div>
+                    <div class="form-field"><label>LinkedIn Profile</label><input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile"></div>
                   </div>
-
-                  <div class="form-field full" style="margin-bottom:14px;">
-                    <label>Portfolio Link</label>
-                    <input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link">
-                  </div>
-
-                  <!-- WHY JOIN -->
+                  <div class="form-field full" style="margin-bottom:14px;"><label>Portfolio Link</label><input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link"></div>
                   <div class="form-field full" style="margin-bottom:14px;">
                     <label>Why Do You Want To Join Flashlab Creative? *</label>
-
-                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..."
-                      required></textarea>
+                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea>
                   </div>
-
-                  <!-- SOURCE -->
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>Where Did You Hear About Us? *</label>
-                      <input type="text" name="heard" placeholder="Instagram, Google, Friend..." required>
-                    </div>
+                    <div class="form-field"><label>Where Did You Hear About Us? *</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..." required></div>
                   </div>
-
-                  <button type="submit" class="form-submit">Submit via WhatsApp <i
-                      class="ri-whatsapp-line"></i></button>
+                  <button type="submit" class="form-submit">Submit Application <i class="ri-send-plane-line"></i></button>
                 </form>
               </div>
             </div>
@@ -1920,10 +1798,8 @@
                 management, and performance analytics for multiple accounts. We need a creative strategist who is as
                 comfortable writing captions as they are reading dashboards.</p>
               <div class="pos-actions">
-                <button class="btn-primary" onclick="toggleDetails('smm-details', this)">View Job Details <i
-                    class="ri-arrow-down-s-line"></i></button>
-                <button class="btn-outline-accent" onclick="toggleForm('smm-form', this)">Apply Now <i
-                    class="ri-send-plane-line"></i></button>
+                <button class="btn-primary" onclick="toggleDetails('smm-details', this)">View Job Details <i class="ri-arrow-down-s-line"></i></button>
+                <button class="btn-outline-accent" onclick="toggleForm('smm-form', this)">Apply Now <i class="ri-send-plane-line"></i></button>
               </div>
               <div class="pos-expanded" id="smm-details">
                 <div class="pos-section-title">What You'll Do</div>
@@ -1943,45 +1819,30 @@
                 </div>
                 <div class="pos-section-title">Requirements</div>
                 <ul class="pos-elig-list">
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Hands-on experience managing brand social
-                      accounts</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Proficiency with Meta Business Suite,
-                      Creator Studio, and scheduling tools</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Strong writing skills in English;
-                      Konkani/Hindi is a bonus</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Knowledge of Meta Ads and Google Ads is a
-                      strong plus</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Creative mindset with analytical thinking
-                      ability</span></li>
-                  <li class="pos-elig-item"><i class="ri-information-line"></i><span>Salary based on experience,
-                      skillset, and client portfolio managed</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Hands-on experience managing brand social accounts</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Proficiency with Meta Business Suite, Creator Studio, and scheduling tools</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Strong writing skills in English; Konkani/Hindi is a bonus</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Knowledge of Meta Ads and Google Ads is a strong plus</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Creative mindset with analytical thinking ability</span></li>
+                  <li class="pos-elig-item"><i class="ri-information-line"></i><span>Salary based on experience, skillset, and client portfolio managed</span></li>
                 </ul>
               </div>
               <div class="pos-form-wrap" id="smm-form">
-                <button class="form-close-btn" onclick="toggleForm('smm-form', null)"><i class="ri-arrow-left-line"></i>
-                  Back to Overview</button>
+                <button class="form-close-btn" onclick="toggleForm('smm-form', null)"><i class="ri-arrow-left-line"></i> Back to Overview</button>
                 <div class="pos-form-title">Social Media Manager Application</div>
                 <p class="pos-form-sub">Fields marked <span style="color:var(--accent)">*</span> are required.</p>
                 <form onsubmit="submitForm(event, 'Social Media Manager')">
-
-                  <!-- PERSONAL DETAILS -->
                   <div class="pos-section-title" style="margin-top:24px;">PERSONAL DETAILS</div>
-
                   <div class="form-row">
-                    <div class="form-field"><label>First Name *</label><input type="text" name="fname"
-                        placeholder="First name" required></div>
-                    <div class="form-field"><label>Last Name *</label><input type="text" name="lname"
-                        placeholder="Last name" required></div>
+                    <div class="form-field"><label>First Name *</label><input type="text" name="fname" placeholder="First name" required></div>
+                    <div class="form-field"><label>Last Name *</label><input type="text" name="lname" placeholder="Last name" required></div>
                   </div>
                   <div class="form-row">
-                    <div class="form-field"><label>Email *</label><input type="email" name="email"
-                        placeholder="you@email.com" required></div>
-                    <div class="form-field"><label>Phone *</label><input type="tel" name="phone"
-                        placeholder="+91 XXXXX XXXXX" required></div>
+                    <div class="form-field"><label>Email *</label><input type="email" name="email" placeholder="you@email.com" required></div>
+                    <div class="form-field"><label>Phone *</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
                   </div>
                   <div class="form-row">
-                    <div class="form-field"><label>City *</label><input type="text" name="city" placeholder="Your city"
-                        required></div>
+                    <div class="form-field"><label>City *</label><input type="text" name="city" placeholder="Your city" required></div>
                     <div class="form-field"><label>Years of Experience</label>
                       <select name="exp">
                         <option value="">Select</option>
@@ -1992,59 +1853,25 @@
                       </select>
                     </div>
                   </div>
-
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Platforms You've Worked
-                      On</label><input type="text" name="platforms"
-                      placeholder="Instagram, Facebook, LinkedIn, Twitter..."></div>
-
-                  <!-- AVAILABILITY -->
+                  <div class="form-field full" style="margin-bottom:14px;"><label>Platforms You've Worked On</label><input type="text" name="platforms" placeholder="Instagram, Facebook, LinkedIn, Twitter..."></div>
                   <div class="pos-section-title" style="margin-top:24px;">AVAILABILITY</div>
-
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>When Can You Start? *</label>
-                      <input type="text" name="start" placeholder="Immediately / Next Month..." required>
-                    </div>
+                    <div class="form-field"><label>When Can You Start? *</label><input type="text" name="start" placeholder="Immediately / Next Month..." required></div>
                   </div>
-
-                  <!-- SOCIALS -->
                   <div class="pos-section-title" style="margin-top:24px;">Show Us Who You Are</div>
-
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>Instagram Handle</label>
-                      <input type="text" name="instagram" placeholder="@yourhandle">
-                    </div>
-
-                    <div class="form-field">
-                      <label>LinkedIn Profile</label>
-                      <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
-                    </div>
+                    <div class="form-field"><label>Instagram Handle</label><input type="text" name="instagram" placeholder="@yourhandle"></div>
+                    <div class="form-field"><label>LinkedIn Profile</label><input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile"></div>
                   </div>
-
-                  <div class="form-field full" style="margin-bottom:14px;">
-                    <label>Portfolio Link</label>
-                    <input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link">
-                  </div>
-
-                  <!-- WHY JOIN -->
+                  <div class="form-field full" style="margin-bottom:14px;"><label>Portfolio Link</label><input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link"></div>
                   <div class="form-field full" style="margin-bottom:14px;">
                     <label>Why Do You Want To Join Flashlab Creative? *</label>
-
-                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..."
-                      required></textarea>
+                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea>
                   </div>
-
-                  <!-- SOURCE -->
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>Where Did You Hear About Us? *</label>
-                      <input type="text" name="heard" placeholder="Instagram, Google, Friend..." required>
-                    </div>
+                    <div class="form-field"><label>Where Did You Hear About Us? *</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..." required></div>
                   </div>
-
-                  <button type="submit" class="form-submit">Submit via WhatsApp <i
-                      class="ri-whatsapp-line"></i></button>
+                  <button type="submit" class="form-submit">Submit Application <i class="ri-send-plane-line"></i></button>
                 </form>
               </div>
             </div>
@@ -2063,11 +1890,8 @@
                 delivering fast, accessible, and visually sharp websites that perform as well as they look. Experience
                 with custom themes, plugins, or headless setups is a big advantage.</p>
               <div class="pos-actions">
-                <button class="btn-primary" onclick="toggleDetails('webdev-details', this)">View Job Details <i
-                    class="ri-arrow-down-s-line"></i></button>
-                <button class="btn-outline-accent" onclick="toggleForm('webdev-form', this)">Apply Now <i
-                    class="ri-send-plane-line"></i></button>
-
+                <button class="btn-primary" onclick="toggleDetails('webdev-details', this)">View Job Details <i class="ri-arrow-down-s-line"></i></button>
+                <button class="btn-outline-accent" onclick="toggleForm('webdev-form', this)">Apply Now <i class="ri-send-plane-line"></i></button>
               </div>
               <div class="pos-expanded" id="webdev-details">
                 <div class="pos-section-title">What You'll Do</div>
@@ -2087,45 +1911,30 @@
                 </div>
                 <div class="pos-section-title">Requirements</div>
                 <ul class="pos-elig-list">
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Strong HTML, CSS, JavaScript
-                      fundamentals</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Hands-on experience with WordPress,
-                      Elementor, and WooCommerce</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Knowledge of PHP and MySQL is
-                      required</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Understanding of SEO best practices in
-                      web development</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Ability to read and adapt existing code
-                      bases</span></li>
-                  <li class="pos-elig-item"><i class="ri-information-line"></i><span>Salary based on experience,
-                      technical depth, and portfolio quality</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Strong HTML, CSS, JavaScript fundamentals</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Hands-on experience with WordPress, Elementor, and WooCommerce</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Knowledge of PHP and MySQL is required</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Understanding of SEO best practices in web development</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Ability to read and adapt existing code bases</span></li>
+                  <li class="pos-elig-item"><i class="ri-information-line"></i><span>Salary based on experience, technical depth, and portfolio quality</span></li>
                 </ul>
               </div>
               <div class="pos-form-wrap" id="webdev-form">
-                <button class="form-close-btn" onclick="toggleForm('webdev-form', null)"><i
-                    class="ri-arrow-left-line"></i> Back to Overview</button>
+                <button class="form-close-btn" onclick="toggleForm('webdev-form', null)"><i class="ri-arrow-left-line"></i> Back to Overview</button>
                 <div class="pos-form-title">Web Developer Application</div>
                 <p class="pos-form-sub">Fields marked <span style="color:var(--accent)">*</span> are required.</p>
                 <form onsubmit="submitForm(event, 'Web Developer')">
-
-                  <!-- PERSONAL DETAILS -->
                   <div class="pos-section-title" style="margin-top:24px;">PERSONAL DETAILS</div>
-
                   <div class="form-row">
-                    <div class="form-field"><label>First Name *</label><input type="text" name="fname"
-                        placeholder="First name" required></div>
-                    <div class="form-field"><label>Last Name *</label><input type="text" name="lname"
-                        placeholder="Last name" required></div>
+                    <div class="form-field"><label>First Name *</label><input type="text" name="fname" placeholder="First name" required></div>
+                    <div class="form-field"><label>Last Name *</label><input type="text" name="lname" placeholder="Last name" required></div>
                   </div>
                   <div class="form-row">
-                    <div class="form-field"><label>Email *</label><input type="email" name="email"
-                        placeholder="you@email.com" required></div>
-                    <div class="form-field"><label>Phone *</label><input type="tel" name="phone"
-                        placeholder="+91 XXXXX XXXXX" required></div>
+                    <div class="form-field"><label>Email *</label><input type="email" name="email" placeholder="you@email.com" required></div>
+                    <div class="form-field"><label>Phone *</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
                   </div>
                   <div class="form-row">
-                    <div class="form-field"><label>City *</label><input type="text" name="city" placeholder="Your city"
-                        required></div>
+                    <div class="form-field"><label>City *</label><input type="text" name="city" placeholder="Your city" required></div>
                     <div class="form-field"><label>Years of Experience</label>
                       <select name="exp">
                         <option value="">Select</option>
@@ -2137,58 +1946,25 @@
                       </select>
                     </div>
                   </div>
-
-                  <div class="form-field full" style="margin-bottom:14px;"><label>Tech Stack / Skills</label><input
-                      type="text" name="stack" placeholder="WordPress, PHP, JavaScript, React..."></div>
-                 
-                  <!-- AVAILABILITY -->
+                  <div class="form-field full" style="margin-bottom:14px;"><label>Tech Stack / Skills</label><input type="text" name="stack" placeholder="WordPress, PHP, JavaScript, React..."></div>
                   <div class="pos-section-title" style="margin-top:24px;">AVAILABILITY</div>
-
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>When Can You Start? *</label>
-                      <input type="text" name="start" placeholder="Immediately / Next Month..." required>
-                    </div>
+                    <div class="form-field"><label>When Can You Start? *</label><input type="text" name="start" placeholder="Immediately / Next Month..." required></div>
                   </div>
-
-                  <!-- SOCIALS -->
                   <div class="pos-section-title" style="margin-top:24px;">Show Us Who You Are</div>
-
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>Instagram Handle</label>
-                      <input type="text" name="instagram" placeholder="@yourhandle">
-                    </div>
-
-                    <div class="form-field">
-                      <label>LinkedIn Profile</label>
-                      <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
-                    </div>
+                    <div class="form-field"><label>Instagram Handle</label><input type="text" name="instagram" placeholder="@yourhandle"></div>
+                    <div class="form-field"><label>LinkedIn Profile</label><input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile"></div>
                   </div>
-
-                  <div class="form-field full" style="margin-bottom:14px;">
-                    <label>Portfolio Link</label>
-                    <input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link">
-                  </div>
-
-                  <!-- WHY JOIN -->
+                  <div class="form-field full" style="margin-bottom:14px;"><label>Portfolio Link</label><input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link"></div>
                   <div class="form-field full" style="margin-bottom:14px;">
                     <label>Why Do You Want To Join Flashlab Creative? *</label>
-
-                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..."
-                      required></textarea>
+                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea>
                   </div>
-
-                  <!-- SOURCE -->
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>Where Did You Hear About Us? *</label>
-                      <input type="text" name="heard" placeholder="Instagram, Google, Friend..." required>
-                    </div>
+                    <div class="form-field"><label>Where Did You Hear About Us? *</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..." required></div>
                   </div>
-
-                  <button type="submit" class="form-submit">Submit via WhatsApp <i
-                      class="ri-whatsapp-line"></i></button>
+                  <button type="submit" class="form-submit">Submit Application <i class="ri-send-plane-line"></i></button>
                 </form>
               </div>
             </div>
@@ -2207,11 +1983,8 @@
                 directly with our digital marketing team and real clients, helping drive measurable organic growth
                 across industries. If you're passionate about search, data, and all things digital — we want you.</p>
               <div class="pos-actions">
-                <button class="btn-primary" onclick="toggleDetails('seo-details', this)">View Job Details <i
-                    class="ri-arrow-down-s-line"></i></button>
-                <button class="btn-outline-accent" onclick="toggleForm('seo-form', this)">Apply Now <i
-                    class="ri-send-plane-line"></i></button>
-
+                <button class="btn-primary" onclick="toggleDetails('seo-details', this)">View Job Details <i class="ri-arrow-down-s-line"></i></button>
+                <button class="btn-outline-accent" onclick="toggleForm('seo-form', this)">Apply Now <i class="ri-send-plane-line"></i></button>
               </div>
               <div class="pos-expanded" id="seo-details">
                 <div class="pos-section-title">What You'll Do</div>
@@ -2228,8 +2001,7 @@
                   <div class="pos-resp-card"><i class="ri-tools-line"></i><strong>Technical SEO</strong>
                     <p>Audit and fix crawlability, site speed, schema, and Core Web Vitals issues.</p>
                   </div>
-                  <div class="pos-resp-card"><i class="ri-bar-chart-2-line"></i><strong>Analytics &amp;
-                      Reporting</strong>
+                  <div class="pos-resp-card"><i class="ri-bar-chart-2-line"></i><strong>Analytics &amp; Reporting</strong>
                     <p>Track and report on organic performance using Google Analytics and Search Console.</p>
                   </div>
                   <div class="pos-resp-card"><i class="ri-map-pin-line"></i><strong>Local SEO</strong>
@@ -2238,43 +2010,29 @@
                 </div>
                 <div class="pos-section-title">Requirements</div>
                 <ul class="pos-elig-list">
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Willing to learn 100% — attitude and
-                      curiosity are key</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Familiarity with SEO strategies and
-                      compliance is a strong advantage</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Knowledge of Google Analytics, Search
-                      Console, Ahrefs, or SEMrush is a plus</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Dedicated, enthusiastic, and interested
-                      in long-term growth</span></li>
-                  <li class="pos-elig-item"><i class="ri-information-line"></i><span>Salary based on skillset,
-                      creativeness, mindset, and experience</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Willing to learn 100% — attitude and curiosity are key</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Familiarity with SEO strategies and compliance is a strong advantage</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Knowledge of Google Analytics, Search Console, Ahrefs, or SEMrush is a plus</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Dedicated, enthusiastic, and interested in long-term growth</span></li>
+                  <li class="pos-elig-item"><i class="ri-information-line"></i><span>Salary based on skillset, creativeness, mindset, and experience</span></li>
                 </ul>
               </div>
               <div class="pos-form-wrap" id="seo-form">
-                <button class="form-close-btn" onclick="toggleForm('seo-form', null)"><i class="ri-arrow-left-line"></i>
-                  Back to Overview</button>
+                <button class="form-close-btn" onclick="toggleForm('seo-form', null)"><i class="ri-arrow-left-line"></i> Back to Overview</button>
                 <div class="pos-form-title">SEO Expert Application</div>
                 <p class="pos-form-sub">Fields marked <span style="color:var(--accent)">*</span> are required.</p>
                 <form onsubmit="submitForm(event, 'SEO Expert')">
-
-                  <!-- PERSONAL DETAILS -->
                   <div class="pos-section-title" style="margin-top:24px;">PERSONAL DETAILS</div>
-
                   <div class="form-row">
-                    <div class="form-field"><label>First Name *</label><input type="text" name="fname"
-                        placeholder="First name" required></div>
-                    <div class="form-field"><label>Last Name *</label><input type="text" name="lname"
-                        placeholder="Last name" required></div>
+                    <div class="form-field"><label>First Name *</label><input type="text" name="fname" placeholder="First name" required></div>
+                    <div class="form-field"><label>Last Name *</label><input type="text" name="lname" placeholder="Last name" required></div>
                   </div>
                   <div class="form-row">
-                    <div class="form-field"><label>Email *</label><input type="email" name="email"
-                        placeholder="you@email.com" required></div>
-                    <div class="form-field"><label>Phone *</label><input type="tel" name="phone"
-                        placeholder="+91 XXXXX XXXXX" required></div>
+                    <div class="form-field"><label>Email *</label><input type="email" name="email" placeholder="you@email.com" required></div>
+                    <div class="form-field"><label>Phone *</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
                   </div>
                   <div class="form-row">
-                    <div class="form-field"><label>City *</label><input type="text" name="city" placeholder="Your city"
-                        required></div>
+                    <div class="form-field"><label>City *</label><input type="text" name="city" placeholder="Your city" required></div>
                     <div class="form-field"><label>Years of Experience *</label>
                       <select name="exp" required>
                         <option value="">Select</option>
@@ -2286,59 +2044,25 @@
                       </select>
                     </div>
                   </div>
-                 
-                  <div class="form-field full" style="margin-bottom:14px;"><label>SEO Tools Familiar With</label><input type="text" name="tools"
-                        placeholder="Ahrefs, SEMrush, GSC, Analytics...">
-                  </div>
-
-                  <!-- AVAILABILITY -->
+                  <div class="form-field full" style="margin-bottom:14px;"><label>SEO Tools Familiar With</label><input type="text" name="tools" placeholder="Ahrefs, SEMrush, GSC, Analytics..."></div>
                   <div class="pos-section-title" style="margin-top:24px;">AVAILABILITY</div>
-
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>When Can You Start? *</label>
-                      <input type="text" name="start" placeholder="Immediately / Next Month..." required>
-                    </div>
+                    <div class="form-field"><label>When Can You Start? *</label><input type="text" name="start" placeholder="Immediately / Next Month..." required></div>
                   </div>
-
-                  <!-- SOCIALS -->
                   <div class="pos-section-title" style="margin-top:24px;">Show Us Who You Are</div>
-
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>Instagram Handle</label>
-                      <input type="text" name="instagram" placeholder="@yourhandle">
-                    </div>
-
-                    <div class="form-field">
-                      <label>LinkedIn Profile</label>
-                      <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
-                    </div>
+                    <div class="form-field"><label>Instagram Handle</label><input type="text" name="instagram" placeholder="@yourhandle"></div>
+                    <div class="form-field"><label>LinkedIn Profile</label><input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile"></div>
                   </div>
-
-                  <div class="form-field full" style="margin-bottom:14px;">
-                    <label>Portfolio Link</label>
-                    <input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link">
-                  </div>
-
-                  <!-- WHY JOIN -->
+                  <div class="form-field full" style="margin-bottom:14px;"><label>Portfolio Link</label><input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link"></div>
                   <div class="form-field full" style="margin-bottom:14px;">
                     <label>Why Do You Want To Join Flashlab Creative? *</label>
-
-                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..."
-                      required></textarea>
+                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea>
                   </div>
-
-                  <!-- SOURCE -->
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>Where Did You Hear About Us? *</label>
-                      <input type="text" name="heard" placeholder="Instagram, Google, Friend..." required>
-                    </div>
+                    <div class="form-field"><label>Where Did You Hear About Us? *</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..." required></div>
                   </div>
-
-                  <button type="submit" class="form-submit">Submit via WhatsApp <i
-                      class="ri-whatsapp-line"></i></button>
+                  <button type="submit" class="form-submit">Submit Application <i class="ri-send-plane-line"></i></button>
                 </form>
               </div>
             </div>
@@ -2357,11 +2081,8 @@
                 full creative and technical ownership over your projects. React Native, Flutter, or native development
                 experience all welcomed. If you build things people love, we want you.</p>
               <div class="pos-actions">
-                <button class="btn-primary" onclick="toggleDetails('appdev-details', this)">View Job Details <i
-                    class="ri-arrow-down-s-line"></i></button>
-                <button class="btn-outline-accent" onclick="toggleForm('appdev-form', this)">Apply Now <i
-                    class="ri-send-plane-line"></i></button>
-
+                <button class="btn-primary" onclick="toggleDetails('appdev-details', this)">View Job Details <i class="ri-arrow-down-s-line"></i></button>
+                <button class="btn-outline-accent" onclick="toggleForm('appdev-form', this)">Apply Now <i class="ri-send-plane-line"></i></button>
               </div>
               <div class="pos-expanded" id="appdev-details">
                 <div class="pos-section-title">What You'll Do</div>
@@ -2381,43 +2102,29 @@
                 </div>
                 <div class="pos-section-title">Requirements</div>
                 <ul class="pos-elig-list">
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Experience with React Native, Flutter,
-                      Swift, or Kotlin</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Portfolio with at least one published or
-                      demo-ready app</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Understanding of REST APIs and JSON data
-                      handling</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Familiarity with Firebase, push
-                      notifications, and app store guidelines</span></li>
-                  <li class="pos-elig-item"><i class="ri-information-line"></i><span>Salary based on technical skillset,
-                      app portfolio, and experience</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Experience with React Native, Flutter, Swift, or Kotlin</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Portfolio with at least one published or demo-ready app</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Understanding of REST APIs and JSON data handling</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Familiarity with Firebase, push notifications, and app store guidelines</span></li>
+                  <li class="pos-elig-item"><i class="ri-information-line"></i><span>Salary based on technical skillset, app portfolio, and experience</span></li>
                 </ul>
               </div>
               <div class="pos-form-wrap" id="appdev-form">
-                <button class="form-close-btn" onclick="toggleForm('appdev-form', null)"><i
-                    class="ri-arrow-left-line"></i> Back to Overview</button>
+                <button class="form-close-btn" onclick="toggleForm('appdev-form', null)"><i class="ri-arrow-left-line"></i> Back to Overview</button>
                 <div class="pos-form-title">App Developer Application</div>
                 <p class="pos-form-sub">Fields marked <span style="color:var(--accent)">*</span> are required.</p>
                 <form onsubmit="submitForm(event, 'App Developer')">
-
-                  <!-- PERSONAL DETAILS -->
                   <div class="pos-section-title" style="margin-top:24px;">PERSONAL DETAILS</div>
-                 
                   <div class="form-row">
-                    <div class="form-field"><label>First Name *</label><input type="text" name="fname"
-                        placeholder="First name" required></div>
-                    <div class="form-field"><label>Last Name *</label><input type="text" name="lname"
-                        placeholder="Last name" required></div>
+                    <div class="form-field"><label>First Name *</label><input type="text" name="fname" placeholder="First name" required></div>
+                    <div class="form-field"><label>Last Name *</label><input type="text" name="lname" placeholder="Last name" required></div>
                   </div>
                   <div class="form-row">
-                    <div class="form-field"><label>Email *</label><input type="email" name="email"
-                        placeholder="you@email.com" required></div>
-                    <div class="form-field"><label>Phone *</label><input type="tel" name="phone"
-                        placeholder="+91 XXXXX XXXXX" required></div>
+                    <div class="form-field"><label>Email *</label><input type="email" name="email" placeholder="you@email.com" required></div>
+                    <div class="form-field"><label>Phone *</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
                   </div>
                   <div class="form-row">
-                    <div class="form-field"><label>City *</label><input type="text" name="city" placeholder="Your city"
-                        required></div>
+                    <div class="form-field"><label>City *</label><input type="text" name="city" placeholder="Your city" required></div>
                     <div class="form-field"><label>Years of Experience *</label>
                       <select name="exp" required>
                         <option value="">Select</option>
@@ -2429,66 +2136,35 @@
                       </select>
                     </div>
                   </div>
-                    <div class="form-field"><label>Primary Framework *</label>
-                      <select name="framework" required>
-                        <option value="">Select</option>
-                        <option>React Native</option>
-                        <option>Flutter</option>
-                        <option>Swift (iOS)</option>
-                        <option>Kotlin (Android)</option>
-                        <option>Other</option>
-                      </select>
-                    </div>
-
-                  <!-- AVAILABILITY -->
+                  <div class="form-field" style="margin-bottom:14px;"><label>Primary Framework *</label>
+                    <select name="framework" required>
+                      <option value="">Select</option>
+                      <option>React Native</option>
+                      <option>Flutter</option>
+                      <option>Swift (iOS)</option>
+                      <option>Kotlin (Android)</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
                   <div class="pos-section-title" style="margin-top:24px;">AVAILABILITY</div>
-
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>When Can You Start? *</label>
-                      <input type="text" name="start" placeholder="Immediately / Next Month..." required>
-                    </div>
+                    <div class="form-field"><label>When Can You Start? *</label><input type="text" name="start" placeholder="Immediately / Next Month..." required></div>
                   </div>
-
-                  <!-- SOCIALS -->
                   <div class="pos-section-title" style="margin-top:24px;">Show Us Who You Are</div>
-
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>Instagram Handle</label>
-                      <input type="text" name="instagram" placeholder="@yourhandle">
-                    </div>
-
-                    <div class="form-field">
-                      <label>LinkedIn Profile</label>
-                      <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
-                    </div>
+                    <div class="form-field"><label>Instagram Handle</label><input type="text" name="instagram" placeholder="@yourhandle"></div>
+                    <div class="form-field"><label>LinkedIn Profile</label><input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile"></div>
                   </div>
-
-                  <div class="form-field full" style="margin-bottom:14px;">
-                    <label>Portfolio Link</label>
-                    <input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link">
-                  </div>
-
-                  <!-- WHY JOIN -->
+                  <div class="form-field full" style="margin-bottom:14px;"><label>Portfolio Link</label><input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link"></div>
                   <div class="form-field full" style="margin-bottom:14px;">
                     <label>Why Do You Want To Join Flashlab Creative? *</label>
-
-                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..."
-                      required></textarea>
+                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea>
                   </div>
-
-                  <!-- SOURCE -->
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>Where Did You Hear About Us? *</label>
-                      <input type="text" name="heard" placeholder="Instagram, Google, Friend..." required>
-                    </div>
+                    <div class="form-field"><label>Where Did You Hear About Us? *</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..." required></div>
                   </div>
-
-                  <button type="submit" class="form-submit">Submit via WhatsApp <i
-                      class="ri-whatsapp-line"></i></button>
-                </form>  
+                  <button type="submit" class="form-submit">Submit Application <i class="ri-send-plane-line"></i></button>
+                </form>
               </div>
             </div>
 
@@ -2510,66 +2186,32 @@
           </div>
           <div class="faq-list reveal-right">
             <div class="faq-item">
-              <div class="faq-q" onclick="toggleFaq(this)">
-                How do I apply for a position?
-                <i class="ri-add-line"></i>
-              </div>
-              <div class="faq-a">Select the role you're interested in from the "View Available Positions" section above,
-                click "Apply Now", fill out the form, and submit via WhatsApp. Our team will personally review your
-                application and respond within 5 working days.</div>
+              <div class="faq-q" onclick="toggleFaq(this)">How do I apply for a position?<i class="ri-add-line"></i></div>
+              <div class="faq-a">Select the role you're interested in from the "View Available Positions" section above, click "Apply Now", fill out the form, and submit. Our team will personally review your application and respond within 5 working days.</div>
             </div>
             <div class="faq-item">
-              <div class="faq-q" onclick="toggleFaq(this)">
-                Do I need prior experience to apply?
-                <i class="ri-add-line"></i>
-              </div>
-              <div class="faq-a">Not necessarily. For our internship programme, we prioritise attitude, enthusiasm, and
-                willingness to learn over formal experience. For senior roles, relevant experience and a portfolio are
-                expected — but we always evaluate candidates holistically.</div>
+              <div class="faq-q" onclick="toggleFaq(this)">Do I need prior experience to apply?<i class="ri-add-line"></i></div>
+              <div class="faq-a">Not necessarily. For our internship programme, we prioritise attitude, enthusiasm, and willingness to learn over formal experience. For senior roles, relevant experience and a portfolio are expected — but we always evaluate candidates holistically.</div>
             </div>
             <div class="faq-item">
-              <div class="faq-q" onclick="toggleFaq(this)">
-                How long does the hiring process take?
-                <i class="ri-add-line"></i>
-              </div>
-              <div class="faq-a">We review applications within 5 working days. If shortlisted, you'll be invited for an
-                interview or a short task assessment. The full process from application to offer typically takes 1–2
-                weeks.</div>
+              <div class="faq-q" onclick="toggleFaq(this)">How long does the hiring process take?<i class="ri-add-line"></i></div>
+              <div class="faq-a">We review applications within 5 working days. If shortlisted, you'll be invited for an interview or a short task assessment. The full process from application to offer typically takes 1–2 weeks.</div>
             </div>
             <div class="faq-item">
-              <div class="faq-q" onclick="toggleFaq(this)">
-                Is the internship paid?
-                <i class="ri-add-line"></i>
-              </div>
-              <div class="faq-a">Internship stipends are based on the department, your skill level, and the scope of
-                work. All details will be discussed during your interview. Top interns are regularly offered full-time
-                positions.</div>
+              <div class="faq-q" onclick="toggleFaq(this)">Is the internship paid?<i class="ri-add-line"></i></div>
+              <div class="faq-a">Internship stipends are based on the department, your skill level, and the scope of work. All details will be discussed during your interview. Top interns are regularly offered full-time positions.</div>
             </div>
             <div class="faq-item">
-              <div class="faq-q" onclick="toggleFaq(this)">
-                Can I apply for multiple roles?
-                <i class="ri-add-line"></i>
-              </div>
-              <div class="faq-a">Yes, but we recommend applying for the role that best matches your primary skills. If
-                you're versatile and feel you fit multiple departments, mention that in your "Why do you want to join?"
-                section and we'll take note.</div>
+              <div class="faq-q" onclick="toggleFaq(this)">Can I apply for multiple roles?<i class="ri-add-line"></i></div>
+              <div class="faq-a">Yes, but we recommend applying for the role that best matches your primary skills. If you're versatile and feel you fit multiple departments, mention that in your "Why do you want to join?" section and we'll take note.</div>
             </div>
             <div class="faq-item">
-              <div class="faq-q" onclick="toggleFaq(this)">
-                Where is the office located?
-                <i class="ri-add-line"></i>
-              </div>
-              <div class="faq-a">Our studio is located at G26 Vikrant Complex, Margao, Goa — 403601. All roles are
-                primarily in-person at our Margao studio. We are Mon–Sat: 9am–6pm IST.</div>
+              <div class="faq-q" onclick="toggleFaq(this)">Where is the office located?<i class="ri-add-line"></i></div>
+              <div class="faq-a">Our studio is located at G26 Vikrant Complex, Margao, Goa — 403601. All roles are primarily in-person at our Margao studio. We are Mon–Sat: 9am–6pm IST.</div>
             </div>
             <div class="faq-item">
-              <div class="faq-q" onclick="toggleFaq(this)">
-                Do you offer a certificate for internships?
-                <i class="ri-add-line"></i>
-              </div>
-              <div class="faq-a">Yes! Every intern who successfully completes their programme receives an official
-                Flashlab Creative Certificate of Completion and a Letter of Recommendation from our director — great for your
-                portfolio and next interview.</div>
+              <div class="faq-q" onclick="toggleFaq(this)">Do you offer a certificate for internships?<i class="ri-add-line"></i></div>
+              <div class="faq-a">Yes! Every intern who successfully completes their programme receives an official Flashlab Creative Certificate of Completion and a Letter of Recommendation from our director — great for your portfolio and next interview.</div>
             </div>
           </div>
         </div>
@@ -2583,15 +2225,130 @@
           <div>
             <h2 class="no-role-title">Don't See Your<br><em>Role Listed?</em></h2>
             <p class="no-role-sub">We're always open to hearing from talented creatives — even if your specific role
-              isn't listed yet. Send us your portfolio, tell us what you do best, and we'll be in touch when the right
-              opportunity opens up. We hire for passion as much as we hire for skill.</p>
+              isn't listed yet. Tell us what you do best and we'll be in touch when the right opportunity opens up.
+              We hire for passion as much as we hire for skill.</p>
           </div>
           <div class="no-role-actions">
             <a href="connect.html" class="btn-primary">Contact Us <i class="ri-arrow-right-line"></i></a>
-            <a href="mailto:contact@flashlabcreative.com" button class="btn-outline-accent">Send Your Resume <i
-                class="ri-send-plane-line"></i></a>
+            <button class="btn-outline-accent" onclick="toggleOpenForm()">Send Your Resume <i class="ri-send-plane-line"></i></button>
           </div>
         </div>
+
+        <!-- Open Application Form (toggles below the green box) -->
+        <div class="open-form-outer" id="open-application-form">
+          <div class="pos-form-wrap open" style="margin-top:0;">
+            <button class="form-close-btn" onclick="toggleOpenForm()"><i class="ri-arrow-left-line"></i> Close Form</button>
+            <div class="pos-form-title">Open Application</div>
+            <p class="pos-form-sub">Don't see your role? Tell us about yourself and why you'd be a great fit. Fields marked <span style="color:var(--accent)">*</span> are required.</p>
+
+            <form onsubmit="submitOpenForm(event)">
+
+              <!-- PERSONAL DETAILS -->
+              <div class="pos-section-title" style="margin-top:24px;">PERSONAL DETAILS</div>
+              <div class="form-row">
+                <div class="form-field"><label>First Name *</label><input type="text" name="fname" placeholder="First name" required></div>
+                <div class="form-field"><label>Last Name *</label><input type="text" name="lname" placeholder="Last name" required></div>
+              </div>
+              <div class="form-row">
+                <div class="form-field"><label>Email *</label><input type="email" name="email" placeholder="you@email.com" required></div>
+                <div class="form-field"><label>Phone *</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
+              </div>
+              <div class="form-row">
+                <div class="form-field"><label>City *</label><input type="text" name="city" placeholder="Your city" required></div>
+              </div>
+
+              <!-- ROLE TYPE -->
+              <div class="pos-section-title" style="margin-top:24px;">ROLE TYPE</div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label>Are You Looking For? *</label>
+                  <select name="role_type" id="openRoleType" onchange="handleOpenRoleType(this.value)" required>
+                    <option value="">Select</option>
+                    <option value="internship">Internship</option>
+                    <option value="fulltime">Full-Time Job</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Internship fields -->
+              <div id="open-internship-fields" style="display:none;">
+                <div class="form-row">
+                  <div class="form-field">
+                    <label>How Long Are You Available? *</label>
+                    <select name="intern_duration">
+                      <option value="">Select Duration</option>
+                      <option>1 Month</option>
+                      <option>2 Months</option>
+                      <option>3 Months</option>
+                      <option>6 Months</option>
+                      <option>Flexible / Open Ended</option>
+                    </select>
+                  </div>
+                  <div class="form-field">
+                    <label>Open To Full-Time Conversion?</label>
+                    <select name="convert_fulltime">
+                      <option value="">Select</option>
+                      <option>Yes</option>
+                      <option>No</option>
+                      <option>Maybe</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Full-time fields -->
+              <div id="open-fulltime-fields" style="display:none;">
+                <div class="form-row">
+                  <div class="form-field">
+                    <label>Notice Period / When Can You Start? *</label>
+                    <input type="text" name="notice" placeholder="Immediately / 1 month notice...">
+                  </div>
+                  <div class="form-field">
+                    <label>Expected Salary (Annual)</label>
+                    <input type="text" name="salary" placeholder="e.g. ₹3.5 LPA or Open to discuss">
+                  </div>
+                </div>
+              </div>
+
+              <!-- ROLE DETAILS -->
+              <div class="pos-section-title" style="margin-top:24px;">ROLE DETAILS</div>
+              <div class="form-field full" style="margin-bottom:14px;">
+                <label>What Role Are You Applying For? *</label>
+                <input type="text" name="role_name" placeholder="e.g. Video Editor, Photographer, Content Writer..." required>
+              </div>
+              <div class="form-field full" style="margin-bottom:14px;">
+                <label>Why This Specific Role at Flashlab Creative? *</label>
+                <textarea name="why_role" placeholder="Tell us what draws you to this particular role and why you're the right person for it..." required></textarea>
+              </div>
+              <div class="form-field full" style="margin-bottom:14px;">
+                <label>How Will the Company Benefit From You? *</label>
+                <textarea name="company_benefit" placeholder="What value, skills, or perspective do you bring that will make a measurable difference at Flashlab Creative?" required></textarea>
+              </div>
+
+              <!-- SHOW US WHO YOU ARE -->
+              <div class="pos-section-title" style="margin-top:24px;">SHOW US WHO YOU ARE</div>
+              <div class="form-row">
+                <div class="form-field"><label>Instagram Handle</label><input type="text" name="instagram" placeholder="@yourhandle"></div>
+                <div class="form-field"><label>LinkedIn Profile</label><input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile"></div>
+              </div>
+              <div class="form-field full" style="margin-bottom:14px;">
+                <label>Portfolio / Resume Link</label>
+                <input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link">
+              </div>
+
+              <!-- SOURCE -->
+              <div class="form-row">
+                <div class="form-field">
+                  <label>Where Did You Hear About Us? *</label>
+                  <input type="text" name="heard" placeholder="Instagram, Google, Friend..." required>
+                </div>
+              </div>
+
+              <button type="submit" class="form-submit">Submit Application <i class="ri-send-plane-line"></i></button>
+            </form>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -2610,15 +2367,11 @@
         <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in
           2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i
-              class="ri-instagram-fill"></i></a>
-          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i
-              class="ri-facebook-fill"></i></a>
-          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i
-              class="ri-linkedin-fill"></i></a>
+          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i class="ri-instagram-fill"></i></a>
+          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i class="ri-facebook-fill"></i></a>
+          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i class="ri-linkedin-fill"></i></a>
           <a href="https://twitter.com/theflashlab" target="_blank" rel="noopener"><i class="ri-twitter-x-fill"></i></a>
-          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i
-              class="ri-youtube-fill"></i></a>
+          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i class="ri-youtube-fill"></i></a>
         </div>
       </div>
       <div>
@@ -2668,19 +2421,16 @@
       <div>
         <h4 class="footer-head">Contact</h4>
         <div class="footer-contact">
-          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa"
-              target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
+          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa" target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
           <p><i class="ri-phone-fill"></i><a href="tel:+919923580023">+91 99235 80023</a></p>
-          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a>
-          </p>
+          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a></p>
           <p><i class="ri-time-fill"></i><span>Mon – Sat: 9am – 6pm IST</span></p>
           <a href="connect.html" class="footer-cta">Start a Project <i class="ri-arrow-right-line"></i></a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>Copyright &copy; 2026 Flashlab Creative — Website Crafted by <a href="https://cybercreative.in/"
-          target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
+      <p>Copyright &copy; 2026 Flashlab Creative — Website Crafted by <a href="https://cybercreative.in/" target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
     </div>
   </footer>
 
@@ -2694,16 +2444,11 @@
        POSITIONS: Menu role switching
     ──────────────────────────────────────────────────────── */
     function selectRole(role, el) {
-      // Update menu active state
       document.querySelectorAll('.pos-menu-item').forEach(i => i.classList.remove('active'));
       el.classList.add('active');
-
-      // Show correct panel
       document.querySelectorAll('.pos-detail').forEach(d => d.classList.remove('active'));
       const panel = document.getElementById('role-' + role);
       if (panel) panel.classList.add('active');
-
-      // On mobile, scroll panel into view
       if (window.innerWidth < 960) {
         panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
@@ -2716,7 +2461,6 @@
       const el = document.getElementById(id);
       if (!el) return;
       const isOpen = el.classList.contains('open');
-      // Close all expanded sections in this panel
       el.closest('.pos-detail').querySelectorAll('.pos-expanded').forEach(e => e.classList.remove('open'));
       if (!isOpen) {
         el.classList.add('open');
@@ -2734,7 +2478,6 @@
       const el = document.getElementById(id);
       if (!el) return;
       const isOpen = el.classList.contains('open');
-      // Close all forms in this panel
       el.closest('.pos-detail').querySelectorAll('.pos-form-wrap').forEach(f => f.classList.remove('open'));
       if (!isOpen) {
         el.classList.add('open');
@@ -2743,27 +2486,88 @@
     }
 
     /* ─────────────────────────────────────────────────────
-       FORM SUBMISSION (WhatsApp)
+       FORM SUBMISSION — all position forms (email)
     ──────────────────────────────────────────────────────── */
     function submitForm(e, position) {
       e.preventDefault();
       const form = e.target;
       const get = (n) => { const el = form.querySelector('[name="' + n + '"]'); return el ? el.value : '—'; };
-      const phone = "919923580023";
-      const msg =
-        `*New Career Application — Flashlab Creative*
-━━━━━━━━━━━━━━━━━━━━━━
-*Position:* ${position}
-*Name:* ${get('fname')} ${get('lname')}
-*Email:* ${get('email')}
-*Phone:* ${get('phone')}
-*City:* ${get('city')}
-*Experience:* ${get('exp') || get('framework') || get('software') || '—'}
-*Portfolio:* ${get('portfolio') || '—'}
-*Skills / Tools:* ${get('tools') || get('stack') || get('platforms') || get('dept') || '—'}
-*Why Join:* ${get('why')}
-*Heard From:* ${get('heard') || '—'}`;
-      window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(msg), '_blank');
+      const to = "ankith@flashlabcreative.com";
+      const subject = 'Career Application — ' + position + ' | Flashlab Creative';
+      const body =
+        'New Career Application — Flashlab Creative\n\n' +
+        'Position: ' + position + '\n' +
+        'Name: ' + get('fname') + ' ' + get('lname') + '\n' +
+        'Email: ' + get('email') + '\n' +
+        'Phone: ' + get('phone') + '\n' +
+        'City: ' + get('city') + '\n' +
+        'College: ' + get('college') + '\n' +
+        'Course: ' + get('course') + '\n' +
+        'Graduation Year: ' + get('graduation') + '\n' +
+        'Area of Interest: ' + get('interest') + '\n' +
+        'Experience: ' + (get('exp') || get('framework') || get('software') || '—') + '\n' +
+        'Previous Job Title: ' + get('prev') + '\n' +
+        'Platforms: ' + get('platforms') + '\n' +
+        'Tech Stack: ' + get('stack') + '\n' +
+        'SEO Tools: ' + get('tools') + '\n' +
+        'Duration: ' + get('duration') + '\n' +
+        'Open to Full-Time: ' + get('fulltime') + '\n' +
+        'When Can Start: ' + get('start') + '\n' +
+        'Portfolio: ' + (get('portfolio') || '—') + '\n' +
+        'Instagram: ' + (get('instagram') || '—') + '\n' +
+        'LinkedIn: ' + (get('linkedin') || '—') + '\n' +
+        'Why Join: ' + get('why') + '\n' +
+        'Heard From: ' + (get('heard') || '—');
+      window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    }
+
+    /* ─────────────────────────────────────────────────────
+       OPEN APPLICATION FORM TOGGLE
+    ──────────────────────────────────────────────────────── */
+    function toggleOpenForm() {
+      const form = document.getElementById('open-application-form');
+      const isOpen = form.classList.contains('open');
+      if (isOpen) {
+        form.classList.remove('open');
+      } else {
+        form.classList.add('open');
+        setTimeout(() => form.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+      }
+    }
+
+    function handleOpenRoleType(val) {
+      document.getElementById('open-internship-fields').style.display = val === 'internship' ? '' : 'none';
+      document.getElementById('open-fulltime-fields').style.display = val === 'fulltime' ? '' : 'none';
+    }
+
+    /* ─────────────────────────────────────────────────────
+       OPEN APPLICATION SUBMIT (email)
+    ──────────────────────────────────────────────────────── */
+    function submitOpenForm(e) {
+      e.preventDefault();
+      const form = e.target;
+      const get = (n) => { const el = form.querySelector('[name="' + n + '"]'); return el ? el.value : '—'; };
+      const to = "ankith@flashlabcreative.com";
+      const subject = 'Open Application — ' + get('role_name') + ' | Flashlab Creative';
+      const body =
+        'Open Application — Flashlab Creative\n\n' +
+        'Name: ' + get('fname') + ' ' + get('lname') + '\n' +
+        'Email: ' + get('email') + '\n' +
+        'Phone: ' + get('phone') + '\n' +
+        'City: ' + get('city') + '\n' +
+        'Role Type: ' + get('role_type') + '\n' +
+        'Role Applied For: ' + get('role_name') + '\n' +
+        'Internship Duration: ' + (get('intern_duration') || '—') + '\n' +
+        'Open to Full-Time: ' + (get('convert_fulltime') || '—') + '\n' +
+        'Notice Period / Start: ' + (get('notice') || '—') + '\n' +
+        'Expected Salary: ' + (get('salary') || '—') + '\n' +
+        'Why This Role: ' + get('why_role') + '\n' +
+        'How Company Benefits: ' + get('company_benefit') + '\n' +
+        'Portfolio / Resume: ' + (get('portfolio') || '—') + '\n' +
+        'Instagram: ' + (get('instagram') || '—') + '\n' +
+        'LinkedIn: ' + (get('linkedin') || '—') + '\n' +
+        'Heard From: ' + get('heard');
+      window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     }
 
     /* ─────────────────────────────────────────────────────
@@ -2772,7 +2576,6 @@
     function toggleFaq(el) {
       const answer = el.nextElementSibling;
       const isOpen = el.classList.contains('open');
-      // Close all
       document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('open'));
       document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
       if (!isOpen) {
@@ -2820,13 +2623,14 @@
       });
     });
 
-    // Filter tabs
+    /* ─────────────────────────────────────────────────────
+       FILTER TABS
+    ──────────────────────────────────────────────────────── */
     document.querySelectorAll('.pos-filter-tab').forEach(tab => {
       tab.addEventListener('click', () => {
         document.querySelectorAll('.pos-filter-tab').forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
         const filter = tab.dataset.filter;
-
         document.querySelectorAll('.pos-menu-item[data-type]').forEach(item => {
           item.style.display = (filter === 'all' || item.dataset.type === filter) ? '' : 'none';
         });
