@@ -7,9 +7,7 @@
   <title>Services — Flashlab Creative</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100;200;300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
-  rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100;200;300;400;500;600;700&family=Jost:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="flash.css">
 
@@ -113,9 +111,9 @@
 
     .page-hero h1 em {
       font-style: normal;
-      font-family: 'Inter', sans-serif;
-      color: var(--accent2, #f97316);
-      font-weight: 200;
+      font-family: var(--font-italic);
+      color: var(--accent2);
+      font-weight: 390;
     }
 
     .page-hero-sub {
@@ -1101,10 +1099,9 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+   <!-- FOOTER — links, services, contact, socials -->
   <footer class="footer">
     <div class="wrap footer-grid">
-
       <div class="footer-brand">
         <div class="footer-logo">
           <a href="index.html">
@@ -1121,13 +1118,13 @@
           <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i class="ri-youtube-fill"></i></a>
         </div>
       </div>
-
       <div>
         <h4 class="footer-head">Navigation</h4>
         <ul class="footer-list">
           <li><a href="index.html"><i class="ri-arrow-right-s-line"></i>Home</a></li>
           <li><a href="about.html"><i class="ri-arrow-right-s-line"></i>About</a></li>
           <li><a href="services.html"><i class="ri-arrow-right-s-line"></i>Services</a></li>
+          <li><a href="portfolio.html"><i class="ri-arrow-right-s-line"></i>Portfolio</a></li>
           <li><a href="clients.html"><i class="ri-arrow-right-s-line"></i>Clients</a></li>
           <li><a href="case-studies.html"><i class="ri-arrow-right-s-line"></i>Case Studies</a></li>
           <li><a href="team.html"><i class="ri-arrow-right-s-line"></i>Teams</a></li>
@@ -1135,7 +1132,6 @@
           <li><a href="connect.html"><i class="ri-arrow-right-s-line"></i>Connect</a></li>
         </ul>
       </div>
-
       <div>
         <h4 class="footer-head">Services</h4>
         <ul class="footer-list">
@@ -1148,20 +1144,18 @@
           <li><a href="ecommerce.html"><i class="ri-arrow-right-s-line"></i>E-Commerce</a></li>
         </ul>
       </div>
-
       <div>
-        <h4 class="footer-head">Join Us</h4>
-        <ul class="footer-list">
-          <li><a href="career-intern.html"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
-          <li><a href="career-seo-expert.html"><i class="ri-arrow-right-s-line"></i>SEO Expert</a></li>
-          <li><a href="career-social-media-manager.html"><i class="ri-arrow-right-s-line"></i>Social Media Mgr</a></li>
-          <li><a href="career-graphic-designer.html"><i class="ri-arrow-right-s-line"></i>Graphic Designer</a></li>
-          <li><a href="career-web-developer.html"><i class="ri-arrow-right-s-line"></i>Web Developer</a></li>
-          <li><a href="career-animation-designer.html"><i class="ri-arrow-right-s-line"></i>Animation Designer</a></li>
-          <li><a href="career-app-developer.html"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
-        </ul>
-      </div>
-
+  <h4 class="footer-head">Join Us</h4>
+  <ul class="footer-list">
+    <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','intern')"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
+    <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','seo-expert')"><i class="ri-arrow-right-s-line"></i>SEO Expert</a></li>
+    <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','social-media-manager')"><i class="ri-arrow-right-s-line"></i>Social Media Mgr</a></li>
+    <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','graphic-designer')"><i class="ri-arrow-right-s-line"></i>Graphic Designer</a></li>
+    <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','web-developer')"><i class="ri-arrow-right-s-line"></i>Web Developer</a></li>
+    <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','animation-designer')"><i class="ri-arrow-right-s-line"></i>Animation Designer</a></li>
+    <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','app-developer')"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
+  </ul>
+</div>
       <div>
         <h4 class="footer-head">Service Links</h4>
         <ul class="footer-list">
@@ -1169,7 +1163,6 @@
           <li><a href="https://backstagexchange.com"><i class="ri-arrow-right-s-line"></i>Event Activation</a></li>
         </ul>
       </div>
-
       <div>
         <h4 class="footer-head">Contact</h4>
         <div class="footer-contact">
@@ -1180,13 +1173,11 @@
           <a href="connect.html" class="footer-cta">Start a Project <i class="ri-arrow-right-line"></i></a>
         </div>
       </div>
-
     </div>
     <div class="footer-bottom">
       <p>Copyright &copy; 2026 Flashlab Creative — Website Crafted by <a href="https://cybercreative.in/" target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
     </div>
   </footer>
-
   <button class="back-top" id="backTop"><i class="ri-arrow-up-line"></i></button>
 
   <script src="flash.js"></script>

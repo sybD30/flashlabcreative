@@ -10,9 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100;200;300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100;200;300;400;500;600;700&family=Jost:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="flash.css">
 
@@ -142,7 +140,7 @@
     .hero-h1 em {
       font-style: normal;
       font-family: var(--font-italic);
-      font-weight: 200;
+      font-weight: 390;
       color: var(--accent2);
       font-size: .85em;
       display: block;
@@ -183,7 +181,6 @@
       background: linear-gradient(135deg, rgba(168, 232, 50, .15), transparent 60%);
     }
 
-
     /* ============================================================
    LIFE AT FLASHLAB (photo collage)
    ============================================================ */
@@ -221,13 +218,8 @@
       filter: saturate(1);
     }
 
-    .life-cell.span-col-2 {
-      grid-column: span 2;
-    }
-
-    .life-cell.span-row-2 {
-      grid-row: span 2;
-    }
+    .life-cell.span-col-2 { grid-column: span 2; }
+    .life-cell.span-row-2 { grid-row: span 2; }
 
     .life-cell-overlay {
       position: absolute;
@@ -239,9 +231,7 @@
       padding: 20px;
     }
 
-    .life-cell:hover .life-cell-overlay {
-      background: rgba(10, 10, 15, .15);
-    }
+    .life-cell:hover .life-cell-overlay { background: rgba(10, 10, 15, .15); }
 
     .life-cell-label {
       font-family: sans-serif;
@@ -255,10 +245,7 @@
       transition: .35s;
     }
 
-    .life-cell:hover .life-cell-label {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .life-cell:hover .life-cell-label { opacity: 1; transform: translateY(0); }
 
     /* ============================================================
    PERKS & BENEFITS
@@ -285,9 +272,7 @@
       transition: background .3s;
     }
 
-    .perk-card:hover {
-      background: var(--card2);
-    }
+    .perk-card:hover { background: var(--card2); }
 
     .perk-icon {
       width: 52px;
@@ -317,7 +302,7 @@
     }
 
     /* ============================================================
-   OPEN POSITIONS (interactive sidebar layout)
+   OPEN POSITIONS
    ============================================================ */
     .positions-section {
       padding: 100px 0;
@@ -332,9 +317,9 @@
       border-radius: 20px;
       overflow: hidden;
       margin-top: 60px;
+  margin-bottom: 8px;
     }
 
-    /* Left menu */
     .pos-menu {
       background: var(--card);
       border-right: 1px solid var(--border);
@@ -350,7 +335,6 @@
       border-bottom: 1px solid var(--border);
     }
 
-    /* Filter tabs */
     .pos-filter-tabs {
       display: flex;
       gap: 6px;
@@ -373,10 +357,7 @@
       transition: all .25s;
     }
 
-    .pos-filter-tab:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
+    .pos-filter-tab:hover { border-color: var(--accent); color: var(--accent); }
 
     .pos-filter-tab.active {
       background: var(--accent);
@@ -384,7 +365,6 @@
       color: #0a0a0f;
     }
 
-    /* Section group label */
     .pos-menu-group-label {
       font-size: .65rem;
       font-weight: 700;
@@ -398,12 +378,7 @@
       cursor: default;
     }
 
-
-    .pos-menu-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+    .pos-menu-list { list-style: none; margin: 0; padding: 0; }
 
     .pos-menu-item {
       display: flex;
@@ -419,10 +394,7 @@
       position: relative;
     }
 
-    .pos-menu-item:hover {
-      background: var(--card2);
-      color: var(--text);
-    }
+    .pos-menu-item:hover { background: var(--card2); color: var(--text); }
 
     .pos-menu-item.active {
       background: rgba(168, 232, 50, .08);
@@ -432,18 +404,13 @@
     .pos-menu-item.active::before {
       content: '';
       position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
+      left: 0; top: 0; bottom: 0;
       width: 3px;
       background: var(--accent);
       border-radius: 0 3px 3px 0;
     }
 
-    .pos-menu-item i {
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
+    .pos-menu-item i { font-size: 1.1rem; flex-shrink: 0; }
 
     .pos-menu-badge {
       margin-left: auto;
@@ -457,11 +424,7 @@
       border-radius: 999px;
     }
 
-    /* Right panel */
-    .pos-panel {
-      background: var(--bg);
-      min-height: 500px;
-    }
+    .pos-panel { background: var(--bg); min-height: 500px; }
 
     .pos-detail {
       display: none;
@@ -469,20 +432,11 @@
       animation: panelFade .3s ease;
     }
 
-    .pos-detail.active {
-      display: block;
-    }
+    .pos-detail.active { display: block; }
 
     @keyframes panelFade {
-      from {
-        opacity: 0;
-        transform: translateY(8px);
-      }
-
-      to {
-        opacity: 1;
-        transform: none;
-      }
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: none; }
     }
 
     .pos-eyebrow {
@@ -504,12 +458,7 @@
       line-height: 1;
     }
 
-    .pos-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 28px;
-    }
+    .pos-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
 
     .pos-tag {
       display: inline-flex;
@@ -534,14 +483,8 @@
       max-width: 620px;
     }
 
-    .pos-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
+    .pos-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
 
-    /* Expanded job detail */
     .pos-expanded {
       display: none;
       margin-top: 0;
@@ -550,9 +493,7 @@
       animation: panelFade .35s ease;
     }
 
-    .pos-expanded.open {
-      display: block;
-    }
+    .pos-expanded.open { display: block; }
 
     .pos-section-title {
       font-family: var(--font-head);
@@ -587,31 +528,11 @@
       transition: border-color .25s;
     }
 
-    .pos-resp-card:hover {
-      border-color: rgba(168, 232, 50, .25);
-    }
+    .pos-resp-card:hover { border-color: rgba(168, 232, 50, .25); }
 
-    .pos-resp-card i {
-      font-size: 1.2rem;
-      color: var(--accent);
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .pos-resp-card strong {
-      display: block;
-      font-size: .88rem;
-      font-weight: 700;
-      color: var(--text-strong);
-      margin-bottom: 6px;
-    }
-
-    .pos-resp-card p {
-      font-size: .82rem;
-      color: var(--muted);
-      line-height: 1.6;
-      margin: 0;
-    }
+    .pos-resp-card i { font-size: 1.2rem; color: var(--accent); margin-bottom: 10px; display: block; }
+    .pos-resp-card strong { display: block; font-size: .88rem; font-weight: 700; color: var(--text-strong); margin-bottom: 6px; }
+    .pos-resp-card p { font-size: .82rem; color: var(--muted); line-height: 1.6; margin: 0; }
 
     .pos-elig-list {
       list-style: none;
@@ -631,14 +552,8 @@
       line-height: 1.5;
     }
 
-    .pos-elig-item i {
-      color: var(--accent);
-      font-size: 1rem;
-      margin-top: 1px;
-      flex-shrink: 0;
-    }
+    .pos-elig-item i { color: var(--accent); font-size: 1rem; margin-top: 1px; flex-shrink: 0; }
 
-    /* Application form embedded */
     .pos-form-wrap {
       background: var(--card);
       border: 1px solid var(--border);
@@ -649,9 +564,7 @@
       animation: panelFade .35s ease;
     }
 
-    .pos-form-wrap.open {
-      display: block;
-    }
+    .pos-form-wrap.open { display: block; }
 
     .pos-form-title {
       font-family: var(--font-head);
@@ -661,11 +574,7 @@
       margin-bottom: 6px;
     }
 
-    .pos-form-sub {
-      color: var(--muted);
-      font-size: .85rem;
-      margin-bottom: 28px;
-    }
+    .pos-form-sub { color: var(--muted); font-size: .85rem; margin-bottom: 28px; }
 
     .form-row {
       display: grid;
@@ -674,15 +583,8 @@
       margin-bottom: 14px;
     }
 
-    .form-field {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .form-field.full {
-      grid-column: 1 / -1;
-    }
+    .form-field { display: flex; flex-direction: column; gap: 6px; }
+    .form-field.full { grid-column: 1 / -1; }
 
     .form-field label {
       font-size: .72rem;
@@ -715,14 +617,8 @@
       box-shadow: 0 0 0 3px rgba(168, 232, 50, .08);
     }
 
-    .form-field textarea {
-      height: 90px;
-      resize: vertical;
-    }
-
-    .form-field select option {
-      background: var(--card);
-    }
+    .form-field textarea { height: 90px; resize: vertical; }
+    .form-field select option { background: var(--card); }
 
     .form-submit {
       width: 100%;
@@ -743,10 +639,7 @@
       transition: all .3s;
     }
 
-    .form-submit:hover {
-      background: #bef54a;
-      transform: translateY(-2px);
-    }
+    .form-submit:hover { background: #bef54a; transform: translateY(-2px); }
 
     .form-close-btn {
       display: inline-flex;
@@ -765,18 +658,128 @@
       margin-bottom: 20px;
     }
 
-    .form-close-btn:hover {
-      border-color: var(--accent);
+    .form-close-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ============================================================
+   HR CONTACT STRIP  — below positions layout
+   ============================================================ */
+    .hr-contact-strip {
+      margin-top: 56px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      background: var(--card);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hr-contact-strip::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: var(--accent);
+      border-radius: 4px 0 0 4px;
+    }
+
+    .hr-contact-strip::after {
+      content: '';
+      position: absolute;
+      right: -60px; top: -60px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(168,232,50,.06) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hr-strip-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .hr-strip-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(168, 232, 50, .1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
       color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .hr-strip-label {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 4px;
+      font-family: 'Jost', sans-serif;
+    }
+
+    .hr-strip-headline {
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+      color: var(--text-strong);
+      margin-bottom: 3px;
+      letter-spacing: .3px;
+    }
+
+    .hr-strip-sub {
+      font-size: .82rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .hr-strip-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(168, 232, 50, .08);
+      border: 1px solid rgba(168, 232, 50, .2);
+      color: var(--accent2);
+      padding: 11px 24px;
+      border-radius: 999px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 600;
+      font-size: .88rem;
+      letter-spacing: .5px;
+      text-decoration: none;
+      transition: all .3s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .hr-strip-email:hover {
+      background: var(--accent);
+      color: #0a0a0f;
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(168, 232, 50, .25);
+    }
+
+    @media (max-width: 700px) {
+      .hr-contact-strip {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 22px 24px 28px;
+      }
+      .hr-strip-email { width: 100%; justify-content: center; }
     }
 
     /* ============================================================
    FAQ
    ============================================================ */
-    .faq-section {
-      padding: 100px 0;
-      background: var(--bg2);
-    }
+    .faq-section { padding: 100px 0; background: var(--bg2); }
 
     .faq-grid {
       display: grid;
@@ -798,16 +801,11 @@
     .faq-intro h2 em {
       font-style: normal;
       font-family: var(--font-italic);
-      font-weight: 200;
+      font-weight: 390;
       color: var(--accent2);
     }
 
-    .faq-intro p {
-      color: var(--muted);
-      font-size: .95rem;
-      line-height: 1.85;
-      margin-bottom: 28px;
-    }
+    .faq-intro p { color: var(--muted); font-size: .95rem; line-height: 1.85; margin-bottom: 28px; }
 
     .faq-contact-btn {
       display: inline-flex;
@@ -822,10 +820,7 @@
       transition: all .3s;
     }
 
-    .faq-contact-btn:hover {
-      background: #bef54a;
-      transform: translateY(-2px);
-    }
+    .faq-contact-btn:hover { background: #bef54a; transform: translateY(-2px); }
 
     .faq-list {
       display: flex;
@@ -836,13 +831,8 @@
       overflow: hidden;
     }
 
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-    }
-
-    .faq-item:last-child {
-      border-bottom: none;
-    }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
 
     .faq-q {
       display: flex;
@@ -858,15 +848,8 @@
       background: var(--card);
     }
 
-    .faq-q:hover {
-      color: var(--accent);
-      background: var(--card2);
-    }
-
-    .faq-q.open {
-      color: var(--accent);
-      background: rgba(168, 232, 50, .05);
-    }
+    .faq-q:hover { color: var(--accent); background: var(--card2); }
+    .faq-q.open { color: var(--accent); background: rgba(168, 232, 50, .05); }
 
     .faq-q i {
       font-size: 1.1rem;
@@ -875,10 +858,7 @@
       color: var(--muted);
     }
 
-    .faq-q.open i {
-      transform: rotate(45deg);
-      color: var(--accent);
-    }
+    .faq-q.open i { transform: rotate(45deg); color: var(--accent); }
 
     .faq-a {
       display: none;
@@ -889,17 +869,12 @@
       line-height: 1.8;
     }
 
-    .faq-a.open {
-      display: block;
-    }
+    .faq-a.open { display: block; }
 
     /* ============================================================
    DON'T SEE YOUR ROLE
    ============================================================ */
-    .no-role-section {
-      padding: 100px 0;
-      background: var(--bg);
-    }
+    .no-role-section { padding: 100px 0; background: var(--bg); }
 
     .no-role-inner {
       background: linear-gradient(135deg, #0f1f14 0%, #0a1a0a 100%);
@@ -923,16 +898,11 @@
     .no-role-title em {
       font-style: normal;
       font-family: var(--font-italic);
-      font-weight: 200;
+      font-weight: 390;
       color: var(--accent2);
     }
 
-    .no-role-sub {
-      color: var(--muted);
-      font-size: 1rem;
-      max-width: 500px;
-      line-height: 1.75;
-    }
+    .no-role-sub { color: var(--muted); font-size: 1rem; max-width: 500px; line-height: 1.75; }
 
     .no-role-actions {
       display: flex;
@@ -941,163 +911,60 @@
       align-items: flex-end;
     }
 
-    /* Open application form wrapper (outside the green box) */
     .open-form-outer {
       margin-top: 32px;
       display: none;
       animation: panelFade .35s ease;
     }
 
-    .open-form-outer.open {
-      display: block;
-    }
+    .open-form-outer.open { display: block; }
 
     /* ============================================================
    RESPONSIVE
    ============================================================ */
     @media (max-width:1100px) {
-      .positions-layout {
-        grid-template-columns: 210px 1fr;
-      }
+      .positions-layout { grid-template-columns: 210px 1fr; }
     }
 
     @media (max-width:960px) {
-      .career-hero {
-        padding: 220px 5% 80px;
-      }
-
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 50px;
-      }
-
-      .hero-img-wrap {
-        order: -1;
-      }
-
-      .wwu-inner {
-        grid-template-columns: 1fr;
-        gap: 50px;
-      }
-
-      .perks-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .life-collage {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 200px 200px 200px;
-      }
-
-      .life-cell.span-col-2 {
-        grid-column: span 1;
-      }
-
-      .life-cell.span-row-2 {
-        grid-row: span 1;
-      }
-
-      .positions-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .pos-menu {
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .pos-menu-list {
-        display: flex;
-        overflow-x: auto;
-        padding: 0;
-      }
-
-      .pos-menu-title {
-        display: none;
-      }
-
-      .pos-menu-item {
-        border-bottom: none;
-        border-right: 1px solid var(--border);
-        white-space: nowrap;
-        flex-shrink: 0;
-      }
-
-      .pos-menu-item.active::before {
-        top: auto;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: auto;
-        height: 3px;
-      }
-
-      .pos-detail {
-        padding: 30px;
-      }
-
-      .pos-resp-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .faq-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .no-role-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .no-role-actions {
-        align-items: flex-start;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-      }
+      .career-hero { padding: 220px 5% 80px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 50px; }
+      .hero-img-wrap { order: -1; }
+      .wwu-inner { grid-template-columns: 1fr; gap: 50px; }
+      .perks-grid { grid-template-columns: repeat(2, 1fr); }
+      .life-collage { grid-template-columns: repeat(2, 1fr); grid-template-rows: 200px 200px 200px; }
+      .life-cell.span-col-2 { grid-column: span 1; }
+      .life-cell.span-row-2 { grid-row: span 1; }
+      .positions-layout { grid-template-columns: 1fr; }
+      .pos-menu { border-right: none; border-bottom: 1px solid var(--border); }
+      .pos-menu-list { display: flex; overflow-x: auto; padding: 0; }
+      .pos-menu-title { display: none; }
+      .pos-menu-item { border-bottom: none; border-right: 1px solid var(--border); white-space: nowrap; flex-shrink: 0; }
+      .pos-menu-item.active::before { top: auto; bottom: 0; left: 0; right: 0; width: auto; height: 3px; }
+      .pos-detail { padding: 30px; }
+      .pos-resp-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; gap: 40px; }
+      .no-role-inner { grid-template-columns: 1fr; }
+      .no-role-actions { align-items: flex-start; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
     }
 
     @media (max-width:640px) {
-      .career-hero {
-        padding: 180px 5% 60px;
-      }
-
-      .perks-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .life-collage {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-      }
-
-      .life-cell {
-        height: 180px;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .no-role-inner {
-        padding: 40px 28px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
+      .career-hero { padding: 180px 5% 60px; }
+      .perks-grid { grid-template-columns: 1fr; }
+      .life-collage { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .life-cell { height: 180px; }
+      .form-row { grid-template-columns: 1fr; }
+      .no-role-inner { padding: 40px 28px; }
+      .footer-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body data-page="career">
 
-  <!-- CURSOR -->
   <div class="cursor" id="cursor"></div>
 
-  <!-- LOGO BAR -->
   <div class="site-logo-bar">
     <a href="index.html">
       <img src="images/logos/flashlab-logo.png" alt="Flashlab Creative" id="siteLogoImg"
@@ -1105,7 +972,6 @@
     </a>
   </div>
 
-  <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-wrap">
       <ul class="nav-links" id="navLinks">
@@ -1137,9 +1003,7 @@
             <li><a href="story-6.html"><i class="ri-article-line"></i>Story 6</a></li>
           </ul>
         </li>
-        <li>
-          <a href="career.html">Career</a>
-        </li>
+        <li><a href="career.html">Career</a></li>
         <li><a href="connect.html">Connect</a></li>
       </ul>
       <div class="nav-controls">
@@ -1154,7 +1018,6 @@
     </div>
   </nav>
 
-  <!-- MOBILE MENU -->
   <div class="mob-overlay" id="mobOverlay"></div>
   <div class="mob-menu" id="mobMenu" aria-hidden="true">
     <button class="mob-close" id="mobClose" aria-label="Close menu"><i class="ri-close-line"></i></button>
@@ -1220,7 +1083,6 @@
       </div>
     </section>
 
-
     <!-- ③ LIFE AT FLASHLAB -->
     <section class="life-section">
       <div class="wrap">
@@ -1234,33 +1096,27 @@
       <div style="width:min(1300px,96%);margin:0 auto;">
         <div class="life-collage reveal">
           <div class="life-cell span-col-2 span-row-2">
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80"
-              alt="Team collaboration">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Team collaboration">
             <div class="life-cell-overlay"><span class="life-cell-label">Team Sessions</span></div>
           </div>
           <div class="life-cell">
-            <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=80"
-              alt="Team event">
+            <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=80" alt="Team event">
             <div class="life-cell-overlay"><span class="life-cell-label">Team Events</span></div>
           </div>
           <div class="life-cell">
-            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=600&q=80"
-              alt="Team celebration">
+            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=600&q=80" alt="Team celebration">
             <div class="life-cell-overlay"><span class="life-cell-label">Celebrations</span></div>
           </div>
           <div class="life-cell span-col-2 span-row-2">
-            <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=600&q=80"
-              alt="Client meetings">
+            <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=600&q=80" alt="Client meetings">
             <div class="life-cell-overlay"><span class="life-cell-label">Client Work</span></div>
           </div>
           <div class="life-cell">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80"
-              alt="Creative studio">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" alt="Creative studio">
             <div class="life-cell-overlay"><span class="life-cell-label">Creative Space</span></div>
           </div>
           <div class="life-cell">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80"
-              alt="Workshop event">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80" alt="Workshop event">
             <div class="life-cell-overlay"><span class="life-cell-label">Workshops</span></div>
           </div>
         </div>
@@ -1273,8 +1129,7 @@
         <div class="sec-header centered reveal">
           <span class="sec-eyebrow">● Why Flashlab Creative</span>
           <h2 class="sec-heading">Perks &amp; <em>Benefits</em></h2>
-          <p class="sec-sub">Every role at Flashlab Creative comes with real responsibility, real mentorship, and real rewards
-            from day one.</p>
+          <p class="sec-sub">Every role at Flashlab Creative comes with real responsibility, real mentorship, and real rewards from day one.</p>
         </div>
         <div class="perks-grid">
           <div class="perk-card reveal" style="--delay:.1s">
@@ -1310,20 +1165,18 @@
           <div class="perk-card reveal" style="--delay:.4s">
             <div class="perk-icon"><i class="ri-calendar-event-line"></i></div>
             <div class="perk-title">Team Events</div>
-            <p class="perk-desc">Regular outings, celebrations, workshops, and team bonding activities throughout the
-              year.</p>
+            <p class="perk-desc">Regular outings, celebrations, workshops, and team bonding activities throughout the year.</p>
           </div>
           <div class="perk-card reveal" style="--delay:.45s">
             <div class="perk-icon"><i class="ri-heart-3-line"></i></div>
             <div class="perk-title">Inclusive Culture</div>
-            <p class="perk-desc">A diverse, welcoming workplace where every voice matters and every talent is valued.
-            </p>
+            <p class="perk-desc">A diverse, welcoming workplace where every voice matters and every talent is valued.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== MARQUEE ===== -->
+    <!-- MARQUEE -->
     <div class="marquee-strip">
       <div class="marquee-track">
         <span>GRAPHIC DESIGN</span><span class="dot">●</span>
@@ -1336,7 +1189,6 @@
         <span>VIDEO PRODUCTION</span><span class="dot">●</span>
         <span>DIGITAL MARKETING</span><span class="dot">●</span>
         <span>APP DEVELOPMENT</span><span class="dot">●</span>
-        <!-- duplicate -->
         <span>GRAPHIC DESIGN</span><span class="dot">●</span>
         <span>SOCIAL MEDIA</span><span class="dot">●</span>
         <span>ANIMATION</span><span class="dot">●</span>
@@ -1363,55 +1215,35 @@
           <!-- LEFT MENU -->
           <div class="pos-menu">
             <div class="pos-menu-title">Open Positions</div>
-
             <div class="pos-filter-tabs">
               <button class="pos-filter-tab active" data-filter="all">All</button>
               <button class="pos-filter-tab" data-filter="fulltime">Full-Time</button>
               <button class="pos-filter-tab" data-filter="internship">Internship</button>
             </div>
-
             <ul class="pos-menu-list" id="posMenu">
-
               <li class="pos-menu-group-label" data-group="fulltime">Full-Time Roles</li>
-
-              <li class="pos-menu-item active" data-role="graphic-designer" data-type="fulltime"
-                onclick="selectRole('graphic-designer', this)">
-                <i class="ri-brush-line"></i> Graphic Designer
-                <span class="pos-menu-badge">Open</span>
+              <li class="pos-menu-item active" data-role="graphic-designer" data-type="fulltime" onclick="selectRole('graphic-designer', this)">
+                <i class="ri-brush-line"></i> Graphic Designer <span class="pos-menu-badge">Open</span>
               </li>
-              <li class="pos-menu-item" data-role="animation-designer" data-type="fulltime"
-                onclick="selectRole('animation-designer', this)">
-                <i class="ri-video-line"></i> Animation Designer
-                <span class="pos-menu-badge">Open</span>
+              <li class="pos-menu-item" data-role="animation-designer" data-type="fulltime" onclick="selectRole('animation-designer', this)">
+                <i class="ri-video-line"></i> Animation Designer <span class="pos-menu-badge">Open</span>
               </li>
-              <li class="pos-menu-item" data-role="social-media-manager" data-type="fulltime"
-                onclick="selectRole('social-media-manager', this)">
-                <i class="ri-share-circle-line"></i> Social Media Manager
-                <span class="pos-menu-badge">Open</span>
+              <li class="pos-menu-item" data-role="social-media-manager" data-type="fulltime" onclick="selectRole('social-media-manager', this)">
+                <i class="ri-share-circle-line"></i> Social Media Manager <span class="pos-menu-badge">Open</span>
               </li>
-              <li class="pos-menu-item" data-role="web-developer" data-type="fulltime"
-                onclick="selectRole('web-developer', this)">
-                <i class="ri-code-box-line"></i> Web Developer
-                <span class="pos-menu-badge">Open</span>
+              <li class="pos-menu-item" data-role="web-developer" data-type="fulltime" onclick="selectRole('web-developer', this)">
+                <i class="ri-code-box-line"></i> Web Developer <span class="pos-menu-badge">Open</span>
               </li>
-              <li class="pos-menu-item" data-role="seo-expert" data-type="fulltime"
-                onclick="selectRole('seo-expert', this)">
-                <i class="ri-search-eye-line"></i> SEO Expert
-                <span class="pos-menu-badge">Open</span>
+              <li class="pos-menu-item" data-role="seo-expert" data-type="fulltime" onclick="selectRole('seo-expert', this)">
+                <i class="ri-search-eye-line"></i> SEO Expert <span class="pos-menu-badge">Open</span>
               </li>
-              <li class="pos-menu-item" data-role="app-developer" data-type="fulltime"
-                onclick="selectRole('app-developer', this)">
-                <i class="ri-smartphone-line"></i> App Developer
-                <span class="pos-menu-badge">Open</span>
+              <li class="pos-menu-item" data-role="app-developer" data-type="fulltime" onclick="selectRole('app-developer', this)">
+                <i class="ri-smartphone-line"></i> App Developer <span class="pos-menu-badge">Open</span>
               </li>
-
               <li class="pos-menu-group-label" data-group="internship">Internships</li>
-
               <li class="pos-menu-item" data-role="intern" data-type="internship" onclick="selectRole('intern', this)">
-                <i class="ri-user-add-line"></i> Intern
-                <span class="pos-menu-badge">Open</span>
+                <i class="ri-user-add-line"></i> Intern <span class="pos-menu-badge">Open</span>
               </li>
-
             </ul>
           </div>
 
@@ -1427,60 +1259,35 @@
                 <span class="pos-tag"><i class="ri-time-line"></i> Full-time</span>
                 <span class="pos-tag"><i class="ri-briefcase-line"></i> Fresher / Entry Level</span>
               </div>
-              <p class="pos-overview">FlashLab Creative is looking for enthusiastic, creative young individuals who are eager to
-                learn and grow in a real agency environment. As an intern, you'll work alongside our senior team on live
-                client campaigns — not make-believe projects. This is your chance to build a portfolio that actually
-                matters, get mentored by industry professionals, and earn a fast-track to a full-time role.</p>
+              <p class="pos-overview">FlashLab Creative is looking for enthusiastic, creative young individuals who are eager to learn and grow in a real agency environment. As an intern, you'll work alongside our senior team on live client campaigns — not make-believe projects. This is your chance to build a portfolio that actually matters, get mentored by industry professionals, and earn a fast-track to a full-time role.</p>
               <div class="pos-actions">
-                <button class="btn-primary" onclick="toggleDetails('intern-details', this)">View Job Details <i
-                    class="ri-arrow-down-s-line"></i></button>
-                <button class="btn-outline-accent" onclick="toggleForm('intern-form', this)">Apply Now <i
-                    class="ri-send-plane-line"></i></button>
+                <button class="btn-primary" onclick="toggleDetails('intern-details', this)">View Job Details <i class="ri-arrow-down-s-line"></i></button>
+                <button class="btn-outline-accent" onclick="toggleForm('intern-form', this)">Apply Now <i class="ri-send-plane-line"></i></button>
               </div>
               <div class="pos-expanded" id="intern-details">
                 <div class="pos-section-title">What You'll Do</div>
                 <div class="pos-resp-grid">
-                  <div class="pos-resp-card"><i class="ri-brush-line"></i><strong>Graphic Design</strong>
-                    <p>Assist in creating visuals for social media, branding, print, and digital campaigns.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-video-line"></i><strong>Video & Animation</strong>
-                    <p>Support the production team with editing, motion graphics, and content creation.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-code-s-slash-line"></i><strong>Web & Development</strong>
-                    <p>Contribute to web projects, landing pages, and app builds under senior supervision.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-instagram-line"></i><strong>Social Media</strong>
-                    <p>Help manage client social accounts, plan content calendars, and write captions.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-search-line"></i><strong>SEO Support</strong>
-                    <p>Learn and assist in keyword research, on-page optimisation, and reporting tasks.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-camera-line"></i><strong>Photography / Production</strong>
-                    <p>Join shoots, learn the production process, and assist with behind-the-scenes tasks.</p>
-                  </div>
+                  <div class="pos-resp-card"><i class="ri-brush-line"></i><strong>Graphic Design</strong><p>Assist in creating visuals for social media, branding, print, and digital campaigns.</p></div>
+                  <div class="pos-resp-card"><i class="ri-video-line"></i><strong>Video & Animation</strong><p>Support the production team with editing, motion graphics, and content creation.</p></div>
+                  <div class="pos-resp-card"><i class="ri-code-s-slash-line"></i><strong>Web & Development</strong><p>Contribute to web projects, landing pages, and app builds under senior supervision.</p></div>
+                  <div class="pos-resp-card"><i class="ri-instagram-line"></i><strong>Social Media</strong><p>Help manage client social accounts, plan content calendars, and write captions.</p></div>
+                  <div class="pos-resp-card"><i class="ri-search-line"></i><strong>SEO Support</strong><p>Learn and assist in keyword research, on-page optimisation, and reporting tasks.</p></div>
+                  <div class="pos-resp-card"><i class="ri-camera-line"></i><strong>Photography / Production</strong><p>Join shoots, learn the production process, and assist with behind-the-scenes tasks.</p></div>
                 </div>
                 <div class="pos-section-title">Eligibility &amp; Requirements</div>
                 <ul class="pos-elig-list">
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Willing to learn 100% — attitude matters
-                      more than qualifications</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Enthusiastic, dedicated, and creative
-                      with a long-term mindset</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Basic knowledge of any creative software
-                      (Photoshop, Illustrator, Canva, etc.) is a plus</span></li>
-                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Portfolio or any personal project work is
-                      appreciated but not mandatory</span></li>
-                  <li class="pos-elig-item"><i class="ri-information-line"></i><span>Stipend / Compensation based on
-                      skillset, department, and performance</span></li>
-                  <li class="pos-elig-item"><i class="ri-medal-line"></i><span>Certificate + Letter of Recommendation on
-                      successful completion</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Willing to learn 100% — attitude matters more than qualifications</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Enthusiastic, dedicated, and creative with a long-term mindset</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Basic knowledge of any creative software (Photoshop, Illustrator, Canva, etc.) is a plus</span></li>
+                  <li class="pos-elig-item"><i class="ri-check-line"></i><span>Portfolio or any personal project work is appreciated but not mandatory</span></li>
+                  <li class="pos-elig-item"><i class="ri-information-line"></i><span>Stipend / Compensation based on skillset, department, and performance</span></li>
+                  <li class="pos-elig-item"><i class="ri-medal-line"></i><span>Certificate + Letter of Recommendation on successful completion</span></li>
                 </ul>
               </div>
               <div class="pos-form-wrap" id="intern-form">
-                <button class="form-close-btn" onclick="toggleForm('intern-form', null)"><i
-                    class="ri-arrow-left-line"></i> Back to Overview</button>
+                <button class="form-close-btn" onclick="toggleForm('intern-form', null)"><i class="ri-arrow-left-line"></i> Back to Overview</button>
                 <div class="pos-form-title">Internship Application</div>
-                <p class="pos-form-sub">Fill in your details. We'll review personally and respond within 5 working days.
-                  Fields marked <span style="color:var(--accent)">*</span> are required.</p>
+                <p class="pos-form-sub">Fill in your details. We'll review personally and respond within 5 working days. Fields marked <span style="color:var(--accent)">*</span> are required.</p>
                 <form onsubmit="submitForm(event, 'Intern')">
                   <div class="pos-section-title" style="margin-top:24px;">PERSONAL DETAILS</div>
                   <div class="form-row">
@@ -1493,26 +1300,16 @@
                   </div>
                   <div class="pos-section-title" style="margin-top:24px;">Where Do You Study?</div>
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>College / University *</label>
-                      <input type="text" name="college" placeholder="Your college or university" required>
-                    </div>
-                    <div class="form-field">
-                      <label>Course + Specialization *</label>
-                      <input type="text" name="course" placeholder="BBA Marketing, BCA, Mass Media..." required>
-                    </div>
+                    <div class="form-field"><label>College / University *</label><input type="text" name="college" placeholder="Your college or university" required></div>
+                    <div class="form-field"><label>Course + Specialization *</label><input type="text" name="course" placeholder="BBA Marketing, BCA, Mass Media..." required></div>
                   </div>
                   <div class="form-row">
                     <div class="form-field">
                       <label>Year of Graduation *</label>
                       <select name="graduation" required>
                         <option value="">Select Year</option>
-                        <option>2025</option>
-                        <option>2026</option>
-                        <option>2027</option>
-                        <option>2028</option>
-                        <option>2029</option>
-                        <option>2030</option>
+                        <option>2025</option><option>2026</option><option>2027</option>
+                        <option>2028</option><option>2029</option><option>2030</option>
                       </select>
                     </div>
                   </div>
@@ -1521,36 +1318,21 @@
                     <label>Pick everything you'd genuinely be good at *</label>
                     <select name="interest" required>
                       <option value="">Choose Area</option>
-                      <option>Graphic Design</option>
-                      <option>Video Editing</option>
-                      <option>Animation</option>
-                      <option>Photography</option>
-                      <option>Videography</option>
-                      <option>Social Media Management</option>
-                      <option>Content Writing</option>
-                      <option>SEO</option>
-                      <option>Web Development</option>
-                      <option>App Development</option>
-                      <option>Branding</option>
-                      <option>Marketing</option>
-                      <option>Production Assistance</option>
-                      <option>Client Servicing</option>
-                      <option>General / Open</option>
+                      <option>Graphic Design</option><option>Video Editing</option><option>Animation</option>
+                      <option>Photography</option><option>Videography</option><option>Social Media Management</option>
+                      <option>Content Writing</option><option>SEO</option><option>Web Development</option>
+                      <option>App Development</option><option>Branding</option><option>Marketing</option>
+                      <option>Production Assistance</option><option>Client Servicing</option><option>General / Open</option>
                     </select>
                   </div>
                   <div class="pos-section-title" style="margin-top:24px;">When And How Long?</div>
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>When Can You Start? *</label>
-                      <input type="text" name="start" placeholder="Immediately / Next Month..." required>
-                    </div>
+                    <div class="form-field"><label>When Can You Start? *</label><input type="text" name="start" placeholder="Immediately / Next Month..." required></div>
                     <div class="form-field">
                       <label>How Long Can You Commit? *</label>
                       <select name="duration" required>
                         <option value="">Select Duration</option>
-                        <option>3 Months</option>
-                        <option>6 Months</option>
-                        <option>Flexible / Open Ended</option>
+                        <option>3 Months</option><option>6 Months</option><option>Flexible / Open Ended</option>
                       </select>
                     </div>
                   </div>
@@ -1559,36 +1341,19 @@
                       <label>Open To Full-Time Conversion If It Works Out? *</label>
                       <select name="fulltime" required>
                         <option value="">Choose Option</option>
-                        <option>Yes</option>
-                        <option>No</option>
-                        <option>Maybe</option>
+                        <option>Yes</option><option>No</option><option>Maybe</option>
                       </select>
                     </div>
                   </div>
                   <div class="pos-section-title" style="margin-top:24px;">Show Us Who You Are</div>
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>Instagram Handle</label>
-                      <input type="text" name="instagram" placeholder="@yourhandle">
-                    </div>
-                    <div class="form-field">
-                      <label>LinkedIn Profile</label>
-                      <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
-                    </div>
+                    <div class="form-field"><label>Instagram Handle</label><input type="text" name="instagram" placeholder="@yourhandle"></div>
+                    <div class="form-field"><label>LinkedIn Profile</label><input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile"></div>
                   </div>
-                  <div class="form-field full" style="margin-bottom:14px;">
-                    <label>Portfolio Link</label>
-                    <input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link">
-                  </div>
-                  <div class="form-field full" style="margin-bottom:14px;">
-                    <label>Why Do You Want To Join Flashlab Creative? *</label>
-                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea>
-                  </div>
+                  <div class="form-field full" style="margin-bottom:14px;"><label>Portfolio Link</label><input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link"></div>
+                  <div class="form-field full" style="margin-bottom:14px;"><label>Why Do You Want To Join Flashlab Creative? *</label><textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea></div>
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>Where Did You Hear About Us? *</label>
-                      <input type="text" name="heard" placeholder="Instagram, Google, Friend..." required>
-                    </div>
+                    <div class="form-field"><label>Where Did You Hear About Us? *</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..." required></div>
                   </div>
                   <button type="submit" class="form-submit">Submit Application <i class="ri-send-plane-line"></i></button>
                 </form>
@@ -1604,31 +1369,18 @@
                 <span class="pos-tag"><i class="ri-time-line"></i> Full-time</span>
                 <span class="pos-tag"><i class="ri-briefcase-line"></i> 1–3 Years Experience</span>
               </div>
-              <p class="pos-overview">We're looking for a talented Graphic Designer to create bold, on-brand visuals for
-                print, digital, outdoor advertising, and brand identity — for some of Goa's top brands. You'll work
-                closely with our creative directors and clients to translate briefs into stunning deliverables. If
-                design is your language and impact is your goal, this is your seat.</p>
+              <p class="pos-overview">We're looking for a talented Graphic Designer to create bold, on-brand visuals for print, digital, outdoor advertising, and brand identity — for some of Goa's top brands. You'll work closely with our creative directors and clients to translate briefs into stunning deliverables. If design is your language and impact is your goal, this is your seat.</p>
               <div class="pos-actions">
-                <button class="btn-primary" onclick="toggleDetails('graphic-details', this)">View Job Details <i
-                    class="ri-arrow-down-s-line"></i></button>
-                <button class="btn-outline-accent" onclick="toggleForm('graphic-form', this)">Apply Now <i
-                    class="ri-send-plane-line"></i></button>
+                <button class="btn-primary" onclick="toggleDetails('graphic-details', this)">View Job Details <i class="ri-arrow-down-s-line"></i></button>
+                <button class="btn-outline-accent" onclick="toggleForm('graphic-form', this)">Apply Now <i class="ri-send-plane-line"></i></button>
               </div>
               <div class="pos-expanded" id="graphic-details">
                 <div class="pos-section-title">What You'll Do</div>
                 <div class="pos-resp-grid">
-                  <div class="pos-resp-card"><i class="ri-layout-line"></i><strong>Brand Identity</strong>
-                    <p>Design logos, brand guidelines, and visual systems for new and existing clients.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-image-2-line"></i><strong>Print &amp; Outdoor</strong>
-                    <p>Create hoardings, banners, brochures, flyers, and large-format print collateral.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-smartphone-line"></i><strong>Digital Creatives</strong>
-                    <p>Design social media posts, ad creatives, emailers, and digital marketing assets.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-team-line"></i><strong>Client Collaboration</strong>
-                    <p>Attend client briefs and translate requirements into compelling visual concepts.</p>
-                  </div>
+                  <div class="pos-resp-card"><i class="ri-layout-line"></i><strong>Brand Identity</strong><p>Design logos, brand guidelines, and visual systems for new and existing clients.</p></div>
+                  <div class="pos-resp-card"><i class="ri-image-2-line"></i><strong>Print &amp; Outdoor</strong><p>Create hoardings, banners, brochures, flyers, and large-format print collateral.</p></div>
+                  <div class="pos-resp-card"><i class="ri-smartphone-line"></i><strong>Digital Creatives</strong><p>Design social media posts, ad creatives, emailers, and digital marketing assets.</p></div>
+                  <div class="pos-resp-card"><i class="ri-team-line"></i><strong>Client Collaboration</strong><p>Attend client briefs and translate requirements into compelling visual concepts.</p></div>
                 </div>
                 <div class="pos-section-title">Requirements</div>
                 <ul class="pos-elig-list">
@@ -1658,21 +1410,15 @@
                     <div class="form-field"><label>Years of Experience *</label>
                       <select name="exp" required>
                         <option value="">Select</option>
-                        <option>Fresher</option>
-                        <option>Less than 1 year</option>
-                        <option>1–2 years</option>
-                        <option>2–4 years</option>
-                        <option>4+ years</option>
+                        <option>Fresher</option><option>Less than 1 year</option>
+                        <option>1–2 years</option><option>2–4 years</option><option>4+ years</option>
                       </select>
                     </div>
                   </div>
                   <div class="form-field full" style="margin-bottom:14px;"><label>Previous Job Title</label><input type="text" name="prev" placeholder="e.g. Junior Designer (leave blank if fresher)"></div>
                   <div class="pos-section-title" style="margin-top:24px;">AVAILABILITY</div>
                   <div class="form-row">
-                    <div class="form-field">
-                      <label>When Can You Start? *</label>
-                      <input type="text" name="start" placeholder="Immediately / Next Month..." required>
-                    </div>
+                    <div class="form-field"><label>When Can You Start? *</label><input type="text" name="start" placeholder="Immediately / Next Month..." required></div>
                   </div>
                   <div class="pos-section-title" style="margin-top:24px;">Show Us Who You Are</div>
                   <div class="form-row">
@@ -1680,10 +1426,7 @@
                     <div class="form-field"><label>LinkedIn Profile</label><input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile"></div>
                   </div>
                   <div class="form-field full" style="margin-bottom:14px;"><label>Portfolio Link</label><input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link"></div>
-                  <div class="form-field full" style="margin-bottom:14px;">
-                    <label>Why Do You Want To Join Flashlab Creative? *</label>
-                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea>
-                  </div>
+                  <div class="form-field full" style="margin-bottom:14px;"><label>Why Do You Want To Join Flashlab Creative? *</label><textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea></div>
                   <div class="form-row">
                     <div class="form-field"><label>Where Did You Hear About Us? *</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..." required></div>
                   </div>
@@ -1701,10 +1444,7 @@
                 <span class="pos-tag"><i class="ri-time-line"></i> Full-time</span>
                 <span class="pos-tag"><i class="ri-briefcase-line"></i> 1–3 Years Experience</span>
               </div>
-              <p class="pos-overview">Create engaging motion graphics and animated content for social campaigns, brand
-                launches, and digital ads. As our Animation Designer, you'll bring static concepts to life with
-                movement, rhythm, and storytelling. We're looking for someone who thinks in motion and can deliver
-                frame-perfect work that grabs attention in the first 3 seconds.</p>
+              <p class="pos-overview">Create engaging motion graphics and animated content for social campaigns, brand launches, and digital ads. As our Animation Designer, you'll bring static concepts to life with movement, rhythm, and storytelling. We're looking for someone who thinks in motion and can deliver frame-perfect work that grabs attention in the first 3 seconds.</p>
               <div class="pos-actions">
                 <button class="btn-primary" onclick="toggleDetails('animation-details', this)">View Job Details <i class="ri-arrow-down-s-line"></i></button>
                 <button class="btn-outline-accent" onclick="toggleForm('animation-form', this)">Apply Now <i class="ri-send-plane-line"></i></button>
@@ -1712,18 +1452,10 @@
               <div class="pos-expanded" id="animation-details">
                 <div class="pos-section-title">What You'll Do</div>
                 <div class="pos-resp-grid">
-                  <div class="pos-resp-card"><i class="ri-magic-line"></i><strong>Motion Graphics</strong>
-                    <p>Create motion graphics for reels, ads, presentations, and brand films.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-film-line"></i><strong>2D / 3D Animation</strong>
-                    <p>Develop character animations, product reveals, and explainer videos.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-tv-line"></i><strong>Social Content</strong>
-                    <p>Design animated stories, reels, and short-form content for client accounts.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-edit-line"></i><strong>Video Editing</strong>
-                    <p>Edit raw footage with motion graphics overlays for polished final delivery.</p>
-                  </div>
+                  <div class="pos-resp-card"><i class="ri-magic-line"></i><strong>Motion Graphics</strong><p>Create motion graphics for reels, ads, presentations, and brand films.</p></div>
+                  <div class="pos-resp-card"><i class="ri-film-line"></i><strong>2D / 3D Animation</strong><p>Develop character animations, product reveals, and explainer videos.</p></div>
+                  <div class="pos-resp-card"><i class="ri-tv-line"></i><strong>Social Content</strong><p>Design animated stories, reels, and short-form content for client accounts.</p></div>
+                  <div class="pos-resp-card"><i class="ri-edit-line"></i><strong>Video Editing</strong><p>Edit raw footage with motion graphics overlays for polished final delivery.</p></div>
                 </div>
                 <div class="pos-section-title">Requirements</div>
                 <ul class="pos-elig-list">
@@ -1753,11 +1485,8 @@
                     <div class="form-field"><label>Software Expertise *</label>
                       <select name="software" required>
                         <option value="">Select Primary Tool</option>
-                        <option>Adobe After Effects</option>
-                        <option>Cinema 4D</option>
-                        <option>Blender</option>
-                        <option>Adobe Premiere Pro</option>
-                        <option>Other</option>
+                        <option>Adobe After Effects</option><option>Cinema 4D</option>
+                        <option>Blender</option><option>Adobe Premiere Pro</option><option>Other</option>
                       </select>
                     </div>
                   </div>
@@ -1772,10 +1501,7 @@
                     <div class="form-field"><label>LinkedIn Profile</label><input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile"></div>
                   </div>
                   <div class="form-field full" style="margin-bottom:14px;"><label>Portfolio Link</label><input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link"></div>
-                  <div class="form-field full" style="margin-bottom:14px;">
-                    <label>Why Do You Want To Join Flashlab Creative? *</label>
-                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea>
-                  </div>
+                  <div class="form-field full" style="margin-bottom:14px;"><label>Why Do You Want To Join Flashlab Creative? *</label><textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea></div>
                   <div class="form-row">
                     <div class="form-field"><label>Where Did You Hear About Us? *</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..." required></div>
                   </div>
@@ -1793,10 +1519,7 @@
                 <span class="pos-tag"><i class="ri-time-line"></i> Full-time</span>
                 <span class="pos-tag"><i class="ri-briefcase-line"></i> 1–3 Years Experience</span>
               </div>
-              <p class="pos-overview">Plan, execute, and grow social presence across Meta, LinkedIn, and Google for our
-                diverse B2C client portfolio. As Social Media Manager, you'll own the content calendar, community
-                management, and performance analytics for multiple accounts. We need a creative strategist who is as
-                comfortable writing captions as they are reading dashboards.</p>
+              <p class="pos-overview">Plan, execute, and grow social presence across Meta, LinkedIn, and Google for our diverse B2C client portfolio. As Social Media Manager, you'll own the content calendar, community management, and performance analytics for multiple accounts. We need a creative strategist who is as comfortable writing captions as they are reading dashboards.</p>
               <div class="pos-actions">
                 <button class="btn-primary" onclick="toggleDetails('smm-details', this)">View Job Details <i class="ri-arrow-down-s-line"></i></button>
                 <button class="btn-outline-accent" onclick="toggleForm('smm-form', this)">Apply Now <i class="ri-send-plane-line"></i></button>
@@ -1804,18 +1527,10 @@
               <div class="pos-expanded" id="smm-details">
                 <div class="pos-section-title">What You'll Do</div>
                 <div class="pos-resp-grid">
-                  <div class="pos-resp-card"><i class="ri-calendar-line"></i><strong>Content Calendar</strong>
-                    <p>Plan monthly content calendars across Instagram, Facebook, LinkedIn, and more.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-pencil-line"></i><strong>Copywriting</strong>
-                    <p>Write engaging captions, CTAs, ad copy, and long-form content for various clients.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-bar-chart-line"></i><strong>Analytics &amp; Reporting</strong>
-                    <p>Track KPIs, analyse performance, and present monthly reports to clients.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-megaphone-line"></i><strong>Paid Campaigns</strong>
-                    <p>Set up and optimise Meta Ads and Google Ads for client lead generation and reach.</p>
-                  </div>
+                  <div class="pos-resp-card"><i class="ri-calendar-line"></i><strong>Content Calendar</strong><p>Plan monthly content calendars across Instagram, Facebook, LinkedIn, and more.</p></div>
+                  <div class="pos-resp-card"><i class="ri-pencil-line"></i><strong>Copywriting</strong><p>Write engaging captions, CTAs, ad copy, and long-form content for various clients.</p></div>
+                  <div class="pos-resp-card"><i class="ri-bar-chart-line"></i><strong>Analytics &amp; Reporting</strong><p>Track KPIs, analyse performance, and present monthly reports to clients.</p></div>
+                  <div class="pos-resp-card"><i class="ri-megaphone-line"></i><strong>Paid Campaigns</strong><p>Set up and optimise Meta Ads and Google Ads for client lead generation and reach.</p></div>
                 </div>
                 <div class="pos-section-title">Requirements</div>
                 <ul class="pos-elig-list">
@@ -1846,10 +1561,8 @@
                     <div class="form-field"><label>Years of Experience</label>
                       <select name="exp">
                         <option value="">Select</option>
-                        <option>Fresher</option>
-                        <option>Less than 1 year</option>
-                        <option>1–2 years</option>
-                        <option>3+ years</option>
+                        <option>Fresher</option><option>Less than 1 year</option>
+                        <option>1–2 years</option><option>3+ years</option>
                       </select>
                     </div>
                   </div>
@@ -1864,10 +1577,7 @@
                     <div class="form-field"><label>LinkedIn Profile</label><input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile"></div>
                   </div>
                   <div class="form-field full" style="margin-bottom:14px;"><label>Portfolio Link</label><input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link"></div>
-                  <div class="form-field full" style="margin-bottom:14px;">
-                    <label>Why Do You Want To Join Flashlab Creative? *</label>
-                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea>
-                  </div>
+                  <div class="form-field full" style="margin-bottom:14px;"><label>Why Do You Want To Join Flashlab Creative? *</label><textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea></div>
                   <div class="form-row">
                     <div class="form-field"><label>Where Did You Hear About Us? *</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..." required></div>
                   </div>
@@ -1885,10 +1595,7 @@
                 <span class="pos-tag"><i class="ri-time-line"></i> Full-time</span>
                 <span class="pos-tag"><i class="ri-briefcase-line"></i> 1–4 Years Experience</span>
               </div>
-              <p class="pos-overview">Build and maintain WordPress sites using Elementor, custom PHP, and WooCommerce
-                for our growing client base across Goa and beyond. As Web Developer, you'll be responsible for
-                delivering fast, accessible, and visually sharp websites that perform as well as they look. Experience
-                with custom themes, plugins, or headless setups is a big advantage.</p>
+              <p class="pos-overview">Build and maintain WordPress sites using Elementor, custom PHP, and WooCommerce for our growing client base across Goa and beyond. As Web Developer, you'll be responsible for delivering fast, accessible, and visually sharp websites that perform as well as they look. Experience with custom themes, plugins, or headless setups is a big advantage.</p>
               <div class="pos-actions">
                 <button class="btn-primary" onclick="toggleDetails('webdev-details', this)">View Job Details <i class="ri-arrow-down-s-line"></i></button>
                 <button class="btn-outline-accent" onclick="toggleForm('webdev-form', this)">Apply Now <i class="ri-send-plane-line"></i></button>
@@ -1896,18 +1603,10 @@
               <div class="pos-expanded" id="webdev-details">
                 <div class="pos-section-title">What You'll Do</div>
                 <div class="pos-resp-grid">
-                  <div class="pos-resp-card"><i class="ri-global-line"></i><strong>WordPress Development</strong>
-                    <p>Build and customise WordPress sites with Elementor, Divi, or custom PHP themes.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-shopping-cart-line"></i><strong>E-Commerce</strong>
-                    <p>Set up and manage WooCommerce stores with custom product flows and payment gateways.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-speed-line"></i><strong>Performance Optimisation</strong>
-                    <p>Ensure fast load times, Core Web Vitals, and SEO-friendly code across all projects.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-code-s-slash-line"></i><strong>Custom Integrations</strong>
-                    <p>Connect third-party APIs, CRMs, and tools to client websites as required.</p>
-                  </div>
+                  <div class="pos-resp-card"><i class="ri-global-line"></i><strong>WordPress Development</strong><p>Build and customise WordPress sites with Elementor, Divi, or custom PHP themes.</p></div>
+                  <div class="pos-resp-card"><i class="ri-shopping-cart-line"></i><strong>E-Commerce</strong><p>Set up and manage WooCommerce stores with custom product flows and payment gateways.</p></div>
+                  <div class="pos-resp-card"><i class="ri-speed-line"></i><strong>Performance Optimisation</strong><p>Ensure fast load times, Core Web Vitals, and SEO-friendly code across all projects.</p></div>
+                  <div class="pos-resp-card"><i class="ri-code-s-slash-line"></i><strong>Custom Integrations</strong><p>Connect third-party APIs, CRMs, and tools to client websites as required.</p></div>
                 </div>
                 <div class="pos-section-title">Requirements</div>
                 <ul class="pos-elig-list">
@@ -1938,11 +1637,8 @@
                     <div class="form-field"><label>Years of Experience</label>
                       <select name="exp">
                         <option value="">Select</option>
-                        <option>Fresher</option>
-                        <option>Less than 1 year</option>
-                        <option>1–2 years</option>
-                        <option>3–5 years</option>
-                        <option>5+ years</option>
+                        <option>Fresher</option><option>Less than 1 year</option>
+                        <option>1–2 years</option><option>3–5 years</option><option>5+ years</option>
                       </select>
                     </div>
                   </div>
@@ -1957,10 +1653,7 @@
                     <div class="form-field"><label>LinkedIn Profile</label><input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile"></div>
                   </div>
                   <div class="form-field full" style="margin-bottom:14px;"><label>Portfolio Link</label><input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link"></div>
-                  <div class="form-field full" style="margin-bottom:14px;">
-                    <label>Why Do You Want To Join Flashlab Creative? *</label>
-                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea>
-                  </div>
+                  <div class="form-field full" style="margin-bottom:14px;"><label>Why Do You Want To Join Flashlab Creative? *</label><textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea></div>
                   <div class="form-row">
                     <div class="form-field"><label>Where Did You Hear About Us? *</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..." required></div>
                   </div>
@@ -1978,10 +1671,7 @@
                 <span class="pos-tag"><i class="ri-time-line"></i> Full-time</span>
                 <span class="pos-tag"><i class="ri-briefcase-line"></i> Fresher / Experienced</span>
               </div>
-              <p class="pos-overview">Flashlab Creative is hunting for creative and enthusiastic minds willing to cultivate their
-                ideas into delivering the highest rankings on the internet through smart SEO strategies. You'll work
-                directly with our digital marketing team and real clients, helping drive measurable organic growth
-                across industries. If you're passionate about search, data, and all things digital — we want you.</p>
+              <p class="pos-overview">Flashlab Creative is hunting for creative and enthusiastic minds willing to cultivate their ideas into delivering the highest rankings on the internet through smart SEO strategies. You'll work directly with our digital marketing team and real clients, helping drive measurable organic growth across industries. If you're passionate about search, data, and all things digital — we want you.</p>
               <div class="pos-actions">
                 <button class="btn-primary" onclick="toggleDetails('seo-details', this)">View Job Details <i class="ri-arrow-down-s-line"></i></button>
                 <button class="btn-outline-accent" onclick="toggleForm('seo-form', this)">Apply Now <i class="ri-send-plane-line"></i></button>
@@ -1989,24 +1679,12 @@
               <div class="pos-expanded" id="seo-details">
                 <div class="pos-section-title">What You'll Do</div>
                 <div class="pos-resp-grid">
-                  <div class="pos-resp-card"><i class="ri-search-line"></i><strong>Keyword Research</strong>
-                    <p>Identify high-impact keywords and search opportunities to drive relevant organic traffic.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-file-text-line"></i><strong>On-Page SEO</strong>
-                    <p>Optimise meta tags, headings, content structure, and internal linking for maximum authority.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-links-line"></i><strong>Link Building</strong>
-                    <p>Develop and execute ethical backlink strategies to grow domain authority.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-tools-line"></i><strong>Technical SEO</strong>
-                    <p>Audit and fix crawlability, site speed, schema, and Core Web Vitals issues.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-bar-chart-2-line"></i><strong>Analytics &amp; Reporting</strong>
-                    <p>Track and report on organic performance using Google Analytics and Search Console.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-map-pin-line"></i><strong>Local SEO</strong>
-                    <p>Help Goa-based businesses dominate local search and Google Business Profiles.</p>
-                  </div>
+                  <div class="pos-resp-card"><i class="ri-search-line"></i><strong>Keyword Research</strong><p>Identify high-impact keywords and search opportunities to drive relevant organic traffic.</p></div>
+                  <div class="pos-resp-card"><i class="ri-file-text-line"></i><strong>On-Page SEO</strong><p>Optimise meta tags, headings, content structure, and internal linking for maximum authority.</p></div>
+                  <div class="pos-resp-card"><i class="ri-links-line"></i><strong>Link Building</strong><p>Develop and execute ethical backlink strategies to grow domain authority.</p></div>
+                  <div class="pos-resp-card"><i class="ri-tools-line"></i><strong>Technical SEO</strong><p>Audit and fix crawlability, site speed, schema, and Core Web Vitals issues.</p></div>
+                  <div class="pos-resp-card"><i class="ri-bar-chart-2-line"></i><strong>Analytics &amp; Reporting</strong><p>Track and report on organic performance using Google Analytics and Search Console.</p></div>
+                  <div class="pos-resp-card"><i class="ri-map-pin-line"></i><strong>Local SEO</strong><p>Help Goa-based businesses dominate local search and Google Business Profiles.</p></div>
                 </div>
                 <div class="pos-section-title">Requirements</div>
                 <ul class="pos-elig-list">
@@ -2036,11 +1714,8 @@
                     <div class="form-field"><label>Years of Experience *</label>
                       <select name="exp" required>
                         <option value="">Select</option>
-                        <option>Fresher</option>
-                        <option>Less than 1 year</option>
-                        <option>1–2 years</option>
-                        <option>2–4 years</option>
-                        <option>4+ years</option>
+                        <option>Fresher</option><option>Less than 1 year</option>
+                        <option>1–2 years</option><option>2–4 years</option><option>4+ years</option>
                       </select>
                     </div>
                   </div>
@@ -2055,10 +1730,7 @@
                     <div class="form-field"><label>LinkedIn Profile</label><input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile"></div>
                   </div>
                   <div class="form-field full" style="margin-bottom:14px;"><label>Portfolio Link</label><input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link"></div>
-                  <div class="form-field full" style="margin-bottom:14px;">
-                    <label>Why Do You Want To Join Flashlab Creative? *</label>
-                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea>
-                  </div>
+                  <div class="form-field full" style="margin-bottom:14px;"><label>Why Do You Want To Join Flashlab Creative? *</label><textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea></div>
                   <div class="form-row">
                     <div class="form-field"><label>Where Did You Hear About Us? *</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..." required></div>
                   </div>
@@ -2076,10 +1748,7 @@
                 <span class="pos-tag"><i class="ri-time-line"></i> Full-time</span>
                 <span class="pos-tag"><i class="ri-briefcase-line"></i> 1–4 Years Experience</span>
               </div>
-              <p class="pos-overview">Build iOS and Android apps to support our clients' digital transformation, product
-                launches, and e-commerce goals. As App Developer, you'll take briefs from wireframe to App Store — with
-                full creative and technical ownership over your projects. React Native, Flutter, or native development
-                experience all welcomed. If you build things people love, we want you.</p>
+              <p class="pos-overview">Build iOS and Android apps to support our clients' digital transformation, product launches, and e-commerce goals. As App Developer, you'll take briefs from wireframe to App Store — with full creative and technical ownership over your projects. React Native, Flutter, or native development experience all welcomed. If you build things people love, we want you.</p>
               <div class="pos-actions">
                 <button class="btn-primary" onclick="toggleDetails('appdev-details', this)">View Job Details <i class="ri-arrow-down-s-line"></i></button>
                 <button class="btn-outline-accent" onclick="toggleForm('appdev-form', this)">Apply Now <i class="ri-send-plane-line"></i></button>
@@ -2087,18 +1756,10 @@
               <div class="pos-expanded" id="appdev-details">
                 <div class="pos-section-title">What You'll Do</div>
                 <div class="pos-resp-grid">
-                  <div class="pos-resp-card"><i class="ri-smartphone-line"></i><strong>App Development</strong>
-                    <p>Build cross-platform or native mobile apps for iOS and Android from scratch.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-layout-line"></i><strong>UI/UX Implementation</strong>
-                    <p>Translate Figma or design specs into pixel-perfect, responsive app interfaces.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-database-line"></i><strong>Backend Integration</strong>
-                    <p>Connect apps to REST APIs, Firebase, or custom backend services.</p>
-                  </div>
-                  <div class="pos-resp-card"><i class="ri-bug-line"></i><strong>Testing &amp; Deployment</strong>
-                    <p>QA, debug, and manage app store submissions for Google Play and Apple App Store.</p>
-                  </div>
+                  <div class="pos-resp-card"><i class="ri-smartphone-line"></i><strong>App Development</strong><p>Build cross-platform or native mobile apps for iOS and Android from scratch.</p></div>
+                  <div class="pos-resp-card"><i class="ri-layout-line"></i><strong>UI/UX Implementation</strong><p>Translate Figma or design specs into pixel-perfect, responsive app interfaces.</p></div>
+                  <div class="pos-resp-card"><i class="ri-database-line"></i><strong>Backend Integration</strong><p>Connect apps to REST APIs, Firebase, or custom backend services.</p></div>
+                  <div class="pos-resp-card"><i class="ri-bug-line"></i><strong>Testing &amp; Deployment</strong><p>QA, debug, and manage app store submissions for Google Play and Apple App Store.</p></div>
                 </div>
                 <div class="pos-section-title">Requirements</div>
                 <ul class="pos-elig-list">
@@ -2128,22 +1789,16 @@
                     <div class="form-field"><label>Years of Experience *</label>
                       <select name="exp" required>
                         <option value="">Select</option>
-                        <option>Fresher</option>
-                        <option>Less than 1 year</option>
-                        <option>1–2 years</option>
-                        <option>2–4 years</option>
-                        <option>4+ years</option>
+                        <option>Fresher</option><option>Less than 1 year</option>
+                        <option>1–2 years</option><option>2–4 years</option><option>4+ years</option>
                       </select>
                     </div>
                   </div>
                   <div class="form-field" style="margin-bottom:14px;"><label>Primary Framework *</label>
                     <select name="framework" required>
                       <option value="">Select</option>
-                      <option>React Native</option>
-                      <option>Flutter</option>
-                      <option>Swift (iOS)</option>
-                      <option>Kotlin (Android)</option>
-                      <option>Other</option>
+                      <option>React Native</option><option>Flutter</option>
+                      <option>Swift (iOS)</option><option>Kotlin (Android)</option><option>Other</option>
                     </select>
                   </div>
                   <div class="pos-section-title" style="margin-top:24px;">AVAILABILITY</div>
@@ -2156,10 +1811,7 @@
                     <div class="form-field"><label>LinkedIn Profile</label><input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile"></div>
                   </div>
                   <div class="form-field full" style="margin-bottom:14px;"><label>Portfolio Link</label><input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link"></div>
-                  <div class="form-field full" style="margin-bottom:14px;">
-                    <label>Why Do You Want To Join Flashlab Creative? *</label>
-                    <textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea>
-                  </div>
+                  <div class="form-field full" style="margin-bottom:14px;"><label>Why Do You Want To Join Flashlab Creative? *</label><textarea name="why" placeholder="Tell us what excites you about working with Flashlab Creative..." required></textarea></div>
                   <div class="form-row">
                     <div class="form-field"><label>Where Did You Hear About Us? *</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..." required></div>
                   </div>
@@ -2170,6 +1822,22 @@
 
           </div><!-- /pos-panel -->
         </div><!-- /positions-layout -->
+
+        <!-- ★ HR CONTACT STRIP -->
+        <div class="hr-contact-strip reveal">
+          <div class="hr-strip-left">
+            <div class="hr-strip-icon"><i class="ri-customer-service-2-line"></i></div>
+            <div class="hr-strip-text">
+              <div class="hr-strip-label">● Talent Acquisition</div>
+              <div class="hr-strip-headline">Have questions before you apply? Our HR team is ready to help.</div>
+              <div class="hr-strip-sub">Reach out directly — we respond to every serious inquiry within 2 working days.</div>
+            </div>
+          </div>
+          <a href="mailto:flashlabhr@gmail.com" class="hr-strip-email">
+            <i class="ri-mail-send-line"></i> flashlabhr@gmail.com
+          </a>
+        </div>
+
       </div>
     </section>
 
@@ -2180,8 +1848,7 @@
           <div class="faq-intro reveal-left">
             <span class="sec-eyebrow" style="margin-bottom:14px;display:block;">● Got Questions?</span>
             <h2>Frequently<br>Asked <em>Questions</em></h2>
-            <p>We know the job-hunt can feel overwhelming — so here are answers to the most common questions we get. If
-              you don't see your question here, just reach out and we'll help.</p>
+            <p>We know the job-hunt can feel overwhelming — so here are answers to the most common questions we get. If you don't see your question here, just reach out and we'll help.</p>
             <a href="connect.html" class="faq-contact-btn">Contact Us <i class="ri-arrow-right-line"></i></a>
           </div>
           <div class="faq-list reveal-right">
@@ -2224,9 +1891,7 @@
         <div class="no-role-inner reveal">
           <div>
             <h2 class="no-role-title">Don't See Your<br><em>Role Listed?</em></h2>
-            <p class="no-role-sub">We're always open to hearing from talented creatives — even if your specific role
-              isn't listed yet. Tell us what you do best and we'll be in touch when the right opportunity opens up.
-              We hire for passion as much as we hire for skill.</p>
+            <p class="no-role-sub">We're always open to hearing from talented creatives — even if your specific role isn't listed yet. Tell us what you do best and we'll be in touch when the right opportunity opens up. We hire for passion as much as we hire for skill.</p>
           </div>
           <div class="no-role-actions">
             <a href="connect.html" class="btn-primary">Contact Us <i class="ri-arrow-right-line"></i></a>
@@ -2234,16 +1899,12 @@
           </div>
         </div>
 
-        <!-- Open Application Form (toggles below the green box) -->
         <div class="open-form-outer" id="open-application-form">
           <div class="pos-form-wrap open" style="margin-top:0;">
             <button class="form-close-btn" onclick="toggleOpenForm()"><i class="ri-arrow-left-line"></i> Close Form</button>
             <div class="pos-form-title">Open Application</div>
             <p class="pos-form-sub">Don't see your role? Tell us about yourself and why you'd be a great fit. Fields marked <span style="color:var(--accent)">*</span> are required.</p>
-
             <form onsubmit="submitOpenForm(event)">
-
-              <!-- PERSONAL DETAILS -->
               <div class="pos-section-title" style="margin-top:24px;">PERSONAL DETAILS</div>
               <div class="form-row">
                 <div class="form-field"><label>First Name *</label><input type="text" name="fname" placeholder="First name" required></div>
@@ -2256,8 +1917,6 @@
               <div class="form-row">
                 <div class="form-field"><label>City *</label><input type="text" name="city" placeholder="Your city" required></div>
               </div>
-
-              <!-- ROLE TYPE -->
               <div class="pos-section-title" style="margin-top:24px;">ROLE TYPE</div>
               <div class="form-row">
                 <div class="form-field">
@@ -2269,81 +1928,44 @@
                   </select>
                 </div>
               </div>
-
-              <!-- Internship fields -->
               <div id="open-internship-fields" style="display:none;">
                 <div class="form-row">
                   <div class="form-field">
                     <label>How Long Are You Available? *</label>
                     <select name="intern_duration">
                       <option value="">Select Duration</option>
-                      <option>1 Month</option>
-                      <option>2 Months</option>
-                      <option>3 Months</option>
-                      <option>6 Months</option>
-                      <option>Flexible / Open Ended</option>
+                      <option>1 Month</option><option>2 Months</option><option>3 Months</option>
+                      <option>6 Months</option><option>Flexible / Open Ended</option>
                     </select>
                   </div>
                   <div class="form-field">
                     <label>Open To Full-Time Conversion?</label>
                     <select name="convert_fulltime">
                       <option value="">Select</option>
-                      <option>Yes</option>
-                      <option>No</option>
-                      <option>Maybe</option>
+                      <option>Yes</option><option>No</option><option>Maybe</option>
                     </select>
                   </div>
                 </div>
               </div>
-
-              <!-- Full-time fields -->
               <div id="open-fulltime-fields" style="display:none;">
                 <div class="form-row">
-                  <div class="form-field">
-                    <label>Notice Period / When Can You Start? *</label>
-                    <input type="text" name="notice" placeholder="Immediately / 1 month notice...">
-                  </div>
-                  <div class="form-field">
-                    <label>Expected Salary (Annual)</label>
-                    <input type="text" name="salary" placeholder="e.g. ₹3.5 LPA or Open to discuss">
-                  </div>
+                  <div class="form-field"><label>Notice Period / When Can You Start? *</label><input type="text" name="notice" placeholder="Immediately / 1 month notice..."></div>
+                  <div class="form-field"><label>Expected Salary (Annual)</label><input type="text" name="salary" placeholder="e.g. ₹3.5 LPA or Open to discuss"></div>
                 </div>
               </div>
-
-              <!-- ROLE DETAILS -->
               <div class="pos-section-title" style="margin-top:24px;">ROLE DETAILS</div>
-              <div class="form-field full" style="margin-bottom:14px;">
-                <label>What Role Are You Applying For? *</label>
-                <input type="text" name="role_name" placeholder="e.g. Video Editor, Photographer, Content Writer..." required>
-              </div>
-              <div class="form-field full" style="margin-bottom:14px;">
-                <label>Why This Specific Role at Flashlab Creative? *</label>
-                <textarea name="why_role" placeholder="Tell us what draws you to this particular role and why you're the right person for it..." required></textarea>
-              </div>
-              <div class="form-field full" style="margin-bottom:14px;">
-                <label>How Will the Company Benefit From You? *</label>
-                <textarea name="company_benefit" placeholder="What value, skills, or perspective do you bring that will make a measurable difference at Flashlab Creative?" required></textarea>
-              </div>
-
-              <!-- SHOW US WHO YOU ARE -->
+              <div class="form-field full" style="margin-bottom:14px;"><label>What Role Are You Applying For? *</label><input type="text" name="role_name" placeholder="e.g. Video Editor, Photographer, Content Writer..." required></div>
+              <div class="form-field full" style="margin-bottom:14px;"><label>Why This Specific Role at Flashlab Creative? *</label><textarea name="why_role" placeholder="Tell us what draws you to this particular role and why you're the right person for it..." required></textarea></div>
+              <div class="form-field full" style="margin-bottom:14px;"><label>How Will the Company Benefit From You? *</label><textarea name="company_benefit" placeholder="What value, skills, or perspective do you bring that will make a measurable difference at Flashlab Creative?" required></textarea></div>
               <div class="pos-section-title" style="margin-top:24px;">SHOW US WHO YOU ARE</div>
               <div class="form-row">
                 <div class="form-field"><label>Instagram Handle</label><input type="text" name="instagram" placeholder="@yourhandle"></div>
                 <div class="form-field"><label>LinkedIn Profile</label><input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile"></div>
               </div>
-              <div class="form-field full" style="margin-bottom:14px;">
-                <label>Portfolio / Resume Link</label>
-                <input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link">
-              </div>
-
-              <!-- SOURCE -->
+              <div class="form-field full" style="margin-bottom:14px;"><label>Portfolio / Resume Link</label><input type="url" name="portfolio" placeholder="https://yourportfolio.com or Google Drive link"></div>
               <div class="form-row">
-                <div class="form-field">
-                  <label>Where Did You Hear About Us? *</label>
-                  <input type="text" name="heard" placeholder="Instagram, Google, Friend..." required>
-                </div>
+                <div class="form-field"><label>Where Did You Hear About Us? *</label><input type="text" name="heard" placeholder="Instagram, Google, Friend..." required></div>
               </div>
-
               <button type="submit" class="form-submit">Submit Application <i class="ri-send-plane-line"></i></button>
             </form>
           </div>
@@ -2354,7 +1976,6 @@
 
   </main>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="wrap footer-grid">
       <div class="footer-brand">
@@ -2364,8 +1985,7 @@
               onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
           </a>
         </div>
-        <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in
-          2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
+        <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in 2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
         <div class="footer-socials">
           <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i class="ri-instagram-fill"></i></a>
           <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i class="ri-facebook-fill"></i></a>
@@ -2380,6 +2000,7 @@
           <li><a href="index.html"><i class="ri-arrow-right-s-line"></i>Home</a></li>
           <li><a href="about.html"><i class="ri-arrow-right-s-line"></i>About</a></li>
           <li><a href="services.html"><i class="ri-arrow-right-s-line"></i>Services</a></li>
+          <li><a href="portfolio.html"><i class="ri-arrow-right-s-line"></i>Portfolio</a></li>
           <li><a href="clients.html"><i class="ri-arrow-right-s-line"></i>Clients</a></li>
           <li><a href="case-studies.html"><i class="ri-arrow-right-s-line"></i>Case Studies</a></li>
           <li><a href="team.html"><i class="ri-arrow-right-s-line"></i>Teams</a></li>
@@ -2402,13 +2023,13 @@
       <div>
         <h4 class="footer-head">Join Us</h4>
         <ul class="footer-list">
-          <li><a href="career-intern.html"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
-          <li><a href="career-seo-expert.html"><i class="ri-arrow-right-s-line"></i>SEO Expert</a></li>
-          <li><a href="career-social-media-manager.html"><i class="ri-arrow-right-s-line"></i>Social Media Mgr</a></li>
-          <li><a href="career-graphic-designer.html"><i class="ri-arrow-right-s-line"></i>Graphic Designer</a></li>
-          <li><a href="career-web-developer.html"><i class="ri-arrow-right-s-line"></i>Web Developer</a></li>
-          <li><a href="career-animation-designer.html"><i class="ri-arrow-right-s-line"></i>Animation Designer</a></li>
-          <li><a href="career-app-developer.html"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','intern')"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','seo-expert')"><i class="ri-arrow-right-s-line"></i>SEO Expert</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','social-media-manager')"><i class="ri-arrow-right-s-line"></i>Social Media Mgr</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','graphic-designer')"><i class="ri-arrow-right-s-line"></i>Graphic Designer</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','web-developer')"><i class="ri-arrow-right-s-line"></i>Web Developer</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','animation-designer')"><i class="ri-arrow-right-s-line"></i>Animation Designer</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','app-developer')"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
         </ul>
       </div>
       <div>
@@ -2434,15 +2055,11 @@
     </div>
   </footer>
 
-  <!-- BACK TO TOP -->
   <button class="back-top" id="backTop"><i class="ri-arrow-up-line"></i></button>
 
   <script src="flash.js"></script>
   <script>
 
-    /* ─────────────────────────────────────────────────────
-       POSITIONS: Menu role switching
-    ──────────────────────────────────────────────────────── */
     function selectRole(role, el) {
       document.querySelectorAll('.pos-menu-item').forEach(i => i.classList.remove('active'));
       el.classList.add('active');
@@ -2454,9 +2071,6 @@
       }
     }
 
-    /* ─────────────────────────────────────────────────────
-       TOGGLE JOB DETAILS
-    ──────────────────────────────────────────────────────── */
     function toggleDetails(id, btn) {
       const el = document.getElementById(id);
       if (!el) return;
@@ -2471,9 +2085,6 @@
       }
     }
 
-    /* ─────────────────────────────────────────────────────
-       TOGGLE APPLICATION FORM
-    ──────────────────────────────────────────────────────── */
     function toggleForm(id, btn) {
       const el = document.getElementById(id);
       if (!el) return;
@@ -2485,14 +2096,13 @@
       }
     }
 
-    /* ─────────────────────────────────────────────────────
-       FORM SUBMISSION — all position forms (email)
-    ──────────────────────────────────────────────────────── */
+    /* ── FORM SUBMIT with CC ── */
     function submitForm(e, position) {
       e.preventDefault();
       const form = e.target;
       const get = (n) => { const el = form.querySelector('[name="' + n + '"]'); return el ? el.value : '—'; };
-      const to = "ankith@flashlabcreative.com";
+      const to  = 'flashlabhr@gmail.com';
+      const cc  = 'ankith%40flashlabcreative.com';
       const subject = 'Career Application — ' + position + ' | Flashlab Creative';
       const body =
         'New Career Application — Flashlab Creative\n\n' +
@@ -2518,12 +2128,9 @@
         'LinkedIn: ' + (get('linkedin') || '—') + '\n' +
         'Why Join: ' + get('why') + '\n' +
         'Heard From: ' + (get('heard') || '—');
-      window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      window.location.href = 'mailto:' + to + '?cc=' + cc + '&subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     }
 
-    /* ─────────────────────────────────────────────────────
-       OPEN APPLICATION FORM TOGGLE
-    ──────────────────────────────────────────────────────── */
     function toggleOpenForm() {
       const form = document.getElementById('open-application-form');
       const isOpen = form.classList.contains('open');
@@ -2537,17 +2144,16 @@
 
     function handleOpenRoleType(val) {
       document.getElementById('open-internship-fields').style.display = val === 'internship' ? '' : 'none';
-      document.getElementById('open-fulltime-fields').style.display = val === 'fulltime' ? '' : 'none';
+      document.getElementById('open-fulltime-fields').style.display   = val === 'fulltime'   ? '' : 'none';
     }
 
-    /* ─────────────────────────────────────────────────────
-       OPEN APPLICATION SUBMIT (email)
-    ──────────────────────────────────────────────────────── */
+    /* ── OPEN FORM SUBMIT with CC ── */
     function submitOpenForm(e) {
       e.preventDefault();
       const form = e.target;
       const get = (n) => { const el = form.querySelector('[name="' + n + '"]'); return el ? el.value : '—'; };
-      const to = "ankith@flashlabcreative.com";
+      const to  = 'flashlabhr@gmail.com';
+      const cc  = 'ankith%40flashlabcreative.com';
       const subject = 'Open Application — ' + get('role_name') + ' | Flashlab Creative';
       const body =
         'Open Application — Flashlab Creative\n\n' +
@@ -2567,12 +2173,9 @@
         'Instagram: ' + (get('instagram') || '—') + '\n' +
         'LinkedIn: ' + (get('linkedin') || '—') + '\n' +
         'Heard From: ' + get('heard');
-      window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      window.location.href = 'mailto:' + to + '?cc=' + cc + '&subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     }
 
-    /* ─────────────────────────────────────────────────────
-       FAQ ACCORDION
-    ──────────────────────────────────────────────────────── */
     function toggleFaq(el) {
       const answer = el.nextElementSibling;
       const isOpen = el.classList.contains('open');
@@ -2584,9 +2187,6 @@
       }
     }
 
-    /* ─────────────────────────────────────────────────────
-       SCROLL REVEAL
-    ──────────────────────────────────────────────────────── */
     (function () {
       const obs = new IntersectionObserver(entries => {
         entries.forEach(e => {
@@ -2596,9 +2196,6 @@
       document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
     })();
 
-    /* ─────────────────────────────────────────────────────
-       BACK TO TOP
-    ──────────────────────────────────────────────────────── */
     (function () {
       const btn = document.getElementById('backTop');
       if (!btn) return;
@@ -2606,9 +2203,6 @@
       btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     })();
 
-    /* ─────────────────────────────────────────────────────
-       SMOOTH SCROLL for # links
-    ──────────────────────────────────────────────────────── */
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
@@ -2623,9 +2217,6 @@
       });
     });
 
-    /* ─────────────────────────────────────────────────────
-       FILTER TABS
-    ──────────────────────────────────────────────────────── */
     document.querySelectorAll('.pos-filter-tab').forEach(tab => {
       tab.addEventListener('click', () => {
         document.querySelectorAll('.pos-filter-tab').forEach(t => t.classList.remove('active'));
@@ -2640,7 +2231,26 @@
       });
     });
 
+    (function () {
+      const role = sessionStorage.getItem('openRole');
+      if (!role) return;
+      sessionStorage.removeItem('openRole');
+      window.addEventListener('load', function () {
+        const menuItem = document.querySelector('.pos-menu-item[data-role="' + role + '"]');
+        if (menuItem) {
+          selectRole(role, menuItem);
+          setTimeout(function () {
+            const section = document.getElementById('open-positions');
+            if (section) {
+              const nb = document.getElementById('navbar');
+              const offset = nb ? nb.offsetHeight + 8 : 0;
+              window.scrollTo({ top: section.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+            }
+          }, 100);
+        }
+      });
+    })();
+
   </script>
 </body>
-
 </html>

@@ -5,18 +5,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Social Media Management — Flashlab Creative</title>
+
+  <!-- ── GOOGLE FONTS ── -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100;200;300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100;200;300;400;500;600;700&family=Jost:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ── REMIX ICONS ── -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- ── GLOBAL STYLESHEET ── -->
   <link rel="stylesheet" href="flash.css">
 
   <style>
-    /* ═══════════════════════════════════
+    /* ══════════════════════════════════════════
        PAGE HERO
-    ═══════════════════════════════════ */
+    ══════════════════════════════════════════ */
     .page-hero {
       padding-top: 50px;
       padding-bottom: 80px;
@@ -78,11 +82,12 @@
       margin-bottom: 10px;
     }
 
+    /* ── italic accent inside hero heading ── */
     .page-hero h1 em {
       font-style: normal;
-  font-family: var(--font-italic);
-  font-weight: 200;
-  color: var(--accent2);
+      font-family: var(--font-italic);
+      font-weight: 390;
+      color: var(--accent2);
     }
 
     .page-hero-sub {
@@ -118,7 +123,9 @@
       color: var(--green);
     }
 
-    /* ── SECTION BASE ── */
+    /* ══════════════════════════════════════════
+       SECTIONS — base styles
+    ══════════════════════════════════════════ */
     .section {
       padding: 96px 0;
     }
@@ -159,11 +166,12 @@
       line-height: 1.05;
     }
 
+    /* ── italic accent inside section headings ── */
     .sec-heading em {
       font-style: normal;
-  font-family: var(--font-italic);
-  font-weight: 200;
-  color: var(--accent2);
+      font-family: var(--font-italic);
+      font-weight: 390;
+      color: var(--accent2);
     }
 
     .sec-sub {
@@ -183,7 +191,9 @@
       margin-right: auto;
     }
 
-    /* ─── SERVICE NAV SIDEBAR ─── */
+    /* ══════════════════════════════════════════
+       SERVICE NAV STRIP
+    ══════════════════════════════════════════ */
     .service-nav-strip {
       background: var(--dark);
       padding: 0;
@@ -229,7 +239,9 @@
       font-size: 1rem;
     }
 
-    /* ─── OVERVIEW SPLIT ─── */
+    /* ══════════════════════════════════════════
+       OVERVIEW — two-column split
+    ══════════════════════════════════════════ */
     .overview-split {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -306,6 +318,7 @@
       margin-bottom: 20px;
     }
 
+    /* ── Checklist inside overview ── */
     .check-list {
       display: flex;
       flex-direction: column;
@@ -337,12 +350,13 @@
       color: var(--dark);
     }
 
+    /* ── Primary CTA button ── */
     .btn-primary {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--green);    /* modified colour */
-      color: var(--dark);          /* modified colour */ 
+      background: var(--green);
+      color: var(--dark);
       font-size: 0.85rem;
       font-weight: 700;
       letter-spacing: 1px;
@@ -364,7 +378,9 @@
       opacity: 0.9;
     }
 
-    /* ─── WHAT WE DO GRID ─── */
+    /* ══════════════════════════════════════════
+       WHAT WE MANAGE — platform icon grid
+    ══════════════════════════════════════════ */
     .design-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -451,7 +467,9 @@
       color: rgba(168, 232, 50, 0.15);
     }
 
-    /* ─── WHAT MAKES US DIFFERENT (two-col) ─── */
+    /* ══════════════════════════════════════════
+       WHAT MAKES US DIFFERENT — two-col layout
+    ══════════════════════════════════════════ */
     .diff-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -533,7 +551,9 @@
       line-height: 1.65;
     }
 
-    /* ─── CONTENT CARDS ─── */
+    /* ══════════════════════════════════════════
+       CONTENT CARDS — our work section
+    ══════════════════════════════════════════ */
     .content-cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -581,7 +601,9 @@
       line-height: 1.68;
     }
 
-    /* ─── GALLERY / IMAGE PAIR ─── */
+    /* ══════════════════════════════════════════
+       IMAGE PAIR — gallery / work showcase
+    ══════════════════════════════════════════ */
     .img-pair {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -628,7 +650,9 @@
       color: var(--green);
     }
 
-    /* ─── FAQ ─── */
+    /* ══════════════════════════════════════════
+       FAQ — accordion list
+    ══════════════════════════════════════════ */
     .faq-list {
       max-width: 820px;
       margin: 0 auto;
@@ -697,7 +721,9 @@
       padding-bottom: 22px;
     }
 
-    /* ─── STATS BAND ─── */
+    /* ══════════════════════════════════════════
+       STATS BAND
+    ══════════════════════════════════════════ */
     .stats-band {
       background: var(--dark);
       padding: 56px 0;
@@ -741,7 +767,9 @@
       display: block;
     }
 
-    /* ─── CONTACT BAND ─── */
+    /* ══════════════════════════════════════════
+       CONTACT BAND — CTA strip
+    ══════════════════════════════════════════ */
     .contact-band {
       padding: 20px;
       text-align: center;
@@ -761,11 +789,12 @@
       color: var(--text);
     }
 
+    /* ── italic accent inside contact heading ── */
     .contact-band h2 em {
       font-style: normal;
-  font-family: var(--font-italic);
-  font-weight: 200;
-  color: var(--accent2);
+      font-family: var(--font-italic);
+      font-weight: 390;
+      color: var(--accent2);
     }
 
     .contact-band p {
@@ -774,6 +803,7 @@
       margin-bottom: 36px;
     }
 
+    /* ── Dark outline button ── */
     .contact-band .btn-dark {
       display: inline-flex;
       align-items: center;
@@ -794,7 +824,9 @@
       box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
     }
 
-    /* ─── MOBILE NAV RESPONSIVE ─── */
+    /* ══════════════════════════════════════════
+       RESPONSIVE — mobile adjustments
+    ══════════════════════════════════════════ */
     @media (max-width: 768px) {
       .page-hero {
         padding-top: 155px;
@@ -804,15 +836,20 @@
 </head>
 
 <body data-page="social-media-management">
-  <!-- LOGO BAR -->
 
-  <!-- LOGO BAR -->
+  <!-- ══════════════════════════════════════════
+       LOGO BAR
+  ══════════════════════════════════════════ -->
   <div class="site-logo-bar">
     <a href="#">
       <img src="images/logos/flashlab-logo.png" alt="Flashlab Creative" class="logo-light" id="siteLogoImg">
       <img src="images/logos/flashlab-logo-dark.png" alt="Flashlab Creative" class="logo-dark" id="siteLogoImg">
     </a>
   </div>
+
+  <!-- ══════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════ -->
   <nav class="navbar" id="navbar">
     <div class="nav-wrap">
       <ul class="nav-links" id="navLinks">
@@ -844,10 +881,7 @@
             <li><a href="story-6.html"><i class="ri-article-line"></i>Story 6</a></li>
           </ul>
         </li>
-        <li>
-          <a href="career.html">Career</a>
-          
-        </li>
+        <li><a href="career.html">Career</a></li>
         <li><a href="connect.html">Connect</a></li>
       </ul>
       <div class="nav-controls">
@@ -862,7 +896,9 @@
     </div>
   </nav>
 
-  <!-- MOBILE MENU -->
+  <!-- ══════════════════════════════════════════
+       MOBILE MENU
+  ══════════════════════════════════════════ -->
   <div class="mob-overlay" id="mobOverlay"></div>
   <div class="mob-menu" id="mobMenu" aria-hidden="true">
     <button class="mob-close" id="mobClose" aria-label="Close menu"><i class="ri-close-line"></i></button>
@@ -902,7 +938,10 @@
       <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
     </div>
   </div>
-  <!-- SERVICE NAV STRIP -->
+
+  <!-- ══════════════════════════════════════════
+       SERVICE NAV STRIP
+  ══════════════════════════════════════════ -->
   <div class="service-nav-strip" style="margin-top: 152px;">
     <div class="service-nav-inner">
       <a href="outdoor-print-ads.html"><i class="ri-bill-line"></i>Outdoor &amp; Print</a>
@@ -915,35 +954,22 @@
     </div>
   </div>
 
-  <!-- PAGE HERO -->
+  <!-- ══════════════════════════════════════════
+       PAGE HERO
+  ══════════════════════════════════════════ -->
   <section class="page-hero">
     <div class="wrap hero-inner">
       <div class="hero-eyebrow reveal"><span></span>Service Detail</div>
       <h1 class="reveal" style="transition-delay:0.1s">Social <em>Media</em><br>Management</h1>
       <p class="page-hero-sub reveal" style="transition-delay:0.2s">
-        Your brand lives, breathes, and builds trust where your audience scrolls. From content calendars to daily
-        community engagement — we manage everything so your social presence never sleeps.
+        Your brand lives, breathes, and builds trust where your audience scrolls. From content calendars to daily community engagement — we manage everything so your social presence never sleeps.
       </p>
     </div>
   </section>
 
-  <!-- MARQUEE -->
-  <div class="marquee-strip">
-    <div class="marquee-track" id="marqueeTrack">
-      <span>Instagram</span><span class="dot">●</span>
-      <span>Facebook</span><span class="dot">●</span>
-      <span>LinkedIn</span><span class="dot">●</span>
-      <span>X / Twitter</span><span class="dot">●</span>
-      <span>YouTube</span><span class="dot">●</span>
-      <span>Content Calendars</span><span class="dot">●</span>
-      <span>Reels &amp; Shorts</span><span class="dot">●</span>
-      <span>Community Management</span><span class="dot">●</span>
-      <span>Performance Reporting</span><span class="dot">●</span>
-      <span>Brand Strategy</span><span class="dot">●</span>
-    </div>
-  </div>
-
-  <!-- SERVICE OVERVIEW -->
+  <!-- ══════════════════════════════════════════
+       SERVICE OVERVIEW — image + text split
+  ══════════════════════════════════════════ -->
   <section class="section">
     <div class="wrap">
       <div class="overview-split">
@@ -958,20 +984,17 @@
         <div class="overview-content reveal" style="transition-delay:0.15s">
           <div class="sec-eyebrow"><span></span>Service Overview</div>
           <h2 class="sec-heading" style="margin-bottom:20px">Where Your Brand<br><em>Lives &amp; Grows.</em></h2>
-          <p>At Flashlab Creative, we know that social media is no longer optional — it is where your brand lives,
-            breathes, and builds trust with the people who matter most. Our social media management team handles
-            everything from monthly content calendars and scroll-stopping creative to daily community engagement and
-            in-depth performance reporting.</p>
-          <p>We don't just post content — we build a presence that your audience genuinely connects with and keeps
-            coming back to. Whether you are starting from zero or looking to breathe new life into existing channels, we
-            craft a strategy built specifically around your brand, your audience, and your goals.</p>
+          <p>At Flashlab Creative, we know that social media is no longer optional — it is where your brand lives, breathes, and builds trust with the people who matter most. Our social media management team handles everything from monthly content calendars and scroll-stopping creative to daily community engagement and in-depth performance reporting.</p>
+          <p>We don't just post content — we build a presence that your audience genuinely connects with and keeps coming back to. Whether you are starting from zero or looking to breathe new life into existing channels, we craft a strategy built specifically around your brand, your audience, and your goals.</p>
           <a href="connect.html" class="btn-primary">Start a Project <i class="ri-arrow-right-up-line"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHAT WE MANAGE -->
+  <!-- ══════════════════════════════════════════
+       WHAT WE MANAGE — platform icon grid
+  ══════════════════════════════════════════ -->
   <section class="section section-alt">
     <div class="wrap" style="margin-bottom:48px">
       <div class="centered reveal">
@@ -1025,7 +1048,9 @@
     </div>
   </section>
 
-  <!-- OUR WORK / IMAGE PAIR + CONTENT CARDS -->
+  <!-- ══════════════════════════════════════════
+       OUR WORK — image pair + content cards
+  ══════════════════════════════════════════ -->
   <section class="section">
     <div class="wrap">
       <div class="reveal" style="margin-bottom:48px">
@@ -1040,7 +1065,7 @@
           <div class="img-pair-label">Social Media Campaign</div>
         </div>
         <div class="img-pair-item">
-          <img src="images/timeline/2024-3.jpg" alt="Content Creation"
+          <img src="images/content.jpeg" alt="Content Creation"
             onerror="this.src='https://images.unsplash.com/photo-1611162616305-c69b3037f7ba?auto=format&fit=crop&w=700&q=80'">
           <div class="img-pair-label">Content Creation</div>
         </div>
@@ -1050,26 +1075,25 @@
         <div class="content-card">
           <div class="content-card-icon"><i class="ri-calendar-line"></i></div>
           <h4>Planned with Purpose</h4>
-          <p>We plan every post with purpose — building content calendars that keep your brand consistent, timely, and
-            always one step ahead of the conversation in your industry.</p>
+          <p>We plan every post with purpose — building content calendars that keep your brand consistent, timely, and always one step ahead of the conversation in your industry.</p>
         </div>
         <div class="content-card">
           <div class="content-card-icon"><i class="ri-eye-line"></i></div>
           <h4>Designed to Stop Scrolling</h4>
-          <p>Every piece of content we create is designed to stop the scroll — combining sharp visuals, compelling copy,
-            and platform-specific formatting to drive real engagement and results.</p>
+          <p>Every piece of content we create is designed to stop the scroll — combining sharp visuals, compelling copy, and platform-specific formatting to drive real engagement and results.</p>
         </div>
         <div class="content-card">
           <div class="content-card-icon"><i class="ri-shake-hands-line"></i></div>
           <h4>Hands-On, Every Step</h4>
-          <p>Unlike agencies that post and disappear, Flashlab Creative stays hands-on from brief to publish. We
-            monitor, engage, report, and refine — always focused on your best possible outcome.</p>
+          <p>Unlike agencies that post and disappear, Flashlab Creative stays hands-on from brief to publish. We monitor, engage, report, and refine — always focused on your best possible outcome.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHAT MAKES US DIFFERENT -->
+  <!-- ══════════════════════════════════════════
+       WHAT MAKES US DIFFERENT — two-col layout
+  ══════════════════════════════════════════ -->
   <section class="section section-alt">
     <div class="wrap">
       <div class="diff-grid">
@@ -1081,41 +1105,34 @@
         <div class="reveal" style="transition-delay:0.15s">
           <div class="sec-eyebrow"><span></span>What Makes Us Different</div>
           <h2 class="sec-heading" style="margin-bottom:16px">Built <em>Exclusively</em><br>for Your Brand</h2>
-          <p style="font-size:0.97rem; color:var(--text2); line-height:1.78; margin-bottom:20px;">Most agencies recycle
-            the same tired content templates across every client they manage. At Flashlab Creative, every piece of
-            content we create is made exclusively for your brand — rooted in your tone of voice, your audience's
-            behaviour, and what is actually trending on each platform.</p>
+          <p style="font-size:0.97rem; color:var(--text2); line-height:1.78; margin-bottom:20px;">Most agencies recycle the same tired content templates across every client they manage. At Flashlab Creative, every piece of content we create is made exclusively for your brand — rooted in your tone of voice, your audience's behaviour, and what is actually trending on each platform.</p>
           <div class="diff-list">
             <div class="diff-item">
               <div class="diff-num">01</div>
               <div>
                 <h5>100% Original Content</h5>
-                <p>No templates. No recycled copy. Every post, caption, and visual is crafted exclusively for your brand
-                  from scratch.</p>
+                <p>No templates. No recycled copy. Every post, caption, and visual is crafted exclusively for your brand from scratch.</p>
               </div>
             </div>
             <div class="diff-item">
               <div class="diff-num">02</div>
               <div>
                 <h5>Platform-Native Strategy</h5>
-                <p>We tailor format, tone, and timing to each platform — what works on Instagram is never copy-pasted to
-                  LinkedIn.</p>
+                <p>We tailor format, tone, and timing to each platform — what works on Instagram is never copy-pasted to LinkedIn.</p>
               </div>
             </div>
             <div class="diff-item">
               <div class="diff-num">03</div>
               <div>
                 <h5>Real Community Management</h5>
-                <p>We monitor your channels daily, respond in your brand voice, and keep your audience engaged between
-                  posts.</p>
+                <p>We monitor your channels daily, respond in your brand voice, and keep your audience engaged between posts.</p>
               </div>
             </div>
             <div class="diff-item">
               <div class="diff-num">04</div>
               <div>
                 <h5>Transparent Reporting</h5>
-                <p>Monthly performance reports with clear metrics — reach, engagement, growth, and what we're doing next
-                  to improve.</p>
+                <p>Monthly performance reports with clear metrics — reach, engagement, growth, and what we're doing next to improve.</p>
               </div>
             </div>
           </div>
@@ -1124,7 +1141,9 @@
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- ══════════════════════════════════════════
+       FAQ — accordion
+  ══════════════════════════════════════════ -->
   <section class="section" style="padding: 72px 0 88px">
     <div class="wrap">
       <div class="centered reveal" style="margin-bottom:40px">
@@ -1139,9 +1158,7 @@
             <div class="faq-icon"><i class="ri-add-line"></i></div>
           </button>
           <div class="faq-a">
-            <p>We manage Instagram, Facebook, LinkedIn, X (Twitter), YouTube, and Pinterest. We always recommend the
-              platforms that make the most sense for your specific audience and business goals — not just every platform
-              for the sake of it.</p>
+            <p>We manage Instagram, Facebook, LinkedIn, X (Twitter), YouTube, and Pinterest. We always recommend the platforms that make the most sense for your specific audience and business goals — not just every platform for the sake of it.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -1150,9 +1167,7 @@
             <div class="faq-icon"><i class="ri-add-line"></i></div>
           </button>
           <div class="faq-a">
-            <p>We handle everything. Our in-house team of designers, videographers, and copywriters produce all content
-              from scratch — tailored entirely to your brand. You simply review, approve, and watch your channels grow.
-            </p>
+            <p>We handle everything. Our in-house team of designers, videographers, and copywriters produce all content from scratch — tailored entirely to your brand. You simply review, approve, and watch your channels grow.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -1161,8 +1176,7 @@
             <div class="faq-icon"><i class="ri-add-line"></i></div>
           </button>
           <div class="faq-a">
-            <p>Absolutely. We share a full content calendar with you every month before anything goes live. You review,
-              request changes, and give final approval — you are always in control of what represents your brand.</p>
+            <p>Absolutely. We share a full content calendar with you every month before anything goes live. You review, request changes, and give final approval — you are always in control of what represents your brand.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -1171,8 +1185,7 @@
             <div class="faq-icon"><i class="ri-add-line"></i></div>
           </button>
           <div class="faq-a">
-            <p>Yes. Community management is a core part of what we do. We monitor your channels daily, respond to
-              comments and messages in your brand's tone of voice, and flag anything important directly to you.</p>
+            <p>Yes. Community management is a core part of what we do. We monitor your channels daily, respond to comments and messages in your brand's tone of voice, and flag anything important directly to you.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -1181,23 +1194,25 @@
             <div class="faq-icon"><i class="ri-add-line"></i></div>
           </button>
           <div class="faq-a">
-            <p>Absolutely. While we're proudly based in Margao, Goa, we work with clients across India and
-              internationally. Our digital-first process means geography is never a barrier — everything from brief to
-              delivery happens seamlessly online.</p>
+            <p>Absolutely. While we're proudly based in Margao, Goa, we work with clients across India and internationally. Our digital-first process means geography is never a barrier — everything from brief to delivery happens seamlessly online.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT BAND -->
+  <!-- ══════════════════════════════════════════
+       CONTACT BAND — final CTA
+  ══════════════════════════════════════════ -->
   <div class="contact-band">
     <h2>Ready to Grow Your <em>Social Presence?</em></h2>
     <p>Let's build a social media strategy that turns followers into fans and fans into customers.</p>
     <a href="connect.html" class="btn-dark">Start a Project <i class="ri-arrow-right-up-line"></i></a>
   </div>
 
-  <!-- FOOTER -->
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
   <footer class="footer">
     <div class="wrap footer-grid">
       <div class="footer-brand">
@@ -1207,18 +1222,13 @@
               onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
           </a>
         </div>
-        <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in
-          2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
+        <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in 2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i
-              class="ri-instagram-fill"></i></a>
-          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i
-              class="ri-facebook-fill"></i></a>
-          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i
-              class="ri-linkedin-fill"></i></a>
+          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i class="ri-instagram-fill"></i></a>
+          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i class="ri-facebook-fill"></i></a>
+          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i class="ri-linkedin-fill"></i></a>
           <a href="https://twitter.com/theflashlab" target="_blank" rel="noopener"><i class="ri-twitter-x-fill"></i></a>
-          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i
-              class="ri-youtube-fill"></i></a>
+          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i class="ri-youtube-fill"></i></a>
         </div>
       </div>
       <div>
@@ -1227,6 +1237,7 @@
           <li><a href="index.html"><i class="ri-arrow-right-s-line"></i>Home</a></li>
           <li><a href="about.html"><i class="ri-arrow-right-s-line"></i>About</a></li>
           <li><a href="services.html"><i class="ri-arrow-right-s-line"></i>Services</a></li>
+          <li><a href="portfolio.html"><i class="ri-arrow-right-s-line"></i>Portfolio</a></li>
           <li><a href="clients.html"><i class="ri-arrow-right-s-line"></i>Clients</a></li>
           <li><a href="case-studies.html"><i class="ri-arrow-right-s-line"></i>Case Studies</a></li>
           <li><a href="team.html"><i class="ri-arrow-right-s-line"></i>Teams</a></li>
@@ -1249,13 +1260,13 @@
       <div>
         <h4 class="footer-head">Join Us</h4>
         <ul class="footer-list">
-          <li><a href="career-intern.html"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
-          <li><a href="career-seo-expert.html"><i class="ri-arrow-right-s-line"></i>SEO Expert</a></li>
-          <li><a href="career-social-media-manager.html"><i class="ri-arrow-right-s-line"></i>Social Media Mgr</a></li>
-          <li><a href="career-graphic-designer.html"><i class="ri-arrow-right-s-line"></i>Graphic Designer</a></li>
-          <li><a href="career-web-developer.html"><i class="ri-arrow-right-s-line"></i>Web Developer</a></li>
-          <li><a href="career-animation-designer.html"><i class="ri-arrow-right-s-line"></i>Animation Designer</a></li>
-          <li><a href="career-app-developer.html"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','intern')"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','seo-expert')"><i class="ri-arrow-right-s-line"></i>SEO Expert</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','social-media-manager')"><i class="ri-arrow-right-s-line"></i>Social Media Mgr</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','graphic-designer')"><i class="ri-arrow-right-s-line"></i>Graphic Designer</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','web-developer')"><i class="ri-arrow-right-s-line"></i>Web Developer</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','animation-designer')"><i class="ri-arrow-right-s-line"></i>Animation Designer</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','app-developer')"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
         </ul>
       </div>
       <div>
@@ -1268,30 +1279,32 @@
       <div>
         <h4 class="footer-head">Contact</h4>
         <div class="footer-contact">
-          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa"
-              target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
+          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa" target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
           <p><i class="ri-phone-fill"></i><a href="tel:+919923580023">+91 99235 80023</a></p>
-          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a>
-          </p>
+          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a></p>
           <p><i class="ri-time-fill"></i><span>Mon – Sat: 9am – 6pm IST</span></p>
           <a href="connect.html" class="footer-cta">Start a Project <i class="ri-arrow-right-line"></i></a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>Copyright &copy; 2026 Flashlab Creative — Website Crafted by <a href="https://cybercreative.in/"
-          target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
+      <p>Copyright &copy; 2026 Flashlab Creative — Website Crafted by <a href="https://cybercreative.in/" target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
     </div>
   </footer>
 
-  <!-- BACK TO TOP -->
+  <!-- ══════════════════════════════════════════
+       BACK TO TOP BUTTON
+  ══════════════════════════════════════════ -->
   <button class="back-top" id="backTop" aria-label="Back to top">
     <i class="ri-arrow-up-line"></i>
   </button>
 
+  <!-- ══════════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════════ -->
   <script src="flash.js"></script>
   <script>
-    // FAQ accordion
+    /* ── FAQ accordion ── */
     document.querySelectorAll('.faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');
@@ -1300,11 +1313,8 @@
         if (!isOpen) item.classList.add('open');
       });
     });
-
-    // Marquee duplication
-    const track = document.getElementById('marqueeTrack');
-    if (track) { track.innerHTML = track.innerHTML + track.innerHTML; }
   </script>
+
 </body>
 
 </html>

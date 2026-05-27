@@ -5,16 +5,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Outdoor &amp; Print Ads — Flashlab Creative</title>
+
+  <!-- ── GOOGLE FONTS ── -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100;200;300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100;200;300;400;500;600;700&family=Jost:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ── REMIX ICONS ── -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- ── GLOBAL STYLESHEET ── -->
   <link rel="stylesheet" href="flash.css">
 
   <style>
-    /* ── SERVICE NAV STRIP ── */
+    /* ══════════════════════════════════════════
+       SERVICE NAV STRIP
+    ══════════════════════════════════════════ */
     .service-nav-strip {
       background: var(--dark);
       border-top: 3px solid var(--green);
@@ -60,7 +66,9 @@
       font-size: 1rem;
     }
 
-    /* ── PAGE HERO ── */
+    /* ══════════════════════════════════════════
+       PAGE HERO
+    ══════════════════════════════════════════ */
     .page-hero {
       padding: 60px 0 80px;
       background: var(--bg);
@@ -115,11 +123,12 @@
       margin-bottom: 20px;
     }
 
+    /* ── italic accent inside hero heading ── */
     .page-hero h1 em {
-      font-family: var(--font-italic);
       font-style: normal;
+      font-family: var(--font-italic);
+      font-weight: 390;
       color: var(--accent2);
-      font-weight: 200;
     }
 
     .page-hero-sub {
@@ -129,49 +138,9 @@
       line-height: 1.7;
     }
 
-    /* ── MARQUEE ── */
-    .marquee-strip {
-      background: var(--green);
-      padding: 13px 0;
-      overflow: hidden;
-    }
-
-    .marquee-track {
-      display: flex;
-      gap: 28px;
-      width: max-content;
-      animation: marquee 28s linear infinite;
-    }
-
-    .marquee-strip:hover .marquee-track {
-      animation-play-state: paused;
-    }
-
-    .marquee-track span {
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--dark);
-      white-space: nowrap;
-    }
-
-    .marquee-track .dot {
-      color: rgba(10, 10, 15, .4);
-      font-size: .5rem;
-    }
-
-    @keyframes marquee {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    /* ── SECTIONS ── */
+    /* ══════════════════════════════════════════
+       SECTIONS — base styles
+    ══════════════════════════════════════════ */
     .section {
       padding: 88px 0;
     }
@@ -208,11 +177,12 @@
       line-height: 1.05;
     }
 
+    /* ── italic accent inside section headings ── */
     .sec-heading em {
-      font-family: var(--font-italic);
       font-style: normal;
+      font-family: var(--font-italic);
+      font-weight: 390;
       color: var(--accent2);
-      font-weight: 200;
     }
 
     .sec-sub {
@@ -232,7 +202,9 @@
       margin-right: auto;
     }
 
-    /* ── OVERVIEW SPLIT ── */
+    /* ══════════════════════════════════════════
+       OVERVIEW — two-column split
+    ══════════════════════════════════════════ */
     .overview-split {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -295,12 +267,13 @@
       margin-bottom: 20px;
     }
 
+    /* ── Primary CTA button ── */
     .btn-primary {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--green);    /* modified colour */
-      color: var(--dark);          /* modified colour */ 
+      background: var(--green);
+      color: var(--dark);
       font-size: .85rem;
       font-weight: 700;
       letter-spacing: 1px;
@@ -322,8 +295,9 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
     }
 
-    /* ── WHAT WE DO — the actual content from WP ── */
-    /* Main billboard showcase from WP page */
+    /* ══════════════════════════════════════════
+       SHOWCASE — our work images
+    ══════════════════════════════════════════ */
     .billboard-showcase {
       margin-bottom: 56px;
     }
@@ -360,7 +334,9 @@
       border-radius: 4px;
     }
 
-    /* ── BILLBOARD TYPES (from WP content) ── */
+    /* ══════════════════════════════════════════
+       TYPES GRID — numbered service cards
+    ══════════════════════════════════════════ */
     .types-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -428,7 +404,9 @@
       line-height: 1.65;
     }
 
-    /* ── WHAT WE DESIGN GRID ── */
+    /* ══════════════════════════════════════════
+       DESIGN GRID — formats we cover (4-col)
+    ══════════════════════════════════════════ */
     .design-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -501,7 +479,9 @@
       line-height: 1.6;
     }
 
-    /* ── WHY SECTION ── */
+    /* ══════════════════════════════════════════
+       WHY US — reason cards
+    ══════════════════════════════════════════ */
     .why-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -563,7 +543,9 @@
       line-height: 1.68;
     }
 
-    /* ── STATS BAND ── */
+    /* ══════════════════════════════════════════
+       STATS BAND
+    ══════════════════════════════════════════ */
     .stats-band {
       background: var(--dark);
       padding: 56px 0;
@@ -607,7 +589,9 @@
       display: block;
     }
 
-    /* ── FAQ ── */
+    /* ══════════════════════════════════════════
+       FAQ — accordion list
+    ══════════════════════════════════════════ */
     .faq-list {
       max-width: 820px;
       margin: 0 auto;
@@ -675,7 +659,9 @@
       padding-bottom: 22px;
     }
 
-    /* ── CONTACT BAND ── */
+    /* ══════════════════════════════════════════
+       CONTACT BAND — CTA strip
+    ══════════════════════════════════════════ */
     .contact-band {
       padding: 88px 5%;
       text-align: center;
@@ -691,11 +677,12 @@
       margin-bottom: 16px;
     }
 
+    /* ── italic accent inside contact heading ── */
     .contact-band h2 em {
-      font-family: var(--font-italic);
       font-style: normal;
+      font-family: var(--font-italic);
+      font-weight: 390;
       color: var(--accent2);
-      font-weight: 200;
     }
 
     .contact-band p {
@@ -704,6 +691,7 @@
       margin-bottom: 36px;
     }
 
+    /* ── Dark outline button ── */
     .btn-dark {
       display: inline-flex;
       align-items: center;
@@ -729,6 +717,9 @@
       box-shadow: 0 8px 28px rgba(0, 0, 0, .2);
     }
 
+    /* ══════════════════════════════════════════
+       RESPONSIVE — mobile adjustments
+    ══════════════════════════════════════════ */
     @media (max-width: 768px) {
       .service-nav-strip {
         margin-top: 117px;
@@ -749,7 +740,10 @@
 </head>
 
 <body data-page="outdoor-print-ads">
-  <!-- LOGO BAR -->
+
+  <!-- ══════════════════════════════════════════
+       LOGO BAR
+  ══════════════════════════════════════════ -->
   <div class="site-logo-bar">
     <a href="#">
       <img src="images/logos/flashlab-logo.png" alt="Flashlab Creative" class="logo-light" id="siteLogoImg">
@@ -757,7 +751,9 @@
     </a>
   </div>
 
-  <!-- NAVBAR -->
+  <!-- ══════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════ -->
   <nav class="navbar" id="navbar">
     <div class="nav-wrap">
       <ul class="nav-links" id="navLinks">
@@ -770,10 +766,8 @@
             <li><a href="digital-advertising.html"><i class="ri-megaphone-line"></i>Digital Advertising</a></li>
             <li><a href="seo-sem-marketing.html"><i class="ri-search-line"></i>SEO / SEM Marketing</a></li>
             <li><a href="social-media-management.html"><i class="ri-instagram-line"></i>Social Media Management</a></li>
-            <li><a href="product-design-strategies.html"><i class="ri-pen-nib-line"></i>Product Design &amp;
-                Strategies</a></li>
-            <li><a href="web-app-development.html"><i class="ri-code-s-slash-line"></i>Web &amp; App Development</a>
-            </li>
+            <li><a href="product-design-strategies.html"><i class="ri-pen-nib-line"></i>Product Design &amp; Strategies</a></li>
+            <li><a href="web-app-development.html"><i class="ri-code-s-slash-line"></i>Web &amp; App Development</a></li>
             <li><a href="outdoor-print-ads.html"><i class="ri-image-line"></i>Outdoor &amp; Print Ads</a></li>
             <li><a href="ecommerce.html"><i class="ri-shopping-cart-line"></i>E-Commerce</a></li>
           </ul>
@@ -791,10 +785,7 @@
             <li><a href="story-6.html"><i class="ri-article-line"></i>Story 6</a></li>
           </ul>
         </li>
-        <li>
-          <a href="career.html">Career</a>
-
-        </li>
+        <li><a href="career.html">Career</a></li>
         <li><a href="connect.html">Connect</a></li>
       </ul>
       <div class="nav-controls">
@@ -809,7 +800,9 @@
     </div>
   </nav>
 
-  <!-- MOBILE MENU -->
+  <!-- ══════════════════════════════════════════
+       MOBILE MENU
+  ══════════════════════════════════════════ -->
   <div class="mob-overlay" id="mobOverlay"></div>
   <div class="mob-menu" id="mobMenu" aria-hidden="true">
     <button class="mob-close" id="mobClose" aria-label="Close menu"><i class="ri-close-line"></i></button>
@@ -818,8 +811,7 @@
       <li><a href="about.html">About</a></li>
       <li><a href="team.html">Team</a></li>
       <li>
-        <button class="mob-parent-btn" data-target="mob-sub-services">Services <i
-            class="ri-arrow-down-s-line mob-arrow"></i></button>
+        <button class="mob-parent-btn" data-target="mob-sub-services">Services <i class="ri-arrow-down-s-line mob-arrow"></i></button>
         <ul class="mob-sub" id="mob-sub-services">
           <li><a href="digital-advertising.html">Digital Advertising</a></li>
           <li><a href="seo-sem-marketing.html">SEO / SEM Marketing</a></li>
@@ -833,8 +825,7 @@
       <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="clients.html">Clients</a></li>
       <li>
-        <button class="mob-parent-btn" data-target="mob-sub-case">Case Studies <i
-            class="ri-arrow-down-s-line mob-arrow"></i></button>
+        <button class="mob-parent-btn" data-target="mob-sub-case">Case Studies <i class="ri-arrow-down-s-line mob-arrow"></i></button>
         <ul class="mob-sub" id="mob-sub-case">
           <li><a href="story-1.html">Story 1</a></li>
           <li><a href="story-2.html">Story 2</a></li>
@@ -851,7 +842,10 @@
       <a href="connect.html" class="mob-cta">Start a Project <i class="ri-arrow-right-up-line"></i></a>
     </div>
   </div>
-  <!-- SERVICE NAV STRIP -->
+
+  <!-- ══════════════════════════════════════════
+       SERVICE NAV STRIP
+  ══════════════════════════════════════════ -->
   <div class="service-nav-strip">
     <div class="service-nav-inner">
       <a href="outdoor-print-ads.html" class="active"><i class="ri-bill-line"></i>Outdoor &amp; Print</a>
@@ -864,36 +858,22 @@
     </div>
   </div>
 
-  <!-- PAGE HERO -->
+  <!-- ══════════════════════════════════════════
+       PAGE HERO
+  ══════════════════════════════════════════ -->
   <section class="page-hero">
     <div class="wrap">
       <div class="hero-eyebrow reveal"><span></span>Service Detail</div>
       <h1 class="reveal" style="transition-delay:.1s">Outdoor &amp;<br><em>Print</em> Ads</h1>
       <p class="page-hero-sub reveal" style="transition-delay:.2s">
-        Bold, high-impact advertising solutions — including billboards, posters, and print collateral. Our designs
-        combine striking visuals with strategic messaging to capture attention and elevate your brand in physical
-        environments.
+        Bold, high-impact advertising solutions — including billboards, posters, and print collateral. Our designs combine striking visuals with strategic messaging to capture attention and elevate your brand in physical environments.
       </p>
     </div>
   </section>
 
-  <!-- MARQUEE -->
-  <div class="marquee-strip">
-    <div class="marquee-track" id="marqueeTrack">
-      <span>Billboards</span><span class="dot">●</span>
-      <span>Hoardings</span><span class="dot">●</span>
-      <span>Bus Shelter Ads</span><span class="dot">●</span>
-      <span>Flyers &amp; Brochures</span><span class="dot">●</span>
-      <span>Roller Banners</span><span class="dot">●</span>
-      <span>Event Signage</span><span class="dot">●</span>
-      <span>Window Graphics</span><span class="dot">●</span>
-      <span>Catalogues</span><span class="dot">●</span>
-      <span>Posters</span><span class="dot">●</span>
-      <span>Magazine Ads</span><span class="dot">●</span>
-    </div>
-  </div>
-
-  <!-- OVERVIEW -->
+  <!-- ══════════════════════════════════════════
+       SERVICE OVERVIEW — image + text split
+  ══════════════════════════════════════════ -->
   <section class="section">
     <div class="wrap">
       <div class="overview-split">
@@ -908,25 +888,22 @@
         <div class="overview-content reveal" style="transition-delay:.15s">
           <div class="sec-eyebrow"><span></span>Service Overview</div>
           <h2 class="sec-heading" style="margin-bottom:20px">Making Your Brand<br><em>Impossible</em> to Miss</h2>
-          <p>At Flashlab Creative, we produce bold advertising solutions — from billboards and hoardings to print
-            collateral — that command attention in the real world. Our designs combine striking visuals with strategic
-            messaging that elevates your brand in physical environments.</p>
-          <p>Every piece we produce is brand-consistent, strategically designed, and print-ready to the highest
-            production standards. From a single flyer to a full outdoor campaign, we handle it all.</p>
+          <p>At Flashlab Creative, we produce bold advertising solutions — from billboards and hoardings to print collateral — that command attention in the real world. Our designs combine striking visuals with strategic messaging that elevates your brand in physical environments.</p>
+          <p>Every piece we produce is brand-consistent, strategically designed, and print-ready to the highest production standards. From a single flyer to a full outdoor campaign, we handle it all.</p>
           <a href="connect.html" class="btn-primary">Start a Project <i class="ri-arrow-right-up-line"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BILLBOARD SHOWCASE — images from WP page -->
+  <!-- ══════════════════════════════════════════
+       OUR WORK — billboard showcase + type cards
+  ══════════════════════════════════════════ -->
   <section class="section section-alt">
     <div class="wrap">
       <div class="sec-eyebrow reveal"><span></span>Our Work</div>
-      <h2 class="sec-heading reveal" style="transition-delay:.08s; margin-bottom:40px;">Campaigns
-        That<br><em>Perform</em> in the Real World</h2>
+      <h2 class="sec-heading reveal" style="transition-delay:.08s; margin-bottom:40px;">Campaigns That<br><em>Perform</em> in the Real World</h2>
 
-      <!-- Banner from WP page -->
       <div class="billboard-showcase reveal" style="transition-delay:.12s">
         <div class="showcase-banner">
           <img src="images/brand1.jpeg" alt="Outdoor Campaign — Banner"
@@ -943,49 +920,45 @@
         </div>
       </div>
 
-      <!-- Billboard types from WP content -->
+      <!-- Billboard format types -->
       <div class="types-grid reveal" style="transition-delay:.16s">
         <div class="type-card">
           <div class="type-num">01</div>
           <h4>Static Billboards</h4>
-          <p>Large-format static displays designed to maximise visibility on high-traffic roads and junctions. Bold,
-            readable, and built for impact at 100km/h.</p>
+          <p>Large-format static displays designed to maximise visibility on high-traffic roads and junctions. Bold, readable, and built for impact at 100km/h.</p>
         </div>
         <div class="type-card">
           <div class="type-num">02</div>
           <h4>Portable Digital Billboards</h4>
-          <p>Mobile digital displays that take your campaign wherever the crowd is — events, festivals, roadshows, and
-            high-footfall locations across Goa.</p>
+          <p>Mobile digital displays that take your campaign wherever the crowd is — events, festivals, roadshows, and high-footfall locations across Goa.</p>
         </div>
         <div class="type-card">
           <div class="type-num">03</div>
           <h4>Flex Frame Billboards</h4>
-          <p>Lightweight and cost-effective flex banners with vivid, weather-resistant printing — ideal for long-term
-            outdoor exposure and high-visibility placements.</p>
+          <p>Lightweight and cost-effective flex banners with vivid, weather-resistant printing — ideal for long-term outdoor exposure and high-visibility placements.</p>
         </div>
         <div class="type-card">
           <div class="type-num">04</div>
           <h4>Signage Billboards</h4>
-          <p>Custom fabricated signage for retail fronts, corporate parks, and hospitality venues. Premium materials,
-            precision installation, lasting impressions.</p>
+          <p>Custom fabricated signage for retail fronts, corporate parks, and hospitality venues. Premium materials, precision installation, lasting impressions.</p>
         </div>
         <div class="type-card">
           <div class="type-num">05</div>
           <h4>Hoarding &amp; Transit Ads</h4>
-          <p>Bus shelters, railway hoardings, and transit advertising placements that put your brand in front of
-            thousands of daily commuters across the region.</p>
+          <p>Bus shelters, railway hoardings, and transit advertising placements that put your brand in front of thousands of daily commuters across the region.</p>
         </div>
         <div class="type-card">
           <div class="type-num">06</div>
           <h4>Print Collateral</h4>
-          <p>Flyers, brochures, catalogues, posters, and event collateral crafted to the same standard as our outdoor
-            campaigns — premium design, print-ready files.</p>
+          <p>Flyers, brochures, catalogues, posters, and event collateral crafted to the same standard as our outdoor campaigns — premium design, print-ready files.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHAT WE DESIGN -->
+  <!-- ══════════════════════════════════════════
+       WHAT WE DESIGN — format icon grid
+  ══════════════════════════════════════════ -->
   <section class="section">
     <div class="wrap">
       <div class="centered reveal" style="margin-bottom:44px;">
@@ -1035,62 +1008,59 @@
         </div>
       </div>
       <div class="contact-band">
-        <a href="portfolio.html" class="btn-dark" >Our Portfolio <i class="ri-arrow-right-up-line"></i></a>
+        <a href="portfolio.html" class="btn-dark">Our Portfolio <i class="ri-arrow-right-up-line"></i></a>
       </div>
     </div>
   </section>
 
-  <!-- WHY US -->
+  <!-- ══════════════════════════════════════════
+       WHY FLASHLAB CREATIVE — differentiators
+  ══════════════════════════════════════════ -->
   <section class="section section-alt">
     <div class="wrap">
       <div class="centered reveal" style="margin-bottom:0;">
-        <div class="sec-eyebrow"><span></span>Why Flashlab</div>
+        <div class="sec-eyebrow"><span></span>Why Flashlab Creative</div>
         <h2 class="sec-heading">What Sets Us <em>Apart</em></h2>
-        <p class="sec-sub">Our outdoor and print campaigns are built on strategic thinking, premium production, and
-          relentless attention to brand consistency.</p>
+        <p class="sec-sub">Our outdoor and print campaigns are built on strategic thinking, premium production, and relentless attention to brand consistency.</p>
       </div>
       <div class="why-grid">
         <div class="why-card reveal" style="transition-delay:0s">
           <div class="why-card-icon"><i class="ri-eye-line"></i></div>
           <h4>Designs That Stop People</h4>
-          <p>From thumb-stopping print creatives to compelling outdoor copy, we produce attention-halting designs built
-            to capture eyes instantly and drive your audience to act.</p>
+          <p>From thumb-stopping print creatives to compelling outdoor copy, we produce attention-halting designs built to capture eyes instantly and drive your audience to act.</p>
         </div>
         <div class="why-card reveal" style="transition-delay:.1s">
           <div class="why-card-icon"><i class="ri-bar-chart-line"></i></div>
           <h4>Results We Track Together</h4>
-          <p>We monitor every campaign's performance — analysing response rates and engagement to ensure your print
-            budget is always working as hard as possible.</p>
+          <p>We monitor every campaign's performance — analysing response rates and engagement to ensure your print budget is always working as hard as possible.</p>
         </div>
         <div class="why-card reveal" style="transition-delay:.2s">
           <div class="why-card-icon"><i class="ri-shield-check-line"></i></div>
           <h4>Brand Standards, Always</h4>
-          <p>Every piece is produced in line with your brand guidelines — consistent colour, typography, and tone across
-            every format and placement.</p>
+          <p>Every piece is produced in line with your brand guidelines — consistent colour, typography, and tone across every format and placement.</p>
         </div>
         <div class="why-card reveal" style="transition-delay:.3s">
           <div class="why-card-icon"><i class="ri-shake-hands-line"></i></div>
           <h4>Hands-On, Every Step</h4>
-          <p>Unlike agencies that design and disappear, Flashlab stays with you from brief to final print — refining,
-            advising, and always focused on your best outcome.</p>
+          <p>Unlike agencies that design and disappear, Flashlab Creative stays with you from brief to final print — refining, advising, and always focused on your best outcome.</p>
         </div>
         <div class="why-card reveal" style="transition-delay:.4s">
           <div class="why-card-icon"><i class="ri-camera-3-line"></i></div>
           <h4>State-of-the-Art Production</h4>
-          <p>In-house photography, drone aerials, and studio setups mean every visual in your campaign is produced to
-            the highest standard before it goes to print.</p>
+          <p>In-house photography, drone aerials, and studio setups mean every visual in your campaign is produced to the highest standard before it goes to print.</p>
         </div>
         <div class="why-card reveal" style="transition-delay:.5s">
           <div class="why-card-icon"><i class="ri-map-pin-line"></i></div>
           <h4>Local Expertise, National Reach</h4>
-          <p>Deeply embedded in Goa's hospitality and F&amp;B ecosystem, with campaigns extending across major Indian
-            cities. We know this market better than anyone.</p>
+          <p>Deeply embedded in Goa's hospitality and F&amp;B ecosystem, with campaigns extending across major Indian cities. We know this market better than anyone.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- STATS -->
+  <!-- ══════════════════════════════════════════
+       STATS BAND
+  ══════════════════════════════════════════ -->
   <div class="stats-band">
     <div class="wrap">
       <div class="stats-row">
@@ -1102,7 +1072,9 @@
     </div>
   </div>
 
-  <!-- FAQ -->
+  <!-- ══════════════════════════════════════════
+       FAQ — accordion
+  ══════════════════════════════════════════ -->
   <section class="section">
     <div class="wrap">
       <div class="centered reveal" style="margin-bottom:40px;">
@@ -1117,9 +1089,7 @@
             <div class="faq-icon"><i class="ri-add-line"></i></div>
           </button>
           <div class="faq-a">
-            <p>We design billboards, hoardings, bus shelter ads, flyers, brochures, catalogues, roller banners, posters,
-              window graphics, event signage, and newspaper and magazine advertisements — covering the full spectrum of
-              print and outdoor formats.</p>
+            <p>We design billboards, hoardings, bus shelter ads, flyers, brochures, catalogues, roller banners, posters, window graphics, event signage, and newspaper and magazine advertisements — covering the full spectrum of print and outdoor formats.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -1128,9 +1098,7 @@
             <div class="faq-icon"><i class="ri-add-line"></i></div>
           </button>
           <div class="faq-a">
-            <p>Absolutely. We work from your brand guidelines to ensure every printed piece is fully consistent with
-              your website, social media, and all other marketing materials. If you don't have guidelines yet, we can
-              help you create them.</p>
+            <p>Absolutely. We work from your brand guidelines to ensure every printed piece is fully consistent with your website, social media, and all other marketing materials. If you don't have guidelines yet, we can help you create them.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -1139,8 +1107,7 @@
             <div class="faq-icon"><i class="ri-add-line"></i></div>
           </button>
           <div class="faq-a">
-            <p>Yes. We work with trusted print and installation partners across Goa and can manage the entire process —
-              from artwork to final hoarding installation — so you don't have to coordinate multiple vendors.</p>
+            <p>Yes. We work with trusted print and installation partners across Goa and can manage the entire process — from artwork to final hoarding installation — so you don't have to coordinate multiple vendors.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -1149,9 +1116,7 @@
             <div class="faq-icon"><i class="ri-add-line"></i></div>
           </button>
           <div class="faq-a">
-            <p>Absolutely. While we're proudly based in Margao, Goa, we work with clients across India and
-              internationally. Our digital-first process means geography is never a barrier — everything from brief to
-              final delivery happens seamlessly online.</p>
+            <p>Absolutely. While we're proudly based in Margao, Goa, we work with clients across India and internationally. Our digital-first process means geography is never a barrier — everything from brief to final delivery happens seamlessly online.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -1160,23 +1125,25 @@
             <div class="faq-icon"><i class="ri-add-line"></i></div>
           </button>
           <div class="faq-a">
-            <p>Turnaround depends on the scope — a single flyer can be ready in 24–48 hours, while a full outdoor
-              campaign typically takes 5–10 working days from brief to print-ready files. We always work to your
-              deadline.</p>
+            <p>Turnaround depends on the scope — a single flyer can be ready in 24–48 hours, while a full outdoor campaign typically takes 5–10 working days from brief to print-ready files. We always work to your deadline.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT BAND -->
+  <!-- ══════════════════════════════════════════
+       CONTACT BAND — final CTA
+  ══════════════════════════════════════════ -->
   <div class="contact-band">
     <h2>Ready to Make an <em>Impact?</em></h2>
     <p>Let's create print and outdoor campaigns that stop people in their tracks.</p>
     <a href="connect.html" class="btn-dark">Start a Project <i class="ri-arrow-right-up-line"></i></a>
   </div>
 
-  <!-- FOOTER -->
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
   <footer class="footer">
     <div class="wrap footer-grid">
       <div class="footer-brand">
@@ -1186,18 +1153,13 @@
               onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
           </a>
         </div>
-        <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in
-          2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
+        <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in 2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i
-              class="ri-instagram-fill"></i></a>
-          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i
-              class="ri-facebook-fill"></i></a>
-          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i
-              class="ri-linkedin-fill"></i></a>
+          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i class="ri-instagram-fill"></i></a>
+          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i class="ri-facebook-fill"></i></a>
+          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i class="ri-linkedin-fill"></i></a>
           <a href="https://twitter.com/theflashlab" target="_blank" rel="noopener"><i class="ri-twitter-x-fill"></i></a>
-          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i
-              class="ri-youtube-fill"></i></a>
+          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i class="ri-youtube-fill"></i></a>
         </div>
       </div>
       <div>
@@ -1206,6 +1168,7 @@
           <li><a href="index.html"><i class="ri-arrow-right-s-line"></i>Home</a></li>
           <li><a href="about.html"><i class="ri-arrow-right-s-line"></i>About</a></li>
           <li><a href="services.html"><i class="ri-arrow-right-s-line"></i>Services</a></li>
+          <li><a href="portfolio.html"><i class="ri-arrow-right-s-line"></i>Portfolio</a></li>
           <li><a href="clients.html"><i class="ri-arrow-right-s-line"></i>Clients</a></li>
           <li><a href="case-studies.html"><i class="ri-arrow-right-s-line"></i>Case Studies</a></li>
           <li><a href="team.html"><i class="ri-arrow-right-s-line"></i>Teams</a></li>
@@ -1228,13 +1191,13 @@
       <div>
         <h4 class="footer-head">Join Us</h4>
         <ul class="footer-list">
-          <li><a href="career-intern.html"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
-          <li><a href="career-seo-expert.html"><i class="ri-arrow-right-s-line"></i>SEO Expert</a></li>
-          <li><a href="career-social-media-manager.html"><i class="ri-arrow-right-s-line"></i>Social Media Mgr</a></li>
-          <li><a href="career-graphic-designer.html"><i class="ri-arrow-right-s-line"></i>Graphic Designer</a></li>
-          <li><a href="career-web-developer.html"><i class="ri-arrow-right-s-line"></i>Web Developer</a></li>
-          <li><a href="career-animation-designer.html"><i class="ri-arrow-right-s-line"></i>Animation Designer</a></li>
-          <li><a href="career-app-developer.html"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','intern')"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','seo-expert')"><i class="ri-arrow-right-s-line"></i>SEO Expert</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','social-media-manager')"><i class="ri-arrow-right-s-line"></i>Social Media Mgr</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','graphic-designer')"><i class="ri-arrow-right-s-line"></i>Graphic Designer</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','web-developer')"><i class="ri-arrow-right-s-line"></i>Web Developer</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','animation-designer')"><i class="ri-arrow-right-s-line"></i>Animation Designer</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','app-developer')"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
         </ul>
       </div>
       <div>
@@ -1247,31 +1210,32 @@
       <div>
         <h4 class="footer-head">Contact</h4>
         <div class="footer-contact">
-          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa"
-              target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
+          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa" target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
           <p><i class="ri-phone-fill"></i><a href="tel:+919923580023">+91 99235 80023</a></p>
-          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a>
-          </p>
+          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a></p>
           <p><i class="ri-time-fill"></i><span>Mon – Sat: 9am – 6pm IST</span></p>
           <a href="connect.html" class="footer-cta">Start a Project <i class="ri-arrow-right-line"></i></a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>Copyright &copy; 2026 Flashlab Creative — Website Crafted by <a href="https://cybercreative.in/"
-          target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
+      <p>Copyright &copy; 2026 Flashlab Creative — Website Crafted by <a href="https://cybercreative.in/" target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
     </div>
   </footer>
 
-  <!-- BACK TO TOP -->
+  <!-- ══════════════════════════════════════════
+       BACK TO TOP BUTTON
+  ══════════════════════════════════════════ -->
   <button class="back-top" id="backTop" aria-label="Back to top">
     <i class="ri-arrow-up-line"></i>
   </button>
 
+  <!-- ══════════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════════ -->
   <script src="flash.js"></script>
   <script>
-
-    /* ── FAQ ── */
+    /* ── FAQ accordion ── */
     document.querySelectorAll('.faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');
@@ -1280,12 +1244,6 @@
         if (!isOpen) item.classList.add('open');
       });
     });
-
-    /* ── MARQUEE DUPLICATE ── */
-    const track = document.getElementById('marqueeTrack');
-    if (track) track.innerHTML += track.innerHTML;
-
-
   </script>
 
 </body>
