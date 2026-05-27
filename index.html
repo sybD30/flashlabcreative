@@ -282,27 +282,13 @@
     }
 
     @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(80px)
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0)
-      }
+      from { opacity: 0; transform: translateX(80px) }
+      to { opacity: 1; transform: translateX(0) }
     }
 
     @keyframes slideOut {
-      from {
-        opacity: 1;
-        transform: translateX(0)
-      }
-
-      to {
-        opacity: 0;
-        transform: translateX(-80px)
-      }
+      from { opacity: 1; transform: translateX(0) }
+      to { opacity: 0; transform: translateX(-80px) }
     }
 
     .hero-slide-big {
@@ -364,13 +350,8 @@
     }
 
     @keyframes dotProgress {
-      from {
-        width: 0
-      }
-
-      to {
-        width: 100%
-      }
+      from { width: 0 }
+      to { width: 100% }
     }
 
     .hero-btns {
@@ -656,15 +637,8 @@
     }
 
     @keyframes videoRipple {
-      0% {
-        opacity: 1;
-        transform: scale(1)
-      }
-
-      100% {
-        opacity: 0;
-        transform: scale(1.35)
-      }
+      0% { opacity: 1; transform: scale(1) }
+      100% { opacity: 0; transform: scale(1.35) }
     }
 
     .video-play-label {
@@ -850,7 +824,7 @@
       margin: 0 0 4px;
     }
 
-    .founder-info>p {
+    .founder-info > p {
       font-size: 0.82rem;
       color: var(--muted);
       margin: 0 0 14px;
@@ -919,13 +893,8 @@
       line-height: 1.1;
     }
 
-    [data-theme="light"] .services-comprehensive .comp-title {
-      color: #0a0a0f;
-    }
-
-    [data-theme="dark"] .services-comprehensive .comp-title {
-      color: #f0f0f0;
-    }
+    [data-theme="light"] .services-comprehensive .comp-title { color: #0a0a0f; }
+    [data-theme="dark"] .services-comprehensive .comp-title { color: #f0f0f0; }
 
     .services-comprehensive .comp-sub {
       font-family: 'Inter', sans-serif;
@@ -935,13 +904,8 @@
       margin: 0;
     }
 
-    [data-theme="light"] .services-comprehensive .comp-sub {
-      color: #666;
-    }
-
-    [data-theme="dark"] .services-comprehensive .comp-sub {
-      color: #999;
-    }
+    [data-theme="light"] .services-comprehensive .comp-sub { color: #666; }
+    [data-theme="dark"] .services-comprehensive .comp-sub { color: #999; }
 
     .services-intro {
       display: grid;
@@ -960,13 +924,8 @@
       text-transform: uppercase;
     }
 
-    [data-theme="light"] .services-intro-left h2.main-heading {
-      color: #0a0a0f;
-    }
-
-    [data-theme="dark"] .services-intro-left h2.main-heading {
-      color: #f0f0f0;
-    }
+    [data-theme="light"] .services-intro-left h2.main-heading { color: #0a0a0f; }
+    [data-theme="dark"] .services-intro-left h2.main-heading { color: #f0f0f0; }
 
     .services-intro-left h3.sub-heading {
       font-family: 'Inter', sans-serif;
@@ -976,13 +935,8 @@
       font-weight: 400;
     }
 
-    [data-theme="light"] .services-intro-left h3.sub-heading {
-      color: #555;
-    }
-
-    [data-theme="dark"] .services-intro-left h3.sub-heading {
-      color: #aaa;
-    }
+    [data-theme="light"] .services-intro-left h3.sub-heading { color: #555; }
+    [data-theme="dark"] .services-intro-left h3.sub-heading { color: #aaa; }
 
     .services-intro-right p {
       font-family: 'Outfit', sans-serif;
@@ -991,13 +945,8 @@
       margin: 0 0 20px;
     }
 
-    [data-theme="light"] .services-intro-right p {
-      color: #444;
-    }
-
-    [data-theme="dark"] .services-intro-right p {
-      color: #bbb;
-    }
+    [data-theme="light"] .services-intro-right p { color: #444; }
+    [data-theme="dark"] .services-intro-right p { color: #bbb; }
 
     .services-intro-right .checklist {
       list-style: none;
@@ -1014,13 +963,8 @@
       margin-bottom: 8px;
     }
 
-    [data-theme="light"] .services-intro-right .checklist li {
-      color: #333;
-    }
-
-    [data-theme="dark"] .services-intro-right .checklist li {
-      color: #ccc;
-    }
+    [data-theme="light"] .services-intro-right .checklist li { color: #333; }
+    [data-theme="dark"] .services-intro-right .checklist li { color: #ccc; }
 
     .services-intro-right .checklist li::before {
       content: '✓';
@@ -1097,10 +1041,7 @@
       backface-visibility: hidden;
     }
 
-    .flip-card-front {
-      transform: rotateY(0deg);
-    }
-
+    .flip-card-front { transform: rotateY(0deg); }
     .flip-card-back {
       transform: rotateY(180deg);
       pointer-events: none;
@@ -1256,9 +1197,7 @@
       z-index: 2;
     }
 
-    .stat-item {
-      text-align: center;
-    }
+    .stat-item { text-align: center; }
 
     .stat-num-wrap {
       display: inline-flex;
@@ -1296,16 +1235,8 @@
     }
 
     /* === PORTFOLIO CAROUSEL === */
-    .carousel-outer {
-      position: relative;
-      padding: 0;
-    }
-
-    .carousel-viewport {
-      overflow: hidden;
-      border-radius: var(--radius-lg);
-    }
-
+    .carousel-outer { position: relative; padding: 0; }
+    .carousel-viewport { overflow: hidden; border-radius: var(--radius-lg); }
     .carousel-track {
       display: flex;
       transition: transform 0.48s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1333,15 +1264,8 @@
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
     }
 
-    .port-big {
-      grid-column: 1;
-      grid-row: 1/3;
-    }
-
-    .port-tall {
-      grid-column: 3;
-      grid-row: 1/3;
-    }
+    .port-big { grid-column: 1; grid-row: 1/3; }
+    .port-tall { grid-column: 3; grid-row: 1/3; }
 
     .port-bg {
       width: 100%;
@@ -1355,9 +1279,7 @@
       inset: 0;
     }
 
-    .port-item:hover .port-bg {
-      transform: scale(1.07);
-    }
+    .port-item:hover .port-bg { transform: scale(1.07); }
 
     .port-overlay {
       position: absolute;
@@ -1371,9 +1293,7 @@
       transition: opacity 0.38s;
     }
 
-    .port-item:hover .port-overlay {
-      opacity: 1;
-    }
+    .port-item:hover .port-overlay { opacity: 1; }
 
     .port-tag {
       display: inline-block;
@@ -1389,13 +1309,8 @@
       width: fit-content;
     }
 
-    .port-item:nth-child(2n) .port-tag {
-      background: var(--accent2);
-    }
-
-    .port-item:nth-child(3n) .port-tag {
-      background: var(--accent3);
-    }
+    .port-item:nth-child(2n) .port-tag { background: var(--accent2); }
+    .port-item:nth-child(3n) .port-tag { background: var(--accent3); }
 
     .port-overlay h4 {
       font-size: 0.95rem;
@@ -1405,11 +1320,7 @@
       line-height: 1.3;
     }
 
-    .port-overlay p {
-      color: rgba(255, 255, 255, 0.65);
-      font-size: 0.75rem;
-      margin: 0;
-    }
+    .port-overlay p { color: rgba(255, 255, 255, 0.65); font-size: 0.75rem; margin: 0; }
 
     .port-arrow {
       position: absolute;
@@ -1429,13 +1340,9 @@
       text-decoration: none;
     }
 
-    .port-item:hover .port-arrow {
-      transform: scale(1);
-    }
+    .port-item:hover .port-arrow { transform: scale(1); }
 
-    .carousel-nav {
-      display: none !important;
-    }
+    .carousel-nav { display: none !important; }
 
     .carousel-dots {
       display: flex;
@@ -1460,71 +1367,81 @@
       transform: scale(1.4);
     }
 
-    /* === CLIENTS SCROLLING BELT === */
+    /* =====================================================
+       CLIENTS SECTION — REDESIGNED: THREE-ROW LOGO BELTS
+    ===================================================== */
     .clients-section {
-      background: #767676;
-      padding: 60px 0 0;
-      border-top: 1px solid var(--border);
+      padding: 80px 0 0;
       overflow: hidden;
       width: 100%;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
     }
 
     .clients-header {
       text-align: center;
-      margin-bottom: 36px;
+      margin-bottom: 48px;
       padding: 0 5%;
     }
 
-    .clients-big-title {
-      display: block;
-      font-family: var(--font-body);
-      font-size: clamp(3.5rem, 7vw, 6rem);
+    .clients-main-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 7vw, 6rem);
       line-height: 0.95;
-      letter-spacing: 2px;
-      background: var(--accent2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #a8e832;
       margin-bottom: 10px;
+      display: block;
     }
 
-    .clients-sub {
+    .clients-sub-title {
       font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 4px;
       text-transform: uppercase;
-      color: #000;
+      color: var(--muted);
     }
 
-    .clients-belt-row {
-      position: relative;
-      overflow: hidden;
+    .clients-belt-wrapper {
       width: 100%;
-      padding: 10px 0;
+      overflow: hidden;
     }
 
-    .clients-belt-row::before,
-    .clients-belt-row::after {
+    /* Each row */
+    .clients-row {
+      overflow: hidden;
+      padding: 18px 0;
+      position: relative;
+    }
+
+    .clients-row::before,
+    .clients-row::after {
       content: '';
       position: absolute;
       top: 0;
       bottom: 0;
-      width: 100px;
+      width: 140px;
       z-index: 5;
       pointer-events: none;
     }
 
-    .clients-belt-row::before {
-      left: 0;
-      background: linear-gradient(to right, #767676 0%, transparent 100%);
-    }
+    /* Row 1 — light gray background */
+.clients-row-1 {
+  background: #a3a3a3;
+  border-radius: 16px 16px 0 0;
+}
+.clients-row-1::before { left: 0;  background: linear-gradient(to right, #f0f0f0 0%, transparent 100%); }
+.clients-row-1::after  { right: 0; background: linear-gradient(to left,  #f0f0f0 0%, transparent 100%); }
 
-    .clients-belt-row::after {
-      right: 0;
-      background: linear-gradient(to left, #767676 0%, transparent 100%);
-    }
-
-    .clients-belt-row:hover .clients-belt-track {
+/* Row 2 — dark charcoal background (white logos will show here) */
+.clients-row-2 {
+  background: #22223b;
+}
+.clients-row-2::before { left: 0;  background: linear-gradient(to right, #1a1a2e 0%, transparent 100%); }
+.clients-row-2::after  { right: 0; background: linear-gradient(to left,  #1a1a2e 0%, transparent 100%); }
+    /* Pause animation on hover */
+    .clients-row:hover .clients-belt-track {
       animation-play-state: paused !important;
     }
 
@@ -1534,73 +1451,86 @@
       align-items: center;
     }
 
-    .clients-belt-track.fwd {
-      animation: clBeltFwd 40s linear infinite;
+    .clients-belt-track.belt-fwd {
+      animation: beltScrollFwd 35s linear infinite;
     }
 
-    .clients-belt-track.rev {
-      animation: clBeltRev 40s linear infinite;
+    .clients-belt-track.belt-rev {
+      animation: beltScrollRev 38s linear infinite;
     }
 
-    @keyframes clBeltFwd {
-      0% {
-        transform: translateX(0)
-      }
-
-      100% {
-        transform: translateX(-50%)
-      }
+    .clients-belt-track.belt-fwd2 {
+      animation: beltScrollFwd 42s linear infinite;
     }
 
-    @keyframes clBeltRev {
-      0% {
-        transform: translateX(-50%)
-      }
-
-      100% {
-        transform: translateX(0)
-      }
+    @keyframes beltScrollFwd {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
-    .cl-logo-item {
-      flex-shrink: 0;
-      width: 160px;
-      height: 160px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 8px 18px;
-      cursor: pointer;
-      transition: transform 0.2s;
+    @keyframes beltScrollRev {
+      0%   { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
     }
 
-    .cl-logo-item:hover {
+    /* Logo item */
+.cl-item {
+  flex-shrink: 0;
+  width: 260px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+    .cl-item:hover {
       transform: scale(1.1);
     }
 
-    .cl-logo-item img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      filter: brightness(1);
-      opacity: 1;
-      transition: opacity 0.3s;
-    }
+    /* ALL logo images — full color, no filters */
+.cl-item img {
+  filter: none;
+  opacity: 1;
+  width: 180px;
+  height: 90px;
+  object-fit: contain;
+}
 
-    .cl-logo-divider {
+.cl-item:hover img {
+  opacity: 0.85 !important;
+  transform: scale(1.08);
+}
+
+    .cl-item img {
+  filter: none;
+  opacity: 1;
+  width: 130px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.cl-item:hover img {
+  opacity: 0.85;
+}
+
+    /* Separator between logos */
+    .cl-sep {
       flex-shrink: 0;
       width: 1px;
-      height: 28px;
-      background: rgba(255, 255, 255, 0.1);
+      height: 32px;
+      opacity: 0.1;
     }
 
-    .clients-belt-gap {
-      height: 14px;
-    }
+    .clients-row-1 .cl-sep,
+    .clients-row-3 .cl-sep { background: #000000; }
+    .clients-row-2 .cl-sep { background: #ffffff; }
 
     .clients-view-all {
       text-align: center;
-      padding: 32px 5% 48px;
+      padding: 36px 5% 56px;
     }
 
     .clients-view-all a {
@@ -1650,20 +1580,13 @@
     }
 
     .testi-section::before,
-    .testi-section::after {
-      display: none !important;
-      content: none !important;
-    }
+    .testi-section::after { display: none !important; content: none !important; }
 
     .testi-section .sec-eyebrow,
     .testi-section .sec-heading,
-    .testi-section .sec-sub {
-      color: white;
-    }
+    .testi-section .sec-sub { color: white; }
 
-    .testi-section .sec-sub {
-      opacity: 0.85;
-    }
+    .testi-section .sec-sub { opacity: 0.85; }
 
     .testi-carousel-outer {
       position: relative;
@@ -1678,27 +1601,16 @@
     .testi-carousel-outer::after {
       content: '';
       position: absolute;
-      top: 0;
-      bottom: 0;
+      top: 0; bottom: 0;
       width: 60px;
       z-index: 5;
       pointer-events: none;
     }
 
-    .testi-carousel-outer::before {
-      left: 0;
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.6), transparent);
-    }
+    .testi-carousel-outer::before { left: 0; background: linear-gradient(to right, rgba(0,0,0,0.6), transparent); }
+    .testi-carousel-outer::after  { right: 0; background: linear-gradient(to left, rgba(0,0,0,0.6), transparent); }
 
-    .testi-carousel-outer::after {
-      right: 0;
-      background: linear-gradient(to left, rgba(0, 0, 0, 0.6), transparent);
-    }
-
-    .testi-carousel-viewport {
-      overflow: hidden;
-      width: 100%;
-    }
+    .testi-carousel-viewport { overflow: hidden; width: 100%; }
 
     .testi-carousel-track {
       display: flex;
@@ -1727,8 +1639,7 @@
     .testi-card::after {
       content: 'View on Google \2197';
       position: absolute;
-      top: 12px;
-      right: 14px;
+      top: 12px; right: 14px;
       font-size: 0.68rem;
       font-weight: 700;
       letter-spacing: 0.5px;
@@ -1738,9 +1649,7 @@
       pointer-events: none;
     }
 
-    .testi-card:hover::after {
-      opacity: 1;
-    }
+    .testi-card:hover::after { opacity: 1; }
 
     .testi-card:hover {
       transform: translateY(-4px);
@@ -1748,11 +1657,7 @@
       border: 1.5px solid rgba(66, 133, 244, 0.25);
     }
 
-    .testi-stars {
-      color: #f59e0b;
-      letter-spacing: 2px;
-      font-size: 0.9rem;
-    }
+    .testi-stars { color: #f59e0b; letter-spacing: 2px; font-size: 0.9rem; }
 
     .testi-card p {
       color: #444;
@@ -1798,17 +1703,8 @@
       border-radius: 50%;
     }
 
-    .testi-author-info strong {
-      display: block;
-      font-size: 0.85rem;
-      color: #1a1218;
-      font-weight: 700;
-    }
-
-    .testi-author-info span {
-      color: #888;
-      font-size: 0.73rem;
-    }
+    .testi-author-info strong { display: block; font-size: 0.85rem; color: #1a1218; font-weight: 700; }
+    .testi-author-info span  { color: #888; font-size: 0.73rem; }
 
     .testi-carousel-nav {
       display: flex;
@@ -1822,8 +1718,7 @@
       background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.25);
       color: rgba(255, 255, 255, 0.8);
-      width: 38px;
-      height: 38px;
+      width: 38px; height: 38px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -1833,27 +1728,13 @@
       transition: background 0.2s, border-color 0.2s, color 0.2s;
     }
 
-    .testi-nav-btn:hover {
-      background: #a8e832;
-      border-color: #a8e832;
-      color: #0a0a0f;
-    }
+    .testi-nav-btn:hover { background: #a8e832; border-color: #a8e832; color: #0a0a0f; }
+    .testi-nav-btn:disabled { opacity: 0.25; cursor: default; pointer-events: none; }
 
-    .testi-nav-btn:disabled {
-      opacity: 0.25;
-      cursor: default;
-      pointer-events: none;
-    }
-
-    .testi-nav-dots {
-      display: flex;
-      gap: 7px;
-      align-items: center;
-    }
+    .testi-nav-dots { display: flex; gap: 7px; align-items: center; }
 
     .testi-nav-dot {
-      width: 7px;
-      height: 7px;
+      width: 7px; height: 7px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.28);
       cursor: pointer;
@@ -1862,10 +1743,7 @@
       padding: 0;
     }
 
-    .testi-nav-dot.active {
-      background: #a8e832;
-      transform: scale(1.4);
-    }
+    .testi-nav-dot.active { background: #a8e832; transform: scale(1.4); }
 
     /* === FOUNDER QUOTES SECTION === */
     .founder-quote-section {
@@ -1886,10 +1764,7 @@
       border-radius: 0;
     }
 
-    .fq-inner {
-      max-width: 860px;
-      margin: auto;
-    }
+    .fq-inner { max-width: 860px; margin: auto; }
 
     .fq-icon {
       font-size: 3.5rem;
@@ -1899,9 +1774,7 @@
       opacity: 0.5;
     }
 
-    .fq-icon i {
-      color: #a8e832 !important;
-    }
+    .fq-icon i { color: #a8e832 !important; }
 
     .founder-quote blockquote {
       font-family: var(--font-italic);
@@ -1920,8 +1793,7 @@
     }
 
     .fq-avatar {
-      width: 72px;
-      height: 72px;
+      width: 72px; height: 72px;
       border-radius: 50%;
       overflow: hidden;
       display: flex;
@@ -1933,25 +1805,15 @@
     }
 
     .fq-avatar img {
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       object-fit: cover;
       border-radius: 50%;
       display: block;
     }
 
-    .fq-author strong {
-      display: block;
-      font-size: 1rem;
-      color: var(--text);
-    }
+    .fq-author strong { display: block; font-size: 1rem; color: var(--text); }
+    .fq-author span   { font-size: 0.82rem; color: var(--muted); }
 
-    .fq-author span {
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-
-    /* Divider line between the two founder quotes */
     .fq-divider {
       width: 60%;
       max-width: 500px;
@@ -1985,14 +1847,12 @@
 
     .cta-blob {
       position: absolute;
-      width: 600px;
-      height: 600px;
+      width: 600px; height: 600px;
       background: radial-gradient(circle, var(--accent2) 0%, var(--accent) 60%, transparent 100%);
       border-radius: 50%;
       filter: blur(120px);
       opacity: 0.15;
-      top: 50%;
-      left: 50%;
+      top: 50%; left: 50%;
       transform: translate(-50%, -50%);
     }
 
@@ -2021,20 +1881,14 @@
       font-weight: 390;
     }
 
-    .cta-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
+    .cta-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
     /* === BACK TO TOP BUTTON === */
     .back-top {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      bottom: 30px; right: 30px;
       z-index: 9999;
-      width: 46px;
-      height: 46px;
+      width: 46px; height: 46px;
       border-radius: 50%;
       background: #a8e832 !important;
       color: #0a0a0f !important;
@@ -2066,8 +1920,7 @@
 
     /* === SCROLL REVEAL ANIMATIONS === */
     .pulse {
-      width: 8px;
-      height: 8px;
+      width: 8px; height: 8px;
       background: var(--accent3);
       border-radius: 50%;
       display: inline-block;
@@ -2075,17 +1928,9 @@
     }
 
     @keyframes pulseAnim {
-      0% {
-        box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.5)
-      }
-
-      70% {
-        box-shadow: 0 0 0 10px rgba(22, 163, 74, 0)
-      }
-
-      100% {
-        box-shadow: 0 0 0 0 rgba(22, 163, 74, 0)
-      }
+      0%   { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.5) }
+      70%  { box-shadow: 0 0 0 10px rgba(22, 163, 74, 0) }
+      100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0) }
     }
 
     .reveal {
@@ -2095,10 +1940,7 @@
       transition-delay: var(--delay, 0s);
     }
 
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.active { opacity: 1; transform: translateY(0); }
 
     .reveal-left {
       opacity: 0;
@@ -2106,10 +1948,7 @@
       transition: opacity 0.8s, transform 0.8s;
     }
 
-    .reveal-left.active {
-      opacity: 1;
-      transform: translateX(0);
-    }
+    .reveal-left.active { opacity: 1; transform: translateX(0); }
 
     .reveal-right {
       opacity: 0;
@@ -2117,246 +1956,84 @@
       transition: opacity 0.8s, transform 0.8s;
     }
 
-    .reveal-right.active {
-      opacity: 1;
-      transform: translateX(0);
-    }
+    .reveal-right.active { opacity: 1; transform: translateX(0); }
 
-    /* === RESPONSIVE BREAKPOINTS === */
+    /* === RESPONSIVE === */
     @media (max-width:1100px) {
-      .footer-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 32px;
-      }
+      .footer-grid { grid-template-columns: repeat(3, 1fr); gap: 32px; }
     }
 
     @media (max-width:900px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-img-small {
-        display: none;
-      }
-
-      .cta-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .port-page {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 220px 200px 200px;
-      }
-
-      .port-big {
-        grid-column: 1;
-        grid-row: 1/3;
-      }
-
-      .port-tall {
-        grid-column: 2;
-        grid-row: 2/4;
-      }
-
-      .services-intro {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .flip-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .outstanding-inner {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
-      }
-
-      .outstanding-body {
-        margin: 0 auto;
-      }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-img-small { display: none; }
+      .cta-inner { flex-direction: column; text-align: center; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .port-page { grid-template-columns: repeat(2, 1fr); grid-template-rows: 220px 200px 200px; }
+      .port-big { grid-column: 1; grid-row: 1/3; }
+      .port-tall { grid-column: 2; grid-row: 2/4; }
+      .services-intro { grid-template-columns: 1fr; gap: 24px; }
+      .flip-cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .outstanding-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .outstanding-body { margin: 0 auto; }
     }
 
     @media (max-width:768px) {
-      .site-logo-bar {
-        height: 64px;
-        padding: 0 16px;
-      }
-
-      .site-logo-bar img {
-        height: 44px;
-      }
-
-      .navbar,
-      .navbar.scrolled {
-        top: 64px !important;
-        min-height: 52px;
-      }
-
-      .nav-links {
-        gap: 16px !important;
-        font-size: 0.78rem !important;
-      }
-
-      .hero {
-        padding-top: 136px !important;
-      }
-
-      .hero-slide-wrap {
-        height: 38vh;
-        min-height: 160px;
-        max-height: 260px;
-      }
-
-      .nav-cta {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-        width: 44px;
-        height: 44px;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .founder-quote blockquote {
-        font-size: 1.15rem;
-      }
-
-      .made-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .testi-card {
-        flex: 0 0 250px;
-        width: 250px;
-      }
+      .site-logo-bar { height: 64px; padding: 0 16px; }
+      .site-logo-bar img { height: 44px; }
+      .navbar, .navbar.scrolled { top: 64px !important; min-height: 52px; }
+      .nav-links { gap: 16px !important; font-size: 0.78rem !important; }
+      .hero { padding-top: 136px !important; }
+      .hero-slide-wrap { height: 38vh; min-height: 160px; max-height: 260px; }
+      .nav-cta { display: none; }
+      .hamburger { display: flex; width: 44px; height: 44px; align-items: center; justify-content: center; }
+      .founder-quote blockquote { font-size: 1.15rem; }
+      .made-grid { grid-template-columns: 1fr 1fr; }
+      .testi-card { flex: 0 0 250px; width: 250px; }
+      .cl-item { width: 150px; height: 100px; }
     }
 
     @media (max-width:700px) {
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 28px;
-      }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
     }
 
     @media (max-width:640px) {
-      .section {
-        padding: 50px 0;
-      }
-
-      .nav-links {
-        display: none !important;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero-slide-big {
-        font-size: clamp(1.7rem, 7.5vh, 3.2rem);
-      }
-
-      .made-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .flip-cards-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .port-page {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 200px 170px 170px;
-        gap: 10px;
-      }
-
-      .port-big {
-        grid-column: 1/3;
-        grid-row: 1;
-      }
-
-      .port-tall {
-        grid-column: 1/3;
-        grid-row: auto;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 8px;
-        text-align: center;
-      }
-
-      .testi-card {
-        flex: 0 0 230px;
-        width: 230px;
-      }
+      .section { padding: 50px 0; }
+      .nav-links { display: none !important; }
+      .hamburger { display: flex; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .hero-slide-big { font-size: clamp(1.7rem, 7.5vh, 3.2rem); }
+      .made-grid { grid-template-columns: 1fr; }
+      .flip-cards-grid { grid-template-columns: 1fr; }
+      .port-page { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 170px 170px; gap: 10px; }
+      .port-big { grid-column: 1/3; grid-row: 1; }
+      .port-tall { grid-column: 1/3; grid-row: auto; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      .testi-card { flex: 0 0 230px; width: 230px; }
+      .cl-item { width: 130px; height: 88px; padding: 12px 16px; }
     }
 
     @media (max-width:480px) {
-      .nav-links {
-        display: none !important;
-      }
-
-      .site-logo-bar {
-        height: 58px;
-      }
-
-      .site-logo-bar img {
-        height: 40px;
-      }
-
-      .navbar,
-      .navbar.scrolled {
-        top: 58px !important;
-      }
-
-      .hero {
-        padding-top: 126px !important;
-      }
+      .nav-links { display: none !important; }
+      .site-logo-bar { height: 58px; }
+      .site-logo-bar img { height: 40px; }
+      .navbar, .navbar.scrolled { top: 58px !important; }
+      .hero { padding-top: 126px !important; }
     }
 
     @media (max-width:440px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .made-grid {
-        grid-template-columns: 1fr;
-      }
+      .footer-grid { grid-template-columns: 1fr; }
+      .made-grid { grid-template-columns: 1fr; }
     }
 
-    .team-grid {
-      grid-template-columns: repeat(3, 1fr) !important;
-      gap: 16px !important;
-    }
+    .team-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 16px !important; }
 
     @media (max-width:860px) {
-      .team-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-      }
+      .team-grid { grid-template-columns: repeat(2, 1fr) !important; }
     }
 
     @media (max-width:480px) {
-      .team-grid {
-        grid-template-columns: 1fr !important;
-      }
+      .team-grid { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
@@ -2371,7 +2048,7 @@
     </a>
   </div>
 
-  <!-- NAVBAR with dropdown menus -->
+  <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-wrap">
       <ul class="nav-links" id="navLinks">
@@ -2384,10 +2061,8 @@
             <li><a href="digital-advertising.html"><i class="ri-megaphone-line"></i>Digital Advertising</a></li>
             <li><a href="seo-sem-marketing.html"><i class="ri-search-line"></i>SEO / SEM Marketing</a></li>
             <li><a href="social-media-management.html"><i class="ri-instagram-line"></i>Social Media Management</a></li>
-            <li><a href="product-design-strategies.html"><i class="ri-pen-nib-line"></i>Product Design &amp;
-                Strategies</a></li>
-            <li><a href="web-app-development.html"><i class="ri-code-s-slash-line"></i>Web &amp; App Development</a>
-            </li>
+            <li><a href="product-design-strategies.html"><i class="ri-pen-nib-line"></i>Product Design &amp; Strategies</a></li>
+            <li><a href="web-app-development.html"><i class="ri-code-s-slash-line"></i>Web &amp; App Development</a></li>
             <li><a href="outdoor-print-ads.html"><i class="ri-image-line"></i>Outdoor &amp; Print Ads</a></li>
             <li><a href="ecommerce.html"><i class="ri-shopping-cart-line"></i>E-Commerce</a></li>
           </ul>
@@ -2420,7 +2095,7 @@
     </div>
   </nav>
 
-  <!-- MOBILE MENU OVERLAY + DRAWER -->
+  <!-- MOBILE MENU -->
   <div class="mob-overlay" id="mobOverlay"></div>
   <div class="mob-menu" id="mobMenu" aria-hidden="true">
     <button class="mob-close" id="mobClose" aria-label="Close menu"><i class="ri-close-line"></i></button>
@@ -2429,8 +2104,7 @@
       <li><a href="about.html">About</a></li>
       <li><a href="team.html">Team</a></li>
       <li>
-        <button class="mob-parent-btn" data-target="mob-sub-services">Services <i
-            class="ri-arrow-down-s-line mob-arrow"></i></button>
+        <button class="mob-parent-btn" data-target="mob-sub-services">Services <i class="ri-arrow-down-s-line mob-arrow"></i></button>
         <ul class="mob-sub" id="mob-sub-services">
           <li><a href="digital-advertising.html">Digital Advertising</a></li>
           <li><a href="seo-sem-marketing.html">SEO / SEM Marketing</a></li>
@@ -2444,8 +2118,7 @@
       <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="clients.html">Clients</a></li>
       <li>
-        <button class="mob-parent-btn" data-target="mob-sub-case">Case Studies <i
-            class="ri-arrow-down-s-line mob-arrow"></i></button>
+        <button class="mob-parent-btn" data-target="mob-sub-case">Case Studies <i class="ri-arrow-down-s-line mob-arrow"></i></button>
         <ul class="mob-sub" id="mob-sub-case">
           <li><a href="story-1.html">Story 1</a></li>
           <li><a href="story-2.html">Story 2</a></li>
@@ -2463,7 +2136,7 @@
     </div>
   </div>
 
-  <!-- HERO — full-viewport sliding headline cycler with stats -->
+  <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-bg-img"></div>
     <div class="hero-bg-overlay"></div>
@@ -2477,8 +2150,7 @@
       <div class="hero-slide-wrap" id="heroSlideWrap"></div>
       <div class="hero-btns reveal">
         <a href="portfolio.html" class="btn-red">See Our Work <i class="ri-arrow-right-line"></i></a>
-        <a href="about.html" class="btn-ghost"
-          style="border-color:rgba(255,255,255,0.2); color:rgba(255,255,255,0.7);">Our Story</a>
+        <a href="about.html" class="btn-ghost" style="border-color:rgba(255,255,255,0.2); color:rgba(255,255,255,0.7);">Our Story</a>
       </div>
       <div class="hero-stats reveal">
         <div class="hstat"><strong>10+</strong><span>Years in Business</span></div>
@@ -2495,7 +2167,7 @@
     </svg>
   </section>
 
-  <!-- MARQUEE STRIP — scrolling service tags -->
+  <!-- MARQUEE STRIP -->
   <div class="marquee-strip">
     <div class="marquee-track">
       <span>GRAPHIC DESIGN</span><span class="dot">●</span>
@@ -2521,7 +2193,7 @@
     </div>
   </div>
 
-  <!-- ABOUT — agency story, image, list + Our Work band + video modal + founders -->
+  <!-- ABOUT -->
   <section class="about-section" id="about">
     <div class="wrap">
       <div class="about-grid">
@@ -2538,11 +2210,7 @@
         <div class="about-text-col reveal-right">
           <p class="sec-eyebrow">● About Us</p>
           <h2 class="sec-heading">Your Vision.<br><em>Our Creation.</em></h2>
-          <p class="sec-body">Founded in the heart of Margao, Flashlab Creative started with one goal, to build brands
-            that people remember. What began as a small team of passionate creatives has grown into one of Goa's leading
-            creative agencies, partnering with brands across hospitality, real estate, lifestyle, and beyond. We combine
-            strategy, design, content, and performance to create work that not only looks good but delivers real impact.
-            Every project is built with purpose, backed by creativity, and driven by results.</p>
+          <p class="sec-body">Founded in the heart of Margao, Flashlab Creative started with one goal, to build brands that people remember. What began as a small team of passionate creatives has grown into one of Goa's leading creative agencies, partnering with brands across hospitality, real estate, lifestyle, and beyond. We combine strategy, design, content, and performance to create work that not only looks good but delivers real impact. Every project is built with purpose, backed by creativity, and driven by results.</p>
           <ul class="about-list">
             <li><i class="ri-checkbox-circle-fill"></i> Creative solutions tailored for modern brands</li>
             <li><i class="ri-checkbox-circle-fill"></i> Strategies focused on growth, visibility, and engagement</li>
@@ -2554,7 +2222,7 @@
         </div>
       </div>
 
-      <!-- Our Work full-width image band with video play trigger -->
+      <!-- Our Work band -->
       <div class="outstanding-section">
         <div class="outstanding-bg"></div>
         <div class="outstanding-overlay"></div>
@@ -2563,8 +2231,7 @@
           <div class="outstanding-text reveal-left">
             <p class="sec-eyebrow" style="color:rgba(255,255,255,0.6)">● Our Work</p>
             <h2 class="outstanding-heading">Crafted By <em>Our Team</em></h2>
-            <p class="outstanding-body">A showcase of ideas brought to life through strategy, creativity, and execution.
-              Every project reflects the passion, detail, and impact behind the brands we build.</p>
+            <p class="outstanding-body">A showcase of ideas brought to life through strategy, creativity, and execution. Every project reflects the passion, detail, and impact behind the brands we build.</p>
           </div>
           <div class="outstanding-video-col reveal-right">
             <button class="video-play-btn" id="videoPlayBtn" aria-label="Play video">
@@ -2575,15 +2242,14 @@
         </div>
       </div>
 
-      <!-- VIDEO MODAL — YouTube embed, opens on play button click -->
+      <!-- VIDEO MODAL -->
       <div class="video-modal" id="videoModal">
         <div class="video-modal-backdrop" id="videoModalBackdrop"></div>
         <div class="video-modal-box">
           <div class="video-modal-header">
             <span class="video-modal-title">Flashlab Creative</span>
             <div class="video-modal-actions">
-              <a href="https://www.youtube.com/watch?v=sZd-t5-I5uA" target="_blank" rel="noopener" class="video-yt-link"
-                id="videoYtLink">
+              <a href="https://www.youtube.com/watch?v=sZd-t5-I5uA" target="_blank" rel="noopener" class="video-yt-link" id="videoYtLink">
                 <i class="ri-youtube-fill"></i> Open in YouTube
               </a>
               <button class="video-modal-close" id="videoModalClose" aria-label="Close">
@@ -2599,7 +2265,7 @@
         </div>
       </div>
 
-      <!-- WHO MADE IT — founder cards with photo, name, role, socials -->
+      <!-- WHO MADE IT — founders -->
       <section class="made-it" id="made">
         <div class="sec-header centered reveal" style="margin-bottom:36px;">
           <p class="sec-eyebrow">● Who Made It</p>
@@ -2612,8 +2278,7 @@
             <div class="founder-info">
               <h4>Ankith Kedar</h4>
               <p>Founder &amp; Creative Director</p>
-              <p>15+ years in Media, Web, Graphic &amp; UI/UX Design, Data Analytics, and Passionate DJ &amp; Producer.
-                The creative backbone of Flashlab Creative</p>
+              <p>15+ years in Media, Web, Graphic &amp; UI/UX Design, Data Analytics, and Passionate DJ &amp; Producer. The creative backbone of Flashlab Creative</p>
               <div class="founder-socials">
                 <a href="https://www.instagram.com/ankith.kedar?igsh=MW8zdXMxdGg2bTN5aw==" target="_blank" rel="noopener"><i class="ri-instagram-fill"></i></a>
                 <a href="https://www.linkedin.com/in/ankithkedar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener"><i class="ri-linkedin-fill"></i></a>
@@ -2626,8 +2291,7 @@
             <div class="founder-info">
               <h4>Anuraj Kedar</h4>
               <p>Co-Founder &amp; Strategy Lead</p>
-              <p>The strategic force at Flashlab Creative. Expert in brand positioning, client relations, and scaling
-                businesses through creative digital strategies.</p>
+              <p>The strategic force at Flashlab Creative. Expert in brand positioning, client relations, and scaling businesses through creative digital strategies.</p>
               <div class="founder-socials">
                 <a href="https://www.instagram.com/anurajkedar?igsh=MXB5bTB3dzY0YmdubA==" target="_blank" rel="noopener"><i class="ri-instagram-fill"></i></a>
                 <a href="https://www.linkedin.com/in/anurajkedar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener"><i class="ri-linkedin-fill"></i></a>
@@ -2640,7 +2304,7 @@
     </div>
   </section>
 
-  <!-- SERVICES — what we do, checklist intro, 9 flip cards -->
+  <!-- SERVICES -->
   <section class="services-section" id="services">
     <div class="wrap">
       <div class="services-comprehensive reveal">
@@ -2653,8 +2317,7 @@
           <h2 class="main-heading">360° Creative Solutions Built For Growth</h2>
         </div>
         <div class="services-intro-right">
-          <p>From social media and performance marketing to websites, branding, and production, Flashlab Creative brings
-            together strategy, creativity, and execution under one roof for brands across Goa and beyond.</p>
+          <p>From social media and performance marketing to websites, branding, and production, Flashlab Creative brings together strategy, creativity, and execution under one roof for brands across Goa and beyond.</p>
           <ul class="checklist">
             <li>End-to-end creative solutions tailored to your brand</li>
             <li>Content and campaigns designed to drive engagement</li>
@@ -2662,27 +2325,22 @@
             <li>Expertise across branding, digital, web, and production</li>
             <li>Creative backed by insight, strategy, and real results</li>
           </ul>
-          <a href="services.html" class="btn-services-link">Explore All Services <i
-              class="ri-arrow-right-up-line"></i></a>
+          <a href="services.html" class="btn-services-link">Explore All Services <i class="ri-arrow-right-up-line"></i></a>
         </div>
       </div>
 
-      <!-- 9 flip cards — hover to reveal description + CTA -->
       <div class="flip-cards-grid">
         <div class="flip-card reveal" style="--delay:0s">
           <div class="flip-card-inner">
             <div class="flip-card-front flip-face-img">
               <img src="images/brands.png" alt="Brand Identity &amp; Design">
-              <div class="face-overlay"><span class="face-num">01</span>
-                <h3 class="face-title">Brand Identity &amp; Design</h3>
-              </div>
+              <div class="face-overlay"><span class="face-num">01</span><h3 class="face-title">Brand Identity &amp; Design</h3></div>
             </div>
             <div class="flip-card-back flip-face-text">
               <div class="face-icon"><i class="ri-palette-fill"></i></div>
               <span class="face-num-text">01</span>
               <h3>Brand Identity &amp; Design</h3>
-              <p>Logos, visual systems, typography, packaging, and brand collaterals crafted to create a strong and
-                memorable identity.</p>
+              <p>Logos, visual systems, typography, packaging, and brand collaterals crafted to create a strong and memorable identity.</p>
               <a href="digital-advertising.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
             </div>
           </div>
@@ -2691,16 +2349,13 @@
           <div class="flip-card-inner">
             <div class="flip-card-front flip-face-img">
               <img src="images/web-dev.png" alt="Web &amp; App Development">
-              <div class="face-overlay"><span class="face-num">02</span>
-                <h3 class="face-title">Web &amp; App Development</h3>
-              </div>
+              <div class="face-overlay"><span class="face-num">02</span><h3 class="face-title">Web &amp; App Development</h3></div>
             </div>
             <div class="flip-card-back flip-face-text">
               <div class="face-icon"><i class="ri-global-line"></i></div>
               <span class="face-num-text">02</span>
               <h3>Web &amp; App Development</h3>
-              <p>Modern websites and applications designed for speed, performance, seamless user experience, and higher
-                conversions.</p>
+              <p>Modern websites and applications designed for speed, performance, seamless user experience, and higher conversions.</p>
               <a href="web-app-development.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
             </div>
           </div>
@@ -2709,18 +2364,14 @@
           <div class="flip-card-inner">
             <div class="flip-card-front flip-face-img">
               <img src="images/social-index.png" alt="Social Media Management">
-              <div class="face-overlay"><span class="face-num">03</span>
-                <h3 class="face-title">Social Media Management</h3>
-              </div>
+              <div class="face-overlay"><span class="face-num">03</span><h3 class="face-title">Social Media Management</h3></div>
             </div>
             <div class="flip-card-back flip-face-text">
               <div class="face-icon"><i class="ri-instagram-fill"></i></div>
               <span class="face-num-text">03</span>
               <h3>Social Media Management</h3>
-              <p>Content planning, creative production, platform management, and audience growth tailored for brands
-                that want to stay relevant online.</p>
-              <a href="social-media-management.html" class="face-link">Get Started <i
-                  class="ri-arrow-right-line"></i></a>
+              <p>Content planning, creative production, platform management, and audience growth tailored for brands that want to stay relevant online.</p>
+              <a href="social-media-management.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
             </div>
           </div>
         </div>
@@ -2728,16 +2379,13 @@
           <div class="flip-card-inner">
             <div class="flip-card-front flip-face-img">
               <img src="images/digitalad-service.png" alt="Digital Advertising &amp; SEO">
-              <div class="face-overlay"><span class="face-num">04</span>
-                <h3 class="face-title">Digital Advertising &amp; SEO</h3>
-              </div>
+              <div class="face-overlay"><span class="face-num">04</span><h3 class="face-title">Digital Advertising &amp; SEO</h3></div>
             </div>
             <div class="flip-card-back flip-face-text">
               <div class="face-icon"><i class="ri-bar-chart-fill"></i></div>
               <span class="face-num-text">04</span>
               <h3>Digital Advertising &amp; SEO</h3>
-              <p>Performance campaigns across Google, Meta, and digital platforms supported by SEO strategies that drive
-                visibility and measurable results.</p>
+              <p>Performance campaigns across Google, Meta, and digital platforms supported by SEO strategies that drive visibility and measurable results.</p>
               <a href="digital-advertising.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
             </div>
           </div>
@@ -2746,16 +2394,13 @@
           <div class="flip-card-inner">
             <div class="flip-card-front flip-face-img">
               <img src="images/photo-index.png" alt="Photography &amp; Video">
-              <div class="face-overlay"><span class="face-num">05</span>
-                <h3 class="face-title">Photography &amp; Video</h3>
-              </div>
+              <div class="face-overlay"><span class="face-num">05</span><h3 class="face-title">Photography &amp; Video</h3></div>
             </div>
             <div class="flip-card-back flip-face-text">
               <div class="face-icon"><i class="ri-video-fill"></i></div>
               <span class="face-num-text">05</span>
               <h3>Photography &amp; Video</h3>
-              <p>Brand shoots, cinematic reels, food photography, drone visuals, and creative video production designed
-                to capture attention instantly.</p>
+              <p>Brand shoots, cinematic reels, food photography, drone visuals, and creative video production designed to capture attention instantly.</p>
               <a href="digital-advertising.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
             </div>
           </div>
@@ -2764,16 +2409,13 @@
           <div class="flip-card-inner">
             <div class="flip-card-front flip-face-img">
               <img src="images/Outdoor Print ads1.png" alt="Outdoor &amp; Print Ads">
-              <div class="face-overlay"><span class="face-num">06</span>
-                <h3 class="face-title">Outdoor &amp; Print Ads</h3>
-              </div>
+              <div class="face-overlay"><span class="face-num">06</span><h3 class="face-title">Outdoor &amp; Print Ads</h3></div>
             </div>
             <div class="flip-card-back flip-face-text">
               <div class="face-icon"><i class="ri-price-tag-3-fill"></i></div>
               <span class="face-num-text">06</span>
               <h3>Outdoor &amp; Print Ads</h3>
-              <p>Hoardings, brochures, banners, and print campaigns created to keep your brand visible both on the
-                streets and beyond digital.</p>
+              <p>Hoardings, brochures, banners, and print campaigns created to keep your brand visible both on the streets and beyond digital.</p>
               <a href="outdoor-print-ads.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
             </div>
           </div>
@@ -2782,16 +2424,13 @@
           <div class="flip-card-inner">
             <div class="flip-card-front flip-face-img">
               <img src="images/event-index.png" alt="Event Production">
-              <div class="face-overlay"><span class="face-num">07</span>
-                <h3 class="face-title">Event Production</h3>
-              </div>
+              <div class="face-overlay"><span class="face-num">07</span><h3 class="face-title">Event Production</h3></div>
             </div>
             <div class="flip-card-back flip-face-text">
               <div class="face-icon"><i class="ri-calendar-event-fill"></i></div>
               <span class="face-num-text">07</span>
               <h3>Event Production</h3>
-              <p>Complete event coverage, production, promotions, and content creation for launches, conferences,
-                exhibitions, and live experiences.</p>
+              <p>Complete event coverage, production, promotions, and content creation for launches, conferences, exhibitions, and live experiences.</p>
               <a href="digital-advertising.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
             </div>
           </div>
@@ -2800,16 +2439,13 @@
           <div class="flip-card-inner">
             <div class="flip-card-front flip-face-img">
               <img src="images/consult.png" alt="Media Consulting">
-              <div class="face-overlay"><span class="face-num">08</span>
-                <h3 class="face-title">Media Consulting</h3>
-              </div>
+              <div class="face-overlay"><span class="face-num">08</span><h3 class="face-title">Media Consulting</h3></div>
             </div>
             <div class="flip-card-back flip-face-text">
               <div class="face-icon"><i class="ri-roadster-fill"></i></div>
               <span class="face-num-text">08</span>
               <h3>Media Consulting</h3>
-              <p>Strategic media planning and creative direction across platforms to help brands communicate clearly and
-                grow effectively.</p>
+              <p>Strategic media planning and creative direction across platforms to help brands communicate clearly and grow effectively.</p>
               <a href="services.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
             </div>
           </div>
@@ -2818,16 +2454,13 @@
           <div class="flip-card-inner">
             <div class="flip-card-front flip-face-img">
               <img src="images/animate.png" alt="Animation &amp; Motion">
-              <div class="face-overlay"><span class="face-num">09</span>
-                <h3 class="face-title">Animation &amp; Motion</h3>
-              </div>
+              <div class="face-overlay"><span class="face-num">09</span><h3 class="face-title">Animation &amp; Motion</h3></div>
             </div>
             <div class="flip-card-back flip-face-text">
               <div class="face-icon"><i class="ri-magic-fill"></i></div>
               <span class="face-num-text">09</span>
               <h3>Animation &amp; Motion</h3>
-              <p>Motion graphics, logo animations, explainer videos, and dynamic visual content designed to make brands
-                more engaging and memorable.</p>
+              <p>Motion graphics, logo animations, explainer videos, and dynamic visual content designed to make brands more engaging and memorable.</p>
               <a href="digital-advertising.html" class="face-link">Get Started <i class="ri-arrow-right-line"></i></a>
             </div>
           </div>
@@ -2836,7 +2469,7 @@
     </div>
   </section>
 
-  <!-- STATS — animated counters with background image -->
+  <!-- STATS -->
   <section class="stats-section" id="stats">
     <div class="stats-noise"></div>
     <div class="wrap">
@@ -2846,26 +2479,22 @@
       </div>
       <div class="stats-grid">
         <div class="stat-item reveal" style="--delay:0s">
-          <div class="stat-num-wrap"><span class="stat-num counter" data-target="25">0</span><span
-              class="stat-suf">M+</span></div>
+          <div class="stat-num-wrap"><span class="stat-num counter" data-target="25">0</span><span class="stat-suf">M+</span></div>
           <p>Audience Reached</p>
           <div class="stat-bar"></div>
         </div>
         <div class="stat-item reveal" style="--delay:0.1s">
-          <div class="stat-num-wrap"><span class="stat-num counter" data-target="5">0</span><span
-              class="stat-suf">M+</span></div>
+          <div class="stat-num-wrap"><span class="stat-num counter" data-target="5">0</span><span class="stat-suf">M+</span></div>
           <p>Meaningful Engagements</p>
           <div class="stat-bar"></div>
         </div>
         <div class="stat-item reveal" style="--delay:0.2s">
-          <div class="stat-num-wrap"><span class="stat-num counter" data-target="10">0</span><span
-              class="stat-suf">K+</span></div>
+          <div class="stat-num-wrap"><span class="stat-num counter" data-target="10">0</span><span class="stat-suf">K+</span></div>
           <p>Creative Assets Produced</p>
           <div class="stat-bar"></div>
         </div>
         <div class="stat-item reveal" style="--delay:0.3s">
-          <div class="stat-num-wrap"><span class="stat-num counter" data-target="500">0</span><span
-              class="stat-suf">+</span></div>
+          <div class="stat-num-wrap"><span class="stat-num counter" data-target="500">0</span><span class="stat-suf">+</span></div>
           <p>Campaigns Executed</p>
           <div class="stat-bar"></div>
         </div>
@@ -2873,83 +2502,34 @@
     </div>
   </section>
 
-  <!-- PORTFOLIO — paginated carousel of project tiles -->
-  <section class="section" id="work">
-    <div class="wrap">
-      <div class="sec-header centered reveal">
-        <p class="sec-eyebrow">● Brands We've Shaped</p>
-        <h2 class="sec-heading">Creative <em>Portfolio.</em></h2>
-        <p class="sec-sub">A showcase of bold ideas, strategic storytelling, and high-impact creative work crafted for
-          hospitality, real estate, fitness, sports, and lifestyle brands.</p>
-      </div>
-      <div class="carousel-outer">
-        <button class="carousel-nav prev" id="port-prev" aria-label="Previous page"><i
-            class="ri-arrow-left-s-line"></i></button>
-        <button class="carousel-nav next" id="port-next" aria-label="Next page"><i
-            class="ri-arrow-right-s-line"></i></button>
-        <div class="carousel-viewport">
-          <div class="carousel-track" id="port-track">
-            <div class="port-page">
-              <div class="port-item port-big">
-                <div class="port-bg" style="background:linear-gradient(135deg,#ff416c,#c0392b)">🎨</div>
-                <div class="port-overlay">
-                  <h4>Brand Identity Projects</h4>
-                  <p>Logo · Visual System · Typography</p>
-                </div>
-              </div>
-              <div class="port-item">
-                <div class="port-bg" style="background:linear-gradient(135deg,#667eea,#764ba2)">🌐</div>
-                <div class="port-overlay">
-                  <h4>Web &amp; App Development</h4>
-                  <p>Custom Sites · E-Commerce · Apps</p>
-                </div>
-              </div>
-              <div class="port-item port-tall">
-                <div class="port-bg" style="background:linear-gradient(160deg,#fa709a,#fee140)">🎪</div>
-                <div class="port-overlay">
-                  <h4>Hide Expo 2024</h4>
-                  <p>Hospitality Interior &amp; Design Expo</p>
-                </div>
-              </div>
-              <div class="port-item">
-                <div class="port-bg" style="background:linear-gradient(135deg,#f093fb,#f5576c)">📸</div>
-                <div class="port-overlay">
-                  <h4>Food &amp; Hospitality Shoots</h4>
-                  <p>Aerial · Studio · Events</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-dots" id="port-dots"></div>
-      </div>
-      <div class="center-btn reveal">
-        <button class="btn-red" id="openPortfolioOverlay">
-          <a href="portfolio.html">View Portfolio</a><i class="ri-arrow-right-up-line"></i>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- CLIENTS — dual auto-scrolling logo belts (forward + reverse) -->
+  <!-- ============================================================
+       CLIENTS — THREE-ROW SCROLLING LOGO BELTS
+       Row 1: white bg, logos forced black  → scroll forward
+       Row 2: dark  bg, logos forced white  → scroll reverse
+       Row 3: white bg, logos forced black  → scroll forward (slower)
+  ============================================================= -->
   <section class="clients-section">
     <div class="clients-header">
-      <span class="clients-big-title">Our Esteeme Clients</span>
-      <p class="clients-sub">Across Goa &amp; India</p>
+      <span class="clients-main-title">Our Esteemed Clients</span>
+      <p class="clients-sub-title">Across Goa &amp; India</p>
     </div>
-    <div class="clients-belt-row" id="beltRow1">
-      <div class="clients-belt-track fwd" id="cl-track-fwd"></div>
-    </div>
-    <div class="clients-belt-gap"></div>
-    <div class="clients-belt-row" id="beltRow2">
-      <div class="clients-belt-track rev" id="cl-track-rev"></div>
+    <div class="clients-belt-wrapper">
+      <div class="clients-row clients-row-1">
+        <div class="clients-belt-track belt-fwd" id="cl-row1-track"></div>
+      </div>
+      <div class="clients-row clients-row-2">
+        <div class="clients-belt-track belt-rev" id="cl-row2-track"></div>
+      </div>
+      <div class="clients-row clients-row-3">
+        <div class="clients-belt-track belt-fwd2" id="cl-row3-track"></div>
+      </div>
     </div>
     <div class="clients-view-all">
       <a href="clients.html#brand-partners">View All Brand Partnerships <i class="ri-arrow-right-up-line"></i></a>
     </div>
   </section>
 
-  <!-- TESTIMONIALS — auto-scrolling Google review cards -->
+  <!-- TESTIMONIALS -->
   <section class="section testi-section" id="testimonials">
     <div class="testi-bg"></div>
     <div class="testi-overlay"></div>
@@ -2972,15 +2552,12 @@
     </div>
   </section>
 
-  <!-- FOUNDER QUOTES — two separate quotes with a divider between them -->
+  <!-- FOUNDER QUOTES -->
   <div class="founder-quote-section">
-    <!-- Ankith Kedar quote -->
     <div class="founder-quote">
       <div class="fq-inner reveal">
         <div class="fq-icon"><i class="ri-double-quotes-l"></i></div>
-        <blockquote>At Flashlab Creative, we believe in creativity, collaboration, and consistency. We are a team of
-          artists, strategists, and creators with one shared objective: to work together and deliver quality work to our
-          clients.</blockquote>
+        <blockquote>At Flashlab Creative, we believe in creativity, collaboration, and consistency. We are a team of artists, strategists, and creators with one shared objective: to work together and deliver quality work to our clients.</blockquote>
         <div class="fq-icon"><i class="ri-double-quotes-r"></i></div>
         <div class="fq-author">
           <div class="fq-avatar"><img src="images/ankith.png" alt="Ankith Kedar"></div>
@@ -2991,16 +2568,11 @@
         </div>
       </div>
     </div>
-
-    <!-- Divider line between the two quotes -->
     <div class="fq-divider"></div>
-
-    <!-- Anuraj Kedar quote -->
     <div class="founder-quote">
       <div class="fq-inner reveal">
         <div class="fq-icon"><i class="ri-double-quotes-l"></i></div>
-        <blockquote>Every brand has a story worth telling. At Flashlab Creative, we make sure that story is heard — with
-          clarity, passion, and a strategy that turns vision into lasting impact.</blockquote>
+        <blockquote>Every brand has a story worth telling. At Flashlab Creative, we make sure that story is heard — with clarity, passion, and a strategy that turns vision into lasting impact.</blockquote>
         <div class="fq-icon"><i class="ri-double-quotes-r"></i></div>
         <div class="fq-author">
           <div class="fq-avatar"><img src="images/anuraj.png" alt="Anuraj Kedar"></div>
@@ -3013,7 +2585,7 @@
     </div>
   </div>
 
-  <!-- CTA — call to action with contact prompt -->
+  <!-- CTA -->
   <section class="cta-section">
     <div class="cta-noise"></div>
     <div class="cta-blob"></div>
@@ -3021,8 +2593,7 @@
       <div class="reveal">
         <p class="sec-eyebrow" style="color:var(--text)">● Ready to Begin?</p>
         <h2 class="cta-heading">Have a project<br>in mind? <em>Let's talk.</em></h2>
-        <p style="color:var(--text); margin-top:14px; font-size:0.95rem;">Based in Margao, Goa — serving clients locally
-          and nationally.</p>
+        <p style="color:var(--text); margin-top:14px; font-size:0.95rem;">Based in Margao, Goa — serving clients locally and nationally.</p>
       </div>
       <div class="cta-actions reveal">
         <a href="connect.html" class="btn-white">Start a Project <i class="ri-arrow-right-line"></i></a>
@@ -3031,7 +2602,7 @@
     </div>
   </section>
 
-  <!-- FOOTER — links, services, contact, socials -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="wrap footer-grid">
       <div class="footer-brand">
@@ -3041,18 +2612,13 @@
               onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:1.5rem;letter-spacing:2px;color:#fff\'>FLASHLAB CREATIVE</span>'">
           </a>
         </div>
-        <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in
-          2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
+        <p>Goa's leading creative &amp; digital marketing agency — where imagination meets reality. Born in Margao in 2018, we craft unforgettable digital experiences for brands that dare to stand out.</p>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i
-              class="ri-instagram-fill"></i></a>
-          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i
-              class="ri-facebook-fill"></i></a>
-          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i
-              class="ri-linkedin-fill"></i></a>
+          <a href="https://www.instagram.com/flashlab.creative" target="_blank" rel="noopener"><i class="ri-instagram-fill"></i></a>
+          <a href="https://www.facebook.com/flashlab.creative/" target="_blank" rel="noopener"><i class="ri-facebook-fill"></i></a>
+          <a href="https://www.linkedin.com/company/flashlabcreative" target="_blank" rel="noopener"><i class="ri-linkedin-fill"></i></a>
           <a href="https://twitter.com/theflashlab" target="_blank" rel="noopener"><i class="ri-twitter-x-fill"></i></a>
-          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i
-              class="ri-youtube-fill"></i></a>
+          <a href="https://www.youtube.com/channel/UCuFtcVt_Yp9CZ82UG6pm-pg" target="_blank" rel="noopener"><i class="ri-youtube-fill"></i></a>
         </div>
       </div>
       <div>
@@ -3084,21 +2650,13 @@
       <div>
         <h4 class="footer-head">Join Us</h4>
         <ul class="footer-list">
-          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','intern')"><i
-                class="ri-arrow-right-s-line"></i>Intern</a></li>
-          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','seo-expert')"><i
-                class="ri-arrow-right-s-line"></i>SEO Expert</a></li>
-          <li><a href="career.html#open-positions"
-              onclick="sessionStorage.setItem('openRole','social-media-manager')"><i
-                class="ri-arrow-right-s-line"></i>Social Media Mgr</a></li>
-          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','graphic-designer')"><i
-                class="ri-arrow-right-s-line"></i>Graphic Designer</a></li>
-          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','web-developer')"><i
-                class="ri-arrow-right-s-line"></i>Web Developer</a></li>
-          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','animation-designer')"><i
-                class="ri-arrow-right-s-line"></i>Animation Designer</a></li>
-          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','app-developer')"><i
-                class="ri-arrow-right-s-line"></i>App Developer</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','intern')"><i class="ri-arrow-right-s-line"></i>Intern</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','seo-expert')"><i class="ri-arrow-right-s-line"></i>SEO Expert</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','social-media-manager')"><i class="ri-arrow-right-s-line"></i>Social Media Mgr</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','graphic-designer')"><i class="ri-arrow-right-s-line"></i>Graphic Designer</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','web-developer')"><i class="ri-arrow-right-s-line"></i>Web Developer</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','animation-designer')"><i class="ri-arrow-right-s-line"></i>Animation Designer</a></li>
+          <li><a href="career.html#open-positions" onclick="sessionStorage.setItem('openRole','app-developer')"><i class="ri-arrow-right-s-line"></i>App Developer</a></li>
         </ul>
       </div>
       <div>
@@ -3111,30 +2669,27 @@
       <div>
         <h4 class="footer-head">Contact</h4>
         <div class="footer-contact">
-          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa"
-              target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
+          <p><i class="ri-map-pin-2-fill"></i><a href="https://www.google.com/maps/search/Flashlab+Creative+Margao+Goa" target="_blank" rel="noopener">G26 Vikrant Complex,<br>Margao, Goa, India</a></p>
           <p><i class="ri-phone-fill"></i><a href="tel:+919923580023">+91 99235 80023</a></p>
-          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a>
-          </p>
+          <p><i class="ri-mail-fill"></i><a href="mailto:contact@flashlabcreative.com">contact@flashlabcreative.com</a></p>
           <p><i class="ri-time-fill"></i><span>Mon – Sat: 9am – 6pm IST</span></p>
           <a href="connect.html" class="footer-cta">Start a Project <i class="ri-arrow-right-line"></i></a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>Copyright &copy; 2026 Flashlab Creative — Website Crafted by <a href="https://cybercreative.in/"
-          target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
+      <p>Copyright &copy; 2026 Flashlab Creative — Website Crafted by <a href="https://cybercreative.in/" target="_blank" rel="noopener" class="cyber-link">Cyber Creative</a></p>
     </div>
   </footer>
 
-  <!-- BACK TO TOP — fixed button, appears after scrolling -->
+  <!-- BACK TO TOP -->
   <button class="back-top" id="backTop" aria-label="Back to top">
     <i class="ri-arrow-up-line"></i>
   </button>
 
   <script src="flash.js"></script>
   <script>
-    /* COUNTER ANIMATION — triggers when stats grid enters viewport */
+    /* COUNTER ANIMATION */
     (function () {
       const counters = document.querySelectorAll('.counter');
       function animate(el) {
@@ -3154,7 +2709,7 @@
       }
     })();
 
-    /* PARALLAX BLOBS — subtle vertical drift on scroll */
+    /* PARALLAX BLOBS */
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
       document.querySelectorAll('.blob').forEach((b, i) => {
@@ -3162,7 +2717,7 @@
       });
     });
 
-    /* HERO SLIDE CYCLER — auto-rotates 4 headline slides with progress dots */
+    /* HERO SLIDE CYCLER */
     (function () {
       const SLIDES = [
         { big: "Goa's Most Trusted\nCreative Agency", small: "Built in Goa with global standards for hospitality, real estate, lifestyle, and modern brands." },
@@ -3213,7 +2768,7 @@
       slideEls[0].classList.add('visible'); activateDot(0); scheduleNext();
     })();
 
-    /* PORTFOLIO CAROUSEL — dot-nav paginated carousel with swipe support */
+    /* PORTFOLIO CAROUSEL */
     (function () {
       const track = document.getElementById('port-track');
       const dotsEl = document.getElementById('port-dots');
@@ -3239,67 +2794,81 @@
       goTo(0);
     })();
 
-    /* CLIENTS DUAL BELT — builds two logo rows and injects them into forward/reverse tracks */
+    /* ============================================================
+       CLIENTS THREE-ROW BELT
+    ============================================================ */
     (function () {
-      const logos = [
-        { src: 'images/logos/tikibab.png', alt: 'Tikibab' },
-        { src: 'images/logos/susegad.png', alt: 'Susegad' },
-        { src: 'images/logos/sogofit.png', alt: 'SogoFit' },
-        { src: 'images/logos/rickys.png', alt: "Ricky's" },
-        { src: 'images/logos/reginaldo.png', alt: 'Reginaldo Connect' },
-        { src: 'images/logos/trust.png', alt: 'Reginaldo Trust' },
-        { src: 'images/logos/mikes.png', alt: "Mike's Place" },
-        { src: 'images/logos/gen.png', alt: 'Gen' },
-        { src: 'images/logos/noor.png', alt: 'Noor' },
-        { src: 'images/logos/brane.png', alt: 'Brane' },
-        { src: 'images/logos/origin.png', alt: 'Origin' },
-        { src: 'images/logos/pedros.png', alt: "Pedro's" },
-        { src: 'images/logos/magzika.png', alt: 'Magzika' },
-        { src: 'images/logos/ewater.png', alt: 'eWater' },
-        { src: 'images/logos/colva.png', alt: 'Colva Plaza' },
-        { src: 'images/logos/caliber.png', alt: 'Caliber' },
-        { src: 'images/logos/babshideout.png', alt: "Bab's Hideout" },
-        { src: 'images/logos/investments.png', alt: 'Investments' },
-        { src: 'images/logos/Deltin-Casino.png', alt: 'Deltin Casino' },
+      const row1Logos = [
+        { src: 'images/logos/tikibab.jpg',        alt: 'Tikibab' },
+        { src: 'images/logos/susegad.png',         alt: 'Susegad' },
+        { src: 'images/logos/backyard.png',         alt: 'SogoFit' },
+        { src: 'images/logos/Club-Rickys-Logo.png',          alt: "Ricky's" },
+        { src: 'images/logos/reginaldo.png',       alt: 'Reginaldo Connect' },
+        { src: 'images/logos/trust.png',           alt: 'Reginaldo Trust' },
+        { src: 'images/logos/mikes.png',           alt: "Mike's Place" },
+        { src: 'images/logos/gen.png',             alt: 'Gen' },
+        { src: 'images/logos/noor.jpg',            alt: 'Noor' },
+        { src: 'images/logos/brane.png',           alt: 'Brane' },
+        { src: 'images/logos/origin.png',          alt: 'Origin' },
+        { src: 'images/logos/pedros.jpg',          alt: "Pedro's" },
+        { src: 'images/logos/magzika.png',         alt: 'Magzika' },
+        { src: 'images/logos/ewater.png',          alt: 'eWater' },
+        { src: 'images/logos/colva.png',           alt: 'Colva Plaza' },
+        { src: 'images/logos/caliber.png',         alt: 'Caliber' },
+        { src: 'images/logos/babshideout.png',     alt: "Bab's Hideout" },
+        { src: 'images/logos/investments.png',     alt: 'Investments' },
+        { src: 'images/logos/Deltin-Casino.png',   alt: 'Deltin Casino' },
       ];
-      const bottomlogos = [
-        { src: 'images/logos/Dwarka-Logo.png', alt: 'Dwarka' },
-        { src: 'images/logos/Crafted-Couches.png', alt: 'Crafted Couches' },
-        { src: 'images/logos/heineken-krank-goa.png', alt: 'krank' },
-        { src: 'images/logos/pronature.png', alt: "pronature" },
-        { src: 'images/logos/KOA-Global-Impex.png', alt: 'koa global' },
-        { src: 'images/logos/Fomento-Realty.png', alt: 'Fomento' },
-        { src: 'images/logos/featherdev.png', alt: "featherdev" },
-        { src: 'images/logos/Papiillon-Logo.png', alt: 'papillon' },
-        { src: 'images/logos/Red-Ginger.png', alt: 'Red-Ginger' },
-        { src: 'images/logos/severos.png', alt: 'severos' },
-        { src: 'images/logos/Latin-Quarter-Blue.png', alt: 'Latin-Quarter-Blue' },
-        { src: 'images/logos/La-Barraca-Kitchen-Bar.png', alt: "La-Barraca-Kitchen-Bar" },
-        { src: 'images/logos/patisserie.png', alt: 'patisserie' },
-        { src: 'images/logos/Southern-Coast.jpg', alt: 'Southern Coast' },
-        { src: 'images/logos/Surf-house-logo.png', alt: 'Surf House' },
-        { src: 'images/logos/avtar-kitchen.png', alt: 'Avtar kitchen' },
-        { src: 'images/logos/Pipa-Bella.png', alt: "Pipa Bella" },
-        { src: 'images/logos/fc-goa.png', alt: 'FC Goa' },
-        { src: 'images/logos/Robins-Ark.png', alt: 'Robins Ark' },
+      const row2Logos = [
+        { src: 'images/logos/Dwarka-Logo.png',              alt: 'Dwarka' },
+        { src: 'images/logos/Crafted-Couches.png',          alt: 'Crafted Couches' },
+        { src: 'images/logos/heineken-krank-goa.png',       alt: 'Krank' },
+        { src: 'images/logos/pronature.png',                alt: 'Pronature' },
+        { src: 'images/logos/KOA-Global-Impex.png',         alt: 'KOA Global' },
+        { src: 'images/logos/Fomento-Realty.png',           alt: 'Fomento Realty' },
+        { src: 'images/logos/featherdev.png',               alt: 'Featherdev' },
+        { src: 'images/logos/Papiillon-Logo.png',           alt: 'Papillon' },
+        { src: 'images/logos/Red-Ginger.png',               alt: 'Red Ginger' },
+        { src: 'images/logos/severos.png',                  alt: 'Severos' },
+        { src: 'images/logos/Latin-Quarter-Blue.png',       alt: 'Latin Quarter' },
+        { src: 'images/logos/La-Barraca-Kitchen-Bar.png',   alt: 'La Barraca' },
+        { src: 'images/logos/patisserie.png',               alt: 'Patisserie' },
+        { src: 'images/logos/Southern-Coast.jpg',           alt: 'Southern Coast' },
+        { src: 'images/logos/Surf-house-logo.png',          alt: 'Surf House' },
+        { src: 'images/logos/avtar-kitchen.png',            alt: 'Avtar Kitchen' },
+        { src: 'images/logos/Pipa-Bella.png',               alt: 'Pipa Bella' },
+        { src: 'images/logos/fc-goa.png',                   alt: 'FC Goa' },
+        { src: 'images/logos/Robins-Ark.png',               alt: "Robin's Ark" },
       ];
-      function buildLogoSet(list) {
+
+      function buildBelt(list) {
+        // Double the list for seamless infinite scroll
+        const doubled = [...list, ...list];
         const frag = document.createDocumentFragment();
-        list.forEach(logo => {
-          const item = document.createElement('div'); item.className = 'cl-logo-item';
-          const img = document.createElement('img'); img.src = logo.src; img.alt = logo.alt; img.loading = 'lazy';
-          item.appendChild(img); frag.appendChild(item);
-          const div = document.createElement('div'); div.className = 'cl-logo-divider'; frag.appendChild(div);
+        doubled.forEach(logo => {
+          const item = document.createElement('div');
+          item.className = 'cl-item';
+          const img = document.createElement('img');
+          img.src = logo.src;
+          img.alt = logo.alt;
+          img.loading = 'lazy';
+          img.draggable = false;
+          item.appendChild(img);
+          frag.appendChild(item);
+          const sep = document.createElement('div');
+          sep.className = 'cl-sep';
+          frag.appendChild(sep);
         });
         return frag;
       }
-      const fwdTrack = document.getElementById('cl-track-fwd');
-      if (fwdTrack) { fwdTrack.appendChild(buildLogoSet(logos)); fwdTrack.appendChild(buildLogoSet(logos)); }
-      const revTrack = document.getElementById('cl-track-rev');
-      if (revTrack) { revTrack.appendChild(buildLogoSet(bottomlogos)); revTrack.appendChild(buildLogoSet(bottomlogos)); }
+
+      const t1 = document.getElementById('cl-row1-track');
+      const t2 = document.getElementById('cl-row2-track');
+      if (t1) t1.appendChild(buildBelt(row1Logos));
+      if (t2) t2.appendChild(buildBelt(row2Logos));
     })();
 
-    /* TESTIMONIALS — builds Google review cards, auto-scrolls with prev/next controls */
+    /* TESTIMONIALS */
     (function () {
       const TESTIMONIALS = [
         { stars: 5, text: "Finally a team that genuinely knows their stuff! They seamlessly blend creativity with strategy, providing services in digital marketing, websites, reputation management, photography and videography. Love their energy, attention to detail, and the insights they bring to every project. Definitely my go-to team for any business looking to grow its online presence.", name: "Ervin Sequeira", role: "Google Review", initial: "E", color: "#a8e832", link: "https://share.google/WvRLau5CdmCwfIjYH" },
@@ -3353,7 +2922,7 @@
       goTo(0); startAuto();
     })();
 
-    /* VIDEO MODAL — opens YouTube embed on play button click, closes on backdrop/Escape */
+    /* VIDEO MODAL */
     (function () {
       const VIDEO_ID = 'sZd-t5-I5uA';
       const btn = document.getElementById('videoPlayBtn');
@@ -3372,7 +2941,7 @@
       document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
     })();
 
-    /* PORTFOLIO OVERLAY — opens/closes full-screen portfolio panel */
+    /* PORTFOLIO OVERLAY */
     (function () {
       const openBtn = document.getElementById('openPortfolioOverlay');
       const panel = document.getElementById('portOverlayPanel');
@@ -3384,5 +2953,4 @@
     })();
   </script>
 </body>
-
 </html>
