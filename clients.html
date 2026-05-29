@@ -140,7 +140,7 @@
 
     .hero-full-heading {
       font-family: var(--font-head);
-      font-size: 100px;
+      font-size: clamp(3rem, 10vw, 100px);
       line-height: 0.9;
       letter-spacing: 3px;
       color: var(--text);
@@ -743,7 +743,6 @@
 
     /* ── MERGED CTA ── */
     .merged-cta {
-      padding-right: 350px;
       position: center;
     }
 
@@ -937,7 +936,16 @@
 
     @media (max-width:768px) {
       .page-hero {
-        padding-top: 150px;
+        padding-top: 130px;
+      }
+
+      .hero-full-wrap {
+        padding: 32px 5% 0;
+      }
+
+      .hero-industry-tag {
+        font-size: 0.7rem;
+        padding: 7px 13px;
       }
     }
 
@@ -969,6 +977,24 @@
 
       .mcta-col:last-child {
         padding-right: 5%;
+      }
+
+      .hero-full-right {
+        gap: 8px;
+      }
+    }
+
+    @media (max-width:480px) {
+      .stories-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feed-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testi-card-body {
+        padding: 24px 20px;
       }
     }
   </style>

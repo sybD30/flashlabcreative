@@ -39,6 +39,8 @@
       font-style: normal;
       color: var(--accent2);
       font-weight: 390;
+      text-transform: uppercase;
+
       -webkit-text-fill-color: var(--accent2);
     }
 
@@ -1044,6 +1046,52 @@
       .portrait-grid {
         max-width: 100%;
       }
+
+      .hero-meta {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero-meta-divider {
+        display: none;
+      }
+
+      .page-hero-inner {
+        padding: 0 5% 10px;
+      }
+    }
+
+    @media(max-width:768px) {
+      .page-hero {
+        min-height: auto;
+      }
+
+      .page-hero-inner {
+        padding: 0 4% 8px;
+      }
+
+      .page-hero h1 {
+        font-size: clamp(1.8rem, 8vw, 3rem);
+        letter-spacing: 1px;
+      }
+
+      .page-hero-sub {
+        font-size: 0.82rem;
+      }
+
+      .hero-btns {
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      .hero-meta {
+        gap: 16px;
+      }
+
+      .hero-meta-item strong {
+        font-size: 1.5rem;
+      }
     }
 
     @media(max-width:640px) {
@@ -1083,6 +1131,22 @@
 
       #fl-lb-next {
         right: 8px;
+      }
+
+      .hero-meta {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        text-align: center;
+      }
+
+      .hero-btns {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .page-hero-eyebrow {
+        font-size: 0.65rem;
       }
     }
   </style>

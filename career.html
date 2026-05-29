@@ -142,6 +142,7 @@
       font-family: var(--font-italic);
       font-weight: 390;
       color: var(--accent2);
+      text-transform: uppercase;
       font-size: .85em;
       display: block;
     }
@@ -1032,7 +1033,8 @@
       .life-cell.span-row-2 { grid-row: span 1; }
       .positions-layout { grid-template-columns: 1fr; }
       .pos-menu { border-right: none; border-bottom: 1px solid var(--border); }
-      .pos-menu-list { display: flex; overflow-x: auto; padding: 0; }
+      .pos-menu-list { display: flex; overflow-x: auto; padding: 0; scrollbar-width: none; }
+      .pos-menu-list::-webkit-scrollbar { display: none; }
       .pos-menu-title { display: none; }
       .pos-menu-item { border-bottom: none; border-right: 1px solid var(--border); white-space: nowrap; flex-shrink: 0; }
       .pos-menu-item.active::before { top: auto; bottom: 0; left: 0; right: 0; width: auto; height: 3px; }
@@ -1044,14 +1046,29 @@
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
     }
 
+    @media (max-width:768px) {
+      .career-hero { padding: 190px 5% 70px; }
+      .hero-h1 { font-size: clamp(2.8rem, 8vw, 4.5rem); }
+      .pos-filter-tabs { flex-wrap: wrap; }
+      .pos-form-wrap { padding: 24px 20px; }
+      .hr-contact-strip { padding: 24px 20px 24px 26px; }
+    }
+
     @media (max-width:640px) {
-      .career-hero { padding: 180px 5% 60px; }
+      .career-hero { padding: 165px 5% 60px; }
       .perks-grid { grid-template-columns: 1fr; }
       .life-collage { grid-template-columns: 1fr; grid-template-rows: auto; }
       .life-cell { height: 180px; }
       .form-row { grid-template-columns: 1fr; }
       .no-role-inner { padding: 40px 28px; }
       .footer-grid { grid-template-columns: 1fr; }
+      .pos-detail { padding: 20px 16px; }
+      .pos-title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+    }
+
+    @media (max-width:400px) {
+      .career-hero { padding: 150px 4% 50px; }
+      .no-role-inner { padding: 32px 20px; }
     }
   </style>
 </head>
